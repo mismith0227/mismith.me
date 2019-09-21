@@ -1,3 +1,3 @@
 # my-site
 
-blog & portfoli
+blog & portfolio
