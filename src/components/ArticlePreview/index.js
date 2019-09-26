@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import styles from './article-preview.module.css'
+import { PreviewTitle, Tag } from './styles'
 
 export default ({ article }) => (
-  <div className={styles.preview}>
+  <div>
     <Img alt="" fluid={article.heroImage.fluid} />
-    <h3 className={styles.previewTitle}>
+    <PreviewTitle>
       <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-    </h3>
+    </PreviewTitle>
     <small>{article.publishDate}</small>
     <p
       dangerouslySetInnerHTML={{
@@ -17,9 +17,7 @@ export default ({ article }) => (
       }}
     />
     {article.tags.map(tag => (
-      <p className={styles.tag} key={tag}>
-        {tag}
-      </p>
+      <Tag key={tag}>{tag}</Tag>
     ))}
   </div>
 )
