@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import base from './base.css'
-import Container from './container'
-import Navigation from './Navigation'
+import Navigation from '../Navigation'
 
-class Template extends React.Component {
+class Layout extends React.Component {
   render() {
     const { location, children } = this.props
     let header
@@ -15,12 +14,12 @@ class Template extends React.Component {
     }
 
     return (
-      <Container>
+      <div>
         <Navigation />
         {children}
-      </Container>
+      </div>
     )
   }
 }
 
-export default Template
+export default Layout
