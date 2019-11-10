@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export const Wrap = styled.ul`
-  position: absolute;
+  position: fixed;
   padding: 120px 24px;
   margin: 0;
   background: #000;
@@ -30,5 +30,9 @@ export const Item = styled.li`
 `
 
 export const StyledLink = styled(Link)`
+  display: block;
+`
+
+export const ExternalLink = styled.a`
   display: block;
 `

@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
+import WorkContent from '../components/organisms/WorkContent'
 import ArticlePreview from '../components/organisms/ArticlePreview'
 
 class BlogIndex extends React.Component {
@@ -12,22 +13,8 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <div>Blog</div>
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
+        <Helmet title={siteTitle} />
+        <WorkContent posts={posts} />
       </Layout>
     )
   }
