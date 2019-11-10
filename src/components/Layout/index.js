@@ -1,9 +1,23 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import base from './base.css'
-import Navigation from '../Navigation'
+import Navigation from '../molecules/Navigation'
+import MenuButton from '../atoms/MenuButton'
+
+import { Wrap } from './styles'
 
 class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isSidebarOpen: false,
+    }
+  }
+
+  handleSidebarCtrl() {
+    this.setState({ isSidebarOpen: !this.state.isSidebarOpen })
+  }
+
   render() {
     const { location, children } = this.props
     let header
@@ -14,10 +28,18 @@ class Layout extends React.Component {
     }
 
     return (
-      <div>
-        <Navigation />
+      <Wrap>
+        <Navigation isOpen={this.state.isSidebarOpen} />
+
+        {this.state.isSidebarOpen}
+
+        <MenuButton
+          onClick={this.handleSidebarCtrl.bind(this)}
+          isOpen={this.state.isSidebarOpen}
+        />
+
         {children}
-      </div>
+      </Wrap>
     )
   }
 }

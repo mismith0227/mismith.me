@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
+import HomeContent from '../components/organisms/HomeContent'
 
 class RootIndex extends React.Component {
   render() {
@@ -12,10 +13,8 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
-          <div className="wrapper">mismith portfolio</div>
-        </div>
+        <Helmet title={siteTitle} />
+        <HomeContent />
       </Layout>
     )
   }

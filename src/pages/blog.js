@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
-import ArticlePreview from '../components/ArticlePreview'
+import ArticlePreview from '../components/organisms/ArticlePreview'
 
 class BlogIndex extends React.Component {
   render() {
