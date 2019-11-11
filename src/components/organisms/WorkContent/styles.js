@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import IconList from '../../molecules/IconList'
 
 export const Wrap = styled.div`
-  display: div;
+  display: block;
+  max-width: 1024px;
+  margin: 0 auto;
 `
 
 export const LeadText = styled.p`
