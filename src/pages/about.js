@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Layout from '../components/Layout'
-import HomeContent from '../components/organisms/HomeContent'
+import AboutContent from '../components/organisms/AboutContent'
 
 class About extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class About extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
-        about
+        <AboutContent />
       </Layout>
     )
   }

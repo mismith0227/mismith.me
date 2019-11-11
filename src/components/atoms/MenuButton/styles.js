@@ -6,10 +6,6 @@ export const Wrap = styled.div`
   display: block;
   width: 44px;
   height 34px;
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 20;
   overflow: hidden;
   &:hover {
     cursor: pointer;

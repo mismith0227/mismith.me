@@ -4,7 +4,7 @@ import base from './base.css'
 import Navigation from '../molecules/Navigation'
 import MenuButton from '../atoms/MenuButton'
 
-import { Wrap } from './styles'
+import { Wrap, StyledMenuButton } from './styles'
 
 class Layout extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Layout extends React.Component {
 
         {this.state.isSidebarOpen}
 
-        <MenuButton
+        <StyledMenuButton
           onClick={this.handleSidebarCtrl.bind(this)}
           isOpen={this.state.isSidebarOpen}
         />
