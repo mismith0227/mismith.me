@@ -3,6 +3,7 @@ import IconList from '../../molecules/IconList'
 
 export const Wrap = styled.div`
   display: block;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
 `
