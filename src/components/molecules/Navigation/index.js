@@ -12,7 +12,7 @@ const Navigation = React.memo(({ isOpen }) => {
         <StyledLink to="/about/">About me</StyledLink>
       </Item>
       <Item>
-        <StyledLink to="/work/">Work</StyledLink>
+        <StyledLink to="/work/">Works</StyledLink>
       </Item>
       <Item>
         <ExternalLink href="https://blog.mismith.me/" target="_blank">
