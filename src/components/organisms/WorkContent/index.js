@@ -2,22 +2,24 @@ import * as React from 'react'
 import get from 'lodash/get'
 import ArticlePreview from '../../organisms/ArticlePreview'
 
-import { Wrap, LeadText, List, Item } from './styles'
+import { Wrap, Title, LeadText, List, Item } from './styles'
 
 const WorkContent = ({ posts }) => {
   return (
     <Wrap>
-      <h2 className="section-headline">Works</h2>
+      <Title>Works</Title>
       <LeadText>制作した一部です。非公開のものもあります。</LeadText>
-      <List className="article-list">
-        {posts.map(({ node }) => {
-          return (
-            <Item key={node.slug}>
-              <ArticlePreview article={node} />
-            </Item>
-          )
-        })}
-      </List>
+      {posts && (
+        <List>
+          {posts.map(({ node }) => {
+            return (
+              <Item key={node.slug}>
+                <ArticlePreview article={node} />
+              </Item>
+            )
+          })}
+        </List>
+      )}
     </Wrap>
   )
 }

@@ -18,14 +18,20 @@ export const Wrap = styled.ul`
 `
 
 export const Item = styled.li`
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
   list-style: none;
-  margin: 16px 0;
+  margin: 8px 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 50px;
 
   a {
     text-decoration: none;
     color: #fff;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `
 

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Wrap = styled.div`
   display: block;
+  margin: 0 0 120px;
 `
 
 export const ImageWrap = styled.div`
@@ -18,8 +19,15 @@ export const Content = styled.div`
 `
 
 export const PostTitle = styled.h2`
-  font-size: 24px;
+  font-size: 40px;
   margin: 24px 0 0;
 `
 
 export const Date = styled.div``
+
+export const PostContent = styled.div`
+  margin: 80px auto 0;
+  h3 {
+    font-size: 24px;
+  }
+`

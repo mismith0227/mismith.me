@@ -28,6 +28,8 @@ export const ProfileImg = styled.img`
 `
 
 export const Name = styled.h2`
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 80px;
   margin: 24px 0 0;
 `
 
@@ -36,6 +38,8 @@ export const Section = styled.section`
 `
 
 export const Title = styled.h3`
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 64px;
   margin: 0;
 `
 

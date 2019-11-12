@@ -1,6 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 
 import {
   PreviewTitle,
@@ -10,25 +8,28 @@ import {
   Content,
   TagWrap,
   Date,
+  StyledLink,
 } from './styles'
 
 const ArticlePreview = ({ article }) => {
   return (
     <Wrap>
-      <StyledImg alt="" fluid={article.heroImage.fluid} />
+      <StyledLink to={`/work/${article.slug}`}>
+        <StyledImg alt="" fluid={article.heroImage.fluid} />
 
-      <Content>
-        <PreviewTitle>
-          <Link to={`/work/${article.slug}`}>{article.title}</Link>
-        </PreviewTitle>
-        <Date>{article.publishDate}</Date>
+        <Content>
+          <PreviewTitle>{article.title}</PreviewTitle>
+          <Date>{article.publishDate}</Date>
 
-        <TagWrap>
-          {article.tags.map(tag => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </TagWrap>
-      </Content>
+          {article.tags && (
+            <TagWrap>
+              {article.tags.map(tag => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </TagWrap>
+          )}
+        </Content>
+      </StyledLink>
     </Wrap>
   )
 }

@@ -31,5 +31,20 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Teko',
+              variants: ['300', '400', '500'],
+            },
+          ],
+        },
+        formats: ['woff2', 'woff'],
+        useMinify: true,
+      },
+    },
   ],
 }

@@ -19,7 +19,8 @@ export const Content = styled.div`
 export const Title = styled.div`
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-size: 120px;
 `
 
 export const StyledIconList = styled(IconList)`

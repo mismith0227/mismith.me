@@ -26,10 +26,10 @@ const AboutContent = props => {
             <ProfileImg src="https://pbs.twimg.com/profile_images/1176903104442142720/UO3wHvoE.jpg" />
           </IconWrap>
           <Name>Misumi Takuma</Name>
-          <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
         </ProfileWrap>
         <Section>
           <Title>Profile</Title>
+          <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
           <Text>
             HTML,CSS,JavaScriptといったフロントエンドの領域が主な領域です。リモートワークで東京の会社に勤めており、会社のタスクやスキルアップに力を注いでいますが、余力があれば個人の仕事も受けています。
           </Text>

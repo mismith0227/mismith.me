@@ -5,7 +5,14 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 
-import { Wrap, ImageWrap, Content, PostTitle, Date } from './styles'
+import {
+  Wrap,
+  ImageWrap,
+  Content,
+  PostTitle,
+  Date,
+  PostContent,
+} from './styles'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -22,7 +29,7 @@ class BlogPostTemplate extends React.Component {
           <Content>
             <PostTitle>{post.title}</PostTitle>
             <Date>{post.publishDate}</Date>
-            <div
+            <PostContent
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
