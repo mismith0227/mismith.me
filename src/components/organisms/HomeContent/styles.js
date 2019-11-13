@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../..//styles/media'
 import IconList from '../../molecules/IconList'
 
 export const Wrap = styled.div`
@@ -21,6 +22,14 @@ export const Title = styled.div`
   padding: 0;
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   font-size: 120px;
+
+  ${media.large} {
+    font-size: 100px;
+  }
+
+  ${media.small} {
+    font-size: 60px;
+  }
 `
 
 export const StyledIconList = styled(IconList)`
