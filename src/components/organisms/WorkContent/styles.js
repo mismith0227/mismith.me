@@ -34,8 +34,11 @@ export const Item = styled.li`
   padding: 0;
   list-style: none;
   width: 48%;
+  margin: 0 0 56px 0;
 
-  &:nth-child(n + 3) {
-    margin: 56px 0 0;
+  ${media.small} {
+    width: 100%;
+    margin: 0 0 48px 0;
+  }
   }
 `
