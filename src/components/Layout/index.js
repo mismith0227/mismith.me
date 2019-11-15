@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import base from './base.css'
-import Navigation from '../molecules/Navigation'
-import MenuButton from '../atoms/MenuButton'
+import Navigation from '~/components/molecules/Navigation'
+import MenuButton from '~/components/atoms/MenuButton'
 
 import { Wrap, StyledMenuButton } from './styles'
 

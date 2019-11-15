@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Layout from '../components/Layout'
-import HomeContent from '../components/organisms/HomeContent'
+import Layout from '~/components/Layout'
+import HomeContent from '~/components/organisms/HomeContent'
 
 class RootIndex extends React.Component {
   render() {

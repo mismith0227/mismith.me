@@ -46,5 +46,14 @@ module.exports = {
         useMinify: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '~': 'src',
+        },
+        extensions: ['js'],
+      },
+    },
   ],
 }

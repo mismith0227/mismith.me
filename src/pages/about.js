@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Layout from '../components/Layout'
-import AboutContent from '../components/organisms/AboutContent'
+import Layout from '~/components/Layout'
+import AboutContent from '~/components/organisms/AboutContent'
 
 class About extends React.Component {
   render() {

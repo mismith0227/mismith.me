@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import IconList from '../../molecules/IconList'
+import media from '~/styles/media'
 
 export const Wrap = styled.div`
   display: block;
@@ -22,18 +22,20 @@ export const LeadText = styled.p`
 `
 
 export const List = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 80px 0 0;
   padding: 0;
 `
 
 export const Item = styled.li`
-  display: inline-block;
-  margin: 0 5% 0 0;
+  display: block;
   padding: 0;
   list-style: none;
-  width: 30%;
+  width: 48%;
 
-  &:nth-child(3n) {
-    margin: 0;
+  &:nth-child(n + 3) {
+    margin: 56px 0 0;
   }
 `

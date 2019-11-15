@@ -4,17 +4,19 @@ import { Link } from 'gatsby'
 
 export const Wrap = styled.div``
 
-export const StyledImg = styled(Img)``
+export const StyledImg = styled(Img)`
+  border: 1px solid #ccc;
+`
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 8px 0 0;
 `
 
 export const StyledLink = styled(Link)`
   display: block;
   text-decoration: none;
-  border: 4px solid #000;
   box-sizing: border-box;
   padding: 4px;
 `

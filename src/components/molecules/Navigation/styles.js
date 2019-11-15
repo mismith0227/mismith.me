@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import media from '~/styles/media'
 import { Link } from 'gatsby'
 
 export const Wrap = styled.ul`
   position: fixed;
-  padding: 120px 24px;
+  padding: 100px 24px;
   margin: 0;
   background: #000;
   height: 100%;
@@ -15,6 +16,10 @@ export const Wrap = styled.ul`
   transition: 0.3s;
   box-sizing: border-box;
   z-index: 10;
+
+  ${media.large} {
+    padding: 80px 16px;
+  }
 `
 
 export const Item = styled.li`
@@ -22,7 +27,16 @@ export const Item = styled.li`
   list-style: none;
   margin: 8px 0;
   padding: 0;
-  font-size: 50px;
+  font-size: 48px;
+
+  ${media.large} {
+    margin: 4px 0;
+    font-size: 42px;
+  }
+
+  ${media.small} {
+    font-size: 38px;
+  }
 
   a {
     text-decoration: none;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import MenuButton from '../atoms/MenuButton'
+import MenuButton from '~/components/atoms/MenuButton'
 
 export const Wrap = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import get from 'lodash/get'
-import ArticlePreview from '../../organisms/ArticlePreview'
+import ArticlePreview from '~/components/organisms/ArticlePreview'
 
 import { Wrap, Title, LeadText, List, Item } from './styles'
 

@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import media from '../../..//styles/media'
-import IconList from '../../molecules/IconList'
+import media from '~/styles/media'
+import IconList from '~/components/molecules/IconList'
 
-export const Wrap = styled.div``
-
-export const Content = styled.div`
+export const Wrap = styled.div`
   max-width: 800px;
   width: 96%;
   margin: 120px auto;
