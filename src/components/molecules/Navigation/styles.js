@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import media from '~/styles/media'
 import { Link } from 'gatsby'
+import OpenInNewIcon from '~/components/atoms/Icon/OpenInNew'
 
 export const Wrap = styled.ul`
   position: fixed;
@@ -55,4 +56,8 @@ export const StyledLink = styled(Link)`
 
 export const ExternalLink = styled.a`
   display: block;
+`
+
+export const StyledOpenInNewIcon = styled(OpenInNewIcon)`
+  margin: 0 0 0 8px;
 `

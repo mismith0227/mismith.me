@@ -1,6 +1,12 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { Wrap, Item, StyledLink, ExternalLink } from './styles'
+import {
+  Wrap,
+  Item,
+  StyledLink,
+  ExternalLink,
+  StyledOpenInNewIcon,
+} from './styles'
 
 const Navigation = React.memo(({ isOpen }) => {
   return (
@@ -17,6 +23,7 @@ const Navigation = React.memo(({ isOpen }) => {
       <Item>
         <ExternalLink href="https://blog.mismith.me/" target="_blank">
           Blog
+          <StyledOpenInNewIcon />
         </ExternalLink>
       </Item>
     </Wrap>

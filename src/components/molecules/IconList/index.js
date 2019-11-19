@@ -1,8 +1,8 @@
 import * as React from 'react'
-import FivehundredpxIcon from '../../atoms/Icon/Fivehundredpx'
-import GitHubIcon from '../../atoms/Icon/GitHub'
-import InstagramIcon from '../../atoms/Icon/Instagram'
-import TwitterIcon from '../../atoms/Icon/Twitter'
+import FivehundredpxIcon from '~/components/atoms/Icon/Fivehundredpx'
+import GitHubIcon from '~/components/atoms/Icon/GitHub'
+import InstagramIcon from '~/components/atoms/Icon/Instagram'
+import TwitterIcon from '~/components/atoms/Icon/Twitter'
 
 import { Wrap, Item, ExternalLink } from './styles'
 
