@@ -5,13 +5,13 @@ import OpenInNewIcon from '~/components/atoms/Icon/OpenInNew'
 
 export const Wrap = styled.ul`
   position: fixed;
-  padding: 100px 24px;
+  padding: 10rem 2.4rem;
   margin: 0;
   background: #000;
   height: 100%;
-  width: 300px;
+  width: 30rem;
   top: 0;
-  right: -300px;
+  right: -30rem;
   transform: ${props =>
     props.isOpen ? 'translate3d(-100%, 0, 0)' : 'translate3d(0, 0, 0)'};
   transition: 0.3s;
@@ -19,24 +19,24 @@ export const Wrap = styled.ul`
   z-index: 10;
 
   ${media.large} {
-    padding: 80px 16px;
+    padding: 8rem 1.6rem;
   }
 `
 
 export const Item = styled.li`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   list-style: none;
-  margin: 8px 0;
+  margin: 0.8rem 0;
   padding: 0;
-  font-size: 48px;
+  font-size: 4.8rem;
 
   ${media.large} {
-    margin: 4px 0;
-    font-size: 42px;
+    margin: 0.4rem 0;
+    font-size: 4.2rem;
   }
 
   ${media.small} {
-    font-size: 38px;
+    font-size: 3.8rem;
   }
 
   a {
@@ -59,5 +59,5 @@ export const ExternalLink = styled.a`
 `
 
 export const StyledOpenInNewIcon = styled(OpenInNewIcon)`
-  margin: 0 0 0 8px;
+  margin: 0 0 0 0.8rem;
 `

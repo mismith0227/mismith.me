@@ -4,8 +4,8 @@ const getColor = ({ isOpen }) => (isOpen ? '#fff' : '#000')
 
 export const Wrap = styled.div`
   display: block;
-  width: 44px;
-  height 34px;
+  width: 4.4rem;
+  height: 3.4rem;
   overflow: hidden;
   &:hover {
     cursor: pointer;
@@ -16,13 +16,13 @@ export const Wrap = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 0.4rem;
     background-color: ${getColor};
     top: 0;
     transition: 0.3s;
     transform: ${props =>
       props.isOpen
-        ? 'translateY(15px) rotate(45deg)'
+        ? 'translateY(1.5rem) rotate(45deg)'
         : 'translateY(0) rotate(0)'};
   }
 
@@ -31,13 +31,13 @@ export const Wrap = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 0.4rem;
     background-color: ${getColor};
     bottom: 0;
     transition: 0.3s;
     transform: ${props =>
       props.isOpen
-        ? 'translateY(-15px) rotate(-45deg)'
+        ? 'translateY(-1.5rem) rotate(-45deg)'
         : 'translateY(0) rotate(0)'};
   }
 `
@@ -47,9 +47,9 @@ export const Text = styled.div`
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 0.4rem;
   background-color: ${getColor};
-  top: 15px;
+  top: 1.5rem;
   opacity: ${props => (props.isOpen ? 0.6 : 1)};
   transition: 0.2s;
   transform: ${props =>

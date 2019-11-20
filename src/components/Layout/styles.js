@@ -8,7 +8,7 @@ export const Wrap = styled.div`
 
 export const StyledMenuButton = styled(MenuButton)`
   position: fixed;
-  top: 24px;
-  right: 24px;
+  top: 2.4rem;
+  right: 2.4rem;
   z-index: 20;
 `

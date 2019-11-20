@@ -21,17 +21,17 @@ export const Title = styled.div`
   margin: 0;
   padding: 0;
   font-family: 'Teko', Arial, Helvetica, sans-serif;
-  font-size: 120px;
+  font-size: 12rem;
 
   ${media.large} {
-    font-size: 100px;
+    font-size: 10rem;
   }
 
   ${media.small} {
-    font-size: 60px;
+    font-size: 6rem;
   }
 `
 
 export const StyledIconList = styled(IconList)`
-  margin: 24px 0 0;
+  margin: 2.4rem 0 0;
 `

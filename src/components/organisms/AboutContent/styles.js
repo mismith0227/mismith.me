@@ -3,16 +3,16 @@ import media from '~/styles/media'
 import IconList from '~/components/molecules/IconList'
 
 export const Wrap = styled.div`
-  max-width: 800px;
+  max-width: 80rem;
   width: 96%;
-  margin: 120px auto;
+  margin: 12rem auto;
 
   ${media.large} {
-    margin: 80px auto;
+    margin: 8rem auto;
   }
 
   ${media.small} {
-    margin: 40px auto;
+    margin: 4rem auto;
   }
 `
 
@@ -24,19 +24,19 @@ export const ProfileWrap = styled.div`
 `
 
 export const IconWrap = styled.div`
-  width: 120px;
-  height: 120px;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   overflow: hidden;
 
   ${media.large} {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
   }
 
   ${media.small} {
-    width: 80px;
-    height: 80px;
+    width: 8rem;
+    height: 8rem;
   }
 `
 
@@ -47,55 +47,55 @@ export const ProfileImg = styled.img`
 
 export const Name = styled.h2`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
-  font-size: 80px;
-  margin: 24px 0 0;
+  font-size: 8rem;
+  margin: 2.4rem 0 0;
 
   ${media.large} {
-    font-size: 60px;
-    margin: 20px 0 0;
+    font-size: 6rem;
+    margin: 2rem 0 0;
   }
 
   ${media.small} {
-    font-size: 48px;
-    margin: 16px 0 0;
+    font-size: 4.8rem;
+    margin: 1.6rem 0 0;
   }
 `
 
 export const Section = styled.section`
-  margin: 24px 0 0;
+  margin: 2.4rem 0 0;
 
   ${media.large} {
-    margin: 20px 0 0;
+    margin: 2rem 0 0;
   }
 
   ${media.small} {
-    margin: 16px 0 0;
+    margin: 1.6rem 0 0;
   }
 `
 
 export const Title = styled.h3`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
-  font-size: 64px;
+  font-size: 6.4rem;
   margin: 0;
 
   ${media.large} {
-    font-size: 56px;
+    font-size: 5.6rem;
   }
 
   ${media.small} {
-    font-size: 40px;
+    font-size: 4rem;
   }
 `
 
 export const Text = styled.p`
-  margin: 16px 0 0;
+  margin: 1.6rem 0 0;
 
   ${media.large} {
-    margin: 12px 0 0;
+    margin: 1.2rem 0 0;
   }
 
   ${media.small} {
-    margin: 8px 0 0;
+    margin: 0.8rem 0 0;
   }
 `
 
@@ -104,17 +104,17 @@ export const List = styled.ul``
 export const Item = styled.li``
 
 export const TagList = styled.ul`
-  margin: 24px 0 0;
+  margin: 2.4rem 0 0;
   padding: 0;
 `
 
 export const TagItem = styled.li`
   display: inline-block;
-  margin: 0 8px 0 0;
+  margin: 0 0.8rem 0 0;
 
   &::after {
     content: '/';
-    padding: 0 0 0 8px;
+    padding: 0 0 0 0.8rem;
   }
   &:last-child {
     &::after {
@@ -124,13 +124,13 @@ export const TagItem = styled.li`
 `
 
 export const StyledIconList = styled(IconList)`
-  margin: 24px 0 0;
+  margin: 2.4rem 0 0;
 
   ${media.large} {
-    margin: 12px 0 0;
+    margin: 1.2rem 0 0;
   }
 
   ${media.small} {
-    margin: 8px 0 0;
+    margin: 0.8rem 0 0;
   }
 `

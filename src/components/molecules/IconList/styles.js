@@ -8,7 +8,7 @@ export const Wrap = styled.ul`
 
 export const Item = styled.li`
   list-style: none;
-  margin: 0 8px;
+  margin: 0 0.8rem;
   padding: 0;
 `
 
