@@ -48,7 +48,7 @@ const AboutContent = props => {
           <TagItem>AngularJs(1.x)</TagItem>
           <TagItem>TypeScript</TagItem>
           <TagItem>WordPress</TagItem>
-          <TagItem>FIrebase</TagItem>
+          <TagItem>Firebase</TagItem>
           <TagItem>Amplify</TagItem>
         </TagList>
       </Section>
