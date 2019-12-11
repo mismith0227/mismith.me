@@ -16,7 +16,7 @@ import {
   StyledIconList,
 } from './styles'
 
-const AboutContent = props => {
+const AboutContent = () => {
   return (
     <Wrap>
       <ProfileWrap>

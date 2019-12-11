@@ -1,25 +1,8 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Meta from '~/components/parts/Meta'
 import Layout from '~/components/Layout'
 import WorkContent from '~/components/organisms/WorkContent'
-
-class BlogIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-
-    return (
-      <Layout location={this.props.location}>
-        <Helmet title={siteTitle} />
-        <WorkContent posts={posts} />
-      </Layout>
-    )
-  }
-}
-
-export default BlogIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
@@ -50,3 +33,18 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const BlogIndex = props => {
+  return (
+    <Layout location={props.location}>
+      <Meta
+        pageTitle="Work"
+        pageDescription="制作実績一覧"
+        pageLocation={props.location.href}
+      />
+      <WorkContent posts={props.data.allContentfulBlogPost.edges} />
+    </Layout>
+  )
+}
+
+export default BlogIndex

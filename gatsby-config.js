@@ -19,6 +19,9 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Mismith portfolio',
+    description: 'portfolio site',
+    author: `mismith`,
+    siteUrl: 'https://mismith.me/',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
