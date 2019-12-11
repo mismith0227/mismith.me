@@ -11,11 +11,11 @@ import {
   StyledLink,
 } from './styles'
 
-const ArticlePreview = ({ article }) => {
+const ArticlePreview = ({ article, display }) => {
   return (
     <Wrap>
-      <StyledLink to={`/work/${article.slug}`}>
-        <StyledImg alt="" fluid={article.heroImage.fluid} />
+      <StyledLink to={`/work/${article.slug}`} display={display}>
+        <StyledImg alt="" fluid={article.heroImage.fluid} display={display} />
 
         <Content>
           <PreviewTitle>{article.title}</PreviewTitle>
