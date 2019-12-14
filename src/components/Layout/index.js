@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import base from './base.css'
+import Cursor from '~/components/atoms/Cursor'
 import Navigation from '~/components/molecules/Navigation'
-import MenuButton from '~/components/atoms/MenuButton'
 
 import { Wrap, StyledMenuButton } from './styles'
 
@@ -11,6 +11,8 @@ class Layout extends React.Component {
     super(props)
     this.state = {
       isSidebarOpen: false,
+      clientX: 0,
+      clientY: 0,
     }
   }
 
@@ -18,17 +20,20 @@ class Layout extends React.Component {
     this.setState({ isSidebarOpen: !this.state.isSidebarOpen })
   }
 
-  render() {
-    const { location, children } = this.props
-    let header
+  // handleMousemove(e) {
+  //   this.setState({ clientX: e.clientX, clientY: e.clientY })
+  // }
 
-    let rootPath = `/`
+  render() {
+    const { children } = this.props
+
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
       rootPath = __PATH_PREFIX__ + `/`
     }
 
     return (
       <Wrap>
+        <Cursor />
         <Navigation isOpen={this.state.isSidebarOpen} />
 
         {this.state.isSidebarOpen}
