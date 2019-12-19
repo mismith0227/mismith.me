@@ -6,7 +6,7 @@ import Navigation from '~/components/molecules/Navigation'
 import { Wrap, StyledMenuButton } from './styles'
 
 const Layout = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState('')
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
 
   return (
     <Wrap>
