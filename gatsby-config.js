@@ -30,6 +30,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
+    `gatsby-plugin-typescript`,
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
@@ -55,7 +56,13 @@ module.exports = {
         alias: {
           '~': 'src',
         },
-        extensions: ['js'],
+        extensions: ['js', 'ts', 'tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: `types/graphql-types.d.ts`,
       },
     },
   ],

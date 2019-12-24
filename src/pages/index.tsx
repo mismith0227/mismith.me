@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '~/components/Layout'
-import HomeContent from '~/components/organisms/HomeContent'
-import Meta from '~/components/parts/Meta'
+import Layout from '../components/Layout'
+import HomeContent from '../components/organisms/HomeContent'
+import Meta from '../components/parts/Meta'
 
 const RootIndex = props => {
   return (
