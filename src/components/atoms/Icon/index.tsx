@@ -2,14 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { StyledSvg } from './styles'
 
-const Icon = ({
-  className,
-  children,
-  role = 'icon',
-  angle,
-  rotate,
-  viewBox,
-}) => (
+const Icon = ({ className, children, role = 'icon', viewBox }) => (
   <StyledSvg
     width="100%"
     fill="currentColor"

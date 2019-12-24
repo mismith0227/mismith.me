@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '~/styles/media'
+import media from '../../../styles/media'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 

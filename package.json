@@ -7,12 +7,18 @@
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
   "dependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-helmet": "^5.0.14",
+    "@types/styled-components": "^4.4.1",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby-image": "^2.0.38",
     "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-graphql-codegen": "^2.0.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.34",
     "gatsby-plugin-styled-components": "^3.1.6",
+    "gatsby-plugin-typescript": "^2.1.23",
     "gatsby-plugin-webfonts": "^1.1.0",
     "gatsby-source-contentful": "^2.0.48",
     "gatsby-transformer-remark": "^2.3.8",
@@ -22,7 +28,9 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "sharp": "^0.22.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

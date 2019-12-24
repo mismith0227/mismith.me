@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Meta from '~/components/parts/Meta'
-import Layout from '~/components/Layout'
-import WorkContent from '~/components/organisms/WorkContent'
+import Meta from '../components/parts/Meta'
+import Layout from '../components/Layout'
+import WorkContent from '../components/organisms/WorkContent'
 
 export const pageQuery = graphql`
   query BlogIndexQuery {

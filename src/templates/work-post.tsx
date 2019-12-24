@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Meta from '~/components/parts/Meta'
+import Meta from '../components/parts/Meta'
 import Img from 'gatsby-image'
-import Layout from '~/components/Layout'
+import Layout from '../components/Layout'
 import {
   Wrap,
   ImageWrap,

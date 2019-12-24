@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import media from '~/styles/media'
+import media from '../../../styles/media'
 import { Link } from 'gatsby'
-import OpenInNewIcon from '~/components/atoms/Icon/OpenInNew'
+import OpenInNewIcon from '../../../components/atoms/Icon/OpenInNew'
 
 export const Wrap = styled.ul`
   position: fixed;

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import ArticlePreview from '~/components/organisms/ArticlePreview'
-import GridIcon from '~/components/atoms/Icon/Grid'
-import ListIcon from '~/components/atoms/Icon/List'
+import ArticlePreview from '../../../components/organisms/ArticlePreview'
+import GridIcon from '../../../components/atoms/Icon/Grid'
+import ListIcon from '../../../components/atoms/Icon/List'
 
 import {
   Wrap,

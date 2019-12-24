@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '~/styles/media'
+import media from '../styles/media'
 
 export const Wrap = styled.div`
   max-width: 80rem;
