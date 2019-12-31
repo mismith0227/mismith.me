@@ -123,6 +123,22 @@ export const TagItem = styled.li`
   }
 `
 
+export const ActivitiesList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`
+
+export const ActivitiesListItem = styled.li`
+  margin: 2.4rem 0 0;
+`
+
+export const ActivitiesListTitle = styled.h4`
+  margin: 0;
+`
+
+export const ActivitiesListLink = styled.a``
+
 export const StyledIconList = styled(IconList)`
   margin: 2.4rem 0 0;
 
