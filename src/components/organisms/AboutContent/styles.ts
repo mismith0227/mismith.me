@@ -63,6 +63,7 @@ export const Name = styled.h2`
 
 export const Section = styled.section`
   margin: 2.4rem 0 0;
+  word-wrap: break-word;
 
   ${media.large} {
     margin: 2rem 0 0;
