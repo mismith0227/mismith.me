@@ -5,11 +5,11 @@ import AboutContent from '../components/organisms/AboutContent'
 
 const About = props => {
   return (
-    <Layout location={props.location}>
+    <Layout>
       <Meta
         pageTitle="About"
         pageDescription="このサイトについて"
-        pageLocation={props.location.href}
+        pageLocation="/about/"
       />
       <AboutContent />
     </Layout>

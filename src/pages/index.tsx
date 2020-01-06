@@ -4,12 +4,13 @@ import HomeContent from '../components/organisms/HomeContent'
 import Meta from '../components/parts/Meta'
 
 const RootIndex = props => {
+  console.log(props)
   return (
-    <Layout location={props.location}>
+    <Layout>
       <Meta
         pageTitle="Mismith Portfolio"
         pageDescription="Mismith Portfolio"
-        pageLocation={props.location.href}
+        pageLocation="/"
       />
       <HomeContent />
     </Layout>

@@ -6,8 +6,9 @@ import {
   ExternalLink,
   StyledOpenInNewIcon,
 } from './styles'
+import { Props } from './/types'
 
-const Navigation = React.memo(({ isOpen }) => {
+const Navigation = React.memo(({ isOpen }: Props) => {
   return (
     <Wrap isOpen={isOpen}>
       <Item>

@@ -15,6 +15,7 @@ import {
 
 const WorkContent = ({ posts }) => {
   const [display, setdisplay] = React.useState('grid')
+
   return (
     <Wrap>
       <Title>Works</Title>

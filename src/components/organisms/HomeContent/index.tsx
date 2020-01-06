@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Wrap, StyledIconList, Title, Content } from './styles'
 
-const HomeContent = props => {
+const HomeContent = () => {
   return (
     <Wrap>
       <Content>

@@ -38,10 +38,9 @@ export const pageQuery = graphql`
 
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
-  const siteTitle = props.data.site.siteMetadata.title
 
   return (
-    <Layout location={props.location}>
+    <Layout>
       <Wrap>
         <Meta
           pageTitle={`${post.title}の詳細`}
