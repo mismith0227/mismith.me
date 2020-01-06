@@ -3,7 +3,7 @@ import FivehundredpxIcon from '../../../components/atoms/Icon/Fivehundredpx'
 import GitHubIcon from '../../../components/atoms/Icon/GitHub'
 import InstagramIcon from '../../../components/atoms/Icon/Instagram'
 import TwitterIcon from '../../../components/atoms/Icon/Twitter'
-import { Props } from './/types'
+import { Props } from './types'
 
 import { Wrap, Item, ExternalLink } from './styles'
 

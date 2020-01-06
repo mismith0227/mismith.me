@@ -1,10 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import HomeContent from '../components/organisms/HomeContent'
+import AboutContent from '../components/organisms/AboutContent'
 import Meta from '../components/parts/Meta'
 
-const RootIndex = props => {
-  console.log(props)
+const RootIndex = () => {
   return (
     <Layout>
       <Meta
@@ -12,7 +11,7 @@ const RootIndex = props => {
         pageDescription="Mismith Portfolio"
         pageLocation="/"
       />
-      <HomeContent />
+      <AboutContent />
     </Layout>
   )
 }

@@ -2,6 +2,7 @@ import * as React from 'react'
 import ArticlePreview from '../../../components/organisms/ArticlePreview'
 import GridIcon from '../../../components/atoms/Icon/Grid'
 import ListIcon from '../../../components/atoms/Icon/List'
+import LoadingLogo from '../../molecules/LoadingLogo'
 
 import {
   Wrap,
@@ -18,6 +19,7 @@ const WorkContent = ({ posts }) => {
 
   return (
     <Wrap>
+      <LoadingLogo isloading={false} />
       <Title>Works</Title>
       <LeadText>制作した一部です。非公開のものもあります。</LeadText>
       <DisplayList>
