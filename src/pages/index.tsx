@@ -1,17 +1,17 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import HomeContent from '../components/organisms/HomeContent'
+import AboutContent from '../components/organisms/AboutContent'
 import Meta from '../components/parts/Meta'
 
-const RootIndex = props => {
+const RootIndex = () => {
   return (
-    <Layout location={props.location}>
+    <Layout>
       <Meta
         pageTitle="Mismith Portfolio"
         pageDescription="Mismith Portfolio"
-        pageLocation={props.location.href}
+        pageLocation="/"
       />
-      <HomeContent />
+      <AboutContent />
     </Layout>
   )
 }

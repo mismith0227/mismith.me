@@ -5,61 +5,47 @@ import IconList from '../../../components/molecules/IconList'
 export const Wrap = styled.div`
   max-width: 80rem;
   width: 96%;
-  margin: 12rem auto;
+  margin: 2rem auto 12rem;
 
   ${media.large} {
-    margin: 8rem auto;
+    margin: 2rem auto 8rem;
   }
 
   ${media.small} {
-    margin: 4rem auto;
+    margin: 2rem auto 4rem;
   }
 `
 
-export const ProfileWrap = styled.div`
+export const Main = styled.div`
+  height: 60rem;
   display: flex;
   flex-direction: column;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const IconWrap = styled.div`
-  width: 12rem;
-  height: 12rem;
-  border-radius: 50%;
-  overflow: hidden;
-
+  justify-content: center;
   ${media.large} {
-    width: 10rem;
-    height: 10rem;
+    height: 50rem;
   }
 
   ${media.small} {
-    width: 8rem;
-    height: 8rem;
+    height: 40rem;
   }
-`
-
-export const ProfileImg = styled.img`
-  width: 100%;
-  height: 100%;
 `
 
 export const Name = styled.h2`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   font-size: 8rem;
-  margin: 2.4rem 0 0;
+  margin: 0.8rem 0 0;
+  line-height: 1.2;
 
   ${media.large} {
     font-size: 6rem;
-    margin: 2rem 0 0;
   }
 
   ${media.small} {
     font-size: 4.8rem;
-    margin: 1.6rem 0 0;
   }
 `
+
+export const SubTitle = styled.div``
 
 export const Section = styled.section`
   margin: 2.4rem 0 0;

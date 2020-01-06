@@ -36,11 +36,11 @@ export const pageQuery = graphql`
 
 const BlogIndex = props => {
   return (
-    <Layout location={props.location}>
+    <Layout>
       <Meta
         pageTitle="Work"
         pageDescription="制作実績一覧"
-        pageLocation={props.location.href}
+        pageLocation="/work/"
       />
       <WorkContent posts={props.data.allContentfulBlogPost.edges} />
     </Layout>

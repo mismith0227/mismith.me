@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import { Props } from './types'
 
-const Meta = props => {
+const Meta = (props: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {

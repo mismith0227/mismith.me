@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Meta from '../components/parts/Meta'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
+import LoadingLogo from '../components/molecules/LoadingLogo'
 import {
   Wrap,
   ImageWrap,
@@ -38,10 +39,10 @@ export const pageQuery = graphql`
 
 const BlogPostTemplate = props => {
   const post = props.data.contentfulBlogPost
-  const siteTitle = props.data.site.siteMetadata.title
 
   return (
-    <Layout location={props.location}>
+    <Layout>
+      <LoadingLogo isloading={false} />
       <Wrap>
         <Meta
           pageTitle={`${post.title}の詳細`}

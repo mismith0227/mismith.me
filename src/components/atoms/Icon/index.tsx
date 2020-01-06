@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { StyledSvg } from './styles'
+import { Props } from './types'
 
-const Icon = ({ className, children, role = 'icon', viewBox }) => (
+const Icon = ({ className, children, role = 'icon', viewBox }: Props) => (
   <StyledSvg
     width="100%"
     fill="currentColor"
