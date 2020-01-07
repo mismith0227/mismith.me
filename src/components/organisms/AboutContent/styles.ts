@@ -48,15 +48,19 @@ export const Name = styled.h2`
 export const SubTitle = styled.div``
 
 export const Section = styled.section`
-  margin: 2.4rem 0 0;
+  margin: 12rem 0 0;
   word-wrap: break-word;
 
+  &:first-of-type {
+    margin: 4rem 0 0;
+  }
+
   ${media.large} {
-    margin: 2rem 0 0;
+    margin: 8rem 0 0;
   }
 
   ${media.small} {
-    margin: 1.6rem 0 0;
+    margin: 4rem 0 0;
   }
 `
 
@@ -64,6 +68,7 @@ export const Title = styled.h3`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
   font-size: 6.4rem;
   margin: 0;
+  line-height: 1;
 
   ${media.large} {
     font-size: 5.6rem;
