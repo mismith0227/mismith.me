@@ -25,10 +25,16 @@ const WorkContent = ({ posts }) => {
         制作しているサイトです。作成中のサービスや非公開の受託案件などもあります
       </LeadText>
       <DisplayList>
-        <DisplayItem onClick={() => setdisplay('grid')}>
+        <DisplayItem
+          onClick={() => setdisplay('grid')}
+          display={display === 'grid'}
+        >
           <GridIcon />
         </DisplayItem>
-        <DisplayItem onClick={() => setdisplay('list')}>
+        <DisplayItem
+          onClick={() => setdisplay('list')}
+          display={display === 'list'}
+        >
           <ListIcon />
         </DisplayItem>
       </DisplayList>
