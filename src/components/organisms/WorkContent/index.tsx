@@ -21,7 +21,9 @@ const WorkContent = ({ posts }) => {
     <Wrap>
       <LoadingLogo isloading={false} />
       <Title>Works</Title>
-      <LeadText>制作した一部です。非公開のものもあります。</LeadText>
+      <LeadText>
+        制作しているサイトです。作成中のサービスや非公開の受託案件などもあります
+      </LeadText>
       <DisplayList>
         <DisplayItem onClick={() => setdisplay('grid')}>
           <GridIcon />
