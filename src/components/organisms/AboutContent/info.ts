@@ -68,3 +68,13 @@ export const Activities = [
       'https://speakerdeck.com/mismith0227/wordpressdeorizinarusaitozuo-richao-ru-men-zi-temadetemazuo-cheng-kasutamaizuwoyatutemiyou-1',
   },
 ]
+
+export const Biographies = [
+  '2011年3月 大学卒業',
+  '2011年4月 証券会社で営業',
+  '2013年3月 媒体社で広告営業',
+  '2013年10月 webデザイナーの勉強',
+  '2014年6月 サービス運用会社のwebデザイナー',
+  '2015年8月 制作会社でマークアップエンジニア',
+  '2016年10月 現在の会社',
+]

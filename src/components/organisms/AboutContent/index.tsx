@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Skills, Activities } from './info'
+import { Skills, Activities, Biographies } from './info'
 import LoadingLogo from '../../molecules/LoadingLogo'
 
 import {
@@ -33,7 +33,13 @@ const AboutContent = () => {
         <Title>Profile</Title>
         <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
         <Text>
-          HTML,CSS,JavaScriptといったフロントエンドの領域が主な領域です。リモートワークで東京の会社に勤めており、会社のタスクやスキルアップに力を注いでいますが、余力があれば個人の仕事も受けています。
+          大阪在住のwebエンジニアです。証券会社と広告媒体者で営業をした後に、webデザイナーの勉強をしweb業界に入りました。web業界では、サービス運営のデザイナー、web制作のコーダー、自社プロダクトのフロントエンドエンジニアを経験しています。
+        </Text>
+        <Text>
+          情報整理や導線がしっかりと設計されていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
+        </Text>
+        <Text>
+          一方で、表現方法の一つとしてCanvasやthree.js等を使った目を引くアニメーションの勉強もしていこうと思っています。
         </Text>
         <Text>
           趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
@@ -74,13 +80,9 @@ const AboutContent = () => {
       <Section>
         <Title>Biography</Title>
         <List>
-          <Item>2011年3月 大学卒業</Item>
-          <Item>2011年4月 証券会社で営業</Item>
-          <Item>2013年3月 媒体社で広告営業</Item>
-          <Item>2013年10月 webデザイナーの勉強</Item>
-          <Item>2014年6月 サービス運用会社のwebデザイナー</Item>
-          <Item>2015年8月 制作会社でマークアップエンジニア</Item>
-          <Item>2016年10月 現在の会社</Item>
+          {Biographies.map(biography => {
+            return <Item>{biography}</Item>
+          })}
         </List>
       </Section>
     </Wrap>
