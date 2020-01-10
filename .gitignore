@@ -67,3 +67,6 @@ public
 .contentful.json
 .env*
 !.env.example
+
+# lighthouse
+.lighthouseci
