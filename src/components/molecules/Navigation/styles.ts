@@ -4,45 +4,33 @@ import { Link } from 'gatsby'
 import OpenInNewIcon from '../../../components/atoms/Icon/OpenInNew'
 
 export const Wrap = styled.ul`
+  display: flex;
   position: fixed;
-  padding: 10rem 2.4rem;
+  top: 5rem;
+  right: 4rem;
   margin: 0;
-  background: #000;
-  height: 100%;
-  width: 30rem;
-  top: 0;
-  right: -30rem;
-  transform: ${props =>
-    props.isOpen ? 'translate3d(-100%, 0, 0)' : 'translate3d(0, 0, 0)'};
-  transition: 0.3s;
-  box-sizing: border-box;
+  padding: 0;
+  line-height: 1;
   z-index: 10;
 
-  ${media.large} {
-    padding: 8rem 1.6rem;
+  ${media.small} {
+    top: 5rem;
+    right: 2rem;
   }
 `
 
 export const Item = styled.li`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
   list-style: none;
-  margin: 0.8rem 0;
   padding: 0;
-  font-size: 4.8rem;
-
-  ${media.large} {
-    margin: 0.4rem 0;
-    font-size: 4.2rem;
-  }
-
-  ${media.small} {
-    font-size: 3.8rem;
-  }
+  margin: 0 0 0 1.6rem;
 
   a {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
     text-decoration: none;
-    color: #fff;
     transition: 0.2s;
+    font-weight: bold;
 
     &:hover {
       opacity: 0.8;
@@ -59,5 +47,6 @@ export const ExternalLink = styled.a`
 `
 
 export const StyledOpenInNewIcon = styled(OpenInNewIcon)`
-  margin: 0 0 0 0.8rem;
+  margin: 0 0 0 0.2rem;
+  font-size: 1.2rem;
 `

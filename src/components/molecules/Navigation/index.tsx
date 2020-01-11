@@ -6,11 +6,10 @@ import {
   ExternalLink,
   StyledOpenInNewIcon,
 } from './styles'
-import { Props } from './types'
 
-const Navigation = React.memo(({ isOpen }: Props) => {
+const Navigation = React.memo(() => {
   return (
-    <Wrap isOpen={isOpen}>
+    <Wrap>
       <Item>
         <StyledLink to="/">Top</StyledLink>
       </Item>
