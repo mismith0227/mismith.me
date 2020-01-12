@@ -58,7 +58,7 @@ export const DisplayItem = styled.li`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: ${props => (props.display ? '0.1rem solid #000' : 'none%')};
+  border: ${props => (props.isActive ? '0.1rem solid #000' : 'none')};
 
   &:hover {
     cursor: pointer;

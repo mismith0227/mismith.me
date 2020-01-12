@@ -31,13 +31,13 @@ const WorkContent = ({ posts }) => {
       <DisplayList>
         <DisplayItem
           onClick={() => setdisplay('grid')}
-          display={display === 'grid'}
+          isActive={display === 'grid'}
         >
           <GridIcon />
         </DisplayItem>
         <DisplayItem
           onClick={() => setdisplay('list')}
-          display={display === 'list'}
+          isActive={display === 'list'}
         >
           <ListIcon />
         </DisplayItem>
