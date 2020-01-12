@@ -32,7 +32,6 @@ export const Item = styled.li`
   display: block;
   padding: 0;
   list-style: none;
-  width: 48%;
   width: ${props => (props.display === 'grid' ? '48%' : '100%')};
   margin: 0 0 5.6rem 0;
 
@@ -58,7 +57,7 @@ export const DisplayItem = styled.li`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  border: ${props => (props.display ? '0.1rem solid #000' : 'none%')};
+  border: ${props => (props.isActive ? '0.1rem solid #000' : 'none')};
 
   &:hover {
     cursor: pointer;

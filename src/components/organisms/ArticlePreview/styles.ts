@@ -9,6 +9,7 @@ export const StyledImg = styled(Img)`
   width: ${props => (props.display === 'grid' ? '100%' : '40%')};
   margin-right: ${props => (props.display === 'grid' ? '0' : '1.6rem')};
   border: 0.1rem solid #ccc;
+  box-sizing: border-box;
 `
 
 export const Content = styled.div`
@@ -21,21 +22,25 @@ export const StyledLink = styled(Link)`
   display: ${props => (props.display === 'grid' ? 'block' : 'flex')};
   text-decoration: none;
   box-sizing: border-box;
-  padding: 0.4rem;
 `
 
 export const PreviewTitle = styled.h3`
   margin: 0;
-  font-size: 2.4rem;
+  font-size: 2rem;
+  font-weight: normal;
 
   ${media.small} {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `
 
-export const Date = styled.div``
+export const Date = styled.div`
+  font-size: 1.2rem;
+`
 
-export const TagWrap = styled.div``
+export const TagWrap = styled.div`
+  font-size: 1.2rem;
+`
 
 export const Tag = styled.div`
   display: inline-block;
