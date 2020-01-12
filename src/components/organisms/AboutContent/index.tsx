@@ -57,6 +57,20 @@ const AboutContent = () => {
       </Section>
 
       <Section>
+        <Title>Biography</Title>
+        <List>
+          {Biographies.map(biography => {
+            return <Item key={biography}>{biography}</Item>
+          })}
+        </List>
+      </Section>
+
+      <Section>
+        <Title>SNS</Title>
+        <StyledIconList />
+      </Section>
+
+      <Section>
         <Title>Activities</Title>
         <ActivitiesList>
           {Activities.map(activity => {
@@ -70,20 +84,6 @@ const AboutContent = () => {
             )
           })}
         </ActivitiesList>
-      </Section>
-
-      <Section>
-        <Title>SNS</Title>
-        <StyledIconList />
-      </Section>
-
-      <Section>
-        <Title>Biography</Title>
-        <List>
-          {Biographies.map(biography => {
-            return <Item key={biography}>{biography}</Item>
-          })}
-        </List>
       </Section>
     </Wrap>
   )
