@@ -69,7 +69,6 @@ export const StyledLogo = styled(Logo)`
   transform-origin: center;
 
   ${media.small} {
-    animation: none;
     font-size: 5rem;
   }
 `
