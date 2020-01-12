@@ -7,13 +7,15 @@ import {
   StyledOpenInNewIcon,
 } from './styles'
 
-const Navigation = React.memo(() => {
+import { Props } from './types'
+
+const Navigation = React.memo(({ location }: Props) => {
   return (
     <Wrap>
-      <Item>
+      <Item current={location === '/'}>
         <StyledLink to="/">Top</StyledLink>
       </Item>
-      <Item>
+      <Item current={location === '/work/' || !location}>
         <StyledLink to="/work/">Works</StyledLink>
       </Item>
       <Item>

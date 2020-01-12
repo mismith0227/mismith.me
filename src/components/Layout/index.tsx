@@ -10,7 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <Wrap>
       <GlobalStyle />
-      <Navigation />
+      <Navigation location={children[0].props.pageLocation} />
       {children}
     </Wrap>
   )
