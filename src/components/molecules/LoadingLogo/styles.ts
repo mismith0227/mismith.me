@@ -33,12 +33,10 @@ const moveLogo = keyframes`
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
   }
-  99% {
-    transform: translate3d(0, 0, 0);
-  }
   100% {
     top: 1.5rem;
     left: 1.5rem;
+    transform: translate3d(0, 0, 0);
   }
 `
 
@@ -62,9 +60,9 @@ export const StyledLogo = styled(Logo)`
   z-index: 1001;
   top: 1.5rem;
   left: 1.5rem;
-  animation: ${moveLogo} 1.5s ease-out;
+  animation: ${moveLogo} 1.5s ease-out forwards;
   ${props => !props.isloading && 'animation-name: none'};
-  transform: translate3d(0, 0, 0);
+  transform-origin: center;
 
   ${media.small} {
     font-size: 5rem;
