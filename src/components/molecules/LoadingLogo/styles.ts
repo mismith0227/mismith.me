@@ -36,7 +36,7 @@ const moveLogo = keyframes`
   100% {
     top: 1.5rem;
     left: 1.5rem;
-    transform: none;
+    transform: translate3d(0, 0, 0);
   }
 `
 
@@ -62,7 +62,7 @@ export const StyledLogo = styled(Logo)`
   left: 1.5rem;
   animation: ${moveLogo} 1.5s ease-out forwards;
   ${props => !props.isloading && 'animation-name: none'};
-  transform-origin: center;
+  transform: translate3d(0, 0, 0);
 
   ${media.small} {
     font-size: 5rem;
