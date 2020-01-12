@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import media from '../../../styles/media'
 import Logo from '../../../components/atoms/Icon/Logo'
 
 const fadeOut = keyframes`
@@ -33,9 +34,9 @@ const moveLogo = keyframes`
     transform: translate3d(-50%, -50%, 0);
   }
   100% {
-    top: 2rem;
-    left: 2rem;
-    transform: translate3d(0%, 0%, 0);
+    top: 1.5rem;
+    left: 1.5rem;
+    transform: none;
   }
 `
 
@@ -55,11 +56,15 @@ export const LoadOverlay = styled.div`
 
 export const StyledLogo = styled(Logo)`
   position: fixed;
-  left: 2rem;
-  top: 2rem;
   font-size: 7rem;
   z-index: 1001;
+  top: 1.5rem;
+  left: 1.5rem;
   animation: ${moveLogo} 1.5s ease-out forwards;
   ${props => !props.isloading && 'animation-name: none'};
   transform-origin: center;
+
+  ${media.small} {
+    font-size: 5rem;
+  }
 `

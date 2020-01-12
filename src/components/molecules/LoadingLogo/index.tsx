@@ -7,9 +7,7 @@ import { LoadOverlay, StyledLogo } from './styles'
 const LoadingLogo = React.memo(({ className, isloading = false }: Props) => {
   return (
     <>
-      <Link to="/">
-        <StyledLogo isloading={isloading} />
-      </Link>
+      <StyledLogo isloading={isloading} />
       <LoadOverlay className={className} isloading={isloading}></LoadOverlay>
     </>
   )

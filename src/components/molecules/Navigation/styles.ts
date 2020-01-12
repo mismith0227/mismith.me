@@ -6,7 +6,7 @@ import OpenInNewIcon from '../../../components/atoms/Icon/OpenInNew'
 export const Wrap = styled.ul`
   display: flex;
   position: fixed;
-  top: 5rem;
+  top: 4rem;
   right: 4rem;
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ export const Wrap = styled.ul`
   z-index: 10;
 
   ${media.small} {
-    top: 5rem;
+    top: 3rem;
     right: 2rem;
   }
 `
