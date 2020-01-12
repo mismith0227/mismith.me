@@ -14,8 +14,6 @@ export const Wrap = styled.div`
 `
 
 export const ImageWrap = styled.div`
-  border: 0.1rem solid #ccc;
-
   .gatsby-image-wrapper {
     height: 100%;
   }

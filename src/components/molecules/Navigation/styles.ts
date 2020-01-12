@@ -25,6 +25,7 @@ export const Item = styled.li`
   margin: 0 0 0 1.6rem;
 
   a {
+    position: relative;
     display: flex;
     align-items: center;
     font-size: 1.6rem;
@@ -34,6 +35,19 @@ export const Item = styled.li`
 
     &:hover {
       opacity: 0.8;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      height: 0.2rem;
+      width: 100%;
+      background: #000;
+      transform: 0.2s;
+      opacity: ${props => (props.current ? 1 : 0)};
     }
   }
 `
