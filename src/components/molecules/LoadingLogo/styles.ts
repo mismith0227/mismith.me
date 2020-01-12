@@ -20,6 +20,7 @@ const fadeOut = keyframes`
 
 const moveLogo = keyframes`
   0% {
+    position: fixed;
     top: 50%;
     left: 50%;
     opacity: 0;
@@ -34,14 +35,14 @@ const moveLogo = keyframes`
     transform: translate3d(-50%, -50%, 0);
   }
   100% {
-    top: 1.5rem;
-    left: 1.5rem;
+    top: 15px;
+    left: 15px;
     transform: translate3d(0, 0, 0);
   }
 `
 
 export const LoadOverlay = styled.div`
-  display: none;
+  display: ${props => (props.isloading ? 'block' : 'none')};
   position: fixed;
   top: 0;
   left: 0;
@@ -51,11 +52,8 @@ export const LoadOverlay = styled.div`
   padding: 0;
   background: #fff;
   z-index: 1000;
+  opacity: 0;
   animation: ${fadeOut} 1.5s linear forwards;
-  ${media.small} {
-    display: none;
-    animation: none;
-  }
 `
 
 export const StyledLogo = styled(Logo)`
@@ -64,7 +62,7 @@ export const StyledLogo = styled(Logo)`
   z-index: 1001;
   top: 1.5rem;
   left: 1.5rem;
-  animation: ${moveLogo} 1.5s ease-out forwards;
+  animation: ${moveLogo} 1.5s ease-out;
   ${props => !props.isloading && 'animation-name: none'};
   transform-origin: center;
 
