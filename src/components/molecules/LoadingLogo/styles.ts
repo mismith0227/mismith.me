@@ -41,7 +41,7 @@ const moveLogo = keyframes`
 `
 
 export const LoadOverlay = styled.div`
-  display: ${props => (props.isloading ? 'block' : 'none')};
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,6 +52,10 @@ export const LoadOverlay = styled.div`
   background: #fff;
   z-index: 1000;
   animation: ${fadeOut} 1.5s linear forwards;
+  ${media.small} {
+    display: none;
+    animation: none;
+  }
 `
 
 export const StyledLogo = styled(Logo)`
@@ -65,6 +69,7 @@ export const StyledLogo = styled(Logo)`
   transform-origin: center;
 
   ${media.small} {
+    animation: none;
     font-size: 5rem;
   }
 `
