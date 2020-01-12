@@ -32,7 +32,6 @@ export const Item = styled.li`
   display: block;
   padding: 0;
   list-style: none;
-  width: 48%;
   width: ${props => (props.display === 'grid' ? '48%' : '100%')};
   margin: 0 0 5.6rem 0;
 

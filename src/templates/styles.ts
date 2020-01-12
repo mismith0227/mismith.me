@@ -2,16 +2,14 @@ import styled from 'styled-components'
 import media from '../styles/media'
 
 export const Wrap = styled.div`
-  max-width: 80rem;
-  width: 96%;
-  margin: 12rem auto;
+  margin: 12rem 0;
 
   ${media.large} {
-    margin: 8rem auto;
+    margin: 12rem 0;
   }
 
   ${media.small} {
-    margin: 4rem auto;
+    margin: 8rem 0;
   }
 `
 
@@ -23,7 +21,20 @@ export const ImageWrap = styled.div`
   }
 `
 
-export const Content = styled.div``
+export const Content = styled.div`
+  max-width: 80rem;
+  width: 96%;
+
+  margin: 4rem auto;
+
+  ${media.large} {
+    margin: 4rem auto;
+  }
+
+  ${media.small} {
+    margin: 4rem auto;
+  }
+`
 
 export const PostTitle = styled.h2`
   font-size: 4rem;
