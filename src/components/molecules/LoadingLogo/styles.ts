@@ -33,10 +33,12 @@ const moveLogo = keyframes`
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
   }
+  99% {
+    transform: translate3d(0, 0, 0);
+  }
   100% {
     top: 1.5rem;
     left: 1.5rem;
-    transform: translate3d(0, 0, 0);
   }
 `
 
