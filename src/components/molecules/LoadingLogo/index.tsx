@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Props } from './types'
-import { Link } from 'gatsby'
 
 import { LoadOverlay, StyledLogo } from './styles'
 
