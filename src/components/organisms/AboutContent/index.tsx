@@ -81,7 +81,7 @@ const AboutContent = () => {
         <Title>Biography</Title>
         <List>
           {Biographies.map(biography => {
-            return <Item>{biography}</Item>
+            return <Item key={biography}>{biography}</Item>
           })}
         </List>
       </Section>
