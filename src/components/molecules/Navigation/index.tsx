@@ -15,7 +15,7 @@ const Navigation = React.memo(({ location }: Props) => {
       <Item current={location === '/'}>
         <StyledLink to="/">Top</StyledLink>
       </Item>
-      <Item current={location === '/work/' || !location}>
+      <Item current={location === '/work/'}>
         <StyledLink to="/work/">Works</StyledLink>
       </Item>
       <Item>
