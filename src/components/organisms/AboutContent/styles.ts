@@ -91,9 +91,32 @@ export const Text = styled.p`
   }
 `
 
-export const List = styled.ul``
+export const BiographyList = styled.ul`
+  margin: 2.4rem 0 0;
+  padding: 0;
+  list-style: none;
+`
 
-export const Item = styled.li``
+export const BiographyItem = styled.li`
+  display: flex;
+  margin: 1.6rem 0 0;
+
+  &:first-child {
+    margin: 0;
+  }
+`
+
+export const BiographyDate = styled.h4`
+  position: relative;
+  margin: 0;
+  width: 10rem;
+  font-weight: normal;
+`
+
+export const BiographyTitle = styled.p`
+  margin: 0;
+  flex: 1;
+`
 
 export const TagList = styled.ul`
   margin: 2.4rem 0 0;
@@ -118,11 +141,15 @@ export const TagItem = styled.li`
 export const ActivitiesList = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2.4rem 0 0;
 `
 
 export const ActivitiesListItem = styled.li`
   margin: 2.4rem 0 0;
+
+  &:first-child {
+    margin: 0;
+  }
 `
 
 export const ActivitiesListTitle = styled.h4`

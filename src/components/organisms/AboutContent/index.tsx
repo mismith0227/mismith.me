@@ -10,8 +10,10 @@ import {
   Name,
   SubTitle,
   Text,
-  List,
-  Item,
+  BiographyList,
+  BiographyItem,
+  BiographyDate,
+  BiographyTitle,
   TagList,
   TagItem,
   StyledIconList,
@@ -58,11 +60,16 @@ const AboutContent = () => {
 
       <Section>
         <Title>Biography</Title>
-        <List>
+        <BiographyList>
           {Biographies.map(biography => {
-            return <Item key={biography}>{biography}</Item>
+            return (
+              <BiographyItem key={biography.title}>
+                <BiographyDate>{biography.date}</BiographyDate>
+                <BiographyTitle>{biography.title}</BiographyTitle>
+              </BiographyItem>
+            )
           })}
-        </List>
+        </BiographyList>
       </Section>
 
       <Section>
