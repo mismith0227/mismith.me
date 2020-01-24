@@ -342,7 +342,6 @@ export type ContentfulBlogPost = Node & {
   title?: Maybe<Scalars['String']>,
   slug?: Maybe<Scalars['String']>,
   publishDate?: Maybe<Scalars['Date']>,
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   heroImage?: Maybe<ContentfulAsset>,
   description?: Maybe<ContentfulBlogPostDescriptionTextNode>,
   body?: Maybe<ContentfulBlogPostBodyTextNode>,
@@ -350,6 +349,7 @@ export type ContentfulBlogPost = Node & {
   createdAt?: Maybe<Scalars['Date']>,
   updatedAt?: Maybe<Scalars['Date']>,
   node_locale?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
   childContentfulBlogPostDescriptionTextNode?: Maybe<ContentfulBlogPostDescriptionTextNode>,
   childContentfulBlogPostBodyTextNode?: Maybe<ContentfulBlogPostBodyTextNode>,
 };
@@ -789,7 +789,6 @@ export type ContentfulBlogPostFieldsEnum =
   'title' |
   'slug' |
   'publishDate' |
-  'tags' |
   'heroImage___id' |
   'heroImage___parent___id' |
   'heroImage___parent___parent___id' |
@@ -957,7 +956,8 @@ export type ContentfulBlogPostFieldsEnum =
   'contentful_id' |
   'createdAt' |
   'updatedAt' |
-  'node_locale';
+  'node_locale' |
+  'tags';
 
 export type ContentfulBlogPostFilterInput = {
   id?: Maybe<StringQueryOperatorInput>,
@@ -967,7 +967,6 @@ export type ContentfulBlogPostFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishDate?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   heroImage?: Maybe<ContentfulAssetFilterInput>,
   description?: Maybe<ContentfulBlogPostDescriptionTextNodeFilterInput>,
   body?: Maybe<ContentfulBlogPostBodyTextNodeFilterInput>,
@@ -975,6 +974,7 @@ export type ContentfulBlogPostFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
   node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
 };
 
 export type ContentfulBlogPostGroupConnection = {
@@ -1739,14 +1739,14 @@ export type QueryContentfulBlogPostArgs = {
   title?: Maybe<StringQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   publishDate?: Maybe<DateQueryOperatorInput>,
-  tags?: Maybe<StringQueryOperatorInput>,
   heroImage?: Maybe<ContentfulAssetFilterInput>,
   description?: Maybe<ContentfulBlogPostDescriptionTextNodeFilterInput>,
   body?: Maybe<ContentfulBlogPostBodyTextNodeFilterInput>,
   contentful_id?: Maybe<StringQueryOperatorInput>,
   createdAt?: Maybe<DateQueryOperatorInput>,
   updatedAt?: Maybe<DateQueryOperatorInput>,
-  node_locale?: Maybe<StringQueryOperatorInput>
+  node_locale?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>
 };
 
 

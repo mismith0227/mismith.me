@@ -3,7 +3,7 @@ import ContactForm from '../../molecules/ContactForm'
 import LoadingLogo from '../../molecules/LoadingLogo'
 import { Wrap, Text } from './styles'
 
-const WorkContent = () => {
+const ContactContent = () => {
   return (
     <Wrap>
       <LoadingLogo isloading={false} />
@@ -15,4 +15,4 @@ const WorkContent = () => {
   )
 }
 
-export default WorkContent
+export default ContactContent

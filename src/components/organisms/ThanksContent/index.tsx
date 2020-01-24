@@ -2,7 +2,7 @@ import * as React from 'react'
 import LoadingLogo from '../../molecules/LoadingLogo'
 import { Wrap, Text } from './styles'
 
-const WorkContent = () => {
+const ThanksContent = () => {
   return (
     <Wrap>
       <LoadingLogo isloading={false} />
@@ -12,4 +12,4 @@ const WorkContent = () => {
   )
 }
 
-export default WorkContent
+export default ThanksContent
