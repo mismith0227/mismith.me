@@ -29,11 +29,7 @@ const RootIndex = () => {
         </p>
         <p>
           <label>
-            Your Role:{' '}
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
+            URL: <input type="url" name="url" />
           </label>
         </p>
         <p>
