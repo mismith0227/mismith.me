@@ -18,6 +18,9 @@ const Navigation = React.memo(({ location }: Props) => {
       <Item current={location === '/work/'}>
         <StyledLink to="/work/">Works</StyledLink>
       </Item>
+      <Item current={location === '/contact/'}>
+        <StyledLink to="/contact/">Contact</StyledLink>
+      </Item>
       <Item>
         <ExternalLink href="https://blog.mismith.me/" target="_blank">
           Blog
