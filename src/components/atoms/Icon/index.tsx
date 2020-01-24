@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StyledSvg } from './styles'
 import { Props } from './types'
 
-const Icon = ({ className, children, role = 'icon', viewBox }: Props) => (
+const Icon = ({ className, children, role = 'img', viewBox }: Props) => (
   <StyledSvg
     width="100%"
     fill="currentColor"

@@ -22,7 +22,11 @@ const Navigation = React.memo(({ location }: Props) => {
         <StyledLink to="/contact/">Contact</StyledLink>
       </Item>
       <Item>
-        <ExternalLink href="https://blog.mismith.me/" target="_blank">
+        <ExternalLink
+          href="https://blog.mismith.me/"
+          target="_blank"
+          rel="noopener"
+        >
           Blog
           <StyledOpenInNewIcon />
         </ExternalLink>
