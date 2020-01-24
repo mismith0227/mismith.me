@@ -6,4 +6,6 @@ export const StyledInput = styled.input`
   border: 0.1rem solid #000;
   font-size: 1.6rem;
   box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
 `
