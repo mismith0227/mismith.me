@@ -7,8 +7,9 @@ import {
   StyledTextAreaInput,
   StyledButton,
 } from './styles'
+import { Props } from './tyles'
 
-const Navigation = React.memo(() => {
+const Navigation = React.memo(({ className }: Props) => {
   return (
     <Form
       name="contact"
@@ -16,6 +17,7 @@ const Navigation = React.memo(() => {
       action="thanks"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      className={className}
     >
       <StyledTextInput type="hidden" name="form-name" value="contact" />
 
