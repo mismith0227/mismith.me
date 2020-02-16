@@ -1,6 +1,7 @@
 import * as React from 'react'
 import GlobalStyle from '../../styles/grobalStyle'
 import Navigation from '../../components/molecules/Navigation'
+import FooterBackGround from '../../components/atoms/FooterBackGround'
 
 import { Wrap } from './styles'
 
@@ -12,6 +13,7 @@ const Layout = ({ children }: Props) => {
       <GlobalStyle />
       <Navigation location={children[0].props.pageLocation} />
       {children}
+      <FooterBackGround />
     </Wrap>
   )
 }
