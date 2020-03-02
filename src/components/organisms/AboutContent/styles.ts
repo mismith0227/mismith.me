@@ -51,7 +51,7 @@ export const Section = styled.section`
   margin: 12rem 0 0;
   word-wrap: break-word;
 
-  &:first-of-type {
+  &:first-child {
     margin: 4rem 0 0;
   }
 
@@ -62,6 +62,13 @@ export const Section = styled.section`
   ${media.small} {
     margin: 4rem 0 0;
   }
+`
+
+export const SectionInner = styled.div`
+  opacity: ${({ isView }) => (isView ? 1 : 0)};
+  transform: ${({ isView }) =>
+    isView ? 'translate3d(0, 0, 0)' : `translate3d(0, 100px, 0)`};
+  transition: opacity 1.5s ease, transform 1.5s ease;
 `
 
 export const Title = styled.h3`

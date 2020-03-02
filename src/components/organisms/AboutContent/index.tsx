@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { Skills, Activities, Biographies } from './info'
+import InViewMonitor from 'react-inview-monitor'
 import LoadingLogo from '../../molecules/LoadingLogo'
 
 import {
   Wrap,
   Main,
   Section,
+  SectionInner,
   Title,
   Name,
   SubTitle,
@@ -31,7 +33,8 @@ const AboutContent = () => {
         <SubTitle>Web engineer</SubTitle>
         <Name>Misumi Takuma</Name>
       </Main>
-      <Section>
+
+      <Section isView={false}>
         <Title>Profile</Title>
         <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
         <Text>
@@ -49,48 +52,66 @@ const AboutContent = () => {
       </Section>
 
       <Section>
-        <Title>Skills</Title>
-        <Text>学習中のものもありますが、以下を使用したことがあります。</Text>
-        <TagList>
-          {Skills.map(skill => {
-            return <TagItem key={skill}>{skill}</TagItem>
-          })}
-        </TagList>
+        <InViewMonitor childPropsInView={{ isView: true }}>
+          <SectionInner isView={false}>
+            <Title>Skills</Title>
+            <Text>
+              学習中のものもありますが、以下を使用したことがあります。
+            </Text>
+            <TagList>
+              {Skills.map(skill => {
+                return <TagItem key={skill}>{skill}</TagItem>
+              })}
+            </TagList>
+          </SectionInner>
+        </InViewMonitor>
       </Section>
 
       <Section>
-        <Title>Biography</Title>
-        <BiographyList>
-          {Biographies.map(biography => {
-            return (
-              <BiographyItem key={biography.title}>
-                <BiographyDate>{biography.date}</BiographyDate>
-                <BiographyTitle>{biography.title}</BiographyTitle>
-              </BiographyItem>
-            )
-          })}
-        </BiographyList>
+        <InViewMonitor childPropsInView={{ isView: true }}>
+          <SectionInner isView={false}>
+            <Title>Biography</Title>
+            <BiographyList>
+              {Biographies.map(biography => {
+                return (
+                  <BiographyItem key={biography.title}>
+                    <BiographyDate>{biography.date}</BiographyDate>
+                    <BiographyTitle>{biography.title}</BiographyTitle>
+                  </BiographyItem>
+                )
+              })}
+            </BiographyList>
+          </SectionInner>
+        </InViewMonitor>
       </Section>
 
       <Section>
-        <Title>SNS</Title>
-        <StyledIconList />
+        <InViewMonitor childPropsInView={{ isView: true }}>
+          <SectionInner isView={false}>
+            <Title>SNS</Title>
+            <StyledIconList />
+          </SectionInner>
+        </InViewMonitor>
       </Section>
 
       <Section>
-        <Title>Activities</Title>
-        <ActivitiesList>
-          {Activities.map(activity => {
-            return (
-              <ActivitiesListItem key={activity.title}>
-                <ActivitiesListTitle>{activity.title}</ActivitiesListTitle>
-                <ActivitiesListLink href={activity.link}>
-                  {activity.link}
-                </ActivitiesListLink>
-              </ActivitiesListItem>
-            )
-          })}
-        </ActivitiesList>
+        <InViewMonitor childPropsInView={{ isView: true }}>
+          <SectionInner isView={false}>
+            <Title>Activities</Title>
+            <ActivitiesList>
+              {Activities.map(activity => {
+                return (
+                  <ActivitiesListItem key={activity.title}>
+                    <ActivitiesListTitle>{activity.title}</ActivitiesListTitle>
+                    <ActivitiesListLink href={activity.link}>
+                      {activity.link}
+                    </ActivitiesListLink>
+                  </ActivitiesListItem>
+                )
+              })}
+            </ActivitiesList>
+          </SectionInner>
+        </InViewMonitor>
       </Section>
     </Wrap>
   )
