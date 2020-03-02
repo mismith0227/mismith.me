@@ -27,6 +27,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-inview-monitor": "^2.3.0",
     "sharp": "^0.22.0",
     "styled-components": "^4.4.0",
     "ts-node": "^8.5.4",
