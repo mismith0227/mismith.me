@@ -45,7 +45,7 @@
     "inquirer": "^6.2.2",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
-    "yargs-parser": "^13.0.0"
+    "yargs-parser": "^13.1.2"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
   "keywords": [
