@@ -14,6 +14,19 @@ export const Wrap = styled.div`
 `
 
 export const ImageWrap = styled.div`
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 3;
+  }
   .gatsby-image-wrapper {
     height: 100%;
   }
