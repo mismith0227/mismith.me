@@ -5,12 +5,19 @@ import { Link } from 'gatsby'
 
 export const Wrap = styled.div``
 
-export const StyledImg = styled(Img)`
+export const ImageWrap = styled.div`
   width: ${props => (props.display === 'grid' ? '100%' : '40%')};
   margin-right: ${props => (props.display === 'grid' ? '0' : '1.6rem')};
   border: 0.1rem solid #ccc;
   box-sizing: border-box;
+  .gatsby-image-wrapper {
+    height: 100%;
+    height: 0;
+    padding-bottom: 66%;
+  }
 `
+
+export const StyledImg = styled(Img)``
 
 export const Content = styled.div`
   display: flex;

@@ -9,13 +9,16 @@ import {
   TagWrap,
   Date,
   StyledLink,
+  ImageWrap,
 } from './styles'
 
 const ArticlePreview = ({ article, display }) => {
   return (
     <Wrap>
       <StyledLink to={`/work/${article.slug}`} display={display}>
-        <StyledImg alt="" fluid={article.heroImage.fluid} display={display} />
+        <ImageWrap display={display}>
+          <StyledImg alt="" fluid={article.heroImage.fluid} />
+        </ImageWrap>
 
         <Content>
           <PreviewTitle>{article.title}</PreviewTitle>
