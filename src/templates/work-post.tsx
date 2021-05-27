@@ -11,6 +11,7 @@ import {
   PostTitle,
   Date,
   PostContent,
+  WorkMeta,
 } from './styles'
 
 export const pageQuery = graphql`
@@ -49,12 +50,16 @@ const BlogPostTemplate = props => {
           pageDescription={`${post.title}を制作しました`}
           pageLocation={props.location.href}
         />
+
+        <WorkMeta>
+          <Date>{post.publishDate}</Date>
+          <PostTitle>{post.title}</PostTitle>
+        </WorkMeta>
+
         <ImageWrap>
           <Img alt={post.title} fluid={post.heroImage.fluid} />
         </ImageWrap>
         <Content>
-          <PostTitle>{post.title}</PostTitle>
-          <Date>{post.publishDate}</Date>
           <PostContent
             dangerouslySetInnerHTML={{
               __html: post.body.childMarkdownRemark.html,

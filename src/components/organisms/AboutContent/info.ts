@@ -3,7 +3,7 @@ export const Skills = [
   'CSS',
   'JavaScript',
   'React',
-  'Nuxt(Vue)',
+  'Next',
   'AngularJs(1.x)',
   'TypeScript',
   'WordPress',

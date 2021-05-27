@@ -26,8 +26,7 @@ export const StyledLink = styled(Link)`
 
 export const PreviewTitle = styled.h3`
   margin: 0;
-  font-size: 2rem;
-  font-weight: normal;
+  font-size: 1.8rem;
 
   ${media.small} {
     font-size: 1.6rem;

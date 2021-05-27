@@ -22,11 +22,11 @@ const WorkContent = ({ posts }) => {
       <LoadingLogo isloading={false} />
       <Title>Works</Title>
       <LeadText>
-        制作しているサイトです。
+        個人で制作している事例です。
         <br />
-        掲載しているサイト以外にも、非公開の受託案件や制作会社に在籍していた時の案件、
+        掲載している事例以外にも、個人で引き受けた非公開の受託案件や制作会社での案件もあります。
         <br />
-        制作中のサービスもあります
+        Webアプリ開発や、webサイト制作のフロントエンドが主な担当範囲です。
       </LeadText>
       <DisplayList>
         <DisplayItem

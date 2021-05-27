@@ -15,6 +15,10 @@ export const Wrap = styled.div`
 
 export const ImageWrap = styled.div`
   position: relative;
+  width: 96%;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  box-sizing: border-box;
 
   &::before {
     content: '';
@@ -25,11 +29,20 @@ export const ImageWrap = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
-    z-index: 3;
+    z-index: 1;
   }
+
   .gatsby-image-wrapper {
     height: 100%;
+    height: 0;
+    padding-bottom: 42%;
   }
+`
+
+export const WorkMeta = styled.div`
+  width: 96%;
+  max-width: 1200px;
+  margin: 4rem auto 0;
 `
 
 export const Content = styled.div`
@@ -48,19 +61,13 @@ export const Content = styled.div`
 `
 
 export const PostTitle = styled.h2`
-  font-size: 4rem;
-  margin: 2.4rem 0 0;
-
-  ${media.large} {
-    font-size: 3.2rem;
-  }
-
-  ${media.small} {
-    font-size: 2.4rem;
-  }
+  font-size: 2.4rem;
+  margin: 0.8rem 0 0;
 `
 
-export const Date = styled.div``
+export const Date = styled.div`
+  color: #7d7d7d;
+`
 
 export const PostContent = styled.div`
   margin: 4rem auto 0;
