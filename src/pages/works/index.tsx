@@ -1,10 +1,9 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
-
+import { graphql, Link, PageProps } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
-const WorksPage = ({data}) => (
+const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => (
   <Layout>
     <Seo title="Home" />
     <h1>Hi people</h1>
@@ -19,7 +18,6 @@ const WorksPage = ({data}) => (
 )
 
 export default WorksPage
-
 
 export const query = graphql`
   query {
