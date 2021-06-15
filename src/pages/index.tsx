@@ -2,9 +2,10 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
+import { Container } from "./styles"
 
 const IndexPage = () => {
   const Box = (props: JSX.IntrinsicElements["mesh"]) => {
@@ -30,18 +31,20 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
-      </Canvas>
-      <p>
-        <Link to="/works/">Works</Link>
-      </p>
+      <Container>
+        <h1>Hi people</h1>
+        <p>Welcome to your new Gatsby site.</p>
+        <p>Now go build something great.</p>
+        <Canvas>
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          <Box position={[-1.2, 0, 0]} />
+          <Box position={[1.2, 0, 0]} />
+        </Canvas>
+        <p>
+          <Link to="/works/">Works</Link>
+        </p>
+      </Container>
     </Layout>
   )
 }

@@ -3126,27 +3126,27 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type userstakumamisumimismithmesrcpagesworksindexTsx2674212490QueryVariables = Exact<{ [key: string]: never; }>;
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type userstakumamisumimismithmesrcpagesworksindexTsx2674212490Query = { readonly allMicrocmsPortfolio: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsPortfolio, 'id' | 'title' | 'body'> }> } };
+type Unnamed_1_Query = { readonly allMicrocmsPortfolio: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsPortfolio, 'id' | 'title' | 'body'> }> } };
 
-type userstakumamisumimismithmesrcpagesworksmicrocmsPortfolioIdindexTsx2765496235QueryVariables = Exact<{
+type Unnamed_2_QueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-type userstakumamisumimismithmesrcpagesworksmicrocmsPortfolioIdindexTsx2765496235Query = { readonly microcmsPortfolio: Maybe<Pick<MicrocmsPortfolio, 'id' | 'title' | 'body'>> };
+type Unnamed_2_Query = { readonly microcmsPortfolio: Maybe<Pick<MicrocmsPortfolio, 'id' | 'title' | 'body'>> };
+
+type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
 
 type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteTitleQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
