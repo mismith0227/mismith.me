@@ -5,7 +5,7 @@ import Seo from "../../components/seo"
 
 const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="works" description="制作実績一覧です" />
     <h1>Hi people</h1>
     <ul>
       {data.allMicrocmsPortfolio.edges.map(({ node }) => (
@@ -27,6 +27,14 @@ export const query = graphql`
           id
           title
           body
+          productionDate
+          tags
+          thumbnail {
+            height
+            url
+            width
+          }
+          description
         }
       }
     }
