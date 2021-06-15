@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql, Link, PageProps } from 'gatsby'
-import Layout from '../../components/layout'
+import { Layout } from '../../components/organisms/Layout'
 import Seo from '../../components/seo'
 
 const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => (
