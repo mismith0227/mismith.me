@@ -1,12 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { Canvas, useFrame } from "@react-three/fiber"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { StaticImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const IndexPage = () => {
-  const Box = (props: JSX.IntrinsicElements["mesh"]) => {
+  const Box = (props: JSX.IntrinsicElements['mesh']) => {
     const mesh = React.useRef<THREE.Mesh>(null!)
     const [hovered, setHover] = React.useState(false)
     const [active, setActive] = React.useState(false)
@@ -21,7 +21,7 @@ const IndexPage = () => {
         onPointerOut={event => setHover(false)}
       >
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? "hotpink" : "orange"} />
+        <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
       </mesh>
     )
   }
