@@ -1,7 +1,12 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { Container, Navigation, NavList, NavListItem } from './styles'
+import {
+  Container,
+  Navigation,
+  NavList,
+  NavListItem,
+  StyledLink,
+} from './styles'
 
 type Props = {}
 
@@ -10,14 +15,20 @@ export const Header = ({  }: Props) => (
     <Navigation>
       <NavList>
         <NavListItem>
-          <Link to="/">Home</Link>
+          <StyledLink to="/">Home</StyledLink>
         </NavListItem>
-        <NavListItem>About</NavListItem>
         <NavListItem>
-          <Link to="/works/">Works</Link>
+          <StyledLink to="/about">About</StyledLink>
         </NavListItem>
-        <NavListItem>Contact</NavListItem>
-        <NavListItem>Blog</NavListItem>
+        <NavListItem>
+          <StyledLink to="/works/">Works</StyledLink>
+        </NavListItem>
+        <NavListItem>
+          <StyledLink to="/contact">Contact</StyledLink>
+        </NavListItem>
+        <NavListItem>
+          <StyledLink to="/">Blog</StyledLink>
+        </NavListItem>
       </NavList>
     </Navigation>
   </Container>
