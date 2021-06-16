@@ -9,9 +9,13 @@ export const Header = ({  }: Props) => (
   <Container>
     <Navigation>
       <NavList>
-        <NavListItem>Home</NavListItem>
+        <NavListItem>
+          <Link to="/">Home</Link>
+        </NavListItem>
         <NavListItem>About</NavListItem>
-        <NavListItem>Works</NavListItem>
+        <NavListItem>
+          <Link to="/works/">Works</Link>
+        </NavListItem>
         <NavListItem>Contact</NavListItem>
         <NavListItem>Blog</NavListItem>
       </NavList>
