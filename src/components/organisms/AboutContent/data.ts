@@ -18,7 +18,7 @@ export const skills = [
 export const biographies = [
   {
     date: '2011年3月',
-    title: '大学卒業',
+    title: '大学卒業🌸',
   },
   {
     date: '2011年4月',
@@ -26,7 +26,7 @@ export const biographies = [
   },
   {
     date: '2013年3月',
-    title: '媒体社で広告営業',
+    title: '広告媒体社で営業',
   },
   {
     date: '2013年10月',
@@ -37,7 +37,7 @@ export const biographies = [
     title: 'webサービス会社',
     detail:
       '自社で運営しているサービスのデザイナーをしました。サービスの新規会員やアクティブユーザーの獲得、有料会員への誘導方法などを考える仕事でした。',
-    skills: ['画面設計', '解析', 'テスト'],
+    skills: ['画面設計', '解析', 'HTML', 'CSS'],
   },
   {
     date: '2015年8月',

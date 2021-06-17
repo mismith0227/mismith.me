@@ -7,6 +7,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
+  position: relative;
   margin: 0;
   font-size: 64px;
 `
@@ -122,6 +123,7 @@ export const BiographyDetail = styled.p`
 
 export const BiographySkills = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   margin: 16px 0 0;
   padding: 0;
   list-style: none;
@@ -137,11 +139,18 @@ export const BiographySkillItem = styled.li`
 
 export const Activity = styled.dl``
 
-export const ActivityItem = styled.div``
+export const ActivityItem = styled.div`
+  margin: 24px 0 0;
+`
 
-export const ActivityTerm = styled.dt``
+export const ActivityTerm = styled.dt`
+  font-weight: bold;
+`
 
-export const ActivityDescription = styled.dd``
+export const ActivityDescription = styled.dd`
+  margin: 4px 0 0;
+  overflow-wrap: break-word;
+`
 
 export const SnsList = styled.ul`
   display: flex;

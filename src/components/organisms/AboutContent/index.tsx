@@ -149,7 +149,16 @@ export const AboutContent = ({}: Props) => (
           {activities.map((item) => (
             <ActivityItem key={item.title}>
               <ActivityTerm>{item.title}</ActivityTerm>
-              <ActivityDescription>{item.link}</ActivityDescription>
+              <ActivityDescription>
+                <ExternalLink
+                  href={item.link}
+                  target="_blank"
+                  aria-label={item.title}
+                  rel="noopener"
+                >
+                  {item.link}
+                </ExternalLink>
+              </ActivityDescription>
             </ActivityItem>
           ))}
         </Activity>
