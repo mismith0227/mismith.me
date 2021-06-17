@@ -1,5 +1,4 @@
 import * as React from 'react'
-import PropTypes from 'prop-types'
 import {
   Container,
   Navigation,
@@ -10,7 +9,7 @@ import {
 
 type Props = {}
 
-export const Header = ({  }: Props) => (
+export const Header = ({}: Props) => (
   <Container>
     <Navigation>
       <NavList>
