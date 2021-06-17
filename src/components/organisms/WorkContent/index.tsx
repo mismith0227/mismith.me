@@ -1,7 +1,19 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import { Container, Title, Thumbnail } from './styles'
+import moment from 'moment'
+import {
+  Container,
+  Title,
+  ThumbnailWrap,
+  Thumbnail,
+  Works,
+  WorkItem,
+  Date,
+  WorkTitle,
+  StyledLink,
+  Description,
+  Tags,
+  TagItem,
+} from './styles'
 
 type Props = {
   data: ReadonlyArray<GatsbyTypes.MicrocmsPortfolioEdge>
@@ -10,21 +22,33 @@ type Props = {
 export const WorkContent = ({ data }: Props) => (
   <Container>
     <Title>Works</Title>
-    <ul>
+    <Works>
       {data.map(({ node }) => (
-        <li key={node.id}>
-          {node.productionDate && <span>{node.productionDate}</span>}
-          <Link to={`/works/${node.id}`}>{node.title}</Link>
+        <WorkItem key={node.id}>
+          {node.productionDate && (
+            <Date>{moment(node.productionDate).format('YYYY年M月D日')}</Date>
+          )}
+          <WorkTitle>
+            <StyledLink to={`/works/${node.id}`}>{node.title}</StyledLink>
+          </WorkTitle>
 
-          {node.description && <div>{node.description}</div>}
+          {node.description && <Description>{node.description}</Description>}
 
-          <div>タグ</div>
+          {node.tags && (
+            <Tags>
+              {node.tags.map((item) => (
+                <TagItem key={item}>{item}</TagItem>
+              ))}
+            </Tags>
+          )}
 
           {node.thumbnail && (
-            <Thumbnail src={node.thumbnail.url} alt={node.title} />
+            <ThumbnailWrap>
+              <Thumbnail src={node.thumbnail.url} alt={node.title} />
+            </ThumbnailWrap>
           )}
-        </li>
+        </WorkItem>
       ))}
-    </ul>
+    </Works>
   </Container>
 )
