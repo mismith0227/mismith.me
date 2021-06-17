@@ -52,21 +52,88 @@ export const Biographies = styled.ul`
   list-style: none;
 `
 
-export const BiographyItem = styled.li``
+export const BiographyItem = styled.li`
+  display: flex;
+  position: relative;
+  padding: 0 0 36px 36px;
 
-export const BiographyDate = styled.p``
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+    z-index: 1;
+  }
 
-export const BiographyTitle = styled.h4``
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+  }
 
-export const BiographyDetail = styled.p``
+  &:last-of-type {
+    padding-bottom: 0;
+
+    &::before {
+      background-color: #000;
+    }
+
+    &::after {
+      border-right: 1px dashed #000;
+      left: 6px;
+      background-color: #fff;
+    }
+  }
+`
+
+export const BiographyDate = styled.p`
+  width: 150px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+`
+
+export const BiographyRight = styled.div`
+  flex: 1;
+`
+
+export const BiographyTitle = styled.h4`
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+`
+
+export const BiographyDetail = styled.p`
+  margin: 16px 0 0;
+  font-size: 14px;
+`
 
 export const BiographySkills = styled.ul`
-  margin: 0;
+  display: flex;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 `
 
-export const BiographySkillItem = styled.li``
+export const BiographySkillItem = styled.li`
+  margin: 0 8px 0 0;
+  padding: 4px 8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+`
 
 export const Activity = styled.dl``
 

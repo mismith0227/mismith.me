@@ -10,6 +10,7 @@ import {
   TagItem,
   Biographies,
   BiographyItem,
+  BiographyRight,
   BiographyDate,
   BiographyTitle,
   BiographyDetail,
@@ -121,17 +122,19 @@ export const AboutContent = ({}: Props) => (
           {biographies.map((item: Biography) => (
             <BiographyItem key={item.date}>
               <BiographyDate>{item.date}</BiographyDate>
-              <BiographyTitle>{item.title}</BiographyTitle>
-              {BiographyDetail && (
-                <BiographyDetail>{item.detail}</BiographyDetail>
-              )}
-              {item.skills && (
-                <BiographySkills>
-                  {item.skills.map((item) => (
-                    <BiographySkillItem key={item}>{item}</BiographySkillItem>
-                  ))}
-                </BiographySkills>
-              )}
+              <BiographyRight>
+                <BiographyTitle>{item.title}</BiographyTitle>
+                {BiographyDetail && (
+                  <BiographyDetail>{item.detail}</BiographyDetail>
+                )}
+                {item.skills && (
+                  <BiographySkills>
+                    {item.skills.map((item) => (
+                      <BiographySkillItem key={item}>{item}</BiographySkillItem>
+                    ))}
+                  </BiographySkills>
+                )}
+              </BiographyRight>
             </BiographyItem>
           ))}
         </Biographies>
