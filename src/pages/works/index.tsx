@@ -1,19 +1,13 @@
 import * as React from 'react'
-import { graphql, Link, PageProps } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../../components/organisms/Layout'
+import { WorkContent } from '../../components/organisms/WorkContent'
 import Seo from '../../components/seo'
 
 const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => (
   <Layout>
     <Seo title="works" description="制作実績一覧です" />
-    <h1>Hi people</h1>
-    <ul>
-      {data.allMicrocmsPortfolio.edges.map(({ node }) => (
-        <li key={node.id}>
-          <Link to={`/works/${node.id}`}>{node.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <WorkContent data={data.allMicrocmsPortfolio.edges} />
   </Layout>
 )
 

@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { StaticImage } from 'gatsby-plugin-image'
 import { Layout } from '../components/organisms/Layout'
 import Seo from '../components/seo'
 
@@ -16,9 +15,9 @@ const IndexPage = () => {
         {...props}
         ref={mesh}
         scale={active ? 1.5 : 1}
-        onClick={event => setActive(!active)}
-        onPointerOver={event => setHover(true)}
-        onPointerOut={event => setHover(false)}
+        onClick={(event) => setActive(!active)}
+        onPointerOver={(event) => setHover(true)}
+        onPointerOut={(event) => setHover(false)}
       >
         <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
