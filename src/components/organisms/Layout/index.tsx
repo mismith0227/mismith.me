@@ -14,9 +14,10 @@ import { Header } from '../Header'
 
 type Props = {
   children: React.ReactNode
+  path: string
 }
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children, path }: Props) => {
   const data = useStaticQuery<GatsbyTypes.SiteTitleQueryQuery>(graphql`
     query SiteTitleQuery {
       site {

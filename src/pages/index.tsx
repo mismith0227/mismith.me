@@ -3,8 +3,14 @@ import { Link } from 'gatsby'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Layout } from '../components/organisms/Layout'
 import Seo from '../components/seo'
+import { Description } from '../components/organisms/WorkContent/styles'
 
 const IndexPage = () => {
+  const meta = {
+    title: 'Home',
+    description: 'トップページ',
+    path: 'home',
+  }
   const Box = (props: JSX.IntrinsicElements['mesh']) => {
     const mesh = React.useRef<THREE.Mesh>(null!)
     const [hovered, setHover] = React.useState(false)
@@ -26,8 +32,8 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
-      <Seo title="Home" description="home" />
+    <Layout path={meta.path}>
+      <Seo title={meta.title} description={meta.description} />
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>

@@ -4,13 +4,20 @@ import { Layout } from '../../components/organisms/Layout'
 import { WorkContent } from '../../components/organisms/WorkContent'
 import Seo from '../../components/seo'
 
-const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => (
-  <Layout>
-    <Seo title="works" description="制作実績一覧です" />
-    <WorkContent data={data.allMicrocmsPortfolio.edges} />
-  </Layout>
-)
+const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
+  const meta = {
+    title: 'Works',
+    description: '制作実績一覧です',
+    path: 'work',
+  }
 
+  return (
+    <Layout path={meta.path}>
+      <Seo title={meta.title} description={meta.description} />
+      <WorkContent data={data.allMicrocmsPortfolio.edges} />
+    </Layout>
+  )
+}
 export default WorksPage
 
 export const query = graphql`

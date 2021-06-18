@@ -5,6 +5,8 @@ import {
   NavList,
   NavListItem,
   StyledLink,
+  ExternalLink,
+  StyledOpenInNewIcon,
 } from './styles'
 
 type Props = {}
@@ -14,19 +16,35 @@ export const Header = ({}: Props) => (
     <Navigation>
       <NavList>
         <NavListItem>
-          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/" aria-label="Home">
+            Home
+          </StyledLink>
         </NavListItem>
         <NavListItem>
-          <StyledLink to="/profile">Profile</StyledLink>
+          <StyledLink to="/profile" aria-label="Profile">
+            Profile
+          </StyledLink>
         </NavListItem>
         <NavListItem>
-          <StyledLink to="/works/">Works</StyledLink>
+          <StyledLink to="/works/" aria-label="Works">
+            Works
+          </StyledLink>
         </NavListItem>
         <NavListItem>
-          <StyledLink to="/contact">Contact</StyledLink>
+          <StyledLink to="/contact" aria-label="Contact">
+            Contact
+          </StyledLink>
         </NavListItem>
         <NavListItem>
-          <StyledLink to="/">Blog</StyledLink>
+          <ExternalLink
+            href="https://blog.mismith.me/"
+            target="_blank"
+            aria-label="blog"
+            rel="noopener"
+          >
+            Blog
+            <StyledOpenInNewIcon />
+          </ExternalLink>
         </NavListItem>
       </NavList>
     </Navigation>

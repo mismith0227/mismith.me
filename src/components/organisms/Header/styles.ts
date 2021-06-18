@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { OpenInNew } from '../../atoms/Icon/OpenInNew'
 
 export const Container = styled.header`
   display: block;
@@ -35,4 +36,17 @@ export const StyledLink = styled(Link)`
     bottom: 0;
     left: 0;
   } */
+`
+
+export const ExternalLink = styled.a`
+  position: relative;
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #000;
+`
+
+export const StyledOpenInNewIcon = styled(OpenInNew)`
+  margin: 0 0 0 2px;
+  font-size: 12px;
 `

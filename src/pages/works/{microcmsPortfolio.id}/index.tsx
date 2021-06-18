@@ -5,8 +5,12 @@ import Seo from '../../../components/seo'
 import { WorkDetailContent } from '../../../components/organisms/WorkDetailContent'
 
 const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
+  const meta = {
+    path: 'work',
+  }
+
   return data.microcmsPortfolio ? (
-    <Layout>
+    <Layout path={meta.path}>
       <Seo
         title={data.microcmsPortfolio.title ? data.microcmsPortfolio.title : ''}
         description={
@@ -16,12 +20,6 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
         }
       />
       <WorkDetailContent data={data.microcmsPortfolio} />
-      {/* <h1>{data.microcmsPortfolio.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${data.microcmsPortfolio.body}`,
-        }}
-      /> */}
     </Layout>
   ) : (
     <div>noc ontent</div>

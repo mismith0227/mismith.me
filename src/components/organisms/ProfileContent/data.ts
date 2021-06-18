@@ -60,6 +60,7 @@ export const biographies = [
       'gulp',
       'webpack',
       'Git',
+      'リモートワーク',
     ],
   },
   {
@@ -67,7 +68,16 @@ export const biographies = [
     title: '制作会社',
     detail:
       '制作会社でフロントエンドエンジニアをしています。受託開発で業務支援ツールの開発をしたり、コーポレートサイトやアーティストのサイトを制作しました。',
-    skills: ['React', 'EJS', 'Sass', 'JavaScript', 'gulp', 'webpack', 'Git'],
+    skills: [
+      'React',
+      'EJS',
+      'Sass',
+      'JavaScript',
+      'gulp',
+      'webpack',
+      'Git',
+      'リモートワーク',
+    ],
   },
 ]
 

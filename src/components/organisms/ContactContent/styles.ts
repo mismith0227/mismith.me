@@ -24,7 +24,7 @@ export const Form = styled.form`
 export const FormItem = styled.label`
   display: block;
   margin: 1.6rem 0 0;
-  &:first-child {
+  &:first-of-type {
     margin: 0;
   }
 `
