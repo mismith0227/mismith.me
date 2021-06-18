@@ -15,33 +15,48 @@ export const NavList = styled.ul`
   list-style: none;
 `
 
-export const NavListItem = styled.li`
-  margin: 0 0 0 24px;
-`
+interface LinkProps {
+  isActive?: boolean
+}
 
-export const StyledLink = styled(Link)`
+export const NavListItem = styled.li<LinkProps>`
   position: relative;
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: #000;
+  margin: 0 0 0 24px;
 
-  /* &::before {
+  &::before {
     content: '';
     display: block;
-    width: 100%;
+    width: ${({ isActive }) => (isActive ? '70%' : 0)};
     height: 2px;
     background: #000;
     position: absolute;
     bottom: 0;
     left: 0;
-  } */
+    right: 0;
+    margin: auto;
+    transition: width 0.3s;
+    opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  }
+
+  &:hover {
+    &::before {
+      width: 70%;
+      opacity: 1;
+    }
+  }
+`
+
+export const StyledLink = styled(Link)`
+  display: block;
+  padding: 16px 16px;
+  text-decoration: none;
+  color: #000;
 `
 
 export const ExternalLink = styled.a`
   position: relative;
   display: block;
-  padding: 8px 16px;
+  padding: 16px 16px;
   text-decoration: none;
   color: #000;
 `

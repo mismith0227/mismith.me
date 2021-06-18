@@ -34,6 +34,7 @@ export const Label = styled.div`
 `
 
 export const StyledTextInput = styled.input`
+  box-sizing: border-box;
   margin: 8px 0 0;
   padding: 0 8px;
   width: 100%;
@@ -41,6 +42,7 @@ export const StyledTextInput = styled.input`
 `
 
 export const StyledTextAreaInput = styled.textarea`
+  box-sizing: border-box;
   margin: 8px 0 0;
   padding: 8px;
   width: 100%;

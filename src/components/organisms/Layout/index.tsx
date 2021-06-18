@@ -31,7 +31,7 @@ export const Layout = ({ children, path }: Props) => {
   return (
     <>
       <Global styles={globalStyle} />
-      <Header />
+      <Header path={path} />
       <main>{children}</main>
       <footer
         style={{

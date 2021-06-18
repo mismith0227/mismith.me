@@ -8,7 +8,7 @@ const WorksPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const meta = {
     title: 'Works',
     description: '制作実績一覧です',
-    path: 'work',
+    path: 'works',
   }
 
   return (

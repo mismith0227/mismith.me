@@ -6,7 +6,7 @@ import { WorkDetailContent } from '../../../components/organisms/WorkDetailConte
 
 const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const meta = {
-    path: 'work',
+    path: 'works',
   }
 
   return data.microcmsPortfolio ? (
