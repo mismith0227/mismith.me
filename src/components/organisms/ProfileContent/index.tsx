@@ -33,12 +33,12 @@ import { Fivehundredpx } from '../../atoms/Icon/Fivehundredpx'
 
 type Props = {}
 
-export const AboutContent = ({}: Props) => (
+export const ProfileContent = ({}: Props) => (
   <Container>
-    <Title>About</Title>
+    <Title>Profile</Title>
 
     <Section>
-      <SectionTitle>Profile</SectionTitle>
+      <SectionTitle>About me</SectionTitle>
 
       <SectionInner>
         <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>

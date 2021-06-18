@@ -17,7 +17,7 @@ export const Header = ({}: Props) => (
           <StyledLink to="/">Home</StyledLink>
         </NavListItem>
         <NavListItem>
-          <StyledLink to="/about">About</StyledLink>
+          <StyledLink to="/profile">Profile</StyledLink>
         </NavListItem>
         <NavListItem>
           <StyledLink to="/works/">Works</StyledLink>

@@ -8,7 +8,6 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
-  position: relative;
   margin: 0;
   font-size: 64px;
 `

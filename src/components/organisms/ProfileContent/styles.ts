@@ -7,7 +7,6 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h2`
-  position: relative;
   margin: 0;
   font-size: 64px;
 `
@@ -92,7 +91,7 @@ export const BiographyItem = styled.li`
     }
 
     &::after {
-      border-right: 1px dashed #000;
+      border-right: 1px dashed #aaa;
       left: 6px;
       background-color: #fff;
     }

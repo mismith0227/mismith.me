@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../../../components/organisms/Layout'
 import Seo from '../../../components/seo'
+import { WorkDetailContent } from '../../../components/organisms/WorkDetailContent'
 
 const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   return data.microcmsPortfolio ? (
@@ -14,12 +15,13 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
             : ''
         }
       />
-      <h1>{data.microcmsPortfolio.title}</h1>
+      <WorkDetailContent data={data.microcmsPortfolio} />
+      {/* <h1>{data.microcmsPortfolio.title}</h1>
       <div
         dangerouslySetInnerHTML={{
           __html: `${data.microcmsPortfolio.body}`,
         }}
-      />
+      /> */}
     </Layout>
   ) : (
     <div>noc ontent</div>
