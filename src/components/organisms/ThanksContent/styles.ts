@@ -1,10 +1,19 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
-export const Wrap = styled.div`
+export const Container = styled.article`
   display: block;
-  width: 100%;
-  max-width: 102.4rem;
-  margin: 12rem auto;
+  max-width: 1024px;
+  width: 96%;
+  margin: 180px auto 0;
+`
+
+export const Title = styled.h2`
+  margin: 0;
+  font-size: 64px;
+`
+
+export const Content = styled.div`
+  margin: 180px 0 0;
 `
 
 export const Text = styled.p``

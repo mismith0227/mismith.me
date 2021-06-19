@@ -1,5 +1,13 @@
 {
-  "trailingComma": "es5",
   "semi": false,
-  "singleQuote": true
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    }
+  ]
 }

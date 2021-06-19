@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { StyledSvg } from './styles'
 import { Props } from './types'
 
@@ -9,7 +9,6 @@ const Icon = ({ className, children, role = 'img', viewBox }: Props) => (
     fill="currentColor"
     className={className}
     preserveAspectRatio="xMidYMid meet"
-    xmlns="http://www.w3.org/2000/svg"
     role={role}
     viewBox={viewBox}
   >

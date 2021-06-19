@@ -1,60 +1,54 @@
 import * as React from 'react'
-import ArticlePreview from '../../../components/organisms/ArticlePreview'
-import GridIcon from '../../../components/atoms/Icon/Grid'
-import ListIcon from '../../../components/atoms/Icon/List'
-import LoadingLogo from '../../molecules/LoadingLogo'
-
+import moment from 'moment'
 import {
-  Wrap,
+  Container,
   Title,
-  LeadText,
-  List,
-  Item,
-  DisplayList,
-  DisplayItem,
+  ThumbnailWrap,
+  Thumbnail,
+  Works,
+  WorkItem,
+  Date,
+  WorkTitle,
+  StyledLink,
+  Description,
+  Tags,
+  TagItem,
 } from './styles'
 
-const WorkContent = ({ posts }) => {
-  const [display, setdisplay] = React.useState('grid')
-
-  return (
-    <Wrap>
-      <LoadingLogo isloading={false} />
-      <Title>Works</Title>
-      <LeadText>
-        個人で制作している事例です。
-        <br />
-        掲載している事例以外にも、個人で引き受けた非公開の受託案件や制作会社での案件もあります。
-        <br />
-        Webアプリ開発や、webサイト制作のフロントエンドが主な担当範囲です。
-      </LeadText>
-      <DisplayList>
-        <DisplayItem
-          onClick={() => setdisplay('grid')}
-          isActive={display === 'grid'}
-        >
-          <GridIcon />
-        </DisplayItem>
-        <DisplayItem
-          onClick={() => setdisplay('list')}
-          isActive={display === 'list'}
-        >
-          <ListIcon />
-        </DisplayItem>
-      </DisplayList>
-      {posts && (
-        <List>
-          {posts.map(({ node }) => {
-            return (
-              <Item key={node.slug} display={display}>
-                <ArticlePreview article={node} display={display} />
-              </Item>
-            )
-          })}
-        </List>
-      )}
-    </Wrap>
-  )
+type Props = {
+  data: ReadonlyArray<GatsbyTypes.MicrocmsPortfolioEdge>
 }
 
-export default WorkContent
+export const WorkContent = ({ data }: Props) => (
+  <Container>
+    <Title>Works</Title>
+    <Works>
+      {data.map(({ node }) => (
+        <WorkItem key={node.id}>
+          {node.productionDate && (
+            <Date>{moment(node.productionDate).format('YYYY年M月D日')}</Date>
+          )}
+          <WorkTitle>
+            <StyledLink to={`/works/${node.id}`}>{node.title}</StyledLink>
+          </WorkTitle>
+
+          {node.description && <Description>{node.description}</Description>}
+
+          {node.tags && (
+            <Tags>
+              {node.tags.map((item) => (
+                <TagItem key={item}>{item}</TagItem>
+              ))}
+            </Tags>
+          )}
+
+          {node.thumbnail && (
+            <ThumbnailWrap to={`/works/${node.id}`}>
+              <Thumbnail src={node.thumbnail.url} alt={node.title} />
+            </ThumbnailWrap>
+          )}
+        </WorkItem>
+      ))}
+    </Works>
+  </Container>
+)

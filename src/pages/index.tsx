@@ -1,19 +1,21 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import AboutContent from '../components/organisms/AboutContent'
-import Meta from '../components/parts/Meta'
+import * as React from 'react'
+import { Layout } from '../components/organisms/Layout'
+import Seo from '../components/seo'
+import { HomeContent } from '../components/organisms/HomeContent'
 
-const RootIndex = () => {
+const IndexPage = () => {
+  const meta = {
+    title: 'Home',
+    description: 'トップページ',
+    path: 'home',
+  }
+
   return (
-    <Layout>
-      <Meta
-        pageTitle="Mismith Portfolio"
-        pageDescription="Mismith Portfolio"
-        pageLocation="/"
-      />
-      <AboutContent />
+    <Layout path={meta.path}>
+      <Seo title={meta.title} description={meta.description} />
+      <HomeContent />
     </Layout>
   )
 }
 
-export default RootIndex
+export default IndexPage

@@ -1,65 +1,78 @@
-import styled from 'styled-components'
-import media from '../../../styles/media'
+import styled from '@emotion/styled'
+import { Link } from 'gatsby'
 
-export const Wrap = styled.div`
+export const Container = styled.div`
   display: block;
-  width: 100%;
-  max-width: 102.4rem;
-  margin: 12rem auto;
+  max-width: 1024px;
+  width: 96%;
+  margin: 180px auto 0;
 `
 
 export const Title = styled.h2`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
-  font-size: 8rem;
   margin: 0;
-  text-align: center;
+  font-size: 64px;
 `
 
-export const LeadText = styled.p`
-  font-size: 1.6rem;
-  margin: 2.4rem 0 0;
-  text-align: center;
-`
-
-export const List = styled.ul`
+export const ThumbnailWrap = styled(Link)`
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0;
-`
-
-export const Item = styled.li`
-  display: block;
-  padding: 0;
-  list-style: none;
-  width: ${props => (props.display === 'grid' ? '48%' : '100%')};
-  margin: 0 0 5.6rem 0;
-
-  ${media.small} {
-    width: 100%;
-    margin: 0 0 4.8rem 0;
-  }
-`
-
-export const DisplayList = styled.ul`
-  display: flex;
-  justify-content: flex-end;
-  margin: 8rem 0 0;
-  padding: 0;
-`
-
-export const DisplayItem = styled.li`
-  list-style: none;
-  width: 34px;
-  height: 34px;
-  margin: 0 0 0 1.6rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  border: ${props => (props.isActive ? '0.1rem solid #000' : 'none')};
+  align-items: center;
+  margin: 16px 0 0;
+  width: 100%;
+  height: 400px;
+  background: #eee;
+`
 
-  &:hover {
-    cursor: pointer;
+export const Thumbnail = styled.img`
+  max-height: 80%;
+  max-width: 90%;
+`
+
+export const Works = styled.ul`
+  margin: 180px 0 0;
+  padding: 0;
+  list-style: none;
+`
+
+export const WorkItem = styled.li`
+  margin: 120px 0 0;
+
+  &:first-of-type {
+    margin: 0;
   }
+`
+
+export const Date = styled.p`
+  margin: 0;
+  font-size: 14px;
+`
+
+export const WorkTitle = styled.h3`
+  margin: 0;
+  font-size: 36px;
+`
+
+export const StyledLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
+`
+
+export const Description = styled.p`
+  margin: 16px 0 0;
+`
+
+export const Tags = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+`
+
+export const TagItem = styled.li`
+  margin: 0 8px 0 0;
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
 `
