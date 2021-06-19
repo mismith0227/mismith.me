@@ -1,16 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global } from '@emotion/react'
 import { globalStyle } from '../../../styles/globalStyles'
 import { Header } from '../Header'
+import { StyledFooter } from './styles'
 
 type Props = {
   children: React.ReactNode
@@ -33,15 +27,8 @@ export const Layout = ({ children, path }: Props) => {
       <Global styles={globalStyle} />
       <Header path={path} />
       <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+
+      {path !== 'home' && <StyledFooter />}
     </>
   )
 }
