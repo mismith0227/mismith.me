@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import media from '../../../styles/media'
 
 export const Container = styled.div`
   display: block;
@@ -57,6 +58,10 @@ export const BiographyItem = styled.li`
   display: flex;
   position: relative;
   padding: 0 0 36px 36px;
+
+  ${media.medium} {
+    flex-direction: column;
+  }
 
   &::before {
     content: '';
@@ -124,13 +129,13 @@ export const BiographyDetail = styled.p`
 export const BiographySkills = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 16px 0 0;
+  margin: 0 0 0;
   padding: 0;
   list-style: none;
 `
 
 export const BiographySkillItem = styled.li`
-  margin: 0 8px 0 0;
+  margin: 16px 8px 0 0;
   padding: 4px 8px;
   background-color: #000;
   color: #fff;
