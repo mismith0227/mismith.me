@@ -19,15 +19,20 @@ export const Title = styled.h2`
 
 export const MainVisualWrap = styled.div`
   margin: 32px 0 0;
-  height: 0;
-  padding-bottom: 40%;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  background: #eee;
 `
 
 export const MainVisual = styled.img`
-  width: 100%;
+  max-height: 80%;
+  max-width: 90%;
 `
 
 export const Body = styled.div`
-  margin: 120px 0 0;
+  margin: 120px auto 0;
+  max-width: 600px;
 `

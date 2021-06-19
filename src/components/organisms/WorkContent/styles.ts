@@ -13,16 +13,19 @@ export const Title = styled.h2`
   font-size: 64px;
 `
 
-export const ThumbnailWrap = styled.div`
+export const ThumbnailWrap = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 16px 0 0;
-  height: 0;
-  padding-bottom: 40%;
-  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  background: #eee;
 `
 
 export const Thumbnail = styled.img`
-  width: 100%;
-  object-fit: cover;
+  max-height: 80%;
+  max-width: 90%;
 `
 
 export const Works = styled.ul`

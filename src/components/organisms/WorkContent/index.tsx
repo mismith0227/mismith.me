@@ -43,7 +43,7 @@ export const WorkContent = ({ data }: Props) => (
           )}
 
           {node.thumbnail && (
-            <ThumbnailWrap>
+            <ThumbnailWrap to={`/works/${node.id}`}>
               <Thumbnail src={node.thumbnail.url} alt={node.title} />
             </ThumbnailWrap>
           )}
