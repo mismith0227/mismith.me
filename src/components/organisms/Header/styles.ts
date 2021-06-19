@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import media from '../../../styles/media'
 import { OpenInNew } from '../../atoms/Icon/OpenInNew'
+import { ToggleButton } from '../../molecules/ToggleButton'
 
 export const Container = styled.header`
   display: flex;
@@ -114,73 +115,14 @@ export const StyledOpenInNewIcon = styled(OpenInNew)`
   font-size: 12px;
 `
 
-export const ToggleMenu = styled.button<MenuProps>`
+export const StyledToggleButton = styled(ToggleButton)`
   display: none;
   position: fixed;
   top: 16px;
   right: 16px;
-  width: 40px;
-  height: 40px;
-  border: none;
   z-index: 100;
-  background-color: transparent;
-  transition: 0.2s;
-  color: ${({ isMenuOpen }) => (isMenuOpen ? '#fff' : '#000')};
 
   ${media.medium} {
     display: block;
   }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    position: absolute;
-    left: 0;
-    transition: transform 0.2s;
-    margin: auto;
-  }
-
-  &::before {
-    top: ${({ isMenuOpen }) => (isMenuOpen ? '0' : '5px')};
-    ${({ isMenuOpen }) => isMenuOpen && 'bottom: 0;'}
-    transform: ${({ isMenuOpen }) =>
-      isMenuOpen ? 'rotate(45deg)' : 'rotate(0)'};
-  }
-
-  &::after {
-    bottom: ${({ isMenuOpen }) => (isMenuOpen ? '0' : '5px')};
-    ${({ isMenuOpen }) => isMenuOpen && 'top: 0;'}
-    transform: ${({ isMenuOpen }) =>
-      isMenuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
-  }
-`
-
-export const ToggleBorder = styled.span<MenuProps>`
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  transition: 0.2s;
-  opacity: ${({ isMenuOpen }) => (isMenuOpen ? 0 : 1)};
-`
-
-export const ScreenReaderText = styled.span`
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
 `

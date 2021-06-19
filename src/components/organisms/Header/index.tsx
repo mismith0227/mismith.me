@@ -7,9 +7,7 @@ import {
   StyledLink,
   ExternalLink,
   StyledOpenInNewIcon,
-  ToggleMenu,
-  ToggleBorder,
-  ScreenReaderText,
+  StyledToggleButton,
 } from './styles'
 
 type Props = {
@@ -56,15 +54,11 @@ export const Header = ({ path }: Props) => {
         </NavList>
       </Navigation>
 
-      <ToggleMenu
-        aria-expanded={isMenuOpen}
-        aria-controls="navigation"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        isMenuOpen={isMenuOpen}
-      >
-        <ToggleBorder isMenuOpen={isMenuOpen}></ToggleBorder>
-        <ScreenReaderText>menu</ScreenReaderText>
-      </ToggleMenu>
+      <StyledToggleButton
+        isOpen={isMenuOpen}
+        ariaControls="navigation"
+        onToggleClick={() => setIsMenuOpen(!isMenuOpen)}
+      />
     </Container>
   )
 }
