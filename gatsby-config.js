@@ -1,8 +1,8 @@
-const path = require('path');
+const path = require('path')
 
 require('dotenv').config({
-  path: `.env`
-});
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -31,7 +31,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
@@ -39,17 +39,17 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-source-microcms",
+      resolve: 'gatsby-source-microcms',
       options: {
         apiKey: process.env.API_KEY,
         serviceId: 'mismith',
         apis: [
           {
-            endpoint: "portfolio",
+            endpoint: 'portfolio',
           },
         ],
       },
     },
-    `gatsby-plugin-typegen`
+    `gatsby-plugin-typegen`,
   ],
 }
