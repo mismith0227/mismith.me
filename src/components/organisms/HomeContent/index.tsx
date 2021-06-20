@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Tetrahedron } from '@react-three/drei'
-import { Container, Title } from './styles'
+import { Container, Title, Loading } from './styles'
 
 type Props = {}
 
 export const HomeContent = ({}: Props) => {
+  const [isLoading, setIsLoading] = React.useState<boolean>(true)
   const Circle = () => {
     const ref = React.useRef<THREE.Mesh>(null!)
     const [rotation, setRotation] = React.useState<number>(
@@ -42,7 +43,7 @@ export const HomeContent = ({}: Props) => {
 
   return (
     <Container>
-      <Canvas>
+      <Canvas onCreated={() => setIsLoading(false)}>
         <directionalLight
           intensity={0.5}
           castShadow
@@ -55,6 +56,8 @@ export const HomeContent = ({}: Props) => {
       </Canvas>
 
       <Title>Web developer based in Osaka.</Title>
+
+      {isLoading && <Loading>Loading...</Loading>}
     </Container>
   )
 }
