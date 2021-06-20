@@ -15,3 +15,16 @@ export const Title = styled.h1`
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
 `
+
+export const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+`
