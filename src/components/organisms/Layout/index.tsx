@@ -32,8 +32,6 @@ export const Layout = ({ children, path, isCanvasLoading }: Props) => {
     }
   })
 
-  console.log(isCanvasLoading)
-
   return (
     <>
       <Global styles={globalStyle} />
