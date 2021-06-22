@@ -3,10 +3,13 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Tetrahedron } from '@react-three/drei'
 import { Container, Title, Loading } from './styles'
 
-type Props = {}
+type Props = {
+  onCreated: (value: boolean) => void
+}
 
-export const HomeContent = ({}: Props) => {
+export const HomeContent = ({ onCreated }: Props) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true)
+
   const Circle = () => {
     const ref = React.useRef<THREE.Mesh>(null!)
     const [rotation, setRotation] = React.useState<number>(
@@ -43,7 +46,7 @@ export const HomeContent = ({}: Props) => {
 
   return (
     <Container>
-      <Canvas onCreated={() => setIsLoading(false)}>
+      <Canvas onCreated={() => onCreated(false)}>
         <directionalLight
           intensity={0.5}
           castShadow
@@ -56,8 +59,6 @@ export const HomeContent = ({}: Props) => {
       </Canvas>
 
       <Title>Web developer based in Osaka.</Title>
-
-      {isLoading && <Loading>Loading...</Loading>}
     </Container>
   )
 }
