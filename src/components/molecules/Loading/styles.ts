@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
+import media from '../../../styles/media'
 
 interface Props {
   isLoading: boolean
@@ -7,21 +8,21 @@ interface Props {
 
 const sideIn = keyframes`
   0% {
-    transform: skew(-45deg) translate3d(-120%, 0, 0);
+    transform: skew(-45deg) translate3d(-150%, 0, 0);
   }
 
   100% {
-    transform: skew(-45deg) translate3d(-20%, 0, 0);
+    transform: skew(-45deg) translate3d(-50%, 0, 0);
   }
 `
 
 const slideOut = keyframes`
   0% {
-    transform: skew(-45deg) translate3d(-20%, 0, 0);
+    transform: skew(-45deg) translate3d(-50%, 0, 0);
   }
 
   100% {
-    transform: skew(-45deg) translate3d(120%, 0, 0);
+    transform: skew(-45deg) translate3d(50%, 0, 0);
   }
 `
 
@@ -37,17 +38,22 @@ const triangleAnimation = keyframes`
 
 export const Container = styled.div<Props>`
   display: block;
-  width: 300%;
+  width: 200%;
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   background-color: #000;
-  transform: skew(-45deg) translate3d(0%, 0, 0);
+  transform: skew(-45deg) translate3d(-150%, 0, 0);
   animation: ${({ isLoading }) => (isLoading ? sideIn : slideOut)};
-  animation-duration: 1.2s;
+  animation-duration: 0.6s;
   animation-fill-mode: forwards;
   z-index: 1001;
+
+  ${media.medium} {
+    width: 350%;
+    animation-duration: 0.4s;
+  }
 `
 
 export const Triangle = styled.div<Props>`
