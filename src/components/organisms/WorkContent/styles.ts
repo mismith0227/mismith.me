@@ -21,6 +21,41 @@ export const ThumbnailWrap = styled(Link)`
   width: 100%;
   height: 400px;
   background: #eee;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &::after {
+    content: 'View More';
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
 `
 
 export const Thumbnail = styled.img`
