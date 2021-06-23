@@ -24,7 +24,7 @@ export const Layout = ({ children, path, isCanvasLoading }: Props) => {
       if (!unmounted) {
         setIsLoadingTime(false)
       }
-    }, 1500)
+    }, 1000)
 
     // clean up
     return () => {
