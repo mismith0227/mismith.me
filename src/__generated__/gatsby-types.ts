@@ -696,6 +696,7 @@ type SitePluginPluginOptions = {
   readonly background_color: Maybe<Scalars['String']>;
   readonly theme_color: Maybe<Scalars['String']>;
   readonly display: Maybe<Scalars['String']>;
+  readonly icon: Maybe<Scalars['String']>;
   readonly legacy: Maybe<Scalars['Boolean']>;
   readonly theme_color_in_head: Maybe<Scalars['Boolean']>;
   readonly cache_busting_mode: Maybe<Scalars['String']>;
@@ -725,7 +726,6 @@ type SitePluginPluginOptionsPlugins = {
 
 type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly offsetY: Maybe<Scalars['Int']>;
-  readonly icon: Maybe<Scalars['Boolean']>;
   readonly className: Maybe<Scalars['String']>;
   readonly maintainCase: Maybe<Scalars['Boolean']>;
 };
@@ -2432,6 +2432,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly background_color: Maybe<StringQueryOperatorInput>;
   readonly theme_color: Maybe<StringQueryOperatorInput>;
   readonly display: Maybe<StringQueryOperatorInput>;
+  readonly icon: Maybe<StringQueryOperatorInput>;
   readonly legacy: Maybe<BooleanQueryOperatorInput>;
   readonly theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
   readonly cache_busting_mode: Maybe<StringQueryOperatorInput>;
@@ -2465,7 +2466,6 @@ type SitePluginPluginOptionsPluginsFilterInput = {
 
 type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly offsetY: Maybe<IntQueryOperatorInput>;
-  readonly icon: Maybe<BooleanQueryOperatorInput>;
   readonly className: Maybe<StringQueryOperatorInput>;
   readonly maintainCase: Maybe<BooleanQueryOperatorInput>;
 };
@@ -2648,6 +2648,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.background_color'
   | 'pluginCreator.pluginOptions.theme_color'
   | 'pluginCreator.pluginOptions.display'
+  | 'pluginCreator.pluginOptions.icon'
   | 'pluginCreator.pluginOptions.legacy'
   | 'pluginCreator.pluginOptions.theme_color_in_head'
   | 'pluginCreator.pluginOptions.cache_busting_mode'
@@ -3289,7 +3290,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.plugins.name'
   | 'pluginOptions.plugins.version'
   | 'pluginOptions.plugins.pluginOptions.offsetY'
-  | 'pluginOptions.plugins.pluginOptions.icon'
   | 'pluginOptions.plugins.pluginOptions.className'
   | 'pluginOptions.plugins.pluginOptions.maintainCase'
   | 'pluginOptions.plugins.nodeAPIs'
@@ -3314,6 +3314,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.background_color'
   | 'pluginOptions.theme_color'
   | 'pluginOptions.display'
+  | 'pluginOptions.icon'
   | 'pluginOptions.legacy'
   | 'pluginOptions.theme_color_in_head'
   | 'pluginOptions.cache_busting_mode'
@@ -3707,14 +3708,6 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type userstakumamisumimismithmesrcpagesguidelinesindexTsx1136944953QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type userstakumamisumimismithmesrcpagesguidelinesindexTsx1136944953Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'id' | 'html'>
-        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug'>> }
-      ) }> } };
-
 type userstakumamisumimismithmesrcpagesworksindexTsx4274114437QueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3723,12 +3716,15 @@ type userstakumamisumimismithmesrcpagesworksindexTsx4274114437Query = { readonly
         & { readonly thumbnail: Maybe<Pick<MicrocmsPortfolioThumbnail, 'height' | 'url' | 'width'>> }
       ) }> } };
 
-type userstakumamisumimismithmesrcpagesguidelinesmarkdownRemarkFrontmatterSlugindexTsx1238545120QueryVariables = Exact<{
+type userstakumamisumimismithmesrcpagesguidelinesmarkdownRemarkFrontmatterSlugindexTsx3929124222QueryVariables = Exact<{
   id: Scalars['String'];
 }>;
 
 
-type userstakumamisumimismithmesrcpagesguidelinesmarkdownRemarkFrontmatterSlugindexTsx1238545120Query = { readonly markdownRemark: Maybe<(
+type userstakumamisumimismithmesrcpagesguidelinesmarkdownRemarkFrontmatterSlugindexTsx3929124222Query = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'id' | 'html'>
+        & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug'>> }
+      ) }> }, readonly markdownRemark: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>> }
   )> };

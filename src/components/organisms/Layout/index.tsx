@@ -10,9 +10,15 @@ type Props = {
   children: React.ReactNode
   path: string
   isCanvasLoading?: boolean
+  disableLoading?: boolean
 }
 
-export const Layout = ({ children, path, isCanvasLoading }: Props) => {
+export const Layout = ({
+  children,
+  path,
+  isCanvasLoading,
+  disableLoading,
+}: Props) => {
   const [isLoadingTime, setIsLoadingTime] = React.useState<boolean>(true)
 
   const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
@@ -39,7 +45,7 @@ export const Layout = ({ children, path, isCanvasLoading }: Props) => {
       <main>{children}</main>
 
       {path !== 'home' && <StyledFooter />}
-      <Loading isLoading={isLoadingTime || isLoading} />
+      {!disableLoading && <Loading isLoading={isLoadingTime || isLoading} />}
     </>
   )
 }

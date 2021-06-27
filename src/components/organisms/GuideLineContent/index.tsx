@@ -1,16 +1,42 @@
 import * as React from 'react'
-import { Container, Title, StyledGuideLinesNavigation } from './styles'
+import {
+  Container,
+  Title,
+  StyledGuideLinesNavigation,
+  Inner,
+  Content,
+  Article,
+  ArticleTitle,
+} from './styles'
 
 type Props = {
-  data: ReadonlyArray<GatsbyTypes.MarkdownRemarkEdge>
+  listData: ReadonlyArray<GatsbyTypes.MarkdownRemarkEdge>
+  contentData: GatsbyTypes.MarkdownRemark
 }
 
-export const GuideLineContent = ({ data }: Props) => {
+export const GuideLineContent = ({ listData, contentData }: Props) => {
+  console.log(contentData)
   return (
     <Container>
       <Title>Guidelines</Title>
 
-      <StyledGuideLinesNavigation data={data} />
+      <Inner>
+        <StyledGuideLinesNavigation data={listData} />
+        <Content>
+          <Article>
+            {contentData.frontmatter && (
+              <ArticleTitle>{contentData.frontmatter.title}</ArticleTitle>
+            )}
+
+            {contentData.html && (
+              <div
+                className="blog-post-content"
+                dangerouslySetInnerHTML={{ __html: contentData.html }}
+              />
+            )}
+          </Article>
+        </Content>
+      </Inner>
     </Container>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import { Layout } from '../../../components/organisms/Layout'
 import Seo from '../../../components/seo'
-import { WorkDetailContent } from '../../../components/organisms/WorkDetailContent'
+import { GuideLineContent } from '../../../components/organisms/GuideLineContent'
 
 const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const meta = {
@@ -10,7 +10,7 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   }
 
   return data.markdownRemark ? (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} disableLoading>
       {data.markdownRemark.frontmatter && (
         <Seo
           title={
@@ -26,12 +26,17 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
         />
       )}
 
-      {data.markdownRemark.html && (
+      <GuideLineContent
+        listData={data.allMarkdownRemark.edges}
+        contentData={data.markdownRemark}
+      />
+
+      {/* {data.markdownRemark.html && (
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-      )}
+      )} */}
     </Layout>
   ) : (
     <div>no content</div>
@@ -42,6 +47,18 @@ export default WorkDetailPage
 
 export const query = graphql`
   query($id: String!) {
+    allMarkdownRemark(sort: { fields: frontmatter___order }) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            slug
+          }
+          html
+        }
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

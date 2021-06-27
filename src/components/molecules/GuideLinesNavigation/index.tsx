@@ -1,25 +1,24 @@
 import * as React from 'react'
-import { Container, StyledLink } from './styles'
+import { List, ListItem, StyledLink } from './styles'
 
 type Props = {
   data: ReadonlyArray<GatsbyTypes.MarkdownRemarkEdge>
+  className?: string
 }
 
-export const GuideLinesNavigation = ({ data }: Props) => {
-  console.log(data)
+export const GuideLinesNavigation = ({ data, className }: Props) => {
   return (
-    <Container>
+    <List className={className}>
       {data.map(
         (item) =>
           item.node.frontmatter && (
-            <StyledLink
-              key={item.node.id}
-              to={`/guidelines/${item.node.frontmatter.slug}`}
-            >
-              {item.node.frontmatter.title}
-            </StyledLink>
+            <ListItem key={item.node.id}>
+              <StyledLink to={`/guidelines/${item.node.frontmatter.slug}`}>
+                {item.node.frontmatter.title}
+              </StyledLink>
+            </ListItem>
           )
       )}
-    </Container>
+    </List>
   )
 }
