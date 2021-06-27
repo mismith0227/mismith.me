@@ -6,7 +6,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Mismith portfoli`,
+    title: `Mismith portfolio`,
     description: `web developer based in Osaka.`,
     author: `@misumi_takuma`,
   },
@@ -18,6 +18,23 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `guidelines`,
+        path: `${__dirname}/src/guidelines`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+        plugins: [],
       },
     },
     `gatsby-transformer-sharp`,
