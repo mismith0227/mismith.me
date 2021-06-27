@@ -7,7 +7,7 @@ order: 2
 
 記事 001
 
-# Header 1 {#header1}
+# Header 1
 
 1. テスト 1
 2. テスト 2

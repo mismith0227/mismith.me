@@ -34,7 +34,17 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [],
+        plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `30`,
+              icon: false,
+              className: `custom-class`,
+              maintainCase: true,
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
