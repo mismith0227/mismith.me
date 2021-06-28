@@ -22,7 +22,7 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
       <WorkDetailContent data={data.microcmsPortfolio} />
     </Layout>
   ) : (
-    <div>noc ontent</div>
+    <div>no content</div>
   )
 }
 
