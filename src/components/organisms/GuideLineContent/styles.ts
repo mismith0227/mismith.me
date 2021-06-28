@@ -28,7 +28,13 @@ export const Content = styled.div`
 
 export const Article = styled.article``
 
-export const ArticleTitle = styled.h3`
+export const ArticleTitle = styled.h1`
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
+`
+
+export const ArticleBody = styled.div`
+  h2 {
+    margin: 64px 0 0;
+  }
 `

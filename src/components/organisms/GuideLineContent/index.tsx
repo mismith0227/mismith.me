@@ -7,6 +7,7 @@ import {
   Content,
   Article,
   ArticleTitle,
+  ArticleBody,
 } from './styles'
 
 type Props = {
@@ -15,7 +16,6 @@ type Props = {
 }
 
 export const GuideLineContent = ({ listData, contentData }: Props) => {
-  console.log(contentData)
   return (
     <Container>
       <Title>Guidelines</Title>
@@ -29,7 +29,7 @@ export const GuideLineContent = ({ listData, contentData }: Props) => {
             )}
 
             {contentData.html && (
-              <div
+              <ArticleBody
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: contentData.html }}
               />

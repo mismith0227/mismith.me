@@ -30,13 +30,6 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
         listData={data.allMarkdownRemark.edges}
         contentData={data.markdownRemark}
       />
-
-      {/* {data.markdownRemark.html && (
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        />
-      )} */}
     </Layout>
   ) : (
     <div>no content</div>
