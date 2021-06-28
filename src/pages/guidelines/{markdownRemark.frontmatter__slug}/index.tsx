@@ -8,7 +8,7 @@ const GuideLinesDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({
   data,
 }) => {
   const meta = {
-    path: 'works',
+    path: 'guidelines',
   }
 
   return data.markdownRemark ? (
