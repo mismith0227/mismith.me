@@ -37,4 +37,31 @@ export const ArticleBody = styled.div`
   h2 {
     margin: 64px 0 0;
   }
+
+  pre {
+    border-radius: 4px;
+    background: #000;
+    color: #fff;
+    padding: 16px;
+  }
+
+  p,
+  li {
+    code {
+      background: #000;
+      color: #fff;
+      padding: 2px 8px;
+    }
+  }
+
+  table {
+    th {
+      background: #ccc;
+      font-weight: normal;
+    }
+    td {
+      padding: 4px 8px;
+      border: 1px solid #eee;
+    }
+  }
 `
