@@ -4,7 +4,9 @@ import { Layout } from '../../../components/organisms/Layout'
 import Seo from '../../../components/seo'
 import { GuideLineContent } from '../../../components/organisms/GuideLineContent'
 
-const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
+const GuideLinesDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({
+  data,
+}) => {
   const meta = {
     path: 'works',
   }
@@ -36,7 +38,7 @@ const WorkDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   )
 }
 
-export default WorkDetailPage
+export default GuideLinesDetailPage
 
 export const query = graphql`
   query($id: String!) {
