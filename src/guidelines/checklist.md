@@ -34,10 +34,12 @@ order: 5
   - エラーメッセージのスタイリング
   - エラーメッセージの表示方法（送信時かリアルタイムか）
   - 送信ボタンのアクティブ化
+  - 必須項目
 - URL 構造
 - ディレクトリ構造に指定はあるか
 - サーバー
 - CMS
+- Google アナリティクス
 
 ## 共通
 
@@ -65,12 +67,70 @@ order: 5
 - `target="_blank"` を使って外部リンクを開く場合は `rel="noopener` をつけているか
 - head 内の script タグには、defer、async 属性を指定する
 
+### フォーム関連
+
+#### `autocomplete` 属性
+
+フォームへの自動入力を有効する
+
+```
+<input type="text" name="name" autocomplete="name" />
+```
+
+| 値             | 内容                         |
+| -------------- | ---------------------------- |
+| name           | 姓名                         |
+| family-name    | 姓                           |
+| given-name     | 名                           |
+| email          | メールアドレス               |
+| postal-code    | 郵便番号                     |
+| address-level1 | 都道府県                     |
+| address-level2 | 市区町村                     |
+| address-line1  | 番地・マンション名（1 行目） |
+| address-line2  | 番地・マンション名（2 行目） |
+| organization   | 会社名                       |
+
+[Autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
+
+#### 電話番号や郵便番号のフォームをハイフンで分割しない
+
+- 分割した場合、 `autocomplete` が活用できない
+- 入力がユーザーにとってストレス
+
+#### 住所の数字を全角入力必須としない
+
+- 入力ストレスになる
+
+#### input の type 属性、 inputmode 属性が適切か
+
+```
+// メールアドレス
+<input type="email" name="email" autocomplete="email" />
+// 電話番号
+<input type="tel" name="tel" autocomplete="tel" />
+
+// type属性がない場合は、inputmodeを使う
+// url
+<input type="text" inputmode="url" />
+```
+
+#### 英字入力
+
+英字入力の場合 `autocorrect="off"` と `autocapitalize="off"` を設定することを検討する  
+iOS では英字入力時に、先頭の文字を自動的に大文字入力にする機能があるが、フォーム入力時は意図しない変換機能になる可能性があるため
+
+#### 画面遷移時にアラートを出す
+
+フォーム入力途中で画面遷移する場合に、入力内容を破棄してもいいかどうかのアラートを出すことを検討する  
+途中離脱を防ぐため
+
 ## CSS
 
 - フォント関連（フォント指定、フォントサイズは合っているか）
 - 画像が潰れたりしないか
 - 横スクロールが発生しないか
 - プロダクション用のコードは圧縮しているか
+- コンポーネントに `margin` を持たせていないか
 
 ## JavaScript
 
