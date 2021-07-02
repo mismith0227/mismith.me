@@ -105,7 +105,7 @@ export const BiographyItem = styled.li`
 `
 
 export const BiographyDate = styled.p`
-  width: 150px;
+  width: 128px;
   margin: 0;
   font-size: 18px;
   font-weight: bold;
