@@ -83,6 +83,28 @@ export const biographies = [
 
 export const activities = [
   {
+    title: 'gulpをやめてnpm scriptを使う',
+    link: 'https://speakerdeck.com/mismith0227/gulpwoyametenpm-scriptwoshi-u',
+  },
+  {
+    title: 'Tailwindcssを使ってみる',
+    link: 'https://speakerdeck.com/mismith0227/tailwindcsswoshi-tutemiru',
+  },
+  {
+    title: '最近のWordPressの開発環境について調べてみた',
+    link:
+      'https://speakerdeck.com/mismith0227/zui-jin-falsewordpressfalsekai-fa-huan-jing-nituitediao-betemita',
+  },
+  {
+    title: 'Variable Fontを使ってみた',
+    link: 'https://speakerdeck.com/mismith0227/variable-font-woshi-tutemita',
+  },
+  {
+    title: '見落としがちな想定漏れ',
+    link:
+      'https://speakerdeck.com/mismith0227/jian-luo-tosigatinaxiang-ding-lou-re',
+  },
+  {
     title: 'カンパイ本町を支える技術',
     link: 'https://speakerdeck.com/mismith0227/kanpaiben-ting-wozhi-eruji-shu',
   },
