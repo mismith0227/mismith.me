@@ -58,12 +58,10 @@ export const Container = styled.div<Props>`
 
 export const Triangle = styled.div<Props>`
   display: ${({ isLoading }) => (isLoading ? 'block' : 'none')};
-  width: 0;
-  height: 0;
-  font-size: 30px;
-  border-left: 1em solid transparent;
-  border-right: 1em solid transparent;
-  border-bottom: 1.6em solid #fff;
+  width: 60px;
+  height: 48px;
+  clip-path: polygon(0 100%, 100% 100%, 50% 0);
+  background-color: #fff;
   position: fixed;
   top: 50%;
   left: 50%;
