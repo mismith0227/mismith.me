@@ -55,7 +55,7 @@ export const NavListItem = styled.li<LinkProps>`
   &::before {
     content: '';
     display: block;
-    width: ${({ isActive }) => (isActive ? '70%' : 0)};
+    width: 70%;
     height: 2px;
     background: #000;
     position: absolute;
@@ -63,14 +63,15 @@ export const NavListItem = styled.li<LinkProps>`
     left: 0;
     right: 0;
     margin: auto;
-    transition: width 0.3s;
-    opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+    transform-origin: top right;
+    ${({ isActive }) => !isActive && 'transition: transform 0.3s;'};
+    transform: ${({ isActive }) => (isActive ? 'scaleX(1)' : 'scaleX(0)')};
   }
 
   &:hover {
     &::before {
-      width: 70%;
-      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: top left;
     }
   }
 
