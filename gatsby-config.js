@@ -77,5 +77,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-typegen`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ['Aldrich'],
+        display: 'swap',
+      },
+    },
   ],
 }

@@ -706,6 +706,7 @@ type SitePluginPluginOptions = {
   readonly apiKey: Maybe<Scalars['String']>;
   readonly serviceId: Maybe<Scalars['String']>;
   readonly apis: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsApis>>>;
+  readonly fonts: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
@@ -2453,6 +2454,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly apiKey: Maybe<StringQueryOperatorInput>;
   readonly serviceId: Maybe<StringQueryOperatorInput>;
   readonly apis: Maybe<SitePluginPluginOptionsApisFilterListInput>;
+  readonly fonts: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
@@ -2749,6 +2751,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.serviceId'
   | 'pluginCreator.pluginOptions.apis'
   | 'pluginCreator.pluginOptions.apis.endpoint'
+  | 'pluginCreator.pluginOptions.fonts'
   | 'pluginCreator.pluginOptions.pathCheck'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.isTSX'
@@ -3325,6 +3328,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.serviceId'
   | 'pluginOptions.apis'
   | 'pluginOptions.apis.endpoint'
+  | 'pluginOptions.fonts'
   | 'pluginOptions.pathCheck'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.isTSX'
@@ -3739,6 +3743,11 @@ type userstakumamisumimismithmesrcpagesworksmicrocmsPortfolioIdindexTsx322066619
     & { readonly thumbnail: Maybe<Pick<MicrocmsPortfolioThumbnail, 'height' | 'url' | 'width'>> }
   )> };
 
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
+
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyImageSharpFixed_tracedSVGFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3764,10 +3773,5 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description'>> }> };
 
 }

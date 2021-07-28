@@ -14,6 +14,13 @@ export const Title = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+  font-family: 'Aldrich';
+  font-weight: normal;
+  font-size: 56px;
+
+  .dud {
+    color: #ccc;
+  }
 `
 
 export const Loading = styled.div`
