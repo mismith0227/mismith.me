@@ -94,25 +94,27 @@ class TextScramble {
 }
 
 export const HomeContent = ({ onCreated }: Props) => {
-  const el = document.getElementById('text')
-  const phrases = [
-    '▲▲▲',
-    'Hello ✋',
-    'Web developer based in Osaka',
-    'Born in February 1989',
-  ]
+  React.useEffect(() => {
+    const el = document.getElementById('text')
+    const phrases = [
+      '▲▲▲',
+      'Hello ✋',
+      'Web developer based in Osaka',
+      'Born in February 1989',
+    ]
 
-  if (el) {
-    const fx = new TextScramble(el)
+    if (el) {
+      const fx = new TextScramble(el)
 
-    let counter = 0
-    const next = async () => {
-      await fx.setText(phrases[counter])
-      setTimeout(next, 2000)
-      counter = (counter + 1) % phrases.length
+      let counter = 0
+      const next = async () => {
+        await fx.setText(phrases[counter])
+        setTimeout(next, 2000)
+        counter = (counter + 1) % phrases.length
+      }
+      next()
     }
-    next()
-  }
+  }, [])
 
   const Circle = () => {
     const ref = React.useRef<THREE.Mesh>(null!)
