@@ -49,7 +49,7 @@ export const ProfileContent = ({}: Props) => (
           情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
         </Text>
         <Text>
-          コーディングをすることが多いですが、デザイナー経験もあることから使い勝手を考えたりや情報整理がされているかなどを考え、時には提案しつつ、コーディングすることが強みです。
+          コーディングをすることが多いですが、デザイナー経験もあることから使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
         </Text>
         <Text>
           趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
@@ -66,7 +66,7 @@ export const ProfileContent = ({}: Props) => (
               <GitHub />
             </ExternalLink>
           </SnsItem>
-          <SnsItem>
+          {/* <SnsItem>
             <ExternalLink
               href="https://twitter.com/misumi_takuma/"
               target="_blank"
@@ -75,8 +75,8 @@ export const ProfileContent = ({}: Props) => (
             >
               <Twitter />
             </ExternalLink>
-          </SnsItem>
-          <SnsItem>
+          </SnsItem> */}
+          {/* <SnsItem>
             <ExternalLink
               href="https://www.instagram.com/mismith0227/?hl=ja"
               target="_blank"
@@ -85,7 +85,7 @@ export const ProfileContent = ({}: Props) => (
             >
               <Instagram />
             </ExternalLink>
-          </SnsItem>
+          </SnsItem> */}
           <SnsItem>
             <ExternalLink
               href="https://500px.com/mismith2216"

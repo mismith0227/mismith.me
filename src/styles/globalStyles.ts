@@ -9,5 +9,6 @@ export const globalStyle = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0.04em;
+    line-height: 1.75;
   }
 `
