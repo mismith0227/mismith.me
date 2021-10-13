@@ -21,7 +21,7 @@ export const Layout = ({
 }: Props) => {
   const [isLoadingTime, setIsLoadingTime] = React.useState<boolean>(true)
 
-  const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
+  // const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
 
   React.useEffect(() => {
     let unmounted = false
@@ -45,7 +45,7 @@ export const Layout = ({
       <main>{children}</main>
 
       {path !== 'home' && <StyledFooter />}
-      {!disableLoading && <Loading isLoading={isLoadingTime || isLoading} />}
+      {!disableLoading && <Loading isLoading={isLoadingTime} />}
     </>
   )
 }
