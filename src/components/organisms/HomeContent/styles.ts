@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { keyframes } from '@emotion/react'
 import media from '../../../styles/media'
 
 export const Container = styled.div``
@@ -19,6 +20,42 @@ export const MainVisualText = styled.h1`
   font-size: 8.2vw;
   width: 90%;
   margin: 0;
+`
+
+export const Scroll = styled.div`
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  width: 1px;
+  height: 15vh;
+  background-color: #d3d3d3;
+  overflow: hidden;
+`
+
+const scrollAnimation = keyframes`
+  0% {
+    transform: translate3d(0, -8vh, 0);
+  }
+
+  60% {
+    transform: translate3d(0, 10vh, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 16vh, 0);
+  }
+`
+
+export const ScrollInner = styled.span`
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 4vh;
+  background: #222;
+  transform: translate3d(0, -8vh, 0);
+  animation: ${scrollAnimation} 1.5s linear infinite;
 `
 
 export const Content = styled.div`

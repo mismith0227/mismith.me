@@ -5,6 +5,8 @@ import {
   Container,
   MainVisual,
   MainVisualText,
+  Scroll,
+  ScrollInner,
   Content,
   Section,
   SectionInner,
@@ -55,6 +57,9 @@ export const HomeContent = ({ onCreated }: Props) => {
           Web Developer based in Osaka. I deliver value with front-end
           technology.
         </MainVisualText>
+        <Scroll>
+          <ScrollInner></ScrollInner>
+        </Scroll>
       </MainVisual>
 
       <Content>
