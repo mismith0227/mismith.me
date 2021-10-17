@@ -40,16 +40,10 @@ export const Header = ({ path }: Props) => {
               Contact
             </StyledLink>
           </NavListItem>
-          <NavListItem>
-            <ExternalLink
-              href="https://blog.mismith.me/"
-              target="_blank"
-              aria-label="blog"
-              rel="noopener"
-            >
+          <NavListItem isActive={path === 'blog'}>
+            <StyledLink to="/blog" aria-label="Blog">
               Blog
-              <StyledOpenInNewIcon />
-            </ExternalLink>
+            </StyledLink>
           </NavListItem>
         </NavList>
       </Navigation>
