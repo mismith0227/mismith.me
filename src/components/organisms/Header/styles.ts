@@ -5,8 +5,14 @@ import { OpenInNew } from '../../atoms/Icon/OpenInNew'
 import { ToggleButton } from '../../molecules/ToggleButton'
 
 export const Container = styled.header`
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   padding: 0 16px;
+  box-sizing: border-box;
+  z-index: 10;
 `
 
 interface MenuProps {

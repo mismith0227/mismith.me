@@ -73,6 +73,9 @@ module.exports = {
           {
             endpoint: 'portfolio',
           },
+          {
+            endpoint: 'blog',
+          },
         ],
       },
     },
