@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import media from '../../../styles/media'
 
 export const Container = styled.div`
   display: block;
@@ -11,6 +11,10 @@ export const Container = styled.div`
 export const Title = styled.h2`
   margin: 0;
   font-size: 48px;
+
+  ${media.medium} {
+    font-size: 36px;
+  }
 `
 
 export const Category = styled.span`
@@ -23,6 +27,7 @@ export const Category = styled.span`
 
 export const DateArea = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 export const Date = styled.div`
@@ -40,10 +45,18 @@ export const Body = styled.div`
   margin: 180px auto 0;
   max-width: 640px;
 
+  ${media.medium} {
+    margin: 80px auto 0;
+  }
+
   h2 {
     position: relative;
     margin: 84px 0 32px;
     font-size: 32px;
+
+    ${media.medium} {
+      margin: 42px 0 18px;
+    }
 
     &::before {
       content: '';
@@ -99,4 +112,83 @@ export const Body = styled.div`
     margin-right: 0;
     border-left: 2px solid #000;
   }
+`
+
+export const WrittenBy = styled.div`
+  position: relative;
+  margin: 180px auto 0;
+  max-width: 640px;
+
+  ${media.medium} {
+    margin: 80px auto 0;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    width: 80px;
+    height: 1px;
+  }
+
+  &::after {
+    width: 1px;
+    height: 80px;
+  }
+`
+
+export const WrittenByInner = styled.div`
+  padding: 24px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &::before {
+    width: 80px;
+    height: 1px;
+  }
+
+  &::after {
+    width: 1px;
+    height: 80px;
+  }
+`
+
+export const WrittenByTitle = styled.h2`
+  margin: 0;
+`
+
+export const WrittenByText = styled.p``
+
+export const SnsList = styled.ul`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+export const SnsItem = styled.li`
+  margin: 16px 16px 0 0;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+`
+
+export const ExternalLink = styled.a`
+  color: #000;
 `

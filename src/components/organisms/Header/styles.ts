@@ -56,7 +56,7 @@ interface LinkProps {
 
 export const NavListItem = styled.li<LinkProps>`
   position: relative;
-  margin: 0 0 0 24px;
+  margin: 0 0 0 12px;
   font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
 
   &::before {
