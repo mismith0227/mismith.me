@@ -4037,12 +4037,12 @@ type userstakumamisumimismithmesrcpagesworksmicrocmsPortfolioIdindexTsx322066619
     & { readonly thumbnail: Maybe<Pick<MicrocmsPortfolioThumbnail, 'height' | 'url' | 'width'>> }
   )> };
 
-type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx1707195803QueryVariables = Exact<{
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx4220884728QueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx1707195803Query = { readonly microcmsBlog: Maybe<Pick<MicrocmsBlog, 'id' | 'title' | 'content' | 'description' | 'createdAt' | 'updatedAt'>> };
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx4220884728Query = { readonly microcmsBlog: Maybe<Pick<MicrocmsBlog, 'id' | 'title' | 'content' | 'description' | 'category' | 'createdAt' | 'updatedAt'>> };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 

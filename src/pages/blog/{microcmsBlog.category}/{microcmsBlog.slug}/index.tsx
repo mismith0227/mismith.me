@@ -33,6 +33,7 @@ export const query = graphql`
       title
       content
       description
+      category
       createdAt
       updatedAt
     }
