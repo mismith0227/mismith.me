@@ -33,6 +33,8 @@ export const query = graphql`
             url
             height
           }
+          category
+          slug
         }
       }
     }

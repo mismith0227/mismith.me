@@ -317,13 +317,13 @@ type SitePage = Node & {
 
 type SitePageContext = {
   readonly id: Maybe<Scalars['String']>;
-  readonly frontmatter__slug: Maybe<Scalars['String']>;
   readonly _xparams: Maybe<SitePageContext_xparams>;
+  readonly frontmatter__slug: Maybe<Scalars['String']>;
 };
 
 type SitePageContext_xparams = {
-  readonly frontmatter__slug: Maybe<Scalars['String']>;
   readonly id: Maybe<Scalars['String']>;
+  readonly frontmatter__slug: Maybe<Scalars['String']>;
 };
 
 type MarkdownHeading = {
@@ -2488,13 +2488,13 @@ type SiteFunctionSortInput = {
 
 type SitePageContextFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>;
-  readonly frontmatter__slug: Maybe<StringQueryOperatorInput>;
   readonly _xparams: Maybe<SitePageContext_xparamsFilterInput>;
+  readonly frontmatter__slug: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePageContext_xparamsFilterInput = {
-  readonly frontmatter__slug: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
+  readonly frontmatter__slug: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginFilterInput = {
@@ -2758,9 +2758,9 @@ type SitePageFieldsEnum =
   | 'internal.type'
   | 'isCreatedByStatefulCreatePages'
   | 'context.id'
-  | 'context.frontmatter__slug'
-  | 'context._xparams.frontmatter__slug'
   | 'context._xparams.id'
+  | 'context._xparams.frontmatter__slug'
+  | 'context.frontmatter__slug'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
   | 'pluginCreator.parent.parent.id'
@@ -3989,11 +3989,11 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type userstakumamisumimismithmesrcpagesblogindexTsx2070212553QueryVariables = Exact<{ [key: string]: never; }>;
+type userstakumamisumimismithmesrcpagesblogindexTsx4254555010QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type userstakumamisumimismithmesrcpagesblogindexTsx2070212553Query = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'id' | 'content' | 'title'>
+type userstakumamisumimismithmesrcpagesblogindexTsx4254555010Query = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MicrocmsBlog, 'id' | 'content' | 'title' | 'category' | 'slug'>
         & { readonly thumbnail: Maybe<Pick<MicrocmsBlogThumbnail, 'width' | 'url' | 'height'>> }
       ) }> } };
 
@@ -4065,5 +4065,12 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx2184054713QueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx2184054713Query = { readonly microcmsBlog: Maybe<Pick<MicrocmsBlog, 'id' | 'title' | 'content' | 'description'>> };
 
 }

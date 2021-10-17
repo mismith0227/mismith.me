@@ -12,7 +12,7 @@ export const BlogContent = ({ data }: Props) => (
     {data.map(({ node }) => (
       <div key={node.id}>
         {node.title}
-        <StyledLink to={`/blog/${node.id}`}>link</StyledLink>
+        <StyledLink to={`/blog/${node.category}/${node.slug}`}>link</StyledLink>
       </div>
     ))}
   </Container>
