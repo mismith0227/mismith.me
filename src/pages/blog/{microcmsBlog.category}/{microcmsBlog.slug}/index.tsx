@@ -33,6 +33,8 @@ export const query = graphql`
       title
       content
       description
+      createdAt
+      updatedAt
     }
   }
 `

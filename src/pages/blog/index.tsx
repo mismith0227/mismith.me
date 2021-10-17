@@ -22,19 +22,15 @@ export default BlogPage
 
 export const query = graphql`
   query {
-    allMicrocmsBlog {
+    allMicrocmsBlog(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           id
-          content
           title
-          thumbnail {
-            width
-            url
-            height
-          }
           category
           slug
+          createdAt
+          updatedAt
         }
       }
     }

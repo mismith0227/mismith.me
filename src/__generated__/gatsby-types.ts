@@ -4001,13 +4001,10 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
-type userstakumamisumimismithmesrcpagesblogindexTsx4254555010QueryVariables = Exact<{ [key: string]: never; }>;
+type userstakumamisumimismithmesrcpagesblogindexTsx4161889432QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type userstakumamisumimismithmesrcpagesblogindexTsx4254555010Query = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MicrocmsBlog, 'id' | 'content' | 'title' | 'category' | 'slug'>
-        & { readonly thumbnail: Maybe<Pick<MicrocmsBlogThumbnail, 'width' | 'url' | 'height'>> }
-      ) }> } };
+type userstakumamisumimismithmesrcpagesblogindexTsx4161889432Query = { readonly allMicrocmsBlog: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsBlog, 'id' | 'title' | 'category' | 'slug' | 'createdAt' | 'updatedAt'> }> } };
 
 type userstakumamisumimismithmesrcpagesworksindexTsx4274114437QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4040,12 +4037,12 @@ type userstakumamisumimismithmesrcpagesworksmicrocmsPortfolioIdindexTsx322066619
     & { readonly thumbnail: Maybe<Pick<MicrocmsPortfolioThumbnail, 'height' | 'url' | 'width'>> }
   )> };
 
-type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx2184054713QueryVariables = Exact<{
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx1707195803QueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx2184054713Query = { readonly microcmsBlog: Maybe<Pick<MicrocmsBlog, 'id' | 'title' | 'content' | 'description'>> };
+type userstakumamisumimismithmesrcpagesblogmicrocmsBlogCategorymicrocmsBlogSlugindexTsx1707195803Query = { readonly microcmsBlog: Maybe<Pick<MicrocmsBlog, 'id' | 'title' | 'content' | 'description' | 'createdAt' | 'updatedAt'>> };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
