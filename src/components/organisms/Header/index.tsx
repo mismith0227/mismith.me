@@ -25,11 +25,6 @@ export const Header = ({ path }: Props) => {
               Home
             </StyledLink>
           </NavListItem>
-          <NavListItem isActive={path === 'profile'}>
-            <StyledLink to="/profile" aria-label="Profile">
-              Profile
-            </StyledLink>
-          </NavListItem>
           <NavListItem isActive={path === 'works'}>
             <StyledLink to="/works/" aria-label="Works">
               Works

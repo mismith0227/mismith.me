@@ -44,7 +44,7 @@ export const Layout = ({
       <Header path={path} />
       <main>{children}</main>
 
-      {path !== 'home' && <StyledFooter />}
+      <StyledFooter />
       {!disableLoading && <Loading isLoading={isLoadingTime} />}
     </>
   )
