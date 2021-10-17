@@ -6,7 +6,7 @@ import { BlogDetailContent } from '../../../../components/organisms/BlogDetailCo
 
 const BlogDetailPage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const meta = {
-    path: 'blogs',
+    path: 'blog',
   }
 
   return data.microcmsBlog ? (

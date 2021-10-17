@@ -25,3 +25,11 @@ http://localhost:8000/
 View GraphiQL, an in-browser IDE, to explore your site's data and schema
 
 http://localhost:8000/\_\_\_graphql
+
+### microCMS
+
+create `.env`
+
+```
+API_KEY=xxxx
+```

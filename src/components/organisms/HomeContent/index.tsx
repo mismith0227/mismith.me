@@ -87,26 +87,26 @@ export const HomeContent = ({ onCreated }: Props) => {
                   <GitHub />
                 </ExternalLink>
               </SnsItem>
-              {/* <SnsItem>
-            <ExternalLink
-              href="https://twitter.com/misumi_takuma/"
-              target="_blank"
-              aria-label="Twitter"
-              rel="noopener"
-            >
-              <Twitter />
-            </ExternalLink>
-          </SnsItem> */}
-              {/* <SnsItem>
-            <ExternalLink
-              href="https://www.instagram.com/mismith0227/?hl=ja"
-              target="_blank"
-              aria-label="Instagram"
-              rel="noopener"
-            >
-              <Instagram />
-            </ExternalLink>
-          </SnsItem> */}
+              <SnsItem>
+                <ExternalLink
+                  href="https://twitter.com/misumi_takuma/"
+                  target="_blank"
+                  aria-label="Twitter"
+                  rel="noopener"
+                >
+                  <Twitter />
+                </ExternalLink>
+              </SnsItem>
+              <SnsItem>
+                <ExternalLink
+                  href="https://www.instagram.com/mismith0227/?hl=ja"
+                  target="_blank"
+                  aria-label="Instagram"
+                  rel="noopener"
+                >
+                  <Instagram />
+                </ExternalLink>
+              </SnsItem>
               <SnsItem>
                 <ExternalLink
                   href="https://500px.com/mismith2216"

@@ -84,7 +84,7 @@ export const biographies = [
     title: '制作会社',
     detail:
       '制作会社でフロントエンドエンジニアをしています。受託開発でwebサイトの制作に携わっています',
-    skills: ['EJS', 'Sass', 'JavaScript', 'gulp', 'webpack', 'Git'],
+    skills: ['EJS', 'Sass', 'JavaScript', 'React', 'gulp', 'webpack', 'Git'],
   },
 ]
 
