@@ -1,5 +1,11 @@
 import * as React from 'react'
-import { Container, CopyRight } from './styles'
+import {
+  Container,
+  CopyRight,
+  StyledLink,
+  FooterList,
+  FooterListItem,
+} from './styles'
 
 type Props = {
   className?: string
@@ -8,6 +14,12 @@ type Props = {
 export const Footer = ({ className }: Props) => {
   return (
     <Container className={className}>
+      <FooterList>
+        <FooterListItem>
+          <StyledLink to="/about">このサイトについて</StyledLink>
+        </FooterListItem>
+      </FooterList>
+
       <CopyRight>© {new Date().getFullYear()}, misumi_takuma</CopyRight>
     </Container>
   )
