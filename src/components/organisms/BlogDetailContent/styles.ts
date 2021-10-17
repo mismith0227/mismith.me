@@ -69,6 +69,16 @@ export const Body = styled.div`
 
   p {
     margin: 16px 0;
+
+    code {
+      background: #f5f5f5;
+      font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+      background-color: rgba(135, 131, 120, 0.15);
+      color: #eb5757;
+      font-weight: bold;
+      padding: 4px;
+      font-size: 14px;
+    }
   }
 
   pre {
@@ -81,5 +91,12 @@ export const Body = styled.div`
     background-color: rgb(247, 246, 243);
     color: slategray;
     font-weight: bold;
+  }
+
+  blockquote {
+    padding: 16px;
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 2px solid #000;
   }
 `

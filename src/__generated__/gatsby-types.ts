@@ -858,9 +858,6 @@ type MicrocmsBlog = Node & {
   readonly title: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly content: Maybe<Scalars['String']>;
-  readonly thumbnail: Maybe<MicrocmsBlogThumbnail>;
-  readonly width: Maybe<Scalars['Int']>;
-  readonly height: Maybe<Scalars['Int']>;
   readonly category: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly slug: Maybe<Scalars['String']>;
   readonly blogId: Maybe<Scalars['String']>;
@@ -896,12 +893,6 @@ type MicrocmsBlog_revisedAtArgs = {
   fromNow: Maybe<Scalars['Boolean']>;
   difference: Maybe<Scalars['String']>;
   locale: Maybe<Scalars['String']>;
-};
-
-type MicrocmsBlogThumbnail = {
-  readonly url: Maybe<Scalars['String']>;
-  readonly height: Maybe<Scalars['Int']>;
-  readonly width: Maybe<Scalars['Int']>;
 };
 
 type Query = {
@@ -1232,9 +1223,6 @@ type Query_microcmsBlogArgs = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
   content: Maybe<StringQueryOperatorInput>;
-  thumbnail: Maybe<MicrocmsBlogThumbnailFilterInput>;
-  width: Maybe<IntQueryOperatorInput>;
-  height: Maybe<IntQueryOperatorInput>;
   category: Maybe<StringQueryOperatorInput>;
   slug: Maybe<StringQueryOperatorInput>;
   blogId: Maybe<StringQueryOperatorInput>;
@@ -3808,12 +3796,6 @@ type MicrocmsPortfolioSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type MicrocmsBlogThumbnailFilterInput = {
-  readonly url: Maybe<StringQueryOperatorInput>;
-  readonly height: Maybe<IntQueryOperatorInput>;
-  readonly width: Maybe<IntQueryOperatorInput>;
-};
-
 type MicrocmsBlogConnection = {
   readonly totalCount: Scalars['Int'];
   readonly edges: ReadonlyArray<MicrocmsBlogEdge>;
@@ -3953,11 +3935,6 @@ type MicrocmsBlogFieldsEnum =
   | 'title'
   | 'description'
   | 'content'
-  | 'thumbnail.url'
-  | 'thumbnail.height'
-  | 'thumbnail.width'
-  | 'width'
-  | 'height'
   | 'category'
   | 'slug'
   | 'blogId';
@@ -3983,9 +3960,6 @@ type MicrocmsBlogFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
   readonly content: Maybe<StringQueryOperatorInput>;
-  readonly thumbnail: Maybe<MicrocmsBlogThumbnailFilterInput>;
-  readonly width: Maybe<IntQueryOperatorInput>;
-  readonly height: Maybe<IntQueryOperatorInput>;
   readonly category: Maybe<StringQueryOperatorInput>;
   readonly slug: Maybe<StringQueryOperatorInput>;
   readonly blogId: Maybe<StringQueryOperatorInput>;
