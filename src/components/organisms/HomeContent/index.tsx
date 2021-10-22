@@ -1,6 +1,8 @@
 import * as React from 'react'
 // import { Canvas, useFrame } from '@react-three/fiber'
 // import { Tetrahedron } from '@react-three/drei'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   Container,
   MainVisual,
@@ -50,6 +52,31 @@ type queueItem = {
 }
 
 export const HomeContent = ({ onCreated }: Props) => {
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    fadeInAnimation()
+  }, [])
+
+  const fadeInAnimation = () => {
+    gsap.registerEffect({
+      name: 'scrollSlideIn',
+      defaults: { duration: 2 },
+      effect: (targets: string[]) => {
+        return gsap.from(targets, {
+          scrollTrigger: { trigger: targets },
+          y: 150,
+          opacity: 0,
+          duration: 1,
+          delay: 0.2,
+        })
+      },
+    })
+
+    document.querySelectorAll('section').forEach((box) => {
+      gsap.effects.scrollSlideIn(box)
+    })
+  }
+
   return (
     <Container>
       <MainVisual>

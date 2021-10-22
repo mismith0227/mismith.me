@@ -83,7 +83,7 @@ export const biographies = [
     date: '2021年9月',
     title: '制作会社',
     detail:
-      '制作会社でフロントエンドエンジニアをしています。受託開発でwebサイトの制作に携わっています',
+      '制作会社でフロントエンドエンジニアをしています。受託開発でwebサイトやwebアプリの制作に携わっています',
     skills: ['EJS', 'Sass', 'JavaScript', 'React', 'gulp', 'webpack', 'Git'],
   },
 ]
