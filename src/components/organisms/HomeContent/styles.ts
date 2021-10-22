@@ -119,7 +119,7 @@ export const BiographyItem = styled.li`
     content: '';
     display: block;
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 0;
     background-color: #fff;
     border: 1px solid #000;
@@ -134,7 +134,7 @@ export const BiographyItem = styled.li`
     content: '';
     display: block;
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 7px;
     width: 1px;
     height: 100%;
