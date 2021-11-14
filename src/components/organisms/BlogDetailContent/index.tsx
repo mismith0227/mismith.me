@@ -49,7 +49,7 @@ export const BlogDetailContent = ({ data }: Props) => (
         <WrittenByTitle>About the author</WrittenByTitle>
 
         <WrittenByText>
-          大阪でフロントエンドエンジニアをしています。写真を撮るのが趣味です。よかったら500pxに載せてる写真も見てくささい。
+          大阪でフロントエンドエンジニアをしています。写真を撮るのが趣味です。よかったら500pxに載せてる写真も見てください。
           <br />
           web上に公開しているので、正確さに可能な限り努力してますが、個人の備忘録程度に書いてるので、寛容にお願いします。
           <br />

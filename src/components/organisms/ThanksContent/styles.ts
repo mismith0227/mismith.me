@@ -13,7 +13,8 @@ export const Title = styled.h2`
 `
 
 export const Content = styled.div`
-  margin: 180px 0 0;
+  margin: 180px auto 0;
+  max-width: 650px;
 `
 
 export const Text = styled.p``
