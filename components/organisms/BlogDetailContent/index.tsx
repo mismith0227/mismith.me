@@ -1,5 +1,5 @@
 import * as React from 'react'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import {
   Container,
   Title,
@@ -33,11 +33,11 @@ export const BlogDetailContent = ({ data }: Props) => (
     <DateArea>
       <Date>
         <DateLabel>公開日:</DateLabel>
-        {moment(data.createdAt).format('YYYY年M月D日')}
+        {dayjs(data.createdAt).format('YYYY年M月D日')}
       </Date>
       <Date>
         <DateLabel>最終更新日:</DateLabel>
-        {moment(data.updatedAt).format('YYYY年M月D日')}
+        {dayjs(data.updatedAt).format('YYYY年M月D日')}
       </Date>
     </DateArea>
     <Body

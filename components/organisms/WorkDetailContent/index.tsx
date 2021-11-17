@@ -7,7 +7,7 @@ import {
   MainVisual,
   Body,
 } from './styles'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
 
 export const WorkDetailContent = ({ data }: Props) => (
   <Container>
-    <Date>{moment(data.productionDate).format('YYYY年M月D日')}</Date>
+    <Date>{dayjs(data.productionDate).format('YYYY年M月D日')}</Date>
     <Title>{data.title}</Title>
 
     {data.thumbnail && (

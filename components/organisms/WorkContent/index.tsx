@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
 import {
   Container,
@@ -28,7 +28,7 @@ export const WorkContent = ({ data }: Props) => (
       {data.map((work) => (
         <WorkItem key={work.id}>
           {work.productionDate && (
-            <Date>{moment(work.productionDate).format('YYYY年M月D日')}</Date>
+            <Date>{dayjs(work.productionDate).format('YYYY年M月D日')}</Date>
           )}
           <WorkTitle>
             <Link href={`/works/${work.id}`} passHref>

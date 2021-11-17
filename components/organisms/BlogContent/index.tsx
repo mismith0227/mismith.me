@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import {
   Container,
   StyledLink,
@@ -33,11 +33,11 @@ export const BlogContent = ({ data }: Props) => (
               <DateArea>
                 <Date>
                   <DateLabel>公開日:</DateLabel>
-                  {moment(blog.createdAt).format('YYYY年M月D日')}
+                  {dayjs(blog.createdAt).format('YYYY年M月D日')}
                 </Date>
                 <Date>
                   <DateLabel>最終更新日:</DateLabel>
-                  {moment(blog.updatedAt).format('YYYY年M月D日')}
+                  {dayjs(blog.updatedAt).format('YYYY年M月D日')}
                 </Date>
               </DateArea>
             </StyledLink>
