@@ -1,15 +1,14 @@
-import * as React from 'react'
+import { Twitter } from '@/components/atoms/Icon/Twitter'
+import { Instagram } from '@/components/atoms/Icon/Instagram'
 import {
   Container,
   Title,
   Text,
   Content,
-  Form,
-  FormItem,
-  Label,
-  StyledTextInput,
-  StyledTextAreaInput,
-  StyledButton,
+  Email,
+  SnsList,
+  SnsItem,
+  ExternalLink,
 } from './styles'
 
 export const ContactContent = () => (
@@ -18,35 +17,33 @@ export const ContactContent = () => (
 
     <Content>
       <Text>
-        お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘い、美味しいご飯の情報などは、以下のフォームよりお問い合わせください
+        お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘い、美味しいご飯の情報などは、以下のメールよりお問い合わせください。
+        <br />
+        もしくはSNSのDMでも大丈夫です。
       </Text>
-      <Form
-        name="contact"
-        method="POST"
-        action="thanks"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <StyledTextInput type="hidden" name="form-name" value="contact" />
-
-        <FormItem>
-          <Label>Name</Label>
-          <StyledTextInput type="text" name="name" required />
-        </FormItem>
-        <FormItem>
-          <Label>Email</Label>
-          <StyledTextInput type="email" name="email" required />
-        </FormItem>
-        <FormItem>
-          <Label>URL（任意）</Label>
-          <StyledTextInput type="url" name="url" />
-        </FormItem>
-        <FormItem>
-          <Label>Message</Label>
-          <StyledTextAreaInput name="message" required></StyledTextAreaInput>
-        </FormItem>
-        <StyledButton type="submit">送信</StyledButton>
-      </Form>
+      <Email>doraepon2216@gmail.com</Email>
+      <SnsList>
+        <SnsItem>
+          <ExternalLink
+            href="https://twitter.com/misumi_takuma/"
+            target="_blank"
+            aria-label="Twitter"
+            rel="noopener"
+          >
+            <Twitter />
+          </ExternalLink>
+        </SnsItem>
+        <SnsItem>
+          <ExternalLink
+            href="https://www.instagram.com/mismith0227/?hl=ja"
+            target="_blank"
+            aria-label="Instagram"
+            rel="noopener"
+          >
+            <Instagram />
+          </ExternalLink>
+        </SnsItem>
+      </SnsList>
     </Content>
   </Container>
 )

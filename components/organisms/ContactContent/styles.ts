@@ -19,51 +19,23 @@ export const Content = styled.div`
   max-width: 650px;
 `
 
-export const Form = styled.form`
-  width: 100%;
+export const Email = styled.p``
+
+export const SnsList = styled.ul`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 `
 
-export const FormItem = styled.label`
-  display: block;
-  margin: 1.6rem 0 0;
-  &:first-of-type {
-    margin: 0;
+export const SnsItem = styled.li`
+  margin: 16px 16px 0 0;
+
+  &:last-of-type {
+    margin-right: 0;
   }
 `
 
-export const Label = styled.div`
-  font-weight: bold;
-`
-
-export const StyledTextInput = styled.input`
-  box-sizing: border-box;
-  margin: 8px 0 0;
-  padding: 0 8px;
-  width: 100%;
-  height: 40px;
-`
-
-export const StyledTextAreaInput = styled.textarea`
-  box-sizing: border-box;
-  margin: 8px 0 0;
-  padding: 8px;
-  width: 100%;
-  min-height: 200px;
-`
-
-export const StyledButton = styled.button`
-  width: 100%;
-  margin: 64px 0 0;
-  box-sizing: border-box;
-  border: none;
-  background: #000;
-  color: #fff;
-  padding: 12px 24px;
-  transition: 0.2s;
-  transition: 0.2s;
-
-  &:hover {
-    cursor: pointer;
-    background: #555;
-  }
+export const ExternalLink = styled.a`
+  color: #000;
 `
