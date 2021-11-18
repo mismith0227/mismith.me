@@ -30,6 +30,7 @@ const WorkDetailPage: NextPage<PageProps> = (props) => {
       <Seo
         title={portfolio.title ? portfolio.title : ''}
         description={portfolio.description ? portfolio.description : ''}
+        path={meta.path}
       />
       <WorkDetailContent data={portfolio} />
     </Layout>
