@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Container, Title, Content, Text } from './styles'
 
 export const ThanksContent = () => (

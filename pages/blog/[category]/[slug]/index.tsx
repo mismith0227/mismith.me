@@ -30,6 +30,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
       <Seo
         title={blog.title ? blog.title : ''}
         description={blog.description ? blog.description : ''}
+        path={meta.path}
       />
       <BlogDetailContent data={blog} />
     </Layout>

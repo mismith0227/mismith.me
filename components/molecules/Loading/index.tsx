@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Container, Back, Triangle } from './styles'
 
 type Props = {

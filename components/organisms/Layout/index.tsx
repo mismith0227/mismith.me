@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Global } from '@emotion/react'
 import { globalStyle } from '@/styles/globalStyles'
@@ -19,11 +19,11 @@ export const Layout = ({
   isCanvasLoading,
   disableLoading,
 }: Props) => {
-  const [isLoadingTime, setIsLoadingTime] = React.useState<boolean>(true)
+  const [isLoadingTime, setIsLoadingTime] = useState<boolean>(true)
 
   // const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
 
-  React.useEffect(() => {
+  useEffect(() => {
     let unmounted = false
 
     setTimeout(() => {

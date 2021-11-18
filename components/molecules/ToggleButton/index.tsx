@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Container, ToggleBorder, ScreenReaderText } from './styles'
 
 type Props = {

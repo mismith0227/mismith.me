@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'

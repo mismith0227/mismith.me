@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
@@ -19,7 +18,7 @@ const WorksPage: NextPage<Props> = ({ portfolio }) => {
 
   return (
     <Layout path={meta.path}>
-      <Seo title={meta.title} description={meta.description} />
+      <Seo title={meta.title} description={meta.description} path={meta.path} />
       <WorkContent data={portfolio} />
     </Layout>
   )

@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout path={meta.path} isCanvasLoading={isCanvasLoading}>
-      <Seo title={meta.title} description={meta.description} />
+      <Seo title={meta.title} description={meta.description} path={meta.path} />
       <HomeContent onCreated={(value) => setIsCanvasLoading(value)} />
     </Layout>
   )

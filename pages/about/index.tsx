@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
 import { AboutContent } from '@/components/organisms/AboutContent'
@@ -12,7 +11,7 @@ const About = () => {
 
   return (
     <Layout path={meta.path} disableLoading>
-      <Seo title={meta.title} description={meta.description} />
+      <Seo title={meta.title} description={meta.description} path={meta.path} />
       <AboutContent />
     </Layout>
   )

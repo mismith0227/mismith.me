@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Layout } from '../../components/organisms/Layout'
 import Seo from '../../components/seo'
 import { ThanksContent } from '../../components/organisms/ThanksContent'
@@ -12,7 +11,7 @@ const Thanks = () => {
 
   return (
     <Layout path={meta.path}>
-      <Seo title={meta.title} description={meta.description} />
+      <Seo title={meta.title} description={meta.description} path={meta.path} />
       <ThanksContent />
     </Layout>
   )
