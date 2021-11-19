@@ -20,12 +20,14 @@ import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Blog } from '@/types/Blog'
+import 'highlight.js/styles/stackoverflow-light.css'
 
 type Props = {
   data: Blog
+  body: string
 }
 
-export const BlogDetailContent = ({ data }: Props) => (
+export const BlogDetailContent = ({ data, body }: Props) => (
   <Container>
     <Category>{data.category}</Category>
     <Title>{data.title}</Title>
@@ -41,7 +43,7 @@ export const BlogDetailContent = ({ data }: Props) => (
     </DateArea>
     <Body
       dangerouslySetInnerHTML={{
-        __html: `${data.content}`,
+        __html: body,
       }}
     />
     <WrittenBy>
