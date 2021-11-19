@@ -86,7 +86,7 @@ export const Body = styled.div`
     code {
       background: #f5f5f5;
       font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-      background-color: rgba(135, 131, 120, 0.15);
+      background-color: #f6f6f6;
       color: #eb5757;
       font-weight: bold;
       padding: 4px;
@@ -95,15 +95,17 @@ export const Body = styled.div`
   }
 
   pre {
-    background: #f5f5f5;
-    border: none;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-    padding: 16px;
-    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-    background-color: rgb(247, 246, 243);
-    color: slategray;
-    font-weight: bold;
+    code {
+      font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+      font-size: 14px;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      ${media.medium} {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 
   blockquote {
