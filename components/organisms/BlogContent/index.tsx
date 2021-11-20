@@ -39,9 +39,9 @@ export const BlogContent = ({
     <BlogList>
       {data.map((blog) => (
         <BlogListItem key={blog.id}>
-          <Link href={`/blog/${blog.category}/${blog.slug}`} passHref>
+          <Link href={`/blog/${blog.category.id}/${blog.slug}`} passHref>
             <StyledLink>
-              <Category>{blog.category}</Category>
+              <Category>{blog.category.category_name}</Category>
               <BlogTitle>{blog.title}</BlogTitle>
 
               <DateArea>

@@ -38,7 +38,7 @@ export const BlogDetailContent = ({
   currentCategory,
 }: Props) => (
   <Container>
-    <Category>{data.category}</Category>
+    <Category>{data.category.category_name}</Category>
     <Title>{data.title}</Title>
     <DateArea>
       <Date>
