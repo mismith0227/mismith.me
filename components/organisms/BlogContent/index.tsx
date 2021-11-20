@@ -11,14 +11,16 @@ import {
   DateArea,
   Date,
   DateLabel,
+  StyledPagination,
 } from './styles'
 import { Blog } from '@/types/Blog'
 
 type Props = {
   data: Blog[]
+  totalCount: number
 }
 
-export const BlogContent = ({ data }: Props) => (
+export const BlogContent = ({ data, totalCount }: Props) => (
   <Container>
     <Title>Blog</Title>
 
@@ -45,5 +47,6 @@ export const BlogContent = ({ data }: Props) => (
         </BlogListItem>
       ))}
     </BlogList>
+    <StyledPagination totalCount={totalCount} />
   </Container>
 )
