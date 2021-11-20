@@ -83,6 +83,7 @@ export const Body = styled.div`
 
   p {
     margin: 16px 0;
+    word-wrap: break-word;
 
     code {
       background: #f5f5f5;
