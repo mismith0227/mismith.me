@@ -13,6 +13,7 @@ import {
   DateLabel,
   StyledPagination,
   StyledCategories,
+  CategoryLabel,
 } from './styles'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
@@ -32,40 +33,53 @@ export const BlogContent = ({
   currentPage,
   category,
   currentCategory,
-}: Props) => (
-  <Container>
-    <Title>Blog</Title>
+}: Props) => {
+  const categoryLabel = currentCategory
+    ? category.filter((item) => {
+        return item.id === currentCategory
+      })[0].category_name
+    : null
+  console.log(categoryLabel)
+  return (
+    <Container>
+      <Title>
+        Blog
+        {categoryLabel && (
+          <CategoryLabel>Category: {categoryLabel}</CategoryLabel>
+        )}
+      </Title>
 
-    <BlogList>
-      {data.map((blog) => (
-        <BlogListItem key={blog.id}>
-          <Link href={`/blog/${blog.category.id}/${blog.slug}`} passHref>
-            <StyledLink>
-              <Category>{blog.category.category_name}</Category>
-              <BlogTitle>{blog.title}</BlogTitle>
+      <BlogList>
+        {data.map((blog) => (
+          <BlogListItem key={blog.id}>
+            <Link href={`/blog/${blog.category.id}/${blog.slug}`} passHref>
+              <StyledLink>
+                <Category>{blog.category.category_name}</Category>
+                <BlogTitle>{blog.title}</BlogTitle>
 
-              <DateArea>
-                <Date>
-                  <DateLabel>公開日:</DateLabel>
-                  {dayjs(blog.createdAt).format('YYYY年M月D日')}
-                </Date>
-                <Date>
-                  <DateLabel>最終更新日:</DateLabel>
-                  {dayjs(blog.updatedAt).format('YYYY年M月D日')}
-                </Date>
-              </DateArea>
-            </StyledLink>
-          </Link>
-        </BlogListItem>
-      ))}
-    </BlogList>
-    {totalCount > BLOG_PER_PAGE && (
-      <StyledPagination
-        totalCount={totalCount}
-        currentPage={currentPage}
-        currentCategory={currentCategory}
-      />
-    )}
-    <StyledCategories category={category} currentCategory={currentCategory} />
-  </Container>
-)
+                <DateArea>
+                  <Date>
+                    <DateLabel>公開日:</DateLabel>
+                    {dayjs(blog.createdAt).format('YYYY年M月D日')}
+                  </Date>
+                  <Date>
+                    <DateLabel>最終更新日:</DateLabel>
+                    {dayjs(blog.updatedAt).format('YYYY年M月D日')}
+                  </Date>
+                </DateArea>
+              </StyledLink>
+            </Link>
+          </BlogListItem>
+        ))}
+      </BlogList>
+      {totalCount > BLOG_PER_PAGE && (
+        <StyledPagination
+          totalCount={totalCount}
+          currentPage={currentPage}
+          currentCategory={currentCategory}
+        />
+      )}
+      <StyledCategories category={category} currentCategory={currentCategory} />
+    </Container>
+  )
+}
