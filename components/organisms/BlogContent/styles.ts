@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Pagination } from '@/components/molecules/Pagination'
+import { Categories } from '@/components/molecules/Categories'
 
 export const Container = styled.div`
   display: block;
@@ -68,5 +69,9 @@ export const StyledLink = styled.a`
 `
 
 export const StyledPagination = styled(Pagination)`
+  margin-top: 120px;
+`
+
+export const StyledCategories = styled(Categories)`
   margin-top: 120px;
 `

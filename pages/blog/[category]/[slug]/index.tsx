@@ -12,23 +12,24 @@ import Seo from '@/components/seo'
 import { BlogDetailContent } from '@/components/organisms/BlogDetailContent'
 import { toStringId } from '@/utils/toStringId'
 import { Blog } from '@/types/Blog'
+import { BlogCategory } from '@/types/BlogCategory'
 
 type StaticProps = {
   blog: Blog
   body: string
   draftKey?: string
+  category: BlogCategory[]
+  currentCategory: string
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const { blog, draftKey, body } = props
+  const { blog, draftKey, body, category, currentCategory } = props
 
   const meta = {
     path: 'blog',
   }
-
-  console.log(body)
 
   return blog ? (
     <Layout path={meta.path} disableLoading>
@@ -37,7 +38,12 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
         description={blog.description ? blog.description : ''}
         path={meta.path}
       />
-      <BlogDetailContent data={blog} body={body} />
+      <BlogDetailContent
+        data={blog}
+        body={body}
+        category={category}
+        currentCategory={currentCategory}
+      />
     </Layout>
   ) : (
     <div>no content</div>
@@ -76,10 +82,16 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       bodyData(elm).addClass('hljs')
     })
 
+    const category = await client.get({
+      endpoint: 'blog-category',
+    })
+
     return {
       props: {
         blog: data.contents[0],
         body: bodyData.html(),
+        category: category.contents,
+        currentCategory: toStringId(params.category),
       },
     }
   } catch (e) {
