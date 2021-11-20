@@ -46,7 +46,6 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
 
 export default BlogDetailPage
 
-// 静的生成のためのパスを指定します
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     fallback: 'blocking',
@@ -54,7 +53,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const { params, previewData } = context
   if (!params?.category || !params?.slug) {
