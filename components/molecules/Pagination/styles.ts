@@ -1,36 +1,32 @@
 import styled from '@emotion/styled'
 
-export const Container = styled.div`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-`
-
-export const Title = styled.h2`
+export const Container = styled.ul`
+  display: flex;
+  justify-content: center;
+  list-style: none;
   margin: 0;
-  font-size: 64px;
+  padding: 0;
 `
 
-export const Content = styled.div`
-  margin: 180px auto 0;
-  max-width: 650px;
+export const Item = styled.li`
+  margin: 0 8px;
 `
 
-export const Section = styled.section`
-  margin: 160px 0 0;
+interface Props {
+  isCurrent: boolean
+}
 
-  &:first-of-type {
-    margin: 0;
+export const StyledLink = styled.a<Props>`
+  display: block;
+  padding: 8px 16px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: ${({ isCurrent }) => (isCurrent ? `#fff` : `#000`)};
+  background-color: ${({ isCurrent }) => (isCurrent ? `#000` : `#fff`)};
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
   }
 `
-
-export const SectionTitle = styled.h3`
-  font-size: 48px;
-`
-
-export const SectionTitleSecondary = styled.h4`
-  font-size: 24px;
-`
-
-export const Text = styled.p``

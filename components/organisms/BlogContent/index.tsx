@@ -14,13 +14,15 @@ import {
   StyledPagination,
 } from './styles'
 import { Blog } from '@/types/Blog'
+import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
 type Props = {
   data: Blog[]
   totalCount: number
+  currentPage: number
 }
 
-export const BlogContent = ({ data, totalCount }: Props) => (
+export const BlogContent = ({ data, totalCount, currentPage }: Props) => (
   <Container>
     <Title>Blog</Title>
 
@@ -47,6 +49,8 @@ export const BlogContent = ({ data, totalCount }: Props) => (
         </BlogListItem>
       ))}
     </BlogList>
-    <StyledPagination totalCount={totalCount} />
+    {totalCount > BLOG_PER_PAGE && (
+      <StyledPagination totalCount={totalCount} currentPage={currentPage} />
+    )}
   </Container>
 )

@@ -67,4 +67,6 @@ export const StyledLink = styled.a`
   }
 `
 
-export const StyledPagination = styled(Pagination)``
+export const StyledPagination = styled(Pagination)`
+  margin-top: 120px;
+`

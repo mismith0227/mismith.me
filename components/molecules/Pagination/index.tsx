@@ -1,27 +1,26 @@
 import Link from 'next/link'
-import { Container } from './styles'
+import { Container, Item, StyledLink } from './styles'
+import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
 type Props = {
   totalCount: number
+  currentPage: number
+  className?: string
 }
 
-export const Pagination = ({ totalCount }: Props) => {
-  const PER_PAGE = 5
-
+export const Pagination = ({ totalCount, currentPage, className }: Props) => {
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i)
 
   return (
-    <Container>
-      <ul>
-        {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-          <li key={index}>
-            <Link href={`/blog/page/${number}`}>
-              <a>{number}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <Container className={className}>
+      {range(1, Math.ceil(totalCount / BLOG_PER_PAGE)).map((number, index) => (
+        <Item key={index}>
+          <Link href={`/blog/page/${number}`} passHref>
+            <StyledLink isCurrent={currentPage === number}>{number}</StyledLink>
+          </Link>
+        </Item>
+      ))}
     </Container>
   )
 }
