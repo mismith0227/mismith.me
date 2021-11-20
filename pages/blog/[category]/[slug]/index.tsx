@@ -5,6 +5,8 @@ import {
   NextPage,
   GetStaticPaths,
 } from 'next'
+import cheerio from 'cheerio'
+import hljs from 'highlight.js'
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
 import { BlogDetailContent } from '@/components/organisms/BlogDetailContent'
@@ -13,17 +15,20 @@ import { Blog } from '@/types/Blog'
 
 type StaticProps = {
   blog: Blog
+  body: string
   draftKey?: string
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const { blog, draftKey } = props
+  const { blog, draftKey, body } = props
 
   const meta = {
     path: 'blog',
   }
+
+  console.log(body)
 
   return blog ? (
     <Layout path={meta.path} disableLoading>
@@ -32,7 +37,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
         description={blog.description ? blog.description : ''}
         path={meta.path}
       />
-      <BlogDetailContent data={blog} />
+      <BlogDetailContent data={blog} body={body} />
     </Layout>
   ) : (
     <div>no content</div>
@@ -65,9 +70,18 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       },
     })
 
+    const bodyData = cheerio.load(data.contents[0].content)
+
+    bodyData('pre code').each((_, elm) => {
+      const result = hljs.highlightAuto(bodyData(elm).text())
+      bodyData(elm).html(result.value)
+      bodyData(elm).addClass('hljs')
+    })
+
     return {
       props: {
         blog: data.contents[0],
+        body: bodyData.html(),
       },
     }
   } catch (e) {
