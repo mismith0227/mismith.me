@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Categories } from '@/components/molecules/Categories'
 
 export const Container = styled.div`
   display: block;
@@ -193,4 +194,13 @@ export const SnsItem = styled.li`
 
 export const ExternalLink = styled.a`
   color: #000;
+`
+
+export const StyledCategories = styled(Categories)`
+  margin: 120px auto 0;
+  max-width: 640px;
+
+  ${media.medium} {
+    margin: 60px auto 0;
+  }
 `

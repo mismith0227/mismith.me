@@ -13,13 +13,15 @@ interface Props {
   totalCount: number
   currentPage: number
   category: BlogCategory[]
+  currentCategory: string
 }
 
-const BlogPage: NextPage<Props> = ({
+const CategoryPage: NextPage<Props> = ({
   blog,
   totalCount,
   currentPage,
   category,
+  currentCategory,
 }) => {
   const meta = {
     title: `Blog: Page${currentPage}`,
@@ -35,30 +37,51 @@ const BlogPage: NextPage<Props> = ({
         totalCount={totalCount}
         currentPage={currentPage}
         category={category}
+        currentCategory={currentCategory}
       />
     </Layout>
   )
 }
-export default BlogPage
+export default CategoryPage
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await client.get({
-    endpoint: 'blog',
+export const getAllCategoryPagePaths = async () => {
+  const resCategory = await client.get({
+    endpoint: 'blog-category',
   })
 
-  const range = (start: number, end: number) =>
-    [...Array(end - start + 1)].map((_, i) => start + i)
+  const paths: string[] = await Promise.all(
+    resCategory.contents.map((item: BlogCategory) => {
+      const result = client
+        .get({
+          endpoint: 'blog',
+          queries: {
+            filters: `category[equals]${item.id}`,
+          },
+        })
+        .then(({ totalCount }) => {
+          const range = (start: number, end: number) =>
+            [...Array(end - start + 1)].map((_, i) => start + i)
 
-  const paths = range(1, Math.ceil(res.totalCount / BLOG_PER_PAGE)).map(
-    (repo) => `/blog/page/${repo}`
+          return range(1, Math.ceil(totalCount / BLOG_PER_PAGE)).map(
+            (repo) => `/blog/${item.id}/page/${repo}`
+          )
+        })
+      return result
+    })
   )
+
+  return paths.flat()
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = await getAllCategoryPagePaths()
 
   return { paths, fallback: false }
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { params, previewData } = context
-  if (!params?.id) {
+  if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
 
@@ -66,7 +89,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await client.get({
     endpoint: 'blog',
-    queries: { limit: BLOG_PER_PAGE, offset: (id - 1) * BLOG_PER_PAGE },
+    queries: {
+      limit: BLOG_PER_PAGE,
+      offset: (id - 1) * BLOG_PER_PAGE,
+      filters: `category[equals]${params.category}`,
+    },
   })
 
   const category = await client.get({
@@ -79,6 +106,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       totalCount: data.totalCount,
       currentPage: id,
       category: category.contents,
+      currentCategory: params.category,
     },
   }
 }

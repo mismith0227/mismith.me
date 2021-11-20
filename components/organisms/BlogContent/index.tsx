@@ -12,26 +12,36 @@ import {
   Date,
   DateLabel,
   StyledPagination,
+  StyledCategories,
 } from './styles'
 import { Blog } from '@/types/Blog'
+import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
 type Props = {
   data: Blog[]
   totalCount: number
   currentPage: number
+  category: BlogCategory[]
+  currentCategory?: string
 }
 
-export const BlogContent = ({ data, totalCount, currentPage }: Props) => (
+export const BlogContent = ({
+  data,
+  totalCount,
+  currentPage,
+  category,
+  currentCategory,
+}: Props) => (
   <Container>
     <Title>Blog</Title>
 
     <BlogList>
       {data.map((blog) => (
         <BlogListItem key={blog.id}>
-          <Link href={`/blog/${blog.category}/${blog.slug}`} passHref>
+          <Link href={`/blog/${blog.category.id}/${blog.slug}`} passHref>
             <StyledLink>
-              <Category>{blog.category}</Category>
+              <Category>{blog.category.category_name}</Category>
               <BlogTitle>{blog.title}</BlogTitle>
 
               <DateArea>
@@ -50,7 +60,12 @@ export const BlogContent = ({ data, totalCount, currentPage }: Props) => (
       ))}
     </BlogList>
     {totalCount > BLOG_PER_PAGE && (
-      <StyledPagination totalCount={totalCount} currentPage={currentPage} />
+      <StyledPagination
+        totalCount={totalCount}
+        currentPage={currentPage}
+        currentCategory={currentCategory}
+      />
     )}
+    <StyledCategories category={category} currentCategory={currentCategory} />
   </Container>
 )

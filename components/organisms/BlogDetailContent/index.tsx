@@ -14,22 +14,31 @@ import {
   SnsList,
   SnsItem,
   ExternalLink,
+  StyledCategories,
 } from './styles'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Blog } from '@/types/Blog'
+import { BlogCategory } from '@/types/BlogCategory'
 import 'highlight.js/styles/stackoverflow-light.css'
 
 type Props = {
   data: Blog
   body: string
+  category: BlogCategory[]
+  currentCategory?: string
 }
 
-export const BlogDetailContent = ({ data, body }: Props) => (
+export const BlogDetailContent = ({
+  data,
+  body,
+  category,
+  currentCategory,
+}: Props) => (
   <Container>
-    <Category>{data.category}</Category>
+    <Category>{data.category.category_name}</Category>
     <Title>{data.title}</Title>
     <DateArea>
       <Date>
@@ -101,5 +110,7 @@ export const BlogDetailContent = ({ data, body }: Props) => (
         </SnsList>
       </WrittenByInner>
     </WrittenBy>
+
+    <StyledCategories category={category} currentCategory={currentCategory} />
   </Container>
 )
