@@ -1,4 +1,4 @@
-import { BlogCategory } from './BlogCategory'
+import { BlogCategory } from '@/types/BlogCategory'
 
 export interface Blog {
   id: string
