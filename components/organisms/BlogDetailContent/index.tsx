@@ -15,6 +15,7 @@ import {
   SnsItem,
   ExternalLink,
   StyledCategories,
+  StyledReadNext,
 } from './styles'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
@@ -110,6 +111,8 @@ export const BlogDetailContent = ({
         </SnsList>
       </WrittenByInner>
     </WrittenBy>
+
+    {data.related_post && <StyledReadNext readNestPosts={data.related_post} />}
 
     <StyledCategories category={category} currentCategory={currentCategory} />
   </Container>
