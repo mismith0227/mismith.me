@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Categories } from '@/components/molecules/Categories'
+import { ReadNext } from '@/components/molecules/ReadNext'
 
 export const Container = styled.div`
   display: block;
@@ -198,6 +199,15 @@ export const ExternalLink = styled.a`
 `
 
 export const StyledCategories = styled(Categories)`
+  margin: 120px auto 0;
+  max-width: 640px;
+
+  ${media.medium} {
+    margin: 60px auto 0;
+  }
+`
+
+export const StyledReadNext = styled(ReadNext)`
   margin: 120px auto 0;
   max-width: 640px;
 

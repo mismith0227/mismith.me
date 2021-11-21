@@ -9,4 +9,5 @@ export interface Blog {
   slug: string
   createdAt: Date
   updatedAt: Date
+  related_post?: Blog[]
 }
