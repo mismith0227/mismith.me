@@ -61,20 +61,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   const { params, previewData } = context
-  if (!params?.category || !params?.slug) {
+  if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
 
   try {
-    const slug = toStringId(params.slug)
+    const id = toStringId(params.id)
     const data = await client.get({
       endpoint: 'blog',
-      queries: {
-        filters: `slug[equals]${slug}`,
-      },
+      contentId: id,
     })
 
-    const bodyData = cheerio.load(data.contents[0].content)
+    const bodyData = cheerio.load(data.content)
 
     bodyData('pre code').each((_, elm) => {
       const result = hljs.highlightAuto(bodyData(elm).text())
@@ -88,7 +86,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
 
     return {
       props: {
-        blog: data.contents[0],
+        blog: data,
         body: bodyData.html(),
         category: category.contents,
         currentCategory: toStringId(params.category),

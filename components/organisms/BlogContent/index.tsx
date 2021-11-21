@@ -39,7 +39,7 @@ export const BlogContent = ({
         return item.id === currentCategory
       })[0].category_name
     : null
-  console.log(categoryLabel)
+
   return (
     <Container>
       <Title>
@@ -52,7 +52,7 @@ export const BlogContent = ({
       <BlogList>
         {data.map((blog) => (
           <BlogListItem key={blog.id}>
-            <Link href={`/blog/${blog.category.id}/${blog.slug}`} passHref>
+            <Link href={`/blog/${blog.category.id}/${blog.id}`} passHref>
               <StyledLink>
                 <Category>{blog.category.category_name}</Category>
                 <BlogTitle>{blog.title}</BlogTitle>
