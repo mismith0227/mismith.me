@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Categories } from '@/components/molecules/Categories'
 import { ReadNext } from '@/components/molecules/ReadNext'
+import { ShareButtons } from '@/components/molecules/ShareButtons'
 
 export const Container = styled.div`
   display: block;
@@ -43,13 +44,18 @@ export const DateLabel = styled.span`
   font-weight: bold;
 `
 
-export const Body = styled.div`
-  margin: 180px auto 0;
-  max-width: 640px;
+export const BodyWrap = styled.div`
+  position: relative;
+  margin-top: 180px;
 
   ${media.medium} {
-    margin: 80px auto 0;
+    margin-top: 80px;
   }
+`
+
+export const Body = styled.div`
+  margin: 0 auto;
+  max-width: 640px;
 
   h2 {
     position: relative;
@@ -214,4 +220,27 @@ export const StyledReadNext = styled(ReadNext)`
   ${media.medium} {
     margin: 60px auto 0;
   }
+`
+
+export const ShareButtonsArea = styled.div`
+  position: absolute;
+  top: 0;
+  right: 40px;
+  height: 100%;
+
+  ${media.large} {
+    position: initial;
+    margin: 120px auto 0;
+    max-width: 640px;
+  }
+
+  ${media.medium} {
+    margin: 60px auto 0;
+  }
+`
+
+export const StyledShareButtons = styled(ShareButtons)`
+  position: sticky;
+  top: 200px;
+  right: 0;
 `

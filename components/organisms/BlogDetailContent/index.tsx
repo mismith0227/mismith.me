@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import {
   Container,
   Title,
+  BodyWrap,
   Body,
   DateArea,
   Date,
@@ -16,6 +17,8 @@ import {
   ExternalLink,
   StyledCategories,
   StyledReadNext,
+  ShareButtonsArea,
+  StyledShareButtons,
 } from './styles'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
@@ -51,11 +54,22 @@ export const BlogDetailContent = ({
         {dayjs(data.updatedAt).format('YYYY年M月D日')}
       </Date>
     </DateArea>
-    <Body
-      dangerouslySetInnerHTML={{
-        __html: body,
-      }}
-    />
+    <BodyWrap>
+      <Body
+        dangerouslySetInnerHTML={{
+          __html: body,
+        }}
+      />
+      {currentCategory && (
+        <ShareButtonsArea>
+          <StyledShareButtons
+            currentCategory={currentCategory}
+            title={data.title}
+            contentId={data.id}
+          />
+        </ShareButtonsArea>
+      )}
+    </BodyWrap>
     <WrittenBy>
       <WrittenByInner>
         <WrittenByTitle>About the author</WrittenByTitle>
