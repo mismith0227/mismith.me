@@ -55,6 +55,11 @@ export const StyledLink = styled.a<LinkProps>`
   text-decoration: none;
   ${getContentStyles};
   color: #fff;
+  transition: 0.4s;
+
+  &:hover {
+    border-radius: 50%;
+  }
 `
 
 export const StyledTwitter = styled(Twitter)`

@@ -88,10 +88,17 @@ export const Body = styled.div`
     font-size: 18px;
   }
 
+  a {
+    color: #000;
+  }
+
   p {
     margin: 16px 0;
     word-wrap: break-word;
+  }
 
+  p,
+  li {
     code {
       background: #f5f5f5;
       font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
