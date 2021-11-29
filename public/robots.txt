@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.mismith.me/
-
-# Sitemaps
-Sitemap: https://www.mismith.me/sitemap.xml
