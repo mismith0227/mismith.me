@@ -9,6 +9,10 @@ export const Container = styled.div`
   max-width: 1024px;
   width: 96%;
   margin: 180px auto 0;
+
+  ${media.small} {
+    margin: 80px auto 0;
+  }
 `
 
 export const Title = styled.h2`

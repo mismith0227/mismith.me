@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
-import Link from 'next/link'
+import media from '@/styles/media'
 
 export const Container = styled.div`
   display: block;
   max-width: 1024px;
   width: 96%;
   margin: 180px auto 0;
+
+  ${media.small} {
+    margin: 80px auto 0;
+  }
 `
 
 export const Title = styled.h2`
@@ -56,6 +60,10 @@ export const ThumbnailWrap = styled.a`
       opacity: 1;
     }
   }
+
+  ${media.small} {
+    height: 250px;
+  }
 `
 
 export const Thumbnail = styled.img`
@@ -67,6 +75,10 @@ export const Works = styled.ul`
   margin: 180px 0 0;
   padding: 0;
   list-style: none;
+
+  ${media.small} {
+    margin: 80px 0 0;
+  }
 `
 
 export const WorkItem = styled.li`
@@ -74,6 +86,10 @@ export const WorkItem = styled.li`
 
   &:first-of-type {
     margin: 0;
+  }
+
+  ${media.small} {
+    margin: 60px 0 0;
   }
 `
 
@@ -85,6 +101,10 @@ export const Date = styled.p`
 export const WorkTitle = styled.h3`
   margin: 0;
   font-size: 36px;
+
+  ${media.small} {
+    font-size: 24px;
+  }
 `
 
 export const StyledLink = styled.a`
@@ -94,18 +114,22 @@ export const StyledLink = styled.a`
 
 export const Description = styled.p`
   margin: 16px 0 0;
+
+  ${media.small} {
+    font-size: 14px;
+  }
 `
 
 export const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 16px 0 0;
+  margin: 8px 0 0;
   padding: 0;
   list-style: none;
 `
 
 export const TagItem = styled.li`
-  margin: 0 8px 0 0;
+  margin: 8px 8px 0 0;
   padding: 8px 16px;
   background-color: #000;
   color: #fff;

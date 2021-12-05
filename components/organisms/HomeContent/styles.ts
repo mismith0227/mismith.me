@@ -63,10 +63,18 @@ export const Content = styled.div`
   max-width: 1024px;
   width: 96%;
   margin: 180px auto 0;
+
+  ${media.small} {
+    margin: 80px auto 0;
+  }
 `
 
 export const Section = styled.section`
   margin: 180px 0 0;
+
+  ${media.small} {
+    margin: 80px auto 0;
+  }
 `
 
 export const SectionInner = styled.div`
