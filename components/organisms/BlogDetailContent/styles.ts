@@ -134,6 +134,17 @@ export const Body = styled.div`
     margin-right: 0;
     border-left: 2px solid #000;
   }
+
+  img {
+    width: calc(100% + 200px);
+    margin: 0 -100px;
+    margin-top: 36px;
+
+    ${media.medium} {
+      width: 100vw;
+      margin: 0 calc(50% - 50vw);
+    }
+  }
 `
 
 export const WrittenBy = styled.div`
@@ -236,7 +247,7 @@ export const StyledReadNext = styled(ReadNext)`
 export const ShareButtonsArea = styled.div`
   position: absolute;
   top: 0;
-  right: 40px;
+  right: 20px;
   height: 100%;
 
   ${media.large} {
