@@ -90,13 +90,39 @@ export const HomeContent = ({ onCreated }: Props) => {
 
       <Content>
         <Section>
+          <SectionTitle>Biography</SectionTitle>
+
+          <SectionInner>
+            <Biographies>
+              {biographies.map((item: Biography) => (
+                <BiographyItem key={item.date}>
+                  <BiographyDate>{item.date}</BiographyDate>
+                  <BiographyRight>
+                    <BiographyTitle>{item.title}</BiographyTitle>
+                    {BiographyDetail && (
+                      <BiographyDetail>{item.detail}</BiographyDetail>
+                    )}
+                    {item.skills && (
+                      <BiographySkills>
+                        {item.skills.map((item) => (
+                          <BiographySkillItem key={item}>
+                            {item}
+                          </BiographySkillItem>
+                        ))}
+                      </BiographySkills>
+                    )}
+                  </BiographyRight>
+                </BiographyItem>
+              ))}
+            </Biographies>
+          </SectionInner>
+        </Section>
+
+        <Section>
           <SectionTitle>About me</SectionTitle>
 
           <SectionInner>
             <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
-            <Text>
-              証券会社と広告媒体社で営業をした後に、webデザイナーの勉強をしweb業界に入りました。web業界では、サービス運営のデザイナー、web制作のコーダー、自社プロダクトのフロントエンドエンジニアを経験しています。
-            </Text>
             <Text>
               情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
             </Text>
@@ -163,35 +189,6 @@ export const HomeContent = ({ onCreated }: Props) => {
                 <TagItem key={item}>{item}</TagItem>
               ))}
             </Tags>
-          </SectionInner>
-        </Section>
-
-        <Section>
-          <SectionTitle>Biography</SectionTitle>
-
-          <SectionInner>
-            <Biographies>
-              {biographies.map((item: Biography) => (
-                <BiographyItem key={item.date}>
-                  <BiographyDate>{item.date}</BiographyDate>
-                  <BiographyRight>
-                    <BiographyTitle>{item.title}</BiographyTitle>
-                    {BiographyDetail && (
-                      <BiographyDetail>{item.detail}</BiographyDetail>
-                    )}
-                    {item.skills && (
-                      <BiographySkills>
-                        {item.skills.map((item) => (
-                          <BiographySkillItem key={item}>
-                            {item}
-                          </BiographySkillItem>
-                        ))}
-                      </BiographySkills>
-                    )}
-                  </BiographyRight>
-                </BiographyItem>
-              ))}
-            </Biographies>
           </SectionInner>
         </Section>
 
