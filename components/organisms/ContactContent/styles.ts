@@ -21,7 +21,7 @@ export const Text = styled.p``
 
 export const Content = styled.div`
   margin: 180px auto 0;
-  max-width: 650px;
+  max-width: 800px;
 
   ${media.small} {
     margin: 80px auto 0;
