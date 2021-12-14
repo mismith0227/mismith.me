@@ -1,18 +1,21 @@
 export const skills = [
   'HTML',
   'EJS',
+  'Pug',
   'CSS',
   'Sass',
   'JavaScript',
   'React',
   'Next',
   'Gatsby',
+  'Jest',
   'AngularJs(1.x)',
   'TypeScript',
   'WordPress',
   'Firebase',
   'gulp',
   'webpack',
+  'Storybook',
 ]
 
 export const biographies = [
@@ -86,6 +89,7 @@ export const biographies = [
       '制作会社でフロントエンドエンジニアをしています。webサイトやwebアプリの制作に携わっています。フロントエンド業務全般の管理、コーディング、技術サポートなどを行っております。',
     skills: [
       'EJS',
+      'Pug',
       'Sass',
       'JavaScript',
       'React',
