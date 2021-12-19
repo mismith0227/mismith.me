@@ -21,7 +21,7 @@ async function generateFeedXml() {
       title: post.title,
       description: post.description,
       date: new Date(post.createdAt),
-      url: `https://www.mismith.me/${post.category}/${post.id}`,
+      url: `https://www.mismith.me/${post.category.id}/${post.id}`,
     })
   })
 
