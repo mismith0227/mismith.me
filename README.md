@@ -9,6 +9,8 @@ https://www.mismith.me/blog
 - 記事詳細
   - 関連記事
 - Google Analytics
+- RSS
+- Site Map
 
 ## 技術構成
 
