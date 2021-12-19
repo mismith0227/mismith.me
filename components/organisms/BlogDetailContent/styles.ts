@@ -145,6 +145,11 @@ export const Body = styled.div`
       margin: 0 calc(50% - 50vw);
     }
   }
+
+  iframe {
+    width: 100%;
+    overflow: hidden;
+  }
 `
 
 export const WrittenBy = styled.div`
