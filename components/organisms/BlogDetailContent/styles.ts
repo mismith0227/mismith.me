@@ -149,6 +149,7 @@ export const Body = styled.div`
   iframe {
     width: 100%;
     overflow: hidden;
+    height: 450px;
   }
 `
 
