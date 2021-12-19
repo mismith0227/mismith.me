@@ -24,6 +24,7 @@ import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
+import { Rss } from '@/components/atoms/Icon/Rss'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import 'highlight.js/styles/stackoverflow-light.css'
@@ -120,6 +121,16 @@ export const BlogDetailContent = ({
               rel="noopener"
             >
               <Fivehundredpx />
+            </ExternalLink>
+          </SnsItem>
+          <SnsItem>
+            <ExternalLink
+              href="https://www.mismith.me/feed"
+              target="_blank"
+              aria-label="rss"
+              rel="noopener"
+            >
+              <Rss />
             </ExternalLink>
           </SnsItem>
         </SnsList>
