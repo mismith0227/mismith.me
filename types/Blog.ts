@@ -11,3 +11,9 @@ export interface Blog {
   updatedAt: Date
   related_post?: Blog[]
 }
+
+export interface BlogToc {
+  text: string
+  id: string
+  name: string
+}

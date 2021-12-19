@@ -11,7 +11,7 @@ import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
 import { BlogDetailContent } from '@/components/organisms/BlogDetailContent'
 import { toStringId } from '@/utils/toStringId'
-import { Blog } from '@/types/Blog'
+import { Blog, BlogToc } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 
 type StaticProps = {
@@ -20,16 +20,19 @@ type StaticProps = {
   draftKey?: string
   category: BlogCategory[]
   currentCategory: string
+  toc: BlogToc
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const { blog, draftKey, body, category, currentCategory } = props
+  const { blog, draftKey, body, category, currentCategory, toc } = props
 
   const meta = {
     path: 'blog',
   }
+
+  console.log(toc)
 
   return blog ? (
     <Layout path={meta.path} disableLoading>
@@ -67,7 +70,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
 
   try {
     const id = toStringId(params.id)
-    const data = await client.get({
+    const data: Blog = await client.get({
       endpoint: 'blog',
       contentId: id,
     })
@@ -80,6 +83,17 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       bodyData(elm).addClass('hljs')
     })
 
+    const headings = bodyData('h1, h2, h3').toArray()
+
+    headings.map((data) => console.log(data.children[0]))
+
+    const toc = headings.map((d) => ({
+      //@ts-ignore
+      text: d.children[0].data,
+      id: d.attribs.id,
+      name: d.name,
+    }))
+
     const category = await client.get({
       endpoint: 'blog-category',
     })
@@ -90,6 +104,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
         body: bodyData.html(),
         category: category.contents,
         currentCategory: toStringId(params.category),
+        toc: toc,
       },
     }
   } catch (e) {
