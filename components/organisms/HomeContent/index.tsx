@@ -130,15 +130,13 @@ export const HomeContent = ({ onCreated }: Props) => {
             <Text>
               コーディングをすることが多いですが、デザイナー経験もあることから使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
             </Text>
-            <Text>
-              趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
-            </Text>
+
+            <SubTitle>Skill</SubTitle>
 
             <Text>
               以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします
             </Text>
 
-            <SubTitle>Skill</SubTitle>
             <Tags>
               {skills.map((item) => (
                 <TagItem key={item}>{item}</TagItem>
@@ -146,6 +144,9 @@ export const HomeContent = ({ onCreated }: Props) => {
             </Tags>
 
             <SubTitle>SNS</SubTitle>
+            <Text>
+              趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
+            </Text>
             <SnsList>
               <SnsItem>
                 <ExternalLink
