@@ -81,9 +81,14 @@ export const SectionInner = styled.div`
   margin: 40px 0 0;
 `
 
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h2`
   margin: 0;
   font-size: 42px;
+`
+
+export const SubTitle = styled.h3`
+  margin: 32px 0 0;
+  font-size: 24px;
 `
 
 export const Text = styled.p``
@@ -175,7 +180,7 @@ export const BiographyRight = styled.div`
   flex: 1;
 `
 
-export const BiographyTitle = styled.h4`
+export const BiographyTitle = styled.h3`
   margin: 0;
   font-size: 18px;
   font-weight: bold;

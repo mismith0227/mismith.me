@@ -1,7 +1,7 @@
 // import { Canvas, useFrame } from '@react-three/fiber'
 // import { Tetrahedron } from '@react-three/drei'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   Container,
   MainVisual,
@@ -30,6 +30,7 @@ import {
   SnsList,
   SnsItem,
   ExternalLink,
+  SubTitle,
 } from './styles'
 import { skills, biographies, activities } from './data'
 import { Biography } from './types'
@@ -133,6 +134,18 @@ export const HomeContent = ({ onCreated }: Props) => {
               趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
             </Text>
 
+            <Text>
+              以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします
+            </Text>
+
+            <SubTitle>Skill</SubTitle>
+            <Tags>
+              {skills.map((item) => (
+                <TagItem key={item}>{item}</TagItem>
+              ))}
+            </Tags>
+
+            <SubTitle>SNS</SubTitle>
             <SnsList>
               <SnsItem>
                 <ExternalLink
@@ -175,20 +188,6 @@ export const HomeContent = ({ onCreated }: Props) => {
                 </ExternalLink>
               </SnsItem>
             </SnsList>
-          </SectionInner>
-        </Section>
-
-        <Section>
-          <SectionTitle>Skills</SectionTitle>
-          <SectionInner>
-            <Text>
-              以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします
-            </Text>
-            <Tags>
-              {skills.map((item) => (
-                <TagItem key={item}>{item}</TagItem>
-              ))}
-            </Tags>
           </SectionInner>
         </Section>
 
