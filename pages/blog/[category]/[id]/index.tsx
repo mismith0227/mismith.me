@@ -20,7 +20,7 @@ type StaticProps = {
   draftKey?: string
   category: BlogCategory[]
   currentCategory: string
-  toc: BlogToc
+  toc: BlogToc[]
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
@@ -31,8 +31,6 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
   const meta = {
     path: 'blog',
   }
-
-  console.log(toc)
 
   return blog ? (
     <Layout path={meta.path} disableLoading>
@@ -46,6 +44,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
         body={body}
         category={category}
         currentCategory={currentCategory}
+        toc={toc}
       />
     </Layout>
   ) : (
@@ -83,15 +82,13 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       bodyData(elm).addClass('hljs')
     })
 
-    const headings = bodyData('h1, h2, h3').toArray()
+    const headings = bodyData('h2, h3').toArray()
 
-    headings.map((data) => console.log(data.children[0]))
-
-    const toc = headings.map((d) => ({
-      //@ts-ignore
-      text: d.children[0].data,
-      id: d.attribs.id,
-      name: d.name,
+    const toc = headings.map((data) => ({
+      // @ts-ignore
+      text: data.children[0].data,
+      id: data.attribs.id,
+      name: data.name,
     }))
 
     const category = await client.get({

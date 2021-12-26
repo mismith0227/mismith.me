@@ -25,7 +25,7 @@ import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Rss } from '@/components/atoms/Icon/Rss'
-import { Blog } from '@/types/Blog'
+import { Blog, BlogToc } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import 'highlight.js/styles/stackoverflow-light.css'
 
@@ -34,6 +34,7 @@ type Props = {
   body: string
   category: BlogCategory[]
   currentCategory?: string
+  toc: BlogToc
 }
 
 export const BlogDetailContent = ({
@@ -41,6 +42,7 @@ export const BlogDetailContent = ({
   body,
   category,
   currentCategory,
+  toc,
 }: Props) => (
   <Container>
     <Category>{data.category.category_name}</Category>
