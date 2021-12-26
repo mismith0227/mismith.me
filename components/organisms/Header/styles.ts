@@ -41,6 +41,7 @@ export const NavList = styled.ul`
   display: flex;
   margin: 0;
   padding: 0;
+  gap: 12px;
   list-style: none;
 
   ${media.medium} {
@@ -55,7 +56,6 @@ interface LinkProps {
 
 export const NavListItem = styled.li<LinkProps>`
   position: relative;
-  margin: 0 0 0 12px;
   font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
 
   &::before {
@@ -82,8 +82,6 @@ export const NavListItem = styled.li<LinkProps>`
   }
 
   ${media.medium} {
-    margin: 32px 0 0;
-
     &::before {
       display: none;
     }

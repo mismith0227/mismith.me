@@ -12,7 +12,7 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   margin: 0;
   font-size: 64px;
 `
@@ -98,7 +98,7 @@ export const Date = styled.p`
   font-size: 14px;
 `
 
-export const WorkTitle = styled.h3`
+export const WorkTitle = styled.h2`
   margin: 0;
   font-size: 36px;
 
@@ -124,12 +124,12 @@ export const Tags = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin: 8px 0 0;
+  gap: 8px;
   padding: 0;
   list-style: none;
 `
 
 export const TagItem = styled.li`
-  margin: 8px 8px 0 0;
   padding: 8px 16px;
   background-color: #000;
   color: #fff;

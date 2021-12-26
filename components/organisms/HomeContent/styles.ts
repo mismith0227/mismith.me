@@ -194,13 +194,13 @@ export const BiographyDetail = styled.p`
 export const BiographySkills = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 0;
+  margin: 16px 0 0;
+  gap: 8px;
   padding: 0;
   list-style: none;
 `
 
 export const BiographySkillItem = styled.li`
-  margin: 16px 8px 0 0;
   padding: 4px 8px;
   background-color: #000;
   color: #fff;
@@ -224,18 +224,13 @@ export const ActivityDescription = styled.dd`
 
 export const SnsList = styled.ul`
   display: flex;
-  margin: 0;
+  margin: 32px 0 0;
+  gap: 16px;
   padding: 0;
   list-style: none;
 `
 
-export const SnsItem = styled.li`
-  margin: 32px 16px 0 0;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-`
+export const SnsItem = styled.li``
 
 export const ExternalLink = styled.a`
   color: #000;

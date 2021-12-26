@@ -134,7 +134,7 @@ export const HomeContent = ({ onCreated }: Props) => {
             <SubTitle>Skill</SubTitle>
 
             <Text>
-              以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします
+              以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします。
             </Text>
 
             <Tags>

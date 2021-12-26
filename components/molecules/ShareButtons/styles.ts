@@ -12,6 +12,7 @@ export const List = styled.ul`
   ${media.large} {
     display: flex;
     justify-content: flex-end;
+    gap: 24px;
   }
 `
 
@@ -24,7 +25,6 @@ export const Item = styled.li`
 
   ${media.large} {
     margin-top: 0;
-    margin-right: 24px;
   }
 `
 
