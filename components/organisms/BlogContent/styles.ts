@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   margin: 0;
   font-size: 64px;
 `
@@ -53,7 +53,7 @@ export const BlogListItem = styled.li`
   }
 `
 
-export const BlogTitle = styled.h3`
+export const BlogTitle = styled.h2`
   margin: 16px 0 0;
   font-size: 36px;
 

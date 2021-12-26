@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   margin: 0;
   font-size: 48px;
 
@@ -145,6 +145,12 @@ export const Body = styled.div`
       margin: 0 calc(50% - 50vw);
     }
   }
+
+  iframe {
+    width: 100%;
+    overflow: hidden;
+    height: 450px;
+  }
 `
 
 export const WrittenBy = styled.div`
@@ -209,18 +215,13 @@ export const WrittenByText = styled.p``
 
 export const SnsList = styled.ul`
   display: flex;
-  margin: 0;
+  margin: 32px 0 0;
   padding: 0;
+  gap: 16px;
   list-style: none;
 `
 
-export const SnsItem = styled.li`
-  margin: 16px 16px 0 0;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-`
+export const SnsItem = styled.li``
 
 export const ExternalLink = styled.a`
   color: #000;
