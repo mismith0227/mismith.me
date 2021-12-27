@@ -38,6 +38,7 @@ import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
+import { Codepen } from '@/components/atoms/Icon/CodePen'
 
 type Props = {
   onCreated: (value: boolean) => void
@@ -186,6 +187,16 @@ export const HomeContent = ({ onCreated }: Props) => {
                   rel="noopener"
                 >
                   <Fivehundredpx />
+                </ExternalLink>
+              </SnsItem>
+              <SnsItem>
+                <ExternalLink
+                  href="https://codepen.io/mismith0227"
+                  target="_blank"
+                  aria-label="codepen"
+                  rel="noopener"
+                >
+                  <Codepen />
                 </ExternalLink>
               </SnsItem>
             </SnsList>
