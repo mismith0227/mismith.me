@@ -23,4 +23,8 @@ export const StyledMain = styled.main<MainProps>`
 
 export const StyledFooter = styled(Footer)`
   margin: 180px 0 0;
+
+  ${media.small} {
+    margin-top: 80px;
+  }
 `

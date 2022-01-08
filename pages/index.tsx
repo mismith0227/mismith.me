@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useState } from 'react'
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
-import { HomeContent } from '@/components/organisms/HomeContent'
+import { HomeContent } from '@/components/pages/HomeContent'
 
 const Home: NextPage = () => {
   const [isCanvasLoading, setIsCanvasLoading] = useState<boolean>(true)

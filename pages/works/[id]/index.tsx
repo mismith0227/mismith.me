@@ -7,7 +7,7 @@ import {
 } from 'next'
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
-import { WorkDetailContent } from '@/components/organisms/WorkDetailContent'
+import { WorkDetailContent } from '@/components/pages/WorkDetailContent'
 import { Portfolio } from '@/types/Portfolio'
 import { toStringId } from '@/utils/toStringId'
 
