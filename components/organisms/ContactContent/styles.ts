@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
 
 export const Container = styled.article`
   display: block;
@@ -40,6 +41,13 @@ export const SnsList = styled.ul`
 
 export const SnsItem = styled.li``
 
+export const StyledIconList = styled(IconList)`
+  margin: 32px 0 0;
+`
+
+export const StyledIconListItem = styled(IconListItem)``
+
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `

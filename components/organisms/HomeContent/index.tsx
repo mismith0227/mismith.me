@@ -23,11 +23,11 @@ import {
   ActivityItem,
   ActivityTerm,
   ActivityDescription,
-  SnsList,
-  SnsItem,
   ExternalLink,
   SubTitle,
   StyledTagList,
+  StyledIconList,
+  StyledIconListItem,
 } from './styles'
 import { skills, biographies, activities } from './data'
 import { Biography } from './types'
@@ -133,8 +133,8 @@ export const HomeContent = ({ onCreated }: Props) => {
             <Text>
               趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
             </Text>
-            <SnsList>
-              <SnsItem>
+            <StyledIconList>
+              <StyledIconListItem>
                 <ExternalLink
                   href="https://github.com/mismith0227"
                   target="_blank"
@@ -143,8 +143,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                 >
                   <GitHub />
                 </ExternalLink>
-              </SnsItem>
-              <SnsItem>
+              </StyledIconListItem>
+              <StyledIconListItem>
                 <ExternalLink
                   href="https://twitter.com/misumi_takuma/"
                   target="_blank"
@@ -153,8 +153,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                 >
                   <Twitter />
                 </ExternalLink>
-              </SnsItem>
-              <SnsItem>
+              </StyledIconListItem>
+              <StyledIconListItem>
                 <ExternalLink
                   href="https://www.instagram.com/mismith0227/?hl=ja"
                   target="_blank"
@@ -163,8 +163,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                 >
                   <Instagram />
                 </ExternalLink>
-              </SnsItem>
-              <SnsItem>
+              </StyledIconListItem>
+              <StyledIconListItem>
                 <ExternalLink
                   href="https://500px.com/mismith2216"
                   target="_blank"
@@ -173,8 +173,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                 >
                   <Fivehundredpx />
                 </ExternalLink>
-              </SnsItem>
-              <SnsItem>
+              </StyledIconListItem>
+              <StyledIconListItem>
                 <ExternalLink
                   href="https://codepen.io/mismith0227"
                   target="_blank"
@@ -183,8 +183,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                 >
                   <Codepen />
                 </ExternalLink>
-              </SnsItem>
-            </SnsList>
+              </StyledIconListItem>
+            </StyledIconList>
           </SectionInner>
         </Section>
 

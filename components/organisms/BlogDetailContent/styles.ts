@@ -4,6 +4,7 @@ import { Categories } from '@/components/molecules/Categories'
 import { ReadNext } from '@/components/molecules/ReadNext'
 import { ShareButtons } from '@/components/molecules/ShareButtons'
 import { Tag } from '@/components/atoms/Tag'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
 
 export const Container = styled.div`
   display: block;
@@ -208,17 +209,14 @@ export const WrittenByTitle = styled.h2`
 
 export const WrittenByText = styled.p``
 
-export const SnsList = styled.ul`
-  display: flex;
+export const StyledIconList = styled(IconList)`
   margin: 32px 0 0;
-  padding: 0;
-  gap: 16px;
-  list-style: none;
 `
 
-export const SnsItem = styled.li``
+export const StyledIconListItem = styled(IconListItem)``
 
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `
 

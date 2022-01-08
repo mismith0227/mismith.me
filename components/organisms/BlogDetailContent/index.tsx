@@ -12,13 +12,13 @@ import {
   WrittenByInner,
   WrittenByTitle,
   WrittenByText,
-  SnsList,
-  SnsItem,
   ExternalLink,
   StyledCategories,
   StyledReadNext,
   ShareButtonsArea,
   StyledShareButtons,
+  StyledIconList,
+  StyledIconListItem,
 } from './styles'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
@@ -82,8 +82,8 @@ export const BlogDetailContent = ({
           <br />
           間違いやご意見があれば、コンタクトやSNSに気軽にご連絡ください。
         </WrittenByText>
-        <SnsList>
-          <SnsItem>
+        <StyledIconList>
+          <StyledIconListItem>
             <ExternalLink
               href="https://github.com/mismith0227"
               target="_blank"
@@ -92,8 +92,8 @@ export const BlogDetailContent = ({
             >
               <GitHub />
             </ExternalLink>
-          </SnsItem>
-          <SnsItem>
+          </StyledIconListItem>
+          <StyledIconListItem>
             <ExternalLink
               href="https://twitter.com/misumi_takuma/"
               target="_blank"
@@ -102,8 +102,8 @@ export const BlogDetailContent = ({
             >
               <Twitter />
             </ExternalLink>
-          </SnsItem>
-          <SnsItem>
+          </StyledIconListItem>
+          <StyledIconListItem>
             <ExternalLink
               href="https://www.instagram.com/mismith0227/?hl=ja"
               target="_blank"
@@ -112,8 +112,8 @@ export const BlogDetailContent = ({
             >
               <Instagram />
             </ExternalLink>
-          </SnsItem>
-          <SnsItem>
+          </StyledIconListItem>
+          <StyledIconListItem>
             <ExternalLink
               href="https://500px.com/mismith2216"
               target="_blank"
@@ -122,8 +122,8 @@ export const BlogDetailContent = ({
             >
               <Fivehundredpx />
             </ExternalLink>
-          </SnsItem>
-          <SnsItem>
+          </StyledIconListItem>
+          <StyledIconListItem>
             <ExternalLink
               href="https://www.mismith.me/feed"
               target="_blank"
@@ -132,8 +132,8 @@ export const BlogDetailContent = ({
             >
               <Rss />
             </ExternalLink>
-          </SnsItem>
-        </SnsList>
+          </StyledIconListItem>
+        </StyledIconList>
       </WrittenByInner>
     </WrittenBy>
 

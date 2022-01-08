@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import media from '@/styles/media'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { TagList } from '@/components/molecules/TagList'
 
 export const Container = styled.div``
@@ -191,16 +192,13 @@ export const ActivityDescription = styled.dd`
   overflow-wrap: break-word;
 `
 
-export const SnsList = styled.ul`
-  display: flex;
+export const StyledIconList = styled(IconList)`
   margin: 32px 0 0;
-  gap: 16px;
-  padding: 0;
-  list-style: none;
 `
 
-export const SnsItem = styled.li``
+export const StyledIconListItem = styled(IconListItem)``
 
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `
