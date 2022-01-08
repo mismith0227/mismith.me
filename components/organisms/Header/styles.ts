@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
-import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 import { ToggleButton } from '@/components/molecules/ToggleButton'
 
 export const Container = styled.header`
@@ -48,6 +47,14 @@ export const NavList = styled.ul`
     flex-direction: column;
     width: 100%;
   }
+
+  &:hover {
+    a {
+      &:not(:hover) {
+        color: #bbb;
+      }
+    }
+  }
 `
 
 interface LinkProps {
@@ -57,6 +64,7 @@ interface LinkProps {
 export const NavListItem = styled.li<LinkProps>`
   position: relative;
   font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+  transition: 0.2s;
 
   &::before {
     content: '';
@@ -93,31 +101,13 @@ export const StyledLink = styled.a`
   padding: 16px;
   text-decoration: none;
   color: #000;
+  transition: 0.2s;
 
   ${media.medium} {
     padding: 24px;
     color: #fff;
     font-size: 24px;
   }
-`
-
-export const ExternalLink = styled.a`
-  position: relative;
-  display: block;
-  padding: 16px;
-  text-decoration: none;
-  color: #000;
-
-  ${media.medium} {
-    color: #fff;
-    padding: 24px;
-    font-size: 24px;
-  }
-`
-
-export const StyledOpenInNewIcon = styled(OpenInNew)`
-  margin: 0 0 0 2px;
-  font-size: 12px;
 `
 
 export const StyledToggleButton = styled(ToggleButton)`

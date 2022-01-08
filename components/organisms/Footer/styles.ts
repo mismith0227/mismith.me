@@ -39,14 +39,35 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding: 0;
   margin: 8px 0 0;
-  padding: 0 0 0 16px;
   gap: 8px 0;
 `
 
 export const ListItem = styled.li``
 
 export const StyledLink = styled.a`
+  position: relative;
   color: #fff;
   text-decoration: none;
+  padding-left: 16px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    transform: scaleX(0);
+    transition: 0.2s;
+  }
+
+  &:hover {
+    &:before {
+      transform: scaleX(1);
+    }
+  }
 `
