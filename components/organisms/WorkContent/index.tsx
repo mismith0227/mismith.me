@@ -12,8 +12,7 @@ import {
   WorkTitle,
   StyledLink,
   Description,
-  Tags,
-  TagItem,
+  StyledTagList,
 } from './styles'
 
 type Props = {
@@ -37,13 +36,7 @@ export const WorkContent = ({ data }: Props) => (
 
           {work.description && <Description>{work.description}</Description>}
 
-          {work.tags && (
-            <Tags>
-              {work.tags.map((item) => (
-                <TagItem key={item}>{item}</TagItem>
-              ))}
-            </Tags>
-          )}
+          {work.tags && <StyledTagList items={work.tags} />}
 
           {work.thumbnail && (
             <Link href={`/works/${work.id}`} passHref>

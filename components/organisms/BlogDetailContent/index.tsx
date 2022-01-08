@@ -7,7 +7,7 @@ import {
   DateArea,
   Date,
   DateLabel,
-  Category,
+  StyledTag,
   WrittenBy,
   WrittenByInner,
   WrittenByTitle,
@@ -43,7 +43,7 @@ export const BlogDetailContent = ({
   currentCategory,
 }: Props) => (
   <Container>
-    <Category>{data.category.category_name}</Category>
+    <StyledTag>{data.category.category_name}</StyledTag>
     <Title>{data.title}</Title>
     <DateArea>
       <Date>

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { TagList } from '@/components/molecules/TagList'
 
 export const Container = styled.div`
   display: block;
@@ -120,18 +121,6 @@ export const Description = styled.p`
   }
 `
 
-export const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 8px 0 0;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-`
-
-export const TagItem = styled.li`
-  padding: 8px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 14px;
+export const StyledTagList = styled(TagList)`
+  margin-top: 8px;
 `

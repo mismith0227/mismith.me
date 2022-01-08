@@ -7,7 +7,7 @@ import {
   BlogList,
   BlogListItem,
   BlogTitle,
-  Category,
+  StyledTag,
   DateArea,
   Date,
   DateLabel,
@@ -54,7 +54,7 @@ export const BlogContent = ({
           <BlogListItem key={blog.id}>
             <Link href={`/blog/${blog.category.id}/${blog.id}`} passHref>
               <StyledLink>
-                <Category>{blog.category.category_name}</Category>
+                <StyledTag>{blog.category.category_name}</StyledTag>
                 <BlogTitle>{blog.title}</BlogTitle>
 
                 <DateArea>

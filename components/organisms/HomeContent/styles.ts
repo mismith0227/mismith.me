@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import media from '@/styles/media'
+import { TagList } from '@/components/molecules/TagList'
 
 export const Container = styled.div``
 
@@ -93,24 +94,8 @@ export const SubTitle = styled.h3`
 
 export const Text = styled.p``
 
-export const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 24px 0 0;
-  padding: 0;
-  list-style: none;
-`
-
-export const TagItem = styled.li`
-  margin: 8px 8px 0 0;
-  padding: 4px 8px;
-  background-color: #000;
-  color: #fff;
-  font-size: 14px;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
+export const StyledTagList = styled(TagList)`
+  margin-top: 8px;
 `
 
 export const Biographies = styled.ul`
@@ -189,22 +174,6 @@ export const BiographyTitle = styled.h3`
 export const BiographyDetail = styled.p`
   margin: 16px 0 0;
   font-size: 14px;
-`
-
-export const BiographySkills = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 16px 0 0;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-`
-
-export const BiographySkillItem = styled.li`
-  padding: 4px 8px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
 `
 
 export const Activity = styled.dl``

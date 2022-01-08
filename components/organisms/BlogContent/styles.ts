@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Pagination } from '@/components/molecules/Pagination'
 import { Categories } from '@/components/molecules/Categories'
+import { Tag } from '@/components/atoms/Tag'
 
 export const Container = styled.div`
   display: block;
@@ -63,13 +64,7 @@ export const BlogTitle = styled.h2`
   }
 `
 
-export const Category = styled.span`
-  display: inline-block;
-  padding: 4px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-
+export const StyledTag = styled(Tag)`
   ${media.small} {
     font-size: 10px;
   }

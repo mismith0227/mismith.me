@@ -3,6 +3,7 @@ import media from '@/styles/media'
 import { Categories } from '@/components/molecules/Categories'
 import { ReadNext } from '@/components/molecules/ReadNext'
 import { ShareButtons } from '@/components/molecules/ShareButtons'
+import { Tag } from '@/components/atoms/Tag'
 
 export const Container = styled.div`
   display: block;
@@ -24,13 +25,7 @@ export const Title = styled.h1`
   }
 `
 
-export const Category = styled.span`
-  display: inline-block;
-  padding: 4px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-`
+export const StyledTag = styled(Tag)``
 
 export const DateArea = styled.div`
   display: flex;

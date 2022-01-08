@@ -13,16 +13,12 @@ import {
   SectionInner,
   SectionTitle,
   Text,
-  Tags,
-  TagItem,
   Biographies,
   BiographyItem,
   BiographyRight,
   BiographyDate,
   BiographyTitle,
   BiographyDetail,
-  BiographySkills,
-  BiographySkillItem,
   Activity,
   ActivityItem,
   ActivityTerm,
@@ -31,6 +27,7 @@ import {
   SnsItem,
   ExternalLink,
   SubTitle,
+  StyledTagList,
 } from './styles'
 import { skills, biographies, activities } from './data'
 import { Biography } from './types'
@@ -104,15 +101,7 @@ export const HomeContent = ({ onCreated }: Props) => {
                     {BiographyDetail && (
                       <BiographyDetail>{item.detail}</BiographyDetail>
                     )}
-                    {item.skills && (
-                      <BiographySkills>
-                        {item.skills.map((item) => (
-                          <BiographySkillItem key={item}>
-                            {item}
-                          </BiographySkillItem>
-                        ))}
-                      </BiographySkills>
-                    )}
+                    {item.skills && <StyledTagList items={item.skills} />}
                   </BiographyRight>
                 </BiographyItem>
               ))}
@@ -138,11 +127,7 @@ export const HomeContent = ({ onCreated }: Props) => {
               以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします。
             </Text>
 
-            <Tags>
-              {skills.map((item) => (
-                <TagItem key={item}>{item}</TagItem>
-              ))}
-            </Tags>
+            <StyledTagList items={skills} />
 
             <SubTitle>SNS</SubTitle>
             <Text>
