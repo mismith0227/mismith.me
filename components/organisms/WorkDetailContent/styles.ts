@@ -9,15 +9,6 @@ export const Date = styled.p`
   font-weight: bold;
 `
 
-export const Title = styled.h1`
-  margin: 0;
-  font-size: 64px;
-
-  ${media.small} {
-    font-size: 24px;
-  }
-`
-
 export const MainVisualWrap = styled.div`
   margin: 32px 0 0;
   display: flex;

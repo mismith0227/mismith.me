@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
+import { Heading } from '@/components/atoms/Heading'
 import {
   StyledContainer,
-  Title,
   ThumbnailWrap,
   Thumbnail,
   Works,
@@ -21,7 +21,7 @@ type Props = {
 
 export const WorkContent = ({ data }: Props) => (
   <StyledContainer size="lg">
-    <Title>Works</Title>
+    <Heading>Works</Heading>
     <Works>
       {data.map((work) => (
         <WorkItem key={work.id}>

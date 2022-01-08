@@ -1,9 +1,9 @@
 import dayjs from 'dayjs'
 import {
   StyledContainer,
-  Title,
   BodyWrap,
   Body,
+  Title,
   DateArea,
   Date,
   DateLabel,
@@ -42,7 +42,7 @@ export const BlogDetailContent = ({
   category,
   currentCategory,
 }: Props) => (
-  <StyledContainer>
+  <StyledContainer size="lg">
     <StyledTag>{data.category.category_name}</StyledTag>
     <Title>{data.title}</Title>
     <DateArea>

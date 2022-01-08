@@ -4,6 +4,7 @@ import media from '@/styles/media'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { TagList } from '@/components/molecules/TagList'
 import { Container } from '@/components/organisms/Container'
+import { Heading } from '@/components/atoms/Heading'
 
 export const MainVisual = styled.div`
   position: relative;
@@ -79,14 +80,8 @@ export const SectionInner = styled.div`
   margin: 40px 0 0;
 `
 
-export const SectionTitle = styled.h2`
-  margin: 0;
-  font-size: 42px;
-`
-
-export const SubTitle = styled.h3`
-  margin: 32px 0 0;
-  font-size: 24px;
+export const SubTitle = styled(Heading)`
+  margin-top: 32px;
 `
 
 export const Text = styled.p``

@@ -1,8 +1,8 @@
+import { Heading } from '@/components/atoms/Heading'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import {
   StyledContainer,
-  Title,
   Text,
   Content,
   Email,
@@ -13,7 +13,7 @@ import {
 
 export const ContactContent = () => (
   <StyledContainer size="lg">
-    <Title>Contact</Title>
+    <Heading>Contact</Heading>
 
     <Content>
       <Text>

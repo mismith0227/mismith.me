@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import media from '@/styles/media'
 
 const getTagStyles = () => {
   return css`

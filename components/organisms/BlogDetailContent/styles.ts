@@ -6,11 +6,11 @@ import { ReadNext } from '@/components/molecules/ReadNext'
 import { ShareButtons } from '@/components/molecules/ShareButtons'
 import { Tag } from '@/components/atoms/Tag'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Heading } from '@/components/atoms/Heading'
 
 export const StyledContainer = styled(Container)``
 
-export const Title = styled.h1`
-  margin: 0;
+export const Title = styled(Heading)`
   font-size: 48px;
 
   ${media.medium} {

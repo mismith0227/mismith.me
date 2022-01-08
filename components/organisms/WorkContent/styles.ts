@@ -5,11 +5,6 @@ import { Container } from '@/components/organisms/Container'
 
 export const StyledContainer = styled(Container)``
 
-export const Title = styled.h1`
-  margin: 0;
-  font-size: 64px;
-`
-
 export const ThumbnailWrap = styled.a`
   display: flex;
   justify-content: center;

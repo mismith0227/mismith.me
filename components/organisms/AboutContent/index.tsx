@@ -1,20 +1,19 @@
+import { Heading } from '@/components/atoms/Heading'
 import {
   StyledContainer,
-  Title,
   Content,
   Section,
-  SectionTitle,
   SectionTitleSecondary,
   Text,
 } from './styles'
 
 export const AboutContent = () => (
   <StyledContainer>
-    <Title>About</Title>
+    <Heading>About</Heading>
 
     <Content>
       <Section>
-        <SectionTitle>Privacy Policy</SectionTitle>
+        <Heading level={2}>Privacy Policy</Heading>
         <SectionTitleSecondary>
           アクセス解析ツールについて
         </SectionTitleSecondary>
@@ -35,7 +34,7 @@ export const AboutContent = () => (
       </Section>
 
       <Section>
-        <SectionTitle>免責事項</SectionTitle>
+        <Heading level={2}>免責事項</Heading>
 
         <Text>
           当サイトに掲載されている情報の正確さについて可能な限り努力をしていますが、

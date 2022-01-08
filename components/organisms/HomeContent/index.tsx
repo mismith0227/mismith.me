@@ -10,7 +10,6 @@ import {
   StyledContainer,
   Section,
   SectionInner,
-  SectionTitle,
   Text,
   Biographies,
   BiographyItem,
@@ -30,6 +29,7 @@ import {
 } from './styles'
 import { skills, biographies, activities } from './data'
 import { Biography } from './types'
+import { Heading } from '@/components/atoms/Heading'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
@@ -88,7 +88,7 @@ export const HomeContent = ({ onCreated }: Props) => {
 
       <StyledContainer>
         <Section>
-          <SectionTitle>Biography</SectionTitle>
+          <Heading level={2}>Biography</Heading>
 
           <SectionInner>
             <Biographies>
@@ -109,7 +109,7 @@ export const HomeContent = ({ onCreated }: Props) => {
         </Section>
 
         <Section>
-          <SectionTitle>About me</SectionTitle>
+          <Heading level={2}>About me</Heading>
 
           <SectionInner>
             <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
@@ -120,7 +120,7 @@ export const HomeContent = ({ onCreated }: Props) => {
               コーディングをすることが多いですが、デザイナー経験もあることから使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
             </Text>
 
-            <SubTitle>Skill</SubTitle>
+            <SubTitle level={3}>Skill</SubTitle>
 
             <Text>
               以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします。
@@ -128,7 +128,7 @@ export const HomeContent = ({ onCreated }: Props) => {
 
             <StyledTagList items={skills} />
 
-            <SubTitle>SNS</SubTitle>
+            <SubTitle level={3}>SNS</SubTitle>
             <Text>
               趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
             </Text>
@@ -188,7 +188,7 @@ export const HomeContent = ({ onCreated }: Props) => {
         </Section>
 
         <Section>
-          <SectionTitle>Activities</SectionTitle>
+          <Heading level={2}>Activities</Heading>
 
           <SectionInner>
             <Activity>

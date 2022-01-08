@@ -3,11 +3,6 @@ import { Container } from '@/components/organisms/Container'
 
 export const StyledContainer = styled(Container)``
 
-export const Title = styled.h2`
-  margin: 0;
-  font-size: 64px;
-`
-
 export const Content = styled.div`
   margin: 180px auto 0;
   max-width: 650px;
@@ -19,10 +14,6 @@ export const Section = styled.section`
   &:first-of-type {
     margin: 0;
   }
-`
-
-export const SectionTitle = styled.h3`
-  font-size: 48px;
 `
 
 export const SectionTitleSecondary = styled.h4`
