@@ -14,6 +14,7 @@ import {
   Description,
   StyledTagList,
   LinkArea,
+  ContactLink,
   StyledLinkButton,
 } from './styles'
 
@@ -29,10 +30,12 @@ export const WorkContent = ({ data }: Props) => (
       <Heading level={2}>Client Work</Heading>
 
       <Lead>
-        仕事で制作したものです。
+        仕事では教育関連、採用サイト、コーポレートサイトなど様々なサイトの制作に携わっています。
         <br />
         ご連絡いただければ、詳細をお送りいたします。
       </Lead>
+
+      <ContactLink href={`/contact`}>Contact</ContactLink>
     </Section>
 
     <Section>

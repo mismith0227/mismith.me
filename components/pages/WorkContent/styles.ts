@@ -120,7 +120,14 @@ export const LinkArea = styled.div`
   justify-content: flex-end;
   grid-column: 7 / 13;
   grid-row: 5 / 6;
-  margin-top: 16px;
+`
+
+export const ContactLink = styled(LinkButton)`
+  width: 240px;
+
+  ${media.small} {
+    width: 100%;
+  }
 `
 
 export const StyledLinkButton = styled(LinkButton)`
