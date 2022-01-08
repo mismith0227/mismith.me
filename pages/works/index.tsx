@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
-import { WorkContent } from '@/components/organisms/WorkContent'
+import { WorkContent } from '@/components/pages/WorkContent'
 import Seo from '@/components/seo'
 import { Portfolio } from '@/types/Portfolio'
 

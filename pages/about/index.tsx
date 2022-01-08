@@ -1,6 +1,6 @@
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
-import { AboutContent } from '@/components/organisms/AboutContent'
+import { AboutContent } from '@/components/pages/AboutContent'
 
 const About = () => {
   const meta = {

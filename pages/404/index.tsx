@@ -1,6 +1,6 @@
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
-import { NotFoundContent } from '@/components/organisms/NotFoundContent'
+import { NotFoundContent } from '@/components/pages/NotFoundContent'
 
 const NotFoundPage = () => {
   const meta = {
