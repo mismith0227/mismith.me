@@ -3,7 +3,7 @@ import { Wrap } from './styles'
 type Props = {
   children: React.ReactNode
   className?: string
-  size?: 'lg' | 'md' | 'sm'
+  size?: 'full' | 'lg' | 'md' | 'sm'
 }
 
 export const Container = ({ children, className, size = 'md' }: Props) => {

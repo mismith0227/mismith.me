@@ -2,11 +2,15 @@ import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
 interface ContainerProps {
-  readonly size?: 'lg' | 'md' | 'sm'
+  readonly size?: 'full' | 'lg' | 'md' | 'sm'
 }
 
 const getContentStyles = ({ size = 'md' }: ContainerProps) => {
   switch (size) {
+    case 'full':
+      return css`
+        max-width: 100%;
+      `
     case 'lg':
       return css`
         max-width: 1024px;
