@@ -15,16 +15,12 @@ export const MainVisualWrap = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
+  aspect-ratio: 2 / 1;
   background: #eee;
-
-  ${media.small} {
-    height: 250px;
-  }
 `
 
 export const MainVisual = styled.img`
-  max-height: 80%;
+  max-height: 60%;
   max-width: 90%;
 `
 

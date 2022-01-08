@@ -1,94 +1,86 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { LinkButton } from '@/components/atoms/LinkButton'
 import { TagList } from '@/components/molecules/TagList'
 import { Container } from '@/components/organisms/Container'
 
 export const StyledContainer = styled(Container)``
 
-export const ThumbnailWrap = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 16px 0 0;
-  width: 100%;
-  height: 400px;
-  background: #eee;
-  position: relative;
-
-  &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  &::after {
-    content: 'View More';
-    display: inline-block;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 12px 16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    opacity: 0;
-    transition: 0.3s;
-  }
-
-  &:hover {
-    &::before,
-    &::after {
-      opacity: 1;
-    }
-  }
-
-  ${media.small} {
-    height: 250px;
-  }
-`
-
-export const Thumbnail = styled.img`
-  max-height: 80%;
-  max-width: 90%;
-`
-
-export const Works = styled.ul`
+export const Content = styled.div`
   margin: 180px 0 0;
-  padding: 0;
-  list-style: none;
 
   ${media.small} {
     margin: 80px 0 0;
   }
 `
 
+export const Section = styled.section`
+  margin: 80px 0 0;
+
+  ${media.small} {
+    margin: 40px 0 0;
+  }
+`
+
+export const Lead = styled.p`
+  margin-top: 20px;
+`
+
+export const Works = styled.ul`
+  padding: 0;
+  list-style: none;
+  margin: 40px 0 0;
+
+  ${media.small} {
+    margin: 20px 0 0;
+  }
+`
+
 export const WorkItem = styled.li`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto auto 1fr 40px;
   margin: 120px 0 0;
+  gap: 12px 0;
 
   &:first-of-type {
     margin: 0;
   }
 
   ${media.small} {
+    display: block;
     margin: 60px 0 0;
   }
 `
 
-export const Date = styled.p`
-  margin: 0;
-  font-size: 14px;
+export const ThumbnailWrap = styled.div`
+  grid-column: 1 / 8;
+  grid-row: 1 / 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #eee;
+  position: relative;
+
+  ${media.small} {
+    margin-top: 8px;
+  }
 `
 
-export const WorkTitle = styled.h2`
+export const Thumbnail = styled.img`
+  max-height: 60%;
+  max-width: 90%;
+`
+
+export const WorkTitle = styled.h3`
+  grid-row: 3 / 4;
+  grid-column: 7 / 13;
   margin: 0;
   font-size: 36px;
+  position: relative;
+  z-index: 5;
 
   ${media.small} {
     font-size: 24px;
@@ -100,14 +92,42 @@ export const StyledLink = styled.a`
   text-decoration: none;
 `
 
+export const StyledTagList = styled(TagList)`
+  align-items: flex-start;
+  grid-column: 7 / 13;
+  grid-row: 2 / 3;
+
+  position: relative;
+  z-index: 5;
+`
+
 export const Description = styled.p`
-  margin: 16px 0 0;
+  grid-column: 7 / 13;
+  grid-row: 4 / 5;
+  position: relative;
+  margin: 0;
+  z-index: 5;
+  font-size: 14px;
 
   ${media.small} {
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 12px;
   }
 `
 
-export const StyledTagList = styled(TagList)`
-  margin-top: 8px;
+export const LinkArea = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  grid-column: 7 / 13;
+  grid-row: 5 / 6;
+  margin-top: 16px;
+`
+
+export const StyledLinkButton = styled(LinkButton)`
+  height: 100%;
+
+  ${media.small} {
+    margin-top: 12px;
+    width: 100%;
+  }
 `

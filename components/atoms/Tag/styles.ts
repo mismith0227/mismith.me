@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import media from '@/styles/media'
 
 const getTagStyles = () => {
   return css`
@@ -9,6 +10,10 @@ const getTagStyles = () => {
     color: #fff;
     font-size: 12px;
     font-weight: bold;
+
+    ${media.small} {
+      font-size: 10px;
+    }
   `
 }
 

@@ -1,18 +1,20 @@
 import Link from 'next/link'
-import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
 import { Heading } from '@/components/atoms/Heading'
 import {
   StyledContainer,
+  Section,
+  Lead,
   ThumbnailWrap,
   Thumbnail,
   Works,
   WorkItem,
-  Date,
   WorkTitle,
   StyledLink,
   Description,
   StyledTagList,
+  LinkArea,
+  StyledLinkButton,
 } from './styles'
 
 type Props = {
@@ -22,31 +24,49 @@ type Props = {
 export const WorkContent = ({ data }: Props) => (
   <StyledContainer size="lg">
     <Heading>Works</Heading>
-    <Works>
-      {data.map((work) => (
-        <WorkItem key={work.id}>
-          {work.productionDate && (
-            <Date>{dayjs(work.productionDate).format('YYYY年M月D日')}</Date>
-          )}
-          <WorkTitle>
-            <Link href={`/works/${work.id}`} passHref>
-              <StyledLink>{work.title}</StyledLink>
-            </Link>
-          </WorkTitle>
 
-          {work.description && <Description>{work.description}</Description>}
+    <Section>
+      <Heading level={2}>Client Work</Heading>
 
-          {work.tags && <StyledTagList items={work.tags} />}
+      <Lead>
+        仕事で制作したものです。
+        <br />
+        ご連絡いただければ、詳細をお送りいたします。
+      </Lead>
+    </Section>
 
-          {work.thumbnail && (
-            <Link href={`/works/${work.id}`} passHref>
+    <Section>
+      <Heading level={2}>Personal Production</Heading>
+
+      <Lead>個人の趣味で作ったものです。</Lead>
+
+      <Works>
+        {data.map((work) => (
+          <WorkItem key={work.id}>
+            <WorkTitle>
+              <Link href={`/works/${work.id}`} passHref>
+                <StyledLink>{work.title}</StyledLink>
+              </Link>
+            </WorkTitle>
+
+            {work.tags && <StyledTagList items={work.tags} />}
+
+            {work.thumbnail && (
               <ThumbnailWrap>
                 <Thumbnail src={work.thumbnail.url} alt={work.title} />
               </ThumbnailWrap>
-            </Link>
-          )}
-        </WorkItem>
-      ))}
-    </Works>
+            )}
+
+            {work.description && <Description>{work.description}</Description>}
+
+            <LinkArea>
+              <StyledLinkButton href={`/works/${work.id}`}>
+                View Detail
+              </StyledLinkButton>
+            </LinkArea>
+          </WorkItem>
+        ))}
+      </Works>
+    </Section>
   </StyledContainer>
 )
