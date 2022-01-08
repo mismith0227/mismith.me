@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
+import { Heading } from '@/components/atoms/Heading'
 import {
-  Container,
+  StyledContainer,
   StyledLink,
-  Title,
   BlogList,
   BlogListItem,
   BlogTitle,
-  Category,
+  StyledTag,
   DateArea,
   Date,
   DateLabel,
@@ -41,20 +41,20 @@ export const BlogContent = ({
     : null
 
   return (
-    <Container>
-      <Title>
+    <StyledContainer size="lg">
+      <Heading>
         Blog
         {categoryLabel && (
           <CategoryLabel>Category: {categoryLabel}</CategoryLabel>
         )}
-      </Title>
+      </Heading>
 
       <BlogList>
         {data.map((blog) => (
           <BlogListItem key={blog.id}>
             <Link href={`/blog/${blog.category.id}/${blog.id}`} passHref>
               <StyledLink>
-                <Category>{blog.category.category_name}</Category>
+                <StyledTag>{blog.category.category_name}</StyledTag>
                 <BlogTitle>{blog.title}</BlogTitle>
 
                 <DateArea>
@@ -80,6 +80,6 @@ export const BlogContent = ({
         />
       )}
       <StyledCategories category={category} currentCategory={currentCategory} />
-    </Container>
+    </StyledContainer>
   )
 }

@@ -1,21 +1,9 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { TagList } from '@/components/molecules/TagList'
+import { Container } from '@/components/organisms/Container'
 
-export const Container = styled.div`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
-
-export const Title = styled.h1`
-  margin: 0;
-  font-size: 64px;
-`
+export const StyledContainer = styled(Container)``
 
 export const ThumbnailWrap = styled.a`
   display: flex;
@@ -120,18 +108,6 @@ export const Description = styled.p`
   }
 `
 
-export const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 8px 0 0;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-`
-
-export const TagItem = styled.li`
-  padding: 8px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 14px;
+export const StyledTagList = styled(TagList)`
+  margin-top: 8px;
 `

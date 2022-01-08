@@ -1,30 +1,17 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Container } from '@/components/organisms/Container'
 
-export const Container = styled.article`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
-
-export const Title = styled.h1`
-  margin: 0;
-  font-size: 64px;
-`
+export const StyledContainer = styled(Container)``
 
 export const Text = styled.p``
 
-export const Content = styled.div`
-  margin: 180px auto 0;
-  max-width: 800px;
+export const Content = styled(Container)`
+  margin-top: 180px;
 
   ${media.small} {
-    margin: 80px auto 0;
+    margin-top: 80px;
   }
 `
 
@@ -40,6 +27,13 @@ export const SnsList = styled.ul`
 
 export const SnsItem = styled.li``
 
+export const StyledIconList = styled(IconList)`
+  margin: 32px 0 0;
+`
+
+export const StyledIconListItem = styled(IconListItem)``
+
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `

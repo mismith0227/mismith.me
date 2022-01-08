@@ -1,7 +1,8 @@
-import { Container, Title } from './styles'
+import { StyledContainer, Title } from './styles'
+import { Heading } from '@/components/atoms/Heading'
 
 export const NotFoundContent = () => (
-  <Container>
-    <Title>404 Not Found</Title>
-  </Container>
+  <StyledContainer size="lg">
+    <Heading>404 Not Found</Heading>
+  </StyledContainer>
 )

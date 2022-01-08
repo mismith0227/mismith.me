@@ -1,19 +1,19 @@
+import { Heading } from '@/components/atoms/Heading'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import {
-  Container,
-  Title,
+  StyledContainer,
   Text,
   Content,
   Email,
-  SnsList,
-  SnsItem,
   ExternalLink,
+  StyledIconList,
+  StyledIconListItem,
 } from './styles'
 
 export const ContactContent = () => (
-  <Container>
-    <Title>Contact</Title>
+  <StyledContainer size="lg">
+    <Heading>Contact</Heading>
 
     <Content>
       <Text>
@@ -22,8 +22,8 @@ export const ContactContent = () => (
         もしくはSNSのDMでも大丈夫です。
       </Text>
       <Email>doraepon2216@gmail.com</Email>
-      <SnsList>
-        <SnsItem>
+      <StyledIconList>
+        <StyledIconListItem>
           <ExternalLink
             href="https://twitter.com/misumi_takuma/"
             target="_blank"
@@ -32,8 +32,8 @@ export const ContactContent = () => (
           >
             <Twitter />
           </ExternalLink>
-        </SnsItem>
-        <SnsItem>
+        </StyledIconListItem>
+        <StyledIconListItem>
           <ExternalLink
             href="https://www.instagram.com/mismith0227/?hl=ja"
             target="_blank"
@@ -42,8 +42,8 @@ export const ContactContent = () => (
           >
             <Instagram />
           </ExternalLink>
-        </SnsItem>
-      </SnsList>
+        </StyledIconListItem>
+      </StyledIconList>
     </Content>
-  </Container>
+  </StyledContainer>
 )

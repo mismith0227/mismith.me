@@ -1,22 +1,16 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Container } from '@/components/organisms/Container'
 import { Categories } from '@/components/molecules/Categories'
 import { ReadNext } from '@/components/molecules/ReadNext'
 import { ShareButtons } from '@/components/molecules/ShareButtons'
+import { Tag } from '@/components/atoms/Tag'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Heading } from '@/components/atoms/Heading'
 
-export const Container = styled.div`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
+export const StyledContainer = styled(Container)``
 
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
-
-export const Title = styled.h1`
-  margin: 0;
+export const Title = styled(Heading)`
   font-size: 48px;
 
   ${media.medium} {
@@ -24,13 +18,7 @@ export const Title = styled.h1`
   }
 `
 
-export const Category = styled.span`
-  display: inline-block;
-  padding: 4px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-`
+export const StyledTag = styled(Tag)``
 
 export const DateArea = styled.div`
   display: flex;
@@ -213,17 +201,14 @@ export const WrittenByTitle = styled.h2`
 
 export const WrittenByText = styled.p``
 
-export const SnsList = styled.ul`
-  display: flex;
+export const StyledIconList = styled(IconList)`
   margin: 32px 0 0;
-  padding: 0;
-  gap: 16px;
-  list-style: none;
 `
 
-export const SnsItem = styled.li``
+export const StyledIconListItem = styled(IconListItem)``
 
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `
 

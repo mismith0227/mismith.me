@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
+import { Heading } from '@/components/atoms/Heading'
 import {
-  Container,
-  Title,
+  StyledContainer,
   ThumbnailWrap,
   Thumbnail,
   Works,
@@ -12,8 +12,7 @@ import {
   WorkTitle,
   StyledLink,
   Description,
-  Tags,
-  TagItem,
+  StyledTagList,
 } from './styles'
 
 type Props = {
@@ -21,8 +20,8 @@ type Props = {
 }
 
 export const WorkContent = ({ data }: Props) => (
-  <Container>
-    <Title>Works</Title>
+  <StyledContainer size="lg">
+    <Heading>Works</Heading>
     <Works>
       {data.map((work) => (
         <WorkItem key={work.id}>
@@ -37,13 +36,7 @@ export const WorkContent = ({ data }: Props) => (
 
           {work.description && <Description>{work.description}</Description>}
 
-          {work.tags && (
-            <Tags>
-              {work.tags.map((item) => (
-                <TagItem key={item}>{item}</TagItem>
-              ))}
-            </Tags>
-          )}
+          {work.tags && <StyledTagList items={work.tags} />}
 
           {work.thumbnail && (
             <Link href={`/works/${work.id}`} passHref>
@@ -55,5 +48,5 @@ export const WorkContent = ({ data }: Props) => (
         </WorkItem>
       ))}
     </Works>
-  </Container>
+  </StyledContainer>
 )

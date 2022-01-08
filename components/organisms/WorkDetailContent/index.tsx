@@ -1,7 +1,7 @@
+import { Heading } from '@/components/atoms/Heading'
 import {
-  Container,
+  StyledContainer,
   Date,
-  Title,
   MainVisualWrap,
   MainVisual,
   Body,
@@ -14,9 +14,9 @@ type Props = {
 }
 
 export const WorkDetailContent = ({ data }: Props) => (
-  <Container>
+  <StyledContainer size="lg">
     <Date>{dayjs(data.productionDate).format('YYYY年M月D日')}</Date>
-    <Title>{data.title}</Title>
+    <Heading>{data.title}</Heading>
 
     {data.thumbnail && (
       <MainVisualWrap>
@@ -29,5 +29,5 @@ export const WorkDetailContent = ({ data }: Props) => (
         __html: `${data.body}`,
       }}
     />
-  </Container>
+  </StyledContainer>
 )

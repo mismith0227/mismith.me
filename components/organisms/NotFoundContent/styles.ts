@@ -1,16 +1,9 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Container } from '@/components/organisms/Container'
 
-export const Container = styled.article`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
+export const StyledContainer = styled(Container)`
   min-height: 30vh;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
 `
 
 export const Title = styled.h1`

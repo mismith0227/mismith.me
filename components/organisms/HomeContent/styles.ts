@@ -1,8 +1,10 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import media from '@/styles/media'
-
-export const Container = styled.div``
+import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { TagList } from '@/components/molecules/TagList'
+import { Container } from '@/components/organisms/Container'
+import { Heading } from '@/components/atoms/Heading'
 
 export const MainVisual = styled.div`
   position: relative;
@@ -58,14 +60,11 @@ export const ScrollInner = styled.span`
   animation: ${scrollAnimation} 1.5s linear infinite;
 `
 
-export const Content = styled.div`
-  display: block;
-  max-width: 800px;
-  width: 96%;
-  margin: 180px auto 0;
+export const StyledContainer = styled(Container)`
+  margin-top: 180px;
 
   ${media.small} {
-    margin: 80px auto 0;
+    margin-top: 80px;
   }
 `
 
@@ -81,36 +80,14 @@ export const SectionInner = styled.div`
   margin: 40px 0 0;
 `
 
-export const SectionTitle = styled.h2`
-  margin: 0;
-  font-size: 42px;
-`
-
-export const SubTitle = styled.h3`
-  margin: 32px 0 0;
-  font-size: 24px;
+export const SubTitle = styled(Heading)`
+  margin-top: 32px;
 `
 
 export const Text = styled.p``
 
-export const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 24px 0 0;
-  padding: 0;
-  list-style: none;
-`
-
-export const TagItem = styled.li`
-  margin: 8px 8px 0 0;
-  padding: 4px 8px;
-  background-color: #000;
-  color: #fff;
-  font-size: 14px;
-
-  &:last-of-type {
-    margin-right: 0;
-  }
+export const StyledTagList = styled(TagList)`
+  margin-top: 8px;
 `
 
 export const Biographies = styled.ul`
@@ -191,22 +168,6 @@ export const BiographyDetail = styled.p`
   font-size: 14px;
 `
 
-export const BiographySkills = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 16px 0 0;
-  gap: 8px;
-  padding: 0;
-  list-style: none;
-`
-
-export const BiographySkillItem = styled.li`
-  padding: 4px 8px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-`
-
 export const Activity = styled.dl``
 
 export const ActivityItem = styled.div`
@@ -222,16 +183,13 @@ export const ActivityDescription = styled.dd`
   overflow-wrap: break-word;
 `
 
-export const SnsList = styled.ul`
-  display: flex;
+export const StyledIconList = styled(IconList)`
   margin: 32px 0 0;
-  gap: 16px;
-  padding: 0;
-  list-style: none;
 `
 
-export const SnsItem = styled.li``
+export const StyledIconListItem = styled(IconListItem)``
 
 export const ExternalLink = styled.a`
+  display: block;
   color: #000;
 `

@@ -1,23 +1,11 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Container } from '@/components/organisms/Container'
 import { Pagination } from '@/components/molecules/Pagination'
 import { Categories } from '@/components/molecules/Categories'
+import { Tag } from '@/components/atoms/Tag'
 
-export const Container = styled.div`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
-
-export const Title = styled.h1`
-  margin: 0;
-  font-size: 64px;
-`
+export const StyledContainer = styled(Container)``
 
 export const CategoryLabel = styled.span`
   display: inline-block;
@@ -63,13 +51,7 @@ export const BlogTitle = styled.h2`
   }
 `
 
-export const Category = styled.span`
-  display: inline-block;
-  padding: 4px 16px;
-  background-color: #000;
-  color: #fff;
-  font-size: 12px;
-
+export const StyledTag = styled(Tag)`
   ${media.small} {
     font-size: 10px;
   }
