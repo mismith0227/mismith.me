@@ -1,15 +1,20 @@
-import { Heading } from '@/components/atoms/Heading'
+import dayjs from 'dayjs'
 import {
   StyledContainer,
   Header,
   Title,
   StyledTagList,
-  Date,
+  Description,
   MainVisualWrap,
   MainVisual,
+  Content,
   Body,
+  Aside,
+  AsideSection,
+  AsideSectionTitle,
+  ExternalLink,
+  AsideText,
 } from './styles'
-import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
 
 type Props = {
@@ -28,12 +33,46 @@ export const WorkDetailContent = ({ data }: Props) => (
           <MainVisual src={data.thumbnail.url} alt={data.title} />
         </MainVisualWrap>
       )}
+      <Description>{data.description}</Description>
     </Header>
 
-    <Body
-      dangerouslySetInnerHTML={{
-        __html: `${data.body}`,
-      }}
-    />
+    <Content>
+      <Body
+        dangerouslySetInnerHTML={{
+          __html: `${data.body}`,
+        }}
+      />
+
+      <Aside>
+        <AsideSection>
+          <AsideSectionTitle>Date</AsideSectionTitle>
+          <AsideText>
+            {dayjs(data.productionDate).format('YYYY年M月')}
+          </AsideText>
+        </AsideSection>
+
+        {data.url && (
+          <AsideSection>
+            <AsideSectionTitle>URL</AsideSectionTitle>
+            <AsideText>
+              <ExternalLink href={data.url} target="_blank" rel="noopener">
+                {data.url}
+              </ExternalLink>
+            </AsideText>
+          </AsideSection>
+        )}
+
+        {data.github && (
+          <AsideSection>
+            <AsideSectionTitle>GitHub</AsideSectionTitle>
+            <AsideText>
+              <ExternalLink href={data.github} target="_blank" rel="noopener">
+                {data.github}
+              </ExternalLink>
+            </AsideText>
+          </AsideSection>
+        )}
+      </Aside>
+    </Content>
   </StyledContainer>
 )

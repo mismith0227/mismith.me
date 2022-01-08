@@ -22,7 +22,7 @@ export const Content = styled.div`
   display: flex;
   gap: 0 120px;
 
-  ${media.medium} {
+  ${media.small} {
     flex-direction: column;
     gap: 40px 0;
   }

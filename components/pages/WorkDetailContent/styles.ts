@@ -11,7 +11,7 @@ export const Header = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 100px auto auto 1fr;
 
-  ${media.small} {
+  ${media.large} {
     display: block;
   }
 `
@@ -24,8 +24,18 @@ export const Title = styled.h1`
   margin: 0;
   font-size: 48px;
 
-  ${media.medium} {
+  ${media.large} {
     font-size: 36px;
+  }
+`
+
+export const Description = styled.p`
+  grid-column: 8 / 13;
+  grid-row: 4 / 5;
+  margin: 0;
+
+  ${media.large} {
+    margin-top: 40px;
   }
 `
 
@@ -36,14 +46,9 @@ export const StyledTagList = styled(TagList)`
   position: relative;
   z-index: 5;
 
-  ${media.small} {
+  ${media.large} {
     margin-top: 20px;
   }
-`
-
-export const Date = styled.p`
-  margin: 0;
-  font-weight: bold;
 `
 
 export const MainVisualWrap = styled.div`
@@ -56,7 +61,7 @@ export const MainVisualWrap = styled.div`
   aspect-ratio: 2 / 1;
   background: #eee;
 
-  ${media.small} {
+  ${media.large} {
     margin-top: 20px;
   }
 `
@@ -66,16 +71,63 @@ export const MainVisual = styled.img`
   max-width: 90%;
 `
 
-export const Body = styled.div`
+export const Content = styled.div`
+  display: grid;
+  gap: 0 60px;
+  grid-template-columns: repeat(12, 1fr);
   margin: 120px auto 0;
-  max-width: 600px;
+  max-width: 1024px;
 
   ${media.small} {
-    margin: 40px auto 0;
+    display: block;
+    max-width: 100%;
+    margin: 80px auto 0;
+  }
+`
+
+export const Body = styled.div`
+  grid-column: 5 / 13;
+  grid-row: 1 / 2;
+
+  h2,
+  h3 {
+    &:first-of-type {
+      margin: 0;
+    }
   }
 
   p {
     margin: 16px 0;
     word-wrap: break-word;
   }
+`
+
+export const Aside = styled.div`
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+`
+
+export const AsideSection = styled.div`
+  margin: 12px 0 0;
+
+  &:first-of-type {
+    margin: 0;
+  }
+`
+
+export const AsideSectionTitle = styled.h3`
+  margin: 0;
+  font-size: 16px;
+`
+
+export const AsideText = styled.p`
+  display: block;
+  margin: 4px 0 0;
+  font-size: 14px;
+  word-wrap: break-word;
+`
+
+export const ExternalLink = styled.a`
+  display: block;
+  color: #000;
 `

@@ -10,4 +10,6 @@ export interface Portfolio {
     width: number
   }
   description: string
+  url?: string
+  github?: string
 }
