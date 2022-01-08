@@ -132,6 +132,7 @@ export const ContactLink = styled(LinkButton)`
 
 export const StyledLinkButton = styled(LinkButton)`
   height: 100%;
+  width: 240px;
 
   ${media.small} {
     margin-top: 12px;
