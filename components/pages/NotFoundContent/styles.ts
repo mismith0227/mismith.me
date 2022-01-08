@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import media from '@/styles/media'
 import { Container } from '@/components/organisms/Container'
 
 export const StyledContainer = styled(Container)`

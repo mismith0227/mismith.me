@@ -7,32 +7,11 @@ import {
   Text,
 } from './styles'
 
-export const AboutContent = () => (
+export const PolicyContent = () => (
   <StyledContainer>
-    <Heading>About</Heading>
+    <Heading>Policy</Heading>
 
     <Content>
-      <Section>
-        <Heading level={2}>Privacy Policy</Heading>
-        <SectionTitleSecondary>
-          アクセス解析ツールについて
-        </SectionTitleSecondary>
-        <Text>
-          当ブログでは、アクセス解析ツールGoogle
-          Analyticsを利用したトラフィックデータ収集のためにCookie（クッキー）を利用しています。
-          この情報は匿名で収集され個人を特定するものではありません。このトラフィックデータ収集は、ブラウザ設定でCookieを無効にすることで拒否できます。
-          詳しくは
-          <a
-            rel="noreferrer"
-            href="https://policies.google.com/technologies/partner-sites?hl=ja"
-            target="_blank"
-          >
-            こちら
-          </a>
-          をご確認ください。
-        </Text>
-      </Section>
-
       <Section>
         <Heading level={2}>免責事項</Heading>
 

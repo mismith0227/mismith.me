@@ -1,20 +1,20 @@
 import { Layout } from '@/components/organisms/Layout'
 import Seo from '@/components/seo'
-import { AboutContent } from '@/components/pages/AboutContent'
+import { PolicyContent } from '@/components/pages/PolicyContent'
 
-const About = () => {
+const Policy = () => {
   const meta = {
     title: 'Privacy Policy',
     description: 'プライバシーポリシー',
-    path: 'about',
+    path: 'policy',
   }
 
   return (
     <Layout path={meta.path} disableLoading>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <AboutContent />
+      <PolicyContent />
     </Layout>
   )
 }
 
-export default About
+export default Policy
