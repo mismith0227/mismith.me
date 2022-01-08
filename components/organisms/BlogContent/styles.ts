@@ -1,19 +1,11 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Container } from '@/components/organisms/Container'
 import { Pagination } from '@/components/molecules/Pagination'
 import { Categories } from '@/components/molecules/Categories'
 import { Tag } from '@/components/atoms/Tag'
 
-export const Container = styled.div`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
+export const StyledContainer = styled(Container)``
 
 export const Title = styled.h1`
   margin: 0;

@@ -3,12 +3,11 @@
 // import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
-  Container,
   MainVisual,
   MainVisualText,
   Scroll,
   ScrollInner,
-  Content,
+  StyledContainer,
   Section,
   SectionInner,
   SectionTitle,
@@ -76,7 +75,7 @@ export const HomeContent = ({ onCreated }: Props) => {
   // }
 
   return (
-    <Container>
+    <>
       <MainVisual>
         <MainVisualText>
           Web Developer based in Osaka. I deliver value with front-end
@@ -87,7 +86,7 @@ export const HomeContent = ({ onCreated }: Props) => {
         </Scroll>
       </MainVisual>
 
-      <Content>
+      <StyledContainer>
         <Section>
           <SectionTitle>Biography</SectionTitle>
 
@@ -211,7 +210,7 @@ export const HomeContent = ({ onCreated }: Props) => {
             </Activity>
           </SectionInner>
         </Section>
-      </Content>
-    </Container>
+      </StyledContainer>
+    </>
   )
 }

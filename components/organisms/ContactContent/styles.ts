@@ -1,17 +1,9 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Container } from '@/components/organisms/Container'
 
-export const Container = styled.article`
-  display: block;
-  max-width: 1024px;
-  width: 96%;
-  margin: 180px auto 0;
-
-  ${media.small} {
-    margin: 80px auto 0;
-  }
-`
+export const StyledContainer = styled(Container)``
 
 export const Title = styled.h1`
   margin: 0;
@@ -20,12 +12,11 @@ export const Title = styled.h1`
 
 export const Text = styled.p``
 
-export const Content = styled.div`
-  margin: 180px auto 0;
-  max-width: 800px;
+export const Content = styled(Container)`
+  margin-top: 180px;
 
   ${media.small} {
-    margin: 80px auto 0;
+    margin-top: 80px;
   }
 `
 

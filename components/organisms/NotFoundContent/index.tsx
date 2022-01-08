@@ -1,7 +1,7 @@
-import { Container, Title } from './styles'
+import { StyledContainer, Title } from './styles'
 
 export const NotFoundContent = () => (
-  <Container>
+  <StyledContainer size="lg">
     <Title>404 Not Found</Title>
-  </Container>
+  </StyledContainer>
 )

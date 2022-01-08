@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import {
-  Container,
+  StyledContainer,
   StyledLink,
   Title,
   BlogList,
@@ -41,7 +41,7 @@ export const BlogContent = ({
     : null
 
   return (
-    <Container>
+    <StyledContainer size="lg">
       <Title>
         Blog
         {categoryLabel && (
@@ -80,6 +80,6 @@ export const BlogContent = ({
         />
       )}
       <StyledCategories category={category} currentCategory={currentCategory} />
-    </Container>
+    </StyledContainer>
   )
 }

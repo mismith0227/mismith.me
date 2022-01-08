@@ -2,7 +2,7 @@ import Link from 'next/link'
 import dayjs from 'dayjs'
 import { Portfolio } from '@/types/Portfolio'
 import {
-  Container,
+  StyledContainer,
   Title,
   ThumbnailWrap,
   Thumbnail,
@@ -20,7 +20,7 @@ type Props = {
 }
 
 export const WorkContent = ({ data }: Props) => (
-  <Container>
+  <StyledContainer size="lg">
     <Title>Works</Title>
     <Works>
       {data.map((work) => (
@@ -48,5 +48,5 @@ export const WorkContent = ({ data }: Props) => (
         </WorkItem>
       ))}
     </Works>
-  </Container>
+  </StyledContainer>
 )

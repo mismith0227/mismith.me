@@ -4,7 +4,7 @@ import { Global } from '@emotion/react'
 import { globalStyle } from '@/styles/globalStyles'
 import { Header } from '@/components/organisms/Header'
 import { Loading } from '@/components/molecules/Loading'
-import { StyledFooter } from './styles'
+import { StyledFooter, StyledMain } from './styles'
 
 type Props = {
   children: React.ReactNode
@@ -20,6 +20,8 @@ export const Layout = ({
   disableLoading,
 }: Props) => {
   const [isLoadingTime, setIsLoadingTime] = useState<boolean>(true)
+
+  console.log(path)
 
   // const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
 
@@ -42,7 +44,7 @@ export const Layout = ({
     <>
       <Global styles={globalStyle} />
       <Header path={path} />
-      <main>{children}</main>
+      <StyledMain path={path}>{children}</StyledMain>
 
       <StyledFooter />
       {!disableLoading && <Loading isLoading={isLoadingTime} />}

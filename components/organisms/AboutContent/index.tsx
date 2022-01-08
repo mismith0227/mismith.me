@@ -1,5 +1,5 @@
 import {
-  Container,
+  StyledContainer,
   Title,
   Content,
   Section,
@@ -9,7 +9,7 @@ import {
 } from './styles'
 
 export const AboutContent = () => (
-  <Container>
+  <StyledContainer>
     <Title>About</Title>
 
     <Content>
@@ -49,5 +49,5 @@ export const AboutContent = () => (
         </Text>
       </Section>
     </Content>
-  </Container>
+  </StyledContainer>
 )

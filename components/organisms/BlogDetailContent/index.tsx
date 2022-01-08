@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import {
-  Container,
+  StyledContainer,
   Title,
   BodyWrap,
   Body,
@@ -42,7 +42,7 @@ export const BlogDetailContent = ({
   category,
   currentCategory,
 }: Props) => (
-  <Container>
+  <StyledContainer>
     <StyledTag>{data.category.category_name}</StyledTag>
     <Title>{data.title}</Title>
     <DateArea>
@@ -140,5 +140,5 @@ export const BlogDetailContent = ({
     {data.related_post && <StyledReadNext readNestPosts={data.related_post} />}
 
     <StyledCategories category={category} currentCategory={currentCategory} />
-  </Container>
+  </StyledContainer>
 )

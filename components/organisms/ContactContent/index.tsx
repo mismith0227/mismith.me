@@ -1,20 +1,18 @@
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import {
-  Container,
+  StyledContainer,
   Title,
   Text,
   Content,
   Email,
-  SnsList,
-  SnsItem,
   ExternalLink,
   StyledIconList,
   StyledIconListItem,
 } from './styles'
 
 export const ContactContent = () => (
-  <Container>
+  <StyledContainer size="lg">
     <Title>Contact</Title>
 
     <Content>
@@ -47,5 +45,5 @@ export const ContactContent = () => (
         </StyledIconListItem>
       </StyledIconList>
     </Content>
-  </Container>
+  </StyledContainer>
 )

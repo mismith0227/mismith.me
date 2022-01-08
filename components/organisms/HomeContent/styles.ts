@@ -3,8 +3,7 @@ import { keyframes } from '@emotion/react'
 import media from '@/styles/media'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { TagList } from '@/components/molecules/TagList'
-
-export const Container = styled.div``
+import { Container } from '@/components/organisms/Container'
 
 export const MainVisual = styled.div`
   position: relative;
@@ -60,14 +59,11 @@ export const ScrollInner = styled.span`
   animation: ${scrollAnimation} 1.5s linear infinite;
 `
 
-export const Content = styled.div`
-  display: block;
-  max-width: 800px;
-  width: 96%;
-  margin: 180px auto 0;
+export const StyledContainer = styled(Container)`
+  margin-top: 180px;
 
   ${media.small} {
-    margin: 80px auto 0;
+    margin-top: 80px;
   }
 `
 
