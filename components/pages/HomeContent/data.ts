@@ -40,7 +40,7 @@ export const biographies = [
     title: 'webサービス会社',
     detail:
       '自社で運営しているサービスのデザイナーをしました。サービスの新規会員やアクティブユーザーの獲得、有料会員への誘導方法などを考える仕事でした。',
-    skills: ['画面設計', '解析', 'HTML', 'CSS'],
+    skills: ['画面設計', '解析', 'HTML', 'CSS', 'Sass'],
   },
   {
     date: '2015年8月',
