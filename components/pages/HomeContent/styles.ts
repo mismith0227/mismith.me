@@ -181,6 +181,14 @@ export const ActivityTerm = styled.dt`
 export const ActivityDescription = styled.dd`
   margin: 4px 0 0;
   overflow-wrap: break-word;
+
+  a {
+    display: inline-block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `
 
 export const StyledIconList = styled(IconList)`
