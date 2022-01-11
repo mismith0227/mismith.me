@@ -42,7 +42,6 @@ export const Pagination = ({
         </Link>
       </Item>
       {range(2, lastPage - 1).map((number, index) => {
-        console.log(Math.abs(currentPage - number))
         return Math.abs(currentPage - number) < 3 ? (
           <Item key={index}>
             <Link href={`${paginationPath}/${number}`} passHref>
