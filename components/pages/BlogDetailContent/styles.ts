@@ -61,12 +61,12 @@ export const Body = styled.div`
     &::before {
       content: '';
       display: block;
-      width: 80px;
+      width: 50px;
       height: 6px;
       background-color: #000;
       position: absolute;
       top: 26px;
-      left: -96px;
+      left: -66px;
     }
   }
 
