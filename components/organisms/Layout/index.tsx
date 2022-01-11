@@ -21,8 +21,6 @@ export const Layout = ({
 }: Props) => {
   const [isLoadingTime, setIsLoadingTime] = useState<boolean>(true)
 
-  console.log(path)
-
   // const isLoading = isCanvasLoading === undefined ? false : isCanvasLoading
 
   useEffect(() => {
