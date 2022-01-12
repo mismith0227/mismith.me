@@ -5,7 +5,7 @@ import { Blog } from '@/types/Blog'
 
 async function generateFeedXml() {
   const feed = new RSS({
-    title: 'mismith.meのフィード',
+    title: 'mismith.me',
     description: 'mismith.meのフィード',
     site_url: 'https://www.mismith.me/',
     feed_url: 'https://www.mismith.me/feed',
