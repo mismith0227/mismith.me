@@ -38,9 +38,6 @@ const Seo: React.FC<Props> = ({ description, title, path }) => {
       <meta name="twitter:creator" content="@misumi_takuma" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="theme-color" content="#000" />
-      <link rel="manifest" href="/manifest.webmanifest" />
-      <link rel="apple-touch-icon" href="/icon-192x192.png" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   )
