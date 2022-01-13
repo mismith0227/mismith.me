@@ -63,12 +63,20 @@ export const MainVisualWrap = styled.div`
 
   ${media.large} {
     margin-top: 20px;
+    padding: 24px 0;
   }
 `
 
 export const MainVisual = styled.img`
   max-height: 70%;
-  max-width: 90%;
+  max-width: 70%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  ${media.large} {
+    max-height: 80%;
+  }
 `
 
 export const Content = styled.div`
