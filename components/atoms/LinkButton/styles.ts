@@ -3,6 +3,7 @@ import { css } from '@emotion/react'
 import media from '@/styles/media'
 
 export const StyledLink = styled.a`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +17,19 @@ export const StyledLink = styled.a`
   border: 2px solid #000;
   transition: 0.2s;
   box-sizing: border-box;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
 
   &:hover {
     color: #000;
