@@ -64,6 +64,7 @@ export const ThumbnailWrap = styled.div`
   background: #eee;
   position: relative;
   padding: 24px 0;
+  box-sizing: border-box;
 
   ${media.small} {
     margin-top: 8px;
