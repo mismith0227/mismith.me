@@ -50,6 +50,7 @@ type: リスト形式
 プロジェクトルートに.env ファイルを作成し、以下の項目を設定してください。
 
 ```
+NEXT_PUBLIC_WEB_URL={URL}
 API_KEY={microCMS API Key}
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID={Google Analytics ID} ※任意
 ```

@@ -31,12 +31,15 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     path: 'blog',
   }
 
+  const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/web/next-pagination/ogp`
+
   return blog ? (
     <Layout path={meta.path} disableLoading>
       <Seo
         title={blog.title ? blog.title : ''}
         description={blog.description ? blog.description : ''}
         path={meta.path}
+        ogpImageUrl={ogpImageUrl}
       />
       <BlogDetailContent
         data={blog}

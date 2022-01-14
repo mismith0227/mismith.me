@@ -5,9 +5,10 @@ interface Props {
   description: string
   title: string
   path: string
+  ogpImageUrl?: string
 }
 
-const Seo: React.FC<Props> = ({ description, title, path }) => {
+const Seo: React.FC<Props> = ({ description, title, path, ogpImageUrl }) => {
   return (
     <Head>
       {existsGaId && (
@@ -38,6 +39,18 @@ const Seo: React.FC<Props> = ({ description, title, path }) => {
       <meta name="twitter:creator" content="@misumi_takuma" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      {ogpImageUrl && (
+        <>
+          <meta property="og:image" key="ogImage" content={ogpImageUrl} />
+          <meta
+            name="twitter:card"
+            key="twitterCard"
+            content="summary_large_image"
+          />
+          <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
+        </>
+      )}
+
       <link rel="icon" href="/favicon.ico" />
     </Head>
   )

@@ -12,6 +12,7 @@
     "@types/gtag.js": "^0.0.8",
     "@types/rss": "^0.0.29",
     "@types/three": "^0.129.1",
+    "canvas": "^2.8.0",
     "cheerio": "^1.0.0-rc.10",
     "dayjs": "^1.10.7",
     "gsap": "^3.8.0",
@@ -37,6 +38,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && yarn build"
   }
 }
