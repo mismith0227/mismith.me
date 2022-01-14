@@ -31,7 +31,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     path: 'blog',
   }
 
-  const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/web/next-pagination/ogp`
+  const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
   return blog ? (
     <Layout path={meta.path} disableLoading>
