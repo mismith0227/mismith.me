@@ -10,6 +10,10 @@ export const MainVisual = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  ${media.small} {
+    height: 60vh;
+  }
 `
 
 export const MainVisualText = styled.h1`
@@ -183,7 +187,7 @@ export const ActivityDescription = styled.dd`
   overflow-wrap: break-word;
 
   a {
-    display: inline-block;
+    display: block;
 
     &:hover {
       text-decoration: none;

@@ -7,6 +7,10 @@ export const Wrap = styled.footer`
   background-color: #000;
   box-sizing: border-box;
   color: #fff;
+
+  ${media.small} {
+    padding: 32px 20px;
+  }
 `
 
 export const StyledContainer = styled(Container)``
@@ -19,10 +23,13 @@ export const CopyRight = styled.p`
 `
 
 export const Content = styled.div`
-  display: flex;
+  display: inline-grid;
+  grid-template-columns: repeat(3, auto);
   gap: 0 120px;
 
   ${media.small} {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     flex-direction: column;
     gap: 40px 0;
   }
