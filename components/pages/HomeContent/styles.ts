@@ -185,10 +185,9 @@ export const ActivityTerm = styled.dt`
 export const ActivityDescription = styled.dd`
   margin: 4px 0 0;
   overflow-wrap: break-word;
+  overflow: hidden;
 
   a {
-    display: block;
-
     &:hover {
       text-decoration: none;
     }

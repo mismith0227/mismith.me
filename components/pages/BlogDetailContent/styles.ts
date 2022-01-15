@@ -81,12 +81,15 @@ export const Body = styled.div`
   }
 
   a {
-    display: block;
     color: #000;
   }
 
   p {
     margin: 16px 0;
+    word-wrap: break-word;
+  }
+
+  li {
     word-wrap: break-word;
   }
 
