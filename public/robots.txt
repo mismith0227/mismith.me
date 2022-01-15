@@ -1,4 +1,3 @@
 Sitemap: https://www.mismith.me/sitemap.xml
 User-agent: *
 Allow: /*
-Disallow: /api/*
