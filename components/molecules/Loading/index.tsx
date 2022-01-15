@@ -1,8 +1,5 @@
 import { Container, Back, Triangle } from './styles'
-
-type Props = {
-  isLoading: boolean
-}
+import { Props } from './types'
 
 export const Loading = ({ isLoading }: Props) => {
   return (

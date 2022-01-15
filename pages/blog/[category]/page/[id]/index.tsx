@@ -2,18 +2,18 @@ import { GetStaticProps, NextPage, GetStaticPaths } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { BlogContent } from '@/components/pages/BlogContent'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { toNumberId } from '@/utils/toNumberId'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
-interface Props {
-  blog: Blog[]
-  totalCount: number
-  currentPage: number
-  category: BlogCategory[]
-  currentCategory: string
+type Props = {
+  readonly blog: Blog[]
+  readonly totalCount: number
+  readonly currentPage: number
+  readonly category: BlogCategory[]
+  readonly currentCategory: string
 }
 
 const CategoryPage: NextPage<Props> = ({

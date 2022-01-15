@@ -1,12 +1,7 @@
 import Link from 'next/link'
 import { Container, List, Item, StyledLink, Title, Date } from './styles'
-import { Blog } from '@/types/Blog'
+import { Props } from './types'
 import dayjs from 'dayjs'
-
-type Props = {
-  readNestPosts: Blog[]
-  className?: string
-}
 
 export const ReadNext = ({ readNestPosts, className }: Props) => {
   return (

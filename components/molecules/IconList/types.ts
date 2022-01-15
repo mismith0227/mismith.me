@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export interface ExternalProps {
+export type ExternalProps = {
   readonly children?: React.ReactNode
   readonly className?: string
 }

@@ -1,13 +1,6 @@
 import Link from 'next/link'
 import { Container, Title, List, Item, StyledLink } from './styles'
-import { BlogCategory } from '@/types/BlogCategory'
-import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-
-type Props = {
-  className?: string
-  category: BlogCategory[]
-  currentCategory?: string
-}
+import { Props } from './types'
 
 export const Categories = ({ className, category, currentCategory }: Props) => {
   return (

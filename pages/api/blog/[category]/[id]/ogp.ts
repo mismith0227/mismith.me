@@ -3,9 +3,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { createCanvas, Canvas, registerFont } from 'canvas'
 import * as path from 'path'
 
-interface SeparatedText {
-  line: string
-  remaining: string
+type SeparatedText = {
+  readonly line: string
+  readonly remaining: string
 }
 
 const createTextLine = (canvas: Canvas, text: string): SeparatedText => {

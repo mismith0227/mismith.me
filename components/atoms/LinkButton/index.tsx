@@ -1,11 +1,6 @@
 import Link from 'next/link'
 import { StyledLink } from './styles'
-
-type Props = {
-  className?: string
-  readonly children: React.ReactNode
-  href: string
-}
+import { Props } from './types'
 
 export const LinkButton = ({ className, children, href }: Props) => {
   return (

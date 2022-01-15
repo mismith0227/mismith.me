@@ -1,9 +1,5 @@
 import { Wrap, StyledTag } from './styles'
-
-type Props = {
-  className?: string
-  items: string[]
-}
+import { Props } from './types'
 
 export const TagList = ({ className, items }: Props) => {
   return (

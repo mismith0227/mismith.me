@@ -2,11 +2,11 @@ import { GetStaticProps, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { WorkContent } from '@/components/pages/WorkContent'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { Portfolio } from '@/types/Portfolio'
 
-interface Props {
-  portfolio: Portfolio[]
+type Props = {
+  readonly portfolio: Portfolio[]
 }
 
 const WorksPage: NextPage<Props> = ({ portfolio }) => {

@@ -1,5 +1,5 @@
 import { Layout } from '@/components/organisms/Layout'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { PolicyContent } from '@/components/pages/PolicyContent'
 
 const Policy = () => {

@@ -1,11 +1,5 @@
 import { Container, ToggleBorder, ScreenReaderText } from './styles'
-
-type Props = {
-  isOpen: boolean
-  onToggleClick: (e: React.MouseEvent) => void
-  ariaControls: string
-  className?: string
-}
+import { Props } from './types'
 
 export const ToggleButton = ({
   isOpen,

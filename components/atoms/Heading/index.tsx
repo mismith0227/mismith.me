@@ -1,10 +1,5 @@
 import { Heading1, Heading2, Heading3, Heading4 } from './styles'
-
-type Props = {
-  className?: string
-  readonly children: React.ReactNode
-  level?: 1 | 2 | 3 | 4
-}
+import { Props } from './types'
 
 export const Heading = ({ className, children, level = 1 }: Props) => {
   switch (level) {
