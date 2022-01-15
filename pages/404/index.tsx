@@ -1,5 +1,5 @@
 import { Layout } from '@/components/organisms/Layout'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { NotFoundContent } from '@/components/pages/NotFoundContent'
 
 const NotFoundPage = () => {
