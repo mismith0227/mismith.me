@@ -1,14 +1,6 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import { BASE_URL } from '@/settings/siteSettings'
 import { List, Item, StyledLink, StyledTwitter, StyledHatena } from './styles'
-
-type Props = {
-  className?: string
-  currentCategory: string
-  title: string
-  contentId: string
-}
+import { Props } from './types'
 
 export const ShareButtons = ({
   className,

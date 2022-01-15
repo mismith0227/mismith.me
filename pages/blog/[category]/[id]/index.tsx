@@ -8,18 +8,18 @@ import {
 import cheerio from 'cheerio'
 import hljs from 'highlight.js'
 import { Layout } from '@/components/organisms/Layout'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { BlogDetailContent } from '@/components/pages/BlogDetailContent'
 import { toStringId } from '@/utils/toStringId'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 
 type StaticProps = {
-  blog: Blog
-  body: string
-  draftKey?: string
-  category: BlogCategory[]
-  currentCategory: string
+  readonly blog: Blog
+  readonly body: string
+  readonly draftKey?: string
+  readonly category: BlogCategory[]
+  readonly currentCategory: string
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>

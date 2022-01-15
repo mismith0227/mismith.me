@@ -10,10 +10,7 @@ import {
   List,
   ListItem,
 } from './styles'
-
-type Props = {
-  className?: string
-}
+import { Props } from './types'
 
 export const Footer = ({ className }: Props) => {
   return (

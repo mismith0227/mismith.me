@@ -1,15 +1,17 @@
-export interface Portfolio {
-  id: string
-  title: string
-  body: string
-  productionDate: Date
-  tags: string[]
-  thumbnail: {
-    height: number
-    url: string
-    width: number
-  }
-  description: string
-  url?: string
-  github?: string
+export type Thumbnail = {
+  readonly height: number
+  readonly url: string
+  readonly width: number
+}
+
+export type Portfolio = {
+  readonly id: string
+  readonly title: string
+  readonly body: string
+  readonly productionDate: Date
+  readonly tags: string[]
+  readonly thumbnail: Thumbnail
+  readonly description: string
+  readonly url?: string
+  readonly github?: string
 }

@@ -6,14 +6,14 @@ import {
   GetStaticPaths,
 } from 'next'
 import { Layout } from '@/components/organisms/Layout'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { WorkDetailContent } from '@/components/pages/WorkDetailContent'
 import { Portfolio } from '@/types/Portfolio'
 import { toStringId } from '@/utils/toStringId'
 
 type StaticProps = {
-  portfolio: Portfolio
-  draftKey?: string
+  readonly portfolio: Portfolio
+  readonly draftKey?: string
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>

@@ -2,15 +2,15 @@ import { GetStaticProps, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { BlogContent } from '@/components/pages/BlogContent'
-import Seo from '@/components/seo'
+import { Seo } from '@/components/organisms/Seo'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
 interface Props {
-  blog: Blog[]
-  totalCount: number
-  category: BlogCategory[]
+  readonly blog: Blog[]
+  readonly totalCount: number
+  readonly category: BlogCategory[]
 }
 
 const BlogPage: NextPage<Props> = ({ blog, totalCount, category }) => {

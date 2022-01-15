@@ -1,10 +1,5 @@
 import { Wrap } from './styles'
-
-type Props = {
-  children: React.ReactNode
-  className?: string
-  size?: 'full' | 'lg' | 'md' | 'sm'
-}
+import { Props } from './types'
 
 export const Container = ({ children, className, size = 'md' }: Props) => {
   return (

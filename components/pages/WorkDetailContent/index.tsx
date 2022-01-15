@@ -15,11 +15,7 @@ import {
   ExternalLink,
   AsideText,
 } from './styles'
-import { Portfolio } from '@/types/Portfolio'
-
-type Props = {
-  data: Portfolio
-}
+import { Props } from './types'
 
 export const WorkDetailContent = ({ data }: Props) => (
   <StyledContainer size="full">

@@ -1,11 +1,5 @@
 import { Heading } from '@/components/atoms/Heading'
-import {
-  StyledContainer,
-  Content,
-  Section,
-  SectionTitleSecondary,
-  Text,
-} from './styles'
+import { StyledContainer, Content, Section, Text } from './styles'
 
 export const PolicyContent = () => (
   <StyledContainer>

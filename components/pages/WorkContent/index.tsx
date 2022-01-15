@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Portfolio } from '@/types/Portfolio'
 import { Heading } from '@/components/atoms/Heading'
 import {
   StyledContainer,
@@ -17,10 +16,7 @@ import {
   ContactLink,
   StyledLinkButton,
 } from './styles'
-
-type Props = {
-  data: Portfolio[]
-}
+import { Props } from './types'
 
 export const WorkContent = ({ data }: Props) => (
   <StyledContainer size="lg">

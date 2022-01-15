@@ -5,13 +5,7 @@ import { globalStyle } from '@/styles/globalStyles'
 import { Header } from '@/components/organisms/Header'
 import { Loading } from '@/components/molecules/Loading'
 import { StyledFooter, StyledMain } from './styles'
-
-type Props = {
-  children: React.ReactNode
-  path: string
-  isCanvasLoading?: boolean
-  disableLoading?: boolean
-}
+import { Props } from './types'
 
 export const Layout = ({
   children,

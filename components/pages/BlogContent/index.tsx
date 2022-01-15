@@ -15,17 +15,8 @@ import {
   StyledCategories,
   CategoryLabel,
 } from './styles'
-import { Blog } from '@/types/Blog'
-import { BlogCategory } from '@/types/BlogCategory'
+import { Props } from './types'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-
-type Props = {
-  data: Blog[]
-  totalCount: number
-  currentPage: number
-  category: BlogCategory[]
-  currentCategory?: string
-}
 
 export const BlogContent = ({
   data,

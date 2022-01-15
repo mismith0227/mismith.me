@@ -28,25 +28,13 @@ import {
   StyledIconListItem,
 } from './styles'
 import { skills, biographies, activities } from './data'
-import { Biography } from './types'
 import { Heading } from '@/components/atoms/Heading'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Codepen } from '@/components/atoms/Icon/CodePen'
-
-type Props = {
-  onCreated: (value: boolean) => void
-}
-
-type queueItem = {
-  char?: string
-  end: number
-  from: string
-  start: number
-  to: string
-}
+import { Props, Biography } from './types'
 
 export const HomeContent = ({ onCreated }: Props) => {
   // React.useEffect(() => {

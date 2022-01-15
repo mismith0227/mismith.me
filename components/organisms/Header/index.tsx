@@ -8,10 +8,7 @@ import {
   StyledLink,
   StyledToggleButton,
 } from './styles'
-
-type Props = {
-  path: string
-}
+import { Props } from './types'
 
 export const Header = ({ path }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)

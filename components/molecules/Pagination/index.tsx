@@ -1,13 +1,7 @@
 import Link from 'next/link'
 import { Container, Item, StyledLink, StyledChevron } from './styles'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-
-type Props = {
-  totalCount: number
-  currentPage: number
-  className?: string
-  currentCategory?: string
-}
+import { Props } from './types'
 
 export const Pagination = ({
   totalCount,
