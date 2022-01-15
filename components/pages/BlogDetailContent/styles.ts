@@ -81,6 +81,7 @@ export const Body = styled.div`
   }
 
   a {
+    display: block;
     color: #000;
   }
 
