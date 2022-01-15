@@ -10,4 +10,9 @@ export interface Blog {
   createdAt: Date
   updatedAt: Date
   related_post?: Blog[]
+  thumbnail?: {
+    url: string
+    height: number
+    width: number
+  }
 }

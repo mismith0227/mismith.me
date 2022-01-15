@@ -39,19 +39,31 @@ const Seo: React.FC<Props> = ({ description, title, path, ogpImageUrl }) => {
       <meta name="twitter:creator" content="@misumi_takuma" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {ogpImageUrl && (
-        <>
-          <meta property="og:image" key="ogImage" content={ogpImageUrl} />
-          <meta
-            name="twitter:card"
-            key="twitterCard"
-            content="summary_large_image"
-          />
-          <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
-        </>
-      )}
+      <meta
+        property="og:image"
+        key="ogImage"
+        content={
+          ogpImageUrl
+            ? ogpImageUrl
+            : `${process.env.NEXT_PUBLIC_WEB_URL}/ogp.png`
+        }
+      />
+      <meta
+        name="twitter:card"
+        key="twitterCard"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:image"
+        key="twitterImage"
+        content={
+          ogpImageUrl
+            ? ogpImageUrl
+            : `${process.env.NEXT_PUBLIC_WEB_URL}/ogp.png`
+        }
+      />
 
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
     </Head>
   )
 }
