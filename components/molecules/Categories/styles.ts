@@ -13,14 +13,13 @@ export const Title = styled.h3`
 
 export const List = styled.ul`
   display: flex;
+  gap: 16px;
   list-style: none;
   margin: 0;
   padding: 0;
 `
 
-export const Item = styled.li`
-  margin: 0 16px;
-`
+export const Item = styled.li``
 
 interface LinkProps {
   isActive?: boolean
