@@ -48,7 +48,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
       {draftKey && (
         <div>
           現在プレビューモードで閲覧中です。
-          <Link href={`/api/exit-preview?id=${blog.id}`}>
+          <Link href={`/api/exitPreview?id=${blog.id}`}>
             <a>プレビューを解除</a>
           </Link>
         </div>
@@ -79,8 +79,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
   if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
-
-  console.log(previewData)
 
   const draftKey = isDraft(previewData)
     ? { draftKey: previewData.draftKey }

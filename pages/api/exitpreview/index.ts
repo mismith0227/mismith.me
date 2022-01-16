@@ -6,17 +6,9 @@ const exitPreview = async (
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> => {
-  const id = toStringId(req.query.id)
-  const data = await client.get({
-    endpoint: 'blog',
-    contentId: id,
-  })
-
   res.clearPreviewData()
-  res.writeHead(307, {
-    Location: data ? `/blog/${data.category.id}/${data.id}` : '/',
-  })
-  res.end()
+  res.writeHead(307, { Location: `/` })
+  res.end('Preview mode disabled')
 }
 
 export default exitPreview
