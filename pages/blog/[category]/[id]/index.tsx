@@ -17,7 +17,7 @@ import { BlogCategory } from '@/types/BlogCategory'
 type StaticProps = {
   readonly blog: Blog
   readonly body: string
-  readonly draftKey?: { [key: string]: string }
+  readonly draftKey?: string
   readonly category: BlogCategory[]
   readonly currentCategory: string
 }
@@ -65,26 +65,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
-  const { params, preview, previewData } = context
+  const { params, previewData } = context
   if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
-
-  const draftKey = preview
-    ? (previewData as { [key: string]: string }).draftKey
-    : {}
 
   try {
     const id = toStringId(params.id)
     const data = await client.get({
       endpoint: 'blog',
       contentId: id,
-      queries: draftKey,
     })
-
-    if (!data) {
-      return { notFound: true }
-    }
 
     const bodyData = cheerio.load(data.content)
 
@@ -104,7 +95,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
         body: bodyData.html(),
         category: category.contents,
         currentCategory: toStringId(params.category),
-        draftKey: draftKey,
       },
     }
   } catch (e) {
