@@ -11,13 +11,14 @@ import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { BlogDetailContent } from '@/components/pages/BlogDetailContent'
 import { toStringId } from '@/utils/toStringId'
+import { isDraft } from '@/utils/isDraft'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 
 type StaticProps = {
   readonly blog: Blog
   readonly body: string
-  readonly draftKey?: { [key: string]: string }
+  readonly draftKey?: string
   readonly category: BlogCategory[]
   readonly currentCategory: string
 }
@@ -43,6 +44,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
         path={meta.path}
         ogpImageUrl={ogpImageUrl}
       />
+      {draftKey && <div>現在プレビューモードで閲覧中です。</div>}
       <BlogDetailContent
         data={blog}
         body={body}
@@ -70,8 +72,10 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     throw new Error('Error: ID not found')
   }
 
-  const draftKey = preview
-    ? (previewData as { [key: string]: string }).draftKey
+  console.log(preview)
+
+  const draftKey = isDraft(previewData)
+    ? { draftKey: previewData.draftKey }
     : {}
 
   try {
@@ -79,12 +83,10 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     const data = await client.get({
       endpoint: 'blog',
       contentId: id,
-      queries: draftKey,
+      queries: {
+        ...draftKey,
+      },
     })
-
-    if (!data) {
-      return { notFound: true }
-    }
 
     const bodyData = cheerio.load(data.content)
 
@@ -104,8 +106,9 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
         body: bodyData.html(),
         category: category.contents,
         currentCategory: toStringId(params.category),
-        draftKey: draftKey,
+        ...draftKey,
       },
+      revalidate: 60,
     }
   } catch (e) {
     return { notFound: true }
