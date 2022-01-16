@@ -67,12 +67,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
-  const { params, preview, previewData } = context
+  const { params, previewData } = context
   if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
-
-  console.log(preview)
 
   const draftKey = isDraft(previewData)
     ? { draftKey: previewData.draftKey }
