@@ -28,7 +28,7 @@ export const Date = styled.span`
 `
 
 export const StyledLink = styled.a`
-  font-size: 18px;
+  font-weight: bold;
   color: #000;
 
   &:hover {
