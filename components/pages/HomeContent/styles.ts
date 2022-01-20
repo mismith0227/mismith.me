@@ -91,7 +91,7 @@ export const SubTitle = styled(Heading)`
 export const Text = styled.p``
 
 export const StyledTagList = styled(TagList)`
-  margin-top: 8px;
+  margin-top: 16px;
 `
 
 export const Biographies = styled.ul`
@@ -167,8 +167,14 @@ export const BiographyTitle = styled.h3`
   font-weight: bold;
 `
 
+export const BiographyRole = styled.p`
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+`
+
 export const BiographyDetail = styled.p`
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   font-size: 14px;
 `
 

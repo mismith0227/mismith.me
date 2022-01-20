@@ -16,6 +16,7 @@ import {
   BiographyRight,
   BiographyDate,
   BiographyTitle,
+  BiographyRole,
   BiographyDetail,
   Activity,
   ActivityItem,
@@ -85,7 +86,8 @@ export const HomeContent = ({ onCreated }: Props) => {
                   <BiographyDate>{item.date}</BiographyDate>
                   <BiographyRight>
                     <BiographyTitle>{item.title}</BiographyTitle>
-                    {BiographyDetail && (
+                    {item.role && <BiographyRole>{item.role}</BiographyRole>}
+                    {item.detail && (
                       <BiographyDetail>{item.detail}</BiographyDetail>
                     )}
                     {item.skills && <StyledTagList items={item.skills} />}
@@ -105,7 +107,7 @@ export const HomeContent = ({ onCreated }: Props) => {
               情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
             </Text>
             <Text>
-              コーディングをすることが多いですが、デザイナー経験もあることから使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
+              コーディングをすることが多いですが、デザインにも興味があるので、使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
             </Text>
 
             <SubTitle level={3}>Skill</SubTitle>

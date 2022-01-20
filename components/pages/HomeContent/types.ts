@@ -1,6 +1,7 @@
 export type Biography = {
   readonly date: string
   readonly title: string
+  readonly role?: string
   readonly detail?: string
   readonly skills?: string[]
 }
