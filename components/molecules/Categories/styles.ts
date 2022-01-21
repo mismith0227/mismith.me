@@ -21,7 +21,7 @@ export const List = styled.ul`
 
 export const Item = styled.li``
 
-interface LinkProps {
+type LinkProps = {
   isActive?: boolean
 }
 

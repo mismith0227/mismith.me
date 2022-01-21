@@ -13,7 +13,7 @@ export const Container = styled.header`
   z-index: 10;
 `
 
-interface MenuProps {
+type MenuProps = {
   isMenuOpen: boolean
 }
 
@@ -57,7 +57,7 @@ export const NavList = styled.ul`
   }
 `
 
-interface LinkProps {
+type LinkProps = {
   isActive?: boolean
 }
 

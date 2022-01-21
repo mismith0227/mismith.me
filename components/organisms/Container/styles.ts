@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
-interface ContainerProps {
+type ContainerProps = {
   readonly size?: 'full' | 'lg' | 'md' | 'sm'
 }
 

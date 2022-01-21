@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import media from '@/styles/media'
 import { Footer } from '../Footer'
 
-interface MainProps {
+type MainProps = {
   readonly path: string
 }
 

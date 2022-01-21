@@ -7,7 +7,7 @@ import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 
-interface Props {
+type Props = {
   readonly blog: Blog[]
   readonly totalCount: number
   readonly category: BlogCategory[]

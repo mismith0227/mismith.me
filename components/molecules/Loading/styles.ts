@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 import media from '../../../styles/media'
 
-interface Props {
+type Props = {
   isLoading: boolean
 }
 

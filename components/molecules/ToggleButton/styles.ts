@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
 
-interface Props {
+type Props = {
   isOpen: boolean
 }
 

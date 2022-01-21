@@ -15,7 +15,7 @@ export const Item = styled.li`
   align-items: center;
 `
 
-interface Props {
+type Props = {
   isCurrent?: boolean
 }
 

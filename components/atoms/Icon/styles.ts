@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-interface Props {
+type Props = {
   rotate?: number
 }
 

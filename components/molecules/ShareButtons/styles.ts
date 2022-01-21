@@ -28,7 +28,7 @@ export const Item = styled.li`
   }
 `
 
-interface LinkProps {
+type LinkProps = {
   readonly service?: 'twitter' | 'hatena'
 }
 
