@@ -13,7 +13,6 @@ import {
 import { Props, HitDoc } from './types'
 
 export const SearchResults = ({ className, hits }: Props) => {
-  console.log(hits)
   const CustomPoweredBy = connectPoweredBy(StyledPoweredBy)
 
   return (

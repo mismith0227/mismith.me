@@ -2,14 +2,11 @@ import Link from 'next/link'
 import { Wrap, StyledLink, StyledSvg } from './styles'
 import { Props } from './types'
 
-export const PoweredBy = ({ className }: Props) => {
+export const PoweredBy = ({ className, url }: Props) => {
   return (
     <Wrap className={className}>
       powerd by
-      <Link
-        href={`https://www.algolia.com/?utm_source=react-instantsearch&utm_medium=website&utm_content=localhost&utm_campaign=poweredby`}
-        passHref
-      >
+      <Link href={url} passHref>
         <StyledLink target="_blank">
           <StyledSvg
             width="512px"

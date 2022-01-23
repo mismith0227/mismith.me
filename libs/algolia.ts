@@ -3,10 +3,9 @@ import algoliasearch from 'algoliasearch'
 import { getAllContents } from '@/libs/getAllContents'
 import { Blog } from '@/types/Blog'
 
-const applicationId = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID ?? ''
-const adminApiKey = process.env.ALGOLIA_ADMIN_API_KEY ?? ''
-
 export const generateIndex = async (): Promise<void> => {
+  const applicationId = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID ?? ''
+  const adminApiKey = process.env.ALGOLIA_ADMIN_API_KEY ?? ''
   const posts = await getAllContents()
 
   const objects = posts.map((post: Blog) => {
