@@ -51,7 +51,6 @@ export const Search = ({ className }: Props) => {
         ブログに関する検索は以下からお願いします。
       </Text>
       <InstantSearch indexName={indexName} searchClient={searchClient}>
-        <Configure hitsPerPage={5} />
         <CustomSearchBox />
         <CustomHits />
       </InstantSearch>
