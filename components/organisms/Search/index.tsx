@@ -9,8 +9,6 @@ import algoliasearch from 'algoliasearch/lite'
 import { MultipleQueriesQuery } from '@algolia/client-search'
 import {
   InstantSearch,
-  SearchBox,
-  Hits,
   Configure,
   connectSearchBox,
   connectHits,
@@ -18,18 +16,15 @@ import {
 import { Props } from './types'
 
 export const Search = ({ className }: Props) => {
-  const applicationId = process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID ?? ''
-  const searchApiKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY ?? ''
   const CustomSearchBox = connectSearchBox(StyledSearchInput)
   const CustomHits = connectHits(StyledSearchResults)
-  // const searchClient = algoliasearch(applicationId, searchApiKey)
   const algoliaClient = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APPLICATION_ID || '',
     process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY || ''
   )
   const indexName = 'mismith'
 
-  const mock = {
+  const empty = {
     hits: [],
     nbHits: 0,
     nbPages: 0,
@@ -41,7 +36,7 @@ export const Search = ({ className }: Props) => {
     ...algoliaClient,
     search(requests: MultipleQueriesQuery[]) {
       if (requests.every(({ params }) => !params?.query)) {
-        return Promise.resolve(mock)
+        return Promise.resolve(empty)
       }
       return algoliaClient.search(requests)
     },
