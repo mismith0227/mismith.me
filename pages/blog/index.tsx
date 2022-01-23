@@ -6,6 +6,7 @@ import { Seo } from '@/components/organisms/Seo'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
+import { generateIndex } from '@/libs/algolia'
 
 type Props = {
   readonly blog: Blog[]
@@ -43,6 +44,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const category = await client.get({
     endpoint: 'blog-category',
   })
+
+  await generateIndex()
 
   return {
     props: {

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import media from '@/styles/media'
 import { Tag } from '@/components/atoms/Tag'
 
 export const Wrap = styled.ul`
