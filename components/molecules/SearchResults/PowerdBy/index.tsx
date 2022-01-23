@@ -5,7 +5,7 @@ import { Props } from './types'
 export const PoweredBy = ({ className, url }: Props) => {
   return (
     <Wrap className={className}>
-      powerd by
+      Powered by
       <Link href={url} passHref>
         <StyledLink target="_blank">
           <StyledSvg
