@@ -11,6 +11,7 @@ https://www.mismith.me/blog
 - Google Analytics
 - RSS
 - Site Map
+- algolia（検索機能）
 
 ## 技術構成
 
