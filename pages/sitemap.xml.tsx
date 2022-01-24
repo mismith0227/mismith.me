@@ -13,7 +13,7 @@ async function generateSitemapXml() {
   contents.forEach((post: Blog) => {
     xml += `
       <url>
-        <loc>https://www.mismith.me/${post.category.id}${post.id}</loc>
+        <loc>https://www.mismith.me/${post.category.id}/${post.id}</loc>
         <lastmod>${post.updatedAt}</lastmod>
         <changefreq>weekly</changefreq>
       </url>
