@@ -7,7 +7,6 @@ import {
   StyledTagList,
   Description,
   MainVisualWrap,
-  MainVisual,
   Content,
   Body,
   Aside,

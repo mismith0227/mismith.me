@@ -1,6 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { client } from '@/libs/client'
-import { toStringId } from '@/utils/toStringId'
 
 const exitPreview = async (
   req: NextApiRequest,
