@@ -131,6 +131,7 @@ export const Body = styled.div`
     width: calc(100% + 200px);
     margin: 0 -100px;
     margin-top: 36px;
+    height: auto;
 
     ${media.medium} {
       width: 100vw;
