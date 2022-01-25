@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import Image from 'next/image'
 import {
   StyledContainer,
   Header,
@@ -26,7 +27,12 @@ export const WorkDetailContent = ({ data }: Props) => (
 
       {data.thumbnail && (
         <MainVisualWrap>
-          <MainVisual src={data.thumbnail.url} alt={data.title} />
+          <Image
+            src={data.thumbnail.url}
+            alt={data.title}
+            width={data.thumbnail.width}
+            height={data.thumbnail.height}
+          />
         </MainVisualWrap>
       )}
       <Description>{data.description}</Description>

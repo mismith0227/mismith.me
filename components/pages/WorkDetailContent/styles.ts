@@ -60,10 +60,11 @@ export const MainVisualWrap = styled.div`
   width: 100%;
   aspect-ratio: 2 / 1;
   background: #eee;
+  padding: 0 18%;
+  box-sizing: border-box;
 
   ${media.large} {
     margin-top: 20px;
-    padding: 24px 0;
   }
 `
 

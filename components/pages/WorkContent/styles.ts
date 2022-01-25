@@ -63,20 +63,12 @@ export const ThumbnailWrap = styled.div`
   aspect-ratio: 16 / 9;
   background: #eee;
   position: relative;
-  padding: 24px 0;
+  padding: 0 18%;
   box-sizing: border-box;
 
   ${media.small} {
     margin-top: 8px;
   }
-`
-
-export const Thumbnail = styled.img`
-  max-height: 70%;
-  max-width: 60%;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 `
 
 export const WorkTitle = styled.h3`

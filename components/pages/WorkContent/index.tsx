@@ -1,11 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Heading } from '@/components/atoms/Heading'
 import {
   StyledContainer,
   Section,
   Lead,
   ThumbnailWrap,
-  Thumbnail,
   Works,
   WorkItem,
   WorkTitle,
@@ -52,7 +52,12 @@ export const WorkContent = ({ data }: Props) => (
 
             {work.thumbnail && (
               <ThumbnailWrap>
-                <Thumbnail src={work.thumbnail.url} alt={work.title} />
+                <Image
+                  src={work.thumbnail.url}
+                  alt={work.title}
+                  width={work.thumbnail.width}
+                  height={work.thumbnail.height}
+                />
               </ThumbnailWrap>
             )}
 
