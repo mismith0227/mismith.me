@@ -21,7 +21,7 @@ export const ContactContent = () => (
         <br />
         もしくはSNSのDMでも大丈夫です。
       </Text>
-      <Email>doraepon2216@gmail.com</Email>
+      <Email>mail@mismith.me</Email>
       <StyledIconList>
         <StyledIconListItem>
           <ExternalLink
