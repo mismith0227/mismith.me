@@ -1,20 +1,54 @@
 import { GetServerSidePropsContext } from 'next'
-import { client } from '@/libs/client'
+import { getAllContents } from '@/libs/getAllContents'
+import { getAllPortfolio } from '@/libs/getAllPortfolio'
 import { Blog } from '@/types/Blog'
+import { Portfolio } from '@/types/Portfolio'
 
 async function generateSitemapXml() {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>`
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`
 
-  const { contents } = await client.get({
-    endpoint: 'blog',
+  const posts = await getAllContents()
+  const works = await getAllPortfolio()
+
+  const contents = [
+    {
+      path: '',
+    },
+    {
+      path: 'works',
+    },
+    {
+      path: 'contact',
+    },
+    {
+      path: 'policy',
+    },
+  ]
+
+  contents.forEach((content) => {
+    xml += `
+      <url>
+        <loc>https://www.mismith.me/${content.path}</loc>
+      </url>
+    `
   })
 
-  contents.forEach((post: Blog) => {
+  posts.forEach((post: Blog) => {
     xml += `
       <url>
         <loc>https://www.mismith.me/blog/${post.category.id}/${post.id}</loc>
         <lastmod>${post.updatedAt}</lastmod>
+        <changefreq>weekly</changefreq>
+      </url>
+    `
+  })
+
+  works.forEach((work: Portfolio) => {
+    xml += `
+      <url>
+        <loc>https://www.mismith.me/works/${work.id}</loc>
+        <lastmod>${work.productionDate}</lastmod>
         <changefreq>weekly</changefreq>
       </url>
     `
