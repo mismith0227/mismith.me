@@ -11,13 +11,16 @@ import { Seo } from '@/components/organisms/Seo'
 import { BlogDetailContent } from '@/components/pages/BlogDetailContent'
 import { toStringId } from '@/utils/toStringId'
 import { isDraft } from '@/utils/isDraft'
+import { convertToHtml } from '@/utils/postUtils'
+import { convertToToc } from '@/utils/TocUtil'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
-import { convertToHtml } from '@/utils/postUtils'
+import { Toc } from '@/types/Toc'
 
 type StaticProps = {
   readonly blog: Blog
   readonly body: string
+  readonly toc: Toc[]
   readonly draftKey?: string
   readonly category: BlogCategory[]
   readonly currentCategory: string
@@ -26,7 +29,7 @@ type StaticProps = {
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const { blog, draftKey, body, category, currentCategory } = props
+  const { blog, draftKey, body, toc, category, currentCategory } = props
 
   const meta = {
     path: 'blog',
@@ -55,6 +58,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
       <BlogDetailContent
         data={blog}
         body={body}
+        toc={toc}
         category={category}
         currentCategory={currentCategory}
       />
@@ -94,6 +98,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     })
 
     const body = convertToHtml(data.content)
+    const toc = convertToToc(data.content)
 
     const category = await client.get({
       endpoint: 'blog-category',
@@ -103,6 +108,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       props: {
         blog: data,
         body: body,
+        toc: toc,
         category: category.contents,
         currentCategory: toStringId(params.category),
         ...draftKey,
