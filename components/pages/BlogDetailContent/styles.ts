@@ -7,6 +7,7 @@ import { ShareButtons } from '@/components/molecules/ShareButtons'
 import { Tag } from '@/components/atoms/Tag'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { Heading } from '@/components/atoms/Heading'
+import { Toc } from '@/components/molecules/Toc'
 
 export const StyledContainer = styled(Container)``
 
@@ -43,6 +44,11 @@ export const BodyWrap = styled.div`
   ${media.medium} {
     margin-top: 80px;
   }
+`
+
+export const StyledToc = styled(Toc)`
+  margin: 0 auto 40px;
+  max-width: 640px;
 `
 
 export const Body = styled.div`

@@ -1,6 +1,4 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
-import media from '@/styles/media'
 
 export const StyledLink = styled.a`
   position: relative;

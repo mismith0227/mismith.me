@@ -19,6 +19,7 @@ import {
   StyledShareButtons,
   StyledIconList,
   StyledIconListItem,
+  StyledToc,
 } from './styles'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
@@ -31,6 +32,7 @@ import 'highlight.js/styles/stackoverflow-light.css'
 export const BlogDetailContent = ({
   data,
   body,
+  toc,
   category,
   currentCategory,
 }: Props) => (
@@ -48,6 +50,8 @@ export const BlogDetailContent = ({
       </Date>
     </DateArea>
     <BodyWrap>
+      {toc.length > 0 && <StyledToc items={toc} />}
+
       <Body
         dangerouslySetInnerHTML={{
           __html: body,
