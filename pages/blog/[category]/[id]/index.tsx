@@ -6,8 +6,6 @@ import {
   GetStaticPaths,
 } from 'next'
 import Link from 'next/link'
-import cheerio from 'cheerio'
-import hljs from 'highlight.js'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { BlogDetailContent } from '@/components/pages/BlogDetailContent'
@@ -15,6 +13,7 @@ import { toStringId } from '@/utils/toStringId'
 import { isDraft } from '@/utils/isDraft'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
+import { convertToHtml } from '@/utils/postUtils'
 
 type StaticProps = {
   readonly blog: Blog
@@ -94,13 +93,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       },
     })
 
-    const bodyData = cheerio.load(data.content)
-
-    bodyData('pre code').each((_, elm) => {
-      const result = hljs.highlightAuto(bodyData(elm).text())
-      bodyData(elm).html(result.value)
-      bodyData(elm).addClass('hljs')
-    })
+    const body = convertToHtml(data.content)
 
     const category = await client.get({
       endpoint: 'blog-category',
@@ -109,7 +102,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     return {
       props: {
         blog: data,
-        body: bodyData.html(),
+        body: body,
         category: category.contents,
         currentCategory: toStringId(params.category),
         ...draftKey,
