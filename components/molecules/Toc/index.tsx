@@ -1,4 +1,4 @@
-import { Wrap, Details, Summary, Title, List, Item, Link } from './styles'
+import { Details, Summary, List, Item, Link } from './styles'
 import { Props } from './types'
 
 export const Toc = ({ className, items }: Props) => {
