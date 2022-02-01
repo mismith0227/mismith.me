@@ -105,6 +105,13 @@ export const biographies = [
       'Git',
     ],
   },
+  {
+    date: '2022年2月',
+    title: 'フリーランス',
+    role: 'フロントエンドエンジニア',
+    detail: 'webサイトやwebアプリの制作に携わっています',
+    skills: ['React', 'Next.js'],
+  },
 ]
 
 export const activities = [
