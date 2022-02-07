@@ -20,6 +20,7 @@ import {
   StyledIconList,
   StyledIconListItem,
   StyledLogo,
+  Email,
 } from './styles'
 import { biographies } from './data'
 import { Heading } from '@/components/atoms/Heading'
@@ -136,6 +137,14 @@ export const HomeContent = ({ onCreated }: Props) => {
                 </ExternalLink>
               </StyledIconListItem>
             </StyledIconList>
+
+            <SubTitle level={3}>Contact</SubTitle>
+            <Text>
+              お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘いは、以下のメールよりお問い合わせください。
+              <br />
+              もしくはSNSのDMでも大丈夫です。
+            </Text>
+            <Email>mail@mismith.me</Email>
           </SectionInner>
         </Section>
       </StyledContainer>

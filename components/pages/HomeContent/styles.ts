@@ -169,3 +169,5 @@ export const ExternalLink = styled.a`
   display: block;
   color: #000;
 `
+
+export const Email = styled.p``
