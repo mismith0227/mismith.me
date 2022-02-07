@@ -5,6 +5,7 @@ import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { TagList } from '@/components/molecules/TagList'
 import { Container } from '@/components/organisms/Container'
 import { Heading } from '@/components/atoms/Heading'
+import { Logo } from '@/components/atoms/Icon/Logo'
 
 export const Scroll = styled.div`
   position: absolute;
@@ -47,7 +48,14 @@ export const StyledContainer = styled(Container)`
 `
 
 export const Title = styled.h1`
+  display: flex;
+  align-items: center;
   margin: 0;
+`
+
+export const StyledLogo = styled(Logo)`
+  margin-right: 16px;
+  font-size: 2rem;
 `
 
 export const Section = styled.section`

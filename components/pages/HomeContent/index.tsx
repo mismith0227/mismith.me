@@ -19,6 +19,7 @@ import {
   StyledTagList,
   StyledIconList,
   StyledIconListItem,
+  StyledLogo,
 } from './styles'
 import { biographies } from './data'
 import { Heading } from '@/components/atoms/Heading'
@@ -58,7 +59,10 @@ export const HomeContent = ({ onCreated }: Props) => {
   return (
     <>
       <StyledContainer>
-        <Title>mismith.me</Title>
+        <Title>
+          <StyledLogo />
+          mismith.me
+        </Title>
         <Biographies>
           {biographies.map((item: Biography) => (
             <BiographyItem key={item.id}>
@@ -129,16 +133,6 @@ export const HomeContent = ({ onCreated }: Props) => {
                   rel="noopener"
                 >
                   <Fivehundredpx />
-                </ExternalLink>
-              </StyledIconListItem>
-              <StyledIconListItem>
-                <ExternalLink
-                  href="https://codepen.io/mismith0227"
-                  target="_blank"
-                  aria-label="codepen"
-                  rel="noopener"
-                >
-                  <Codepen />
                 </ExternalLink>
               </StyledIconListItem>
             </StyledIconList>
