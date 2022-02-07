@@ -6,28 +6,6 @@ import { TagList } from '@/components/molecules/TagList'
 import { Container } from '@/components/organisms/Container'
 import { Heading } from '@/components/atoms/Heading'
 
-export const MainVisual = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-
-  ${media.small} {
-    height: 60vh;
-  }
-`
-
-export const MainVisualText = styled.h1`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  font-weight: bold;
-  line-height: 1.4;
-  font-size: 8.2vw;
-  width: 90%;
-  margin: 0;
-`
-
 export const Scroll = styled.div`
   position: absolute;
   right: 20px;
@@ -65,11 +43,11 @@ export const ScrollInner = styled.span`
 `
 
 export const StyledContainer = styled(Container)`
-  margin-top: 180px;
+  margin-top: 35vh;
+`
 
-  ${media.small} {
-    margin-top: 80px;
-  }
+export const Title = styled.h1`
+  margin: 0;
 `
 
 export const Section = styled.section`
@@ -80,9 +58,7 @@ export const Section = styled.section`
   }
 `
 
-export const SectionInner = styled.div`
-  margin: 40px 0 0;
-`
+export const SectionInner = styled.div``
 
 export const SubTitle = styled(Heading)`
   margin-top: 32px;
@@ -95,18 +71,18 @@ export const StyledTagList = styled(TagList)`
 `
 
 export const Biographies = styled.ul`
-  margin: 0;
+  margin: 24px 0 0;
   padding: 0;
   list-style: none;
 `
 
 export const BiographyItem = styled.li`
-  display: flex;
   position: relative;
-  padding: 0 0 36px 36px;
+  padding: 0 0 52px 52px;
 
   ${media.medium} {
     flex-direction: column;
+    padding: 0 0 36px 36px;
   }
 
   &::before {
@@ -135,13 +111,15 @@ export const BiographyItem = styled.li`
     background-color: #000;
   }
 
-  &:last-of-type {
-    padding-bottom: 0;
+  &:first-of-type {
+    height: 50vh;
 
     &::before {
       background-color: #000;
     }
+  }
 
+  &:last-of-type {
     &::after {
       border-right: 1px dashed #aaa;
       left: 6px;
@@ -151,53 +129,26 @@ export const BiographyItem = styled.li`
 `
 
 export const BiographyDate = styled.p`
-  width: 128px;
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 `
 
-export const BiographyRight = styled.div`
-  flex: 1;
-`
-
-export const BiographyTitle = styled.h3`
+export const BiographyProfession = styled.h3`
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 `
 
 export const BiographyRole = styled.p`
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
 `
 
 export const BiographyDetail = styled.p`
   margin: 14px 0 0;
   font-size: 14px;
-`
-
-export const Activity = styled.dl``
-
-export const ActivityItem = styled.div`
-  margin: 24px 0 0;
-`
-
-export const ActivityTerm = styled.dt`
-  font-weight: bold;
-`
-
-export const ActivityDescription = styled.dd`
-  margin: 4px 0 0;
-  overflow-wrap: break-word;
-  overflow: hidden;
-
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
 `
 
 export const StyledIconList = styled(IconList)`

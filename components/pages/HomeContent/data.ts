@@ -1,95 +1,16 @@
-export const skills = [
-  'HTML',
-  'EJS',
-  'Pug',
-  'CSS',
-  'Sass',
-  'JavaScript',
-  'React',
-  'Next',
-  'Gatsby',
-  'Jest',
-  'AngularJs(1.x)',
-  'TypeScript',
-  'WordPress',
-  'Firebase',
-  'gulp',
-  'webpack',
-  'Storybook',
-]
-
 export const biographies = [
   {
-    date: '2011年3月',
-    title: '大学卒業🌸',
-  },
-  {
-    date: '2011年4月',
-    title: '証券会社で営業',
-  },
-  {
-    date: '2013年3月',
-    title: '広告媒体社で営業',
-  },
-  {
-    date: '2013年10月',
-    title: 'webデザイナーの勉強で専門学校へ',
-  },
-  {
-    date: '2014年6月',
-    title: 'webサービス会社',
-    role: 'デザイナー',
-    detail:
-      'サービスの新規会員やアクティブユーザーの獲得、有料会員への誘導方法などを考えるなどの、サービスの改善に携わりました。',
-    skills: ['画面設計', '解析', 'HTML', 'CSS', 'Sass'],
-  },
-  {
-    date: '2015年8月',
-    title: '制作会社',
-    role: 'マークアップエンジニア',
-    detail:
-      '大手のコーポレートサイトや会員制サービスサイトから、大学入試サイト、ECサイト、スマホゲームなど幅広い案件のコーディングを経験しました。',
-    skills: ['HTML', 'EJS', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'gulp'],
-  },
-  {
-    date: '2016年10月',
-    title: 'スタートアップ',
+    id: '2022-02',
+    startDate: '2022年2月',
+    belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
-    detail:
-      '自社開発の業務支援ツールのフロントエンド開発やプロダクトサイトのコーディングをしました。',
-    skills: [
-      'Angular(1.x)',
-      'React',
-      'Sass',
-      'jQuery',
-      'WordPress',
-      'gulp',
-      'webpack',
-      'Git',
-      'リモートワーク',
-    ],
+    detail: 'webサイトやwebアプリの制作に携わっています',
   },
   {
-    date: '2020年4月',
-    title: '制作会社',
-    role: 'フロントエンドエンジニア',
-    detail:
-      '受託開発で業務支援ツールの開発をしたり、コーポレートサイトやアーティストサイトのコーディングをしました。',
-    skills: [
-      'React',
-      'EJS',
-      'Sass',
-      'JavaScript',
-      'gulp',
-      'webpack',
-      'Git',
-      'リモートワーク',
-      'API設計',
-    ],
-  },
-  {
-    date: '2021年9月',
-    title: '制作会社',
+    id: '2021-09',
+    startDate: '2021年9月',
+    endDate: '2022年1月',
+    belongs: '制作会社',
     role: 'フロントエンドエンジニア',
     detail:
       'コーディングだけでなく、フロントエンド業務全般の管理、技術ディレクション、技術サポートなどを行ってます。案件としては、コーポレート、教育機関、リクルート、キャンペーンなどのwebサイトや社内システムなどのwebアプリの制作に携わっています。',
@@ -106,90 +27,77 @@ export const biographies = [
     ],
   },
   {
-    date: '2022年2月',
-    title: 'フリーランス',
+    id: '2020-04',
+    startDate: '2020年4月',
+    endDate: '2021年8月',
+    belongs: '制作会社',
     role: 'フロントエンドエンジニア',
-    detail: 'webサイトやwebアプリの制作に携わっています',
-    skills: ['React', 'Next.js'],
-  },
-]
-
-export const activities = [
-  {
-    title: 'gulpをやめてnpm scriptを使う',
-    link: 'https://speakerdeck.com/mismith0227/gulpwoyametenpm-scriptwoshi-u',
-  },
-  {
-    title: 'Tailwindcssを使ってみる',
-    link: 'https://speakerdeck.com/mismith0227/tailwindcsswoshi-tutemiru',
-  },
-  {
-    title: '最近のWordPressの開発環境について調べてみた',
-    link:
-      'https://speakerdeck.com/mismith0227/zui-jin-falsewordpressfalsekai-fa-huan-jing-nituitediao-betemita',
+    detail:
+      '受託開発で業務支援ツールの開発をしたり、コーポレートサイトやアーティストサイトのコーディングをしました。',
+    skills: [
+      'React',
+      'EJS',
+      'Sass',
+      'JavaScript',
+      'gulp',
+      'webpack',
+      'Git',
+      'リモートワーク',
+      'API設計',
+    ],
   },
   {
-    title: 'Variable Fontを使ってみた',
-    link: 'https://speakerdeck.com/mismith0227/variable-font-woshi-tutemita',
+    id: '2016-10',
+    startDate: '2016年10月',
+    endDate: '2020年3月',
+    belongs: 'スタートアップ',
+    role: 'フロントエンドエンジニア',
+    detail:
+      '自社開発の業務支援ツールのフロントエンド開発やプロダクトサイトのコーディングをしました。',
+    skills: [
+      'Angular(1.x)',
+      'React',
+      'Sass',
+      'jQuery',
+      'WordPress',
+      'gulp',
+      'webpack',
+      'Git',
+      'リモートワーク',
+    ],
   },
   {
-    title: '見落としがちな想定漏れ',
-    link:
-      'https://speakerdeck.com/mismith0227/jian-luo-tosigatinaxiang-ding-lou-re',
+    id: '2015-08',
+    startDate: '2015年7月',
+    endDate: '2016年9月',
+    belongs: '制作会社',
+    role: 'マークアップエンジニア',
+    detail:
+      '大手のコーポレートサイトや会員制サービスサイトから、大学入試サイト、ECサイト、スマホゲームなど幅広い案件のコーディングを経験しました。',
+    skills: ['HTML', 'EJS', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'gulp'],
   },
   {
-    title: 'カンパイ本町を支える技術',
-    link: 'https://speakerdeck.com/mismith0227/kanpaiben-ting-wozhi-eruji-shu',
+    id: '2014-06',
+    startDate: '2014年6月',
+    endDate: '2015年6月',
+    belongs: 'webサービス会社',
+    role: 'デザイナー',
+    detail:
+      'サービスの新規会員やアクティブユーザーの獲得、有料会員への誘導方法などを考えるなどの、サービスの改善に携わりました。',
+    skills: ['画面設計', '解析', 'HTML', 'CSS', 'Sass'],
   },
   {
-    title: 'WP REST APIとReact Nativeを使ってマガジンアプリを作る',
-    link:
-      'https://speakerdeck.com/mismith0227/wp-rest-apitoreact-nativewoshi-tutemakasinahuriwozuo-ru',
+    id: '2013-03',
+    startDate: '2013年3月',
+    endDate: '2013年10月',
+    belongs: '広告媒体社',
+    role: '営業',
   },
   {
-    title: 'Material - UI v1が 出そうなので使ってみた',
-    link:
-      'https://speakerdeck.com/mismith0227/material-ui-v1ga-chu-sounafalsedeshi-tutemita',
-  },
-  {
-    title: 'なんか作ってサーバーレスに触れてみた',
-    link:
-      'https://speakerdeck.com/mismith0227/nankazuo-tutesabaresunihong-retemita',
-  },
-  {
-    title: 'React Nativeが 楽しく感じるまでの話',
-    link:
-      'https://speakerdeck.com/mismith0227/react-nativega-le-sikugan-zirumadefalsehua',
-  },
-  {
-    title: 'ブログ更新してますか？？ブログを続けていてよかったこと',
-    link:
-      'https://speakerdeck.com/mismith0227/burogugeng-xin-sitemasuka-buroguwosok-keteiteyokatutakoto?slide=15',
-  },
-  {
-    title: 'PostCSSを導入してみた話と プラグインいろいろ',
-    link:
-      'https://speakerdeck.com/mismith0227/postcsswodao-ru-sitemitahua-to-puraguiniroiro',
-  },
-  {
-    title: 'ハロウィンで使える CSSトリック',
-    link: 'https://speakerdeck.com/mismith0227/harouindeshi-eru-csstorituku',
-  },
-  {
-    title: 'CSSで変態的にイラストを描く',
-    link:
-      'https://speakerdeck.com/mismith0227/csstebian-tai-de-niirasutowomiao-ku',
-  },
-  {
-    title:
-      'これからWordPressを頑張りたい人へ。子テーマを作って公式テーマディレクトリに登録しよう！',
-    link:
-      'https://speakerdeck.com/mismith0227/korekarawordpresswowan-zhang-ritairen-he-zi-temawozuo-tutegong-shi-temadeirekutorinideng-lu-siyou',
-  },
-  {
-    title:
-      'WordPressでオリジナルサイト作り超入門。子テーマでテーマ作成・カスタマイズをやってみよう！',
-    link:
-      'https://speakerdeck.com/mismith0227/wordpressdeorizinarusaitozuo-richao-ru-men-zi-temadetemazuo-cheng-kasutamaizuwoyatutemiyou-1',
+    id: '2011-04',
+    startDate: '2011年4月',
+    endDate: '2013年2月',
+    belongs: '証券会社',
+    role: '営業',
   },
 ]

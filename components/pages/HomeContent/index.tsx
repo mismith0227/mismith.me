@@ -3,32 +3,24 @@
 // import { gsap } from 'gsap'
 // import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
-  MainVisual,
-  MainVisualText,
-  Scroll,
-  ScrollInner,
   StyledContainer,
+  Title,
   Section,
   SectionInner,
   Text,
   Biographies,
   BiographyItem,
-  BiographyRight,
   BiographyDate,
-  BiographyTitle,
+  BiographyProfession,
   BiographyRole,
   BiographyDetail,
-  Activity,
-  ActivityItem,
-  ActivityTerm,
-  ActivityDescription,
   ExternalLink,
   SubTitle,
   StyledTagList,
   StyledIconList,
   StyledIconListItem,
 } from './styles'
-import { skills, biographies, activities } from './data'
+import { biographies } from './data'
 import { Heading } from '@/components/atoms/Heading'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
@@ -65,38 +57,22 @@ export const HomeContent = ({ onCreated }: Props) => {
 
   return (
     <>
-      <MainVisual>
-        <MainVisualText>
-          Web Developer based in Osaka. I deliver value with front-end
-          technology.
-        </MainVisualText>
-        <Scroll>
-          <ScrollInner></ScrollInner>
-        </Scroll>
-      </MainVisual>
-
       <StyledContainer>
-        <Section>
-          <Heading level={2}>Biography</Heading>
+        <Title>mismith.me</Title>
+        <Biographies>
+          {biographies.map((item: Biography) => (
+            <BiographyItem key={item.id}>
+              <BiographyRole>{item.role}</BiographyRole>
+              <BiographyProfession>{item.belongs}</BiographyProfession>
+              <BiographyDate>
+                {item.startDate} ~ {item.endDate && item.endDate}
+              </BiographyDate>
 
-          <SectionInner>
-            <Biographies>
-              {biographies.map((item: Biography) => (
-                <BiographyItem key={item.date}>
-                  <BiographyDate>{item.date}</BiographyDate>
-                  <BiographyRight>
-                    <BiographyTitle>{item.title}</BiographyTitle>
-                    {item.role && <BiographyRole>{item.role}</BiographyRole>}
-                    {item.detail && (
-                      <BiographyDetail>{item.detail}</BiographyDetail>
-                    )}
-                    {item.skills && <StyledTagList items={item.skills} />}
-                  </BiographyRight>
-                </BiographyItem>
-              ))}
-            </Biographies>
-          </SectionInner>
-        </Section>
+              {item.detail && <BiographyDetail>{item.detail}</BiographyDetail>}
+              {item.skills && <StyledTagList items={item.skills} />}
+            </BiographyItem>
+          ))}
+        </Biographies>
 
         <Section>
           <Heading level={2}>About me</Heading>
@@ -109,14 +85,6 @@ export const HomeContent = ({ onCreated }: Props) => {
             <Text>
               コーディングをすることが多いですが、デザインにも興味があるので、使いやすさを考えたり、情報整理がされているかを考え、時には提案しつつ、コーディングすることが強みです。
             </Text>
-
-            <SubTitle level={3}>Skill</SubTitle>
-
-            <Text>
-              以下は使用したことがある技術です。仕事では主にHTML、CSS、JavaScriptを使ったフロントエンド領域を担当することが多いです。趣味で開発する時にはReact、Firestoreを使ったりします。
-            </Text>
-
-            <StyledTagList items={skills} />
 
             <SubTitle level={3}>SNS</SubTitle>
             <Text>
@@ -174,30 +142,6 @@ export const HomeContent = ({ onCreated }: Props) => {
                 </ExternalLink>
               </StyledIconListItem>
             </StyledIconList>
-          </SectionInner>
-        </Section>
-
-        <Section>
-          <Heading level={2}>Activities</Heading>
-
-          <SectionInner>
-            <Activity>
-              {activities.map((item) => (
-                <ActivityItem key={item.title}>
-                  <ActivityTerm>{item.title}</ActivityTerm>
-                  <ActivityDescription>
-                    <ExternalLink
-                      href={item.link}
-                      target="_blank"
-                      aria-label={item.title}
-                      rel="noopener"
-                    >
-                      {item.link}
-                    </ExternalLink>
-                  </ActivityDescription>
-                </ActivityItem>
-              ))}
-            </Activity>
           </SectionInner>
         </Section>
       </StyledContainer>
