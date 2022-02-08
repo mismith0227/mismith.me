@@ -26,8 +26,8 @@ export const Footer = ({ className }: Props) => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link href="/contact" passHref>
-                  <StyledLink>Contact</StyledLink>
+                <Link href="/works" passHref>
+                  <StyledLink>Works</StyledLink>
                 </Link>
               </ListItem>
               <ListItem>
