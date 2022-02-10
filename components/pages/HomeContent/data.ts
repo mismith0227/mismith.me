@@ -39,6 +39,7 @@ export const biographies = [
       'EJS',
       'Sass',
       'JavaScript',
+      'TypeScript',
       'gulp',
       'webpack',
       'Git',
