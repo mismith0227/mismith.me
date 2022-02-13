@@ -88,6 +88,10 @@ export const Body = styled.div`
 
   a {
     color: #000;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   p {
@@ -96,7 +100,12 @@ export const Body = styled.div`
   }
 
   li {
+    margin: 8px 0 0;
     word-wrap: break-word;
+
+    &:first-of-type {
+      margin: 0;
+    }
   }
 
   p,
