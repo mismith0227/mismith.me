@@ -159,6 +159,11 @@ export const Body = styled.div`
     overflow: hidden;
     height: 450px;
   }
+
+  iframe[title='YouTube embed'] {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
 `
 
 export const WrittenBy = styled.div`
