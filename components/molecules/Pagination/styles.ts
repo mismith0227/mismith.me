@@ -1,5 +1,6 @@
-import { Chevron } from '@/components/atoms/Icon/Chevron'
+import media from '@/styles/media'
 import styled from '@emotion/styled'
+import { Chevron } from '@/components/atoms/Icon/Chevron'
 
 export const Container = styled.ul`
   display: flex;
@@ -31,6 +32,11 @@ export const StyledLink = styled.a<Props>`
   color: ${({ isCurrent }) => (isCurrent ? `#fff` : `#000`)};
   background-color: ${({ isCurrent }) => (isCurrent ? `#000` : `#fff`)};
   transition: 0.2s;
+
+  ${media.small} {
+    width: 28px;
+    height: 46px;
+  }
 
   &:hover {
     background-color: #000;
