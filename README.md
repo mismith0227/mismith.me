@@ -7,11 +7,13 @@ https://www.mismith.me/blog
 - 記事一覧
 - カテゴリー別記事一覧
 - 記事詳細
+  - 目次
   - 関連記事
 - Google Analytics
 - RSS
 - Site Map
 - algolia（検索機能）
+- PWA
 
 ## 技術構成
 
