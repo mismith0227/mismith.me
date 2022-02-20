@@ -30,6 +30,7 @@ export const Seo: React.FC<Props> = ({
         </>
       )}
       <title>{title}</title>
+      <meta name="theme-color" content="#000" />
       <meta name="description" content={description} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={description} />
@@ -62,6 +63,7 @@ export const Seo: React.FC<Props> = ({
         }
       />
       <link rel="manifest" href="/manifest.webmanifest" />
+      <link rel="apple-touch-icon" href="/icon-192x192.png" />
       <link rel="icon" href="/favicon.png" />
     </Head>
   )
