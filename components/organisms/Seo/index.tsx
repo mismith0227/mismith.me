@@ -61,7 +61,7 @@ export const Seo: React.FC<Props> = ({
             : `${process.env.NEXT_PUBLIC_WEB_URL}/ogp.png`
         }
       />
-
+      <link rel="manifest" href="/manifest.webmanifest" />
       <link rel="icon" href="/favicon.png" />
     </Head>
   )
