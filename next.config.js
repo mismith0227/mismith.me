@@ -1,7 +1,14 @@
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
+
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-  images: {
-    domains: ['images.microcms-assets.io'],
+
+const config = {
+  pwa: {
+    dest: 'public',
+    runtimeCaching,
   },
+  reactStrictMode: true,
 }
+
+module.exports = withPWA(config)
