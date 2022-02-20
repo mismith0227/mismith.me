@@ -31,7 +31,7 @@ export const WorkContent = ({ data }: Props) => (
         ご連絡いただければ、詳細をお送りいたします。
       </Lead>
 
-      <ContactLink href={`/contact`}>Contact</ContactLink>
+      <p>mail@mismith.me</p>
     </Section>
 
     <Section>
