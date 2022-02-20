@@ -9,6 +9,9 @@ const config = {
     runtimeCaching,
   },
   reactStrictMode: true,
+  images: {
+    domains: ['images.microcms-assets.io'],
+  },
 }
 
 module.exports = withPWA(config)
