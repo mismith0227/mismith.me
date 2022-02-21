@@ -28,7 +28,7 @@ const BlogPage: NextPage<Props> = ({
   }
 
   return (
-    <Layout path={meta.path} disableLoading>
+    <Layout path={meta.path}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
       <BlogContent
         data={blog}

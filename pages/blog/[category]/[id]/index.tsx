@@ -40,7 +40,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
   return blog ? (
-    <Layout path={meta.path} disableLoading>
+    <Layout path={meta.path}>
       <Seo
         title={blog.title ? blog.title : ''}
         description={blog.description ? blog.description : ''}
