@@ -13,7 +13,6 @@ import {
   Description,
   StyledTagList,
   LinkArea,
-  ContactLink,
   StyledLinkButton,
 } from './styles'
 import { Props } from './types'
