@@ -15,6 +15,7 @@ export const ShareButtons = ({
     <List className={className}>
       <Item key="twitter">
         <StyledLink
+          aria-label="twitter share"
           href={twitterLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -25,6 +26,7 @@ export const ShareButtons = ({
       </Item>
       <Item key="hatena">
         <StyledLink
+          aria-label="hatena bookmark share"
           href={hatenaLink}
           target="_blank"
           rel="noopener noreferrer"
