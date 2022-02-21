@@ -28,34 +28,9 @@ import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
-import { Props, Biography } from './types'
+import { Biography } from './types'
 
-export const HomeContent = ({ onCreated }: Props) => {
-  // React.useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger)
-  //   fadeInAnimation()
-  // }, [])
-
-  // const fadeInAnimation = () => {
-  //   gsap.registerEffect({
-  //     name: 'scrollSlideIn',
-  //     defaults: { duration: 2 },
-  //     effect: (targets: string[]) => {
-  //       return gsap.from(targets, {
-  //         scrollTrigger: { trigger: targets },
-  //         y: 150,
-  //         opacity: 0,
-  //         duration: 1,
-  //         delay: 0.2,
-  //       })
-  //     },
-  //   })
-
-  //   document.querySelectorAll('section').forEach((box) => {
-  //     gsap.effects.scrollSlideIn(box)
-  //   })
-  // }
-
+export const HomeContent = () => {
   return (
     <>
       <StyledContainer>

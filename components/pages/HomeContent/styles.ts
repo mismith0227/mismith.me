@@ -142,7 +142,7 @@ export const BiographyDate = styled.p`
   font-weight: bold;
 `
 
-export const BiographyProfession = styled.h3`
+export const BiographyProfession = styled.p`
   margin: 0;
   font-size: 14px;
   font-weight: bold;

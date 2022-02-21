@@ -8,10 +8,6 @@ export type Biography = {
   readonly skills?: string[]
 }
 
-export type Props = {
-  readonly onCreated: (value: boolean) => void
-}
-
 export type queueItem = {
   readonly char?: string
   readonly end: number
