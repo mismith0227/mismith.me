@@ -28,7 +28,7 @@ const WorkDetailPage: NextPage<PageProps> = (props) => {
   return portfolio ? (
     <Layout path={meta.path}>
       <Seo
-        title={portfolio.title ? portfolio.title : ''}
+        title={portfolio.title ? `${portfolio.title} | mismith.me` : ''}
         description={portfolio.description ? portfolio.description : ''}
         path={meta.path}
       />

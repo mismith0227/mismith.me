@@ -16,7 +16,7 @@ type Props = {
 
 const BlogPage: NextPage<Props> = ({ blog, totalCount, category }) => {
   const meta = {
-    title: 'Blog',
+    title: 'Blog | mismith.me',
     description: 'ブログです',
     path: 'blog',
   }

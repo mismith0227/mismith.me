@@ -5,7 +5,7 @@ import { HomeContent } from '@/components/pages/HomeContent'
 
 const Home: NextPage = () => {
   const meta = {
-    title: 'Home',
+    title: 'Home | mismith.me',
     description: 'トップページ',
     path: 'home',
   }

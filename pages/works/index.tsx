@@ -11,7 +11,7 @@ type Props = {
 
 const WorksPage: NextPage<Props> = ({ portfolio }) => {
   const meta = {
-    title: 'Works',
+    title: 'Works | mismith.me',
     description: '制作実績一覧です',
     path: 'works',
   }

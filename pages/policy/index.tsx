@@ -4,7 +4,7 @@ import { PolicyContent } from '@/components/pages/PolicyContent'
 
 const Policy = () => {
   const meta = {
-    title: 'Privacy Policy',
+    title: 'Privacy Policy | mismith.me',
     description: 'プライバシーポリシー',
     path: 'policy',
   }
