@@ -1,7 +1,3 @@
-// import { Canvas, useFrame } from '@react-three/fiber'
-// import { Tetrahedron } from '@react-three/drei'
-// import { gsap } from 'gsap'
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import {
   StyledContainer,
   Title,
