@@ -8,7 +8,7 @@ export const Toc = ({ className, items }: Props) => {
       <List className={className}>
         {items.map((item, index) => (
           <Item key={`${item.id}-${index}`} name={item.name}>
-            <StyledLink to={item.id} smooth={true} duration={400}>
+            <StyledLink to={item.id} smooth duration={400}>
               {item.text}
             </StyledLink>
           </Item>
