@@ -2,7 +2,6 @@ import { Details, Summary, List, Item, StyledLink } from './styles'
 import { Props } from './types'
 
 export const Toc = ({ className, items }: Props) => {
-  console.log(items)
   return (
     <Details className={className} open>
       <Summary>目次</Summary>
