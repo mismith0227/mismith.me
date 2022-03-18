@@ -32,6 +32,7 @@ export const StyledLink = styled.a<Props>`
   color: ${({ isCurrent }) => (isCurrent ? `#fff` : `#000`)};
   background-color: ${({ isCurrent }) => (isCurrent ? `#000` : `#fff`)};
   transition: 0.2s;
+  ${({ isCurrent }) => isCurrent && `pointer-events: none;`}
 
   ${media.small} {
     width: 28px;
