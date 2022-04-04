@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const Wrap = styled.input`
+export const Input = styled.input`
   box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 8px;
