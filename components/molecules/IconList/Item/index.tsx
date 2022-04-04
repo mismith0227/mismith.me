@@ -1,8 +1,7 @@
-import * as React from 'react'
 import { Props } from './types'
 import { Wrap } from './styles'
 
-const ListItem: React.FC<Props> = ({ children, className }) => {
+const ListItem = ({ children, className }: Props) => {
   return <Wrap className={className}>{children}</Wrap>
 }
 
