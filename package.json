@@ -9,7 +9,7 @@
     "@emotion/styled": "^11.3.0",
     "@next/bundle-analyzer": "^12.1.0",
     "@react-three/drei": "^6.2.0",
-    "@react-three/fiber": "^7.0.1",
+    "@react-three/fiber": "7.0.29",
     "@types/gtag.js": "^0.0.8",
     "@types/jsdom": "^16.2.14",
     "@types/react-instantsearch-dom": "^6.12.2",
