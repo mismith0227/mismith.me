@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Container, Item, StyledLink, StyledChevron } from './styles'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { Props } from './types'
@@ -22,47 +21,48 @@ export const Pagination = ({
     <Container className={className}>
       {currentPage !== 1 && (
         <Item>
-          <Link href={`${paginationPath}/${currentPage - 1}`} passHref>
-            <StyledLink>
-              <StyledChevron />
-            </StyledLink>
-          </Link>
+          <StyledLink href={`${paginationPath}/${currentPage - 1}`}>
+            <StyledChevron />
+          </StyledLink>
         </Item>
       )}
 
       <Item key={1}>
-        <Link href={`${paginationPath}/${1}`} passHref>
-          <StyledLink isCurrent={currentPage === 1}>{1}</StyledLink>
-        </Link>
+        <StyledLink
+          href={`${paginationPath}/${1}`}
+          isCurrent={currentPage === 1}
+        >
+          {1}
+        </StyledLink>
       </Item>
       {range(2, lastPage - 1).map((number, index) => {
         return Math.abs(currentPage - number) < 3 ? (
           <Item key={index}>
-            <Link href={`${paginationPath}/${number}`} passHref>
-              <StyledLink isCurrent={currentPage === number}>
-                {number}
-              </StyledLink>
-            </Link>
+            <StyledLink
+              href={`${paginationPath}/${number}`}
+              isCurrent={currentPage === number}
+            >
+              {number}
+            </StyledLink>
           </Item>
         ) : (
           Math.abs(currentPage - number) === 3 && <Item key={index}>...</Item>
         )
       })}
       <Item key={lastPage}>
-        <Link href={`${paginationPath}/${lastPage}`} passHref>
-          <StyledLink isCurrent={currentPage === lastPage}>
-            {lastPage}
-          </StyledLink>
-        </Link>
+        <StyledLink
+          href={`${paginationPath}/${lastPage}`}
+          isCurrent={currentPage === lastPage}
+        >
+          {lastPage}
+        </StyledLink>
       </Item>
 
       {currentPage !== lastPage && (
         <Item>
-          <Link href={`${paginationPath}/${currentPage + 1}`} passHref>
-            <StyledLink>
-              <StyledChevron rotate={180} />
-            </StyledLink>
-          </Link>
+          <StyledLink href={`${paginationPath}/${currentPage + 1}`} passHref>
+            <StyledChevron rotate={180} />
+          </StyledLink>
         </Item>
       )}
     </Container>

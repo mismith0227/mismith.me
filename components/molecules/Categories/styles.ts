@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 
@@ -25,7 +26,7 @@ type LinkProps = {
   isActive?: boolean
 }
 
-export const StyledLink = styled.a<LinkProps>`
+export const StyledLink = styled(Link)<LinkProps>`
   display: inline-block;
   padding: 8px 12px;
   position: relative;

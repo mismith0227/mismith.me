@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 import { PoweredBy } from './PowerdBy'
 
@@ -20,7 +21,7 @@ export const Item = styled.li`
   }
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 24px;

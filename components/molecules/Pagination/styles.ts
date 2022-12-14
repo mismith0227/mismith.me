@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import media from '@/styles/media'
 import styled from '@emotion/styled'
 import { Chevron } from '@/components/atoms/Icon/Chevron'
@@ -20,7 +21,7 @@ type Props = {
   isCurrent?: boolean
 }
 
-export const StyledLink = styled.a<Props>`
+export const StyledLink = styled(Link)<Props>`
   display: flex;
   align-items: center;
   justify-content: center;

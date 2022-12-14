@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Container } from '@/components/organisms/Container'
@@ -81,7 +82,7 @@ export const DateLabel = styled.span`
   font-weight: bold;
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   display: block;
   color: #000;
   text-decoration: none;
