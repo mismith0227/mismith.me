@@ -42,7 +42,6 @@ export const Seo: React.FC<Props> = ({
             : `${process.env.NEXT_PUBLIC_WEB_URL}/ogp.png`
         }
       />
-      <link rel="manifest" href="/manifest.webmanifest" />
       <link rel="apple-touch-icon" href="/icon-192x192.png" />
       <link rel="icon" href="/favicon.png" />
     </Head>

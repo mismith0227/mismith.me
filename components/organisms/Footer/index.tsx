@@ -21,19 +21,13 @@ export const Footer = ({ className }: Props) => {
             <ListTitle>Pages</ListTitle>
             <List>
               <ListItem>
-                <Link href="/" passHref>
-                  <StyledLink>Home</StyledLink>
-                </Link>
+                <StyledLink href="/">Home</StyledLink>
               </ListItem>
               <ListItem>
-                <Link href="/works" passHref>
-                  <StyledLink>Works</StyledLink>
-                </Link>
+                <StyledLink href="/works">Works</StyledLink>
               </ListItem>
               <ListItem>
-                <Link href="/blog" passHref>
-                  <StyledLink>Blog</StyledLink>
-                </Link>
+                <StyledLink href="/blog">Blog</StyledLink>
               </ListItem>
             </List>
           </ListWrap>
@@ -42,9 +36,7 @@ export const Footer = ({ className }: Props) => {
             <ListTitle>Terms</ListTitle>
             <List>
               <ListItem>
-                <Link href="/policy" passHref>
-                  <StyledLink>Policy</StyledLink>
-                </Link>
+                <StyledLink href="/policy">Policy</StyledLink>
               </ListItem>
             </List>
           </ListWrap>

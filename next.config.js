@@ -1,20 +1,7 @@
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
-
 /** @type {import('next').NextConfig} */
-
-const config = {
-  pwa: {
-    dest: 'public',
-    runtimeCaching,
-  },
+const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ['images.microcms-assets.io'],
-  },
+  swcMinify: true,
 }
 
-module.exports = withBundleAnalyzer(withPWA(config))
+module.exports = nextConfig

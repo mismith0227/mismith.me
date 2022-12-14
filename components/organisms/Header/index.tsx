@@ -17,19 +17,14 @@ export const Header = ({ path }: Props) => {
       <Navigation isMenuOpen={isMenuOpen} id="navigation">
         <NavList>
           <NavListItem isActive={path === 'home'}>
-            <Link href="/" aria-label="Home" passHref>
-              <StyledLink>Home</StyledLink>
-            </Link>
-          </NavListItem>
-          <NavListItem isActive={path === 'works'}>
-            <Link href="/works/" aria-label="Works" passHref>
-              <StyledLink>Works</StyledLink>
-            </Link>
+            <StyledLink href="/" aria-label="Home">
+              Home
+            </StyledLink>
           </NavListItem>
           <NavListItem isActive={path === 'blog'}>
-            <Link href="/blog" aria-label="Blog" passHref>
-              <StyledLink>Blog</StyledLink>
-            </Link>
+            <StyledLink href="/blog" aria-label="Blog">
+              Blog
+            </StyledLink>
           </NavListItem>
         </NavList>
       </Navigation>
