@@ -24,9 +24,6 @@ export const Footer = ({ className }: Props) => {
                 <StyledLink href="/">Home</StyledLink>
               </ListItem>
               <ListItem>
-                <StyledLink href="/works">Works</StyledLink>
-              </ListItem>
-              <ListItem>
                 <StyledLink href="/blog">Blog</StyledLink>
               </ListItem>
             </List>
@@ -102,16 +99,6 @@ export const Footer = ({ className }: Props) => {
                   rel="noopener"
                 >
                   Codepen
-                </StyledLink>
-              </ListItem>
-              <ListItem>
-                <StyledLink
-                  href="https://www.mismith.me/feed"
-                  target="_blank"
-                  aria-label="rss"
-                  rel="noopener"
-                >
-                  RSS
                 </StyledLink>
               </ListItem>
             </List>
