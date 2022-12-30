@@ -6,6 +6,7 @@ import { client } from '@/libs/client'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { PhotoContent } from '@/components/pages/PhotoContent'
+import { TopContent } from '@/components/pages/TopContent'
 
 type Props = {
   readonly photos: Photo[]
@@ -24,7 +25,7 @@ const Home: NextPage<Props> = ({ photos, totalCount, category }) => {
     <Layout path={meta.path}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <PhotoContent data={photos} category={category} />
+      <TopContent data={photos} />
     </Layout>
   )
 }

@@ -5,7 +5,6 @@ export const PhotoContent = ({ data, category }: Props) => {
   console.log(category)
   return (
     <Wrap>
-      <h1>photo</h1>
       <StyledMasonry
         columns={{ xs: 1, sm: 2, md: 3 }}
         spacing={{ xs: 1, sm: 3, md: 7 }}
