@@ -12,7 +12,7 @@ type Props = {
   readonly category: PhotoCategory[]
 }
 
-const Home: NextPage<Props> = ({ photos, totalCount, category }) => {
+const Gallery: NextPage<Props> = ({ photos, totalCount, category }) => {
   const meta = {
     title: 'Home | mismith.me',
     description: 'トップページ',
@@ -28,12 +28,12 @@ const Home: NextPage<Props> = ({ photos, totalCount, category }) => {
   )
 }
 
-export default Home
+export default Gallery
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({
     endpoint: 'photo',
-    queries: { limit: 20, offset: 0, filters: 'pickUp[equals]true' },
+    queries: { limit: 20, offset: 0 },
   })
 
   const category = await client.get({

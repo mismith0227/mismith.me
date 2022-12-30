@@ -2,7 +2,6 @@ import { Wrap, StyledMasonry, StyledImage } from './styles'
 import { Props } from './types'
 
 export const PhotoContent = ({ data, category }: Props) => {
-  console.log(category)
   return (
     <Wrap>
       <StyledMasonry
