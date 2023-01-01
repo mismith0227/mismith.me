@@ -16,6 +16,7 @@ import { convertToToc } from '@/utils/TocUtil'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { Toc } from '@/types/Toc'
+import { PhotoCategory } from '@/types/PhotoCategory'
 
 type StaticProps = {
   readonly blog: Blog
@@ -24,12 +25,21 @@ type StaticProps = {
   readonly draftKey?: string
   readonly category: BlogCategory[]
   readonly currentCategory: string
+  readonly photoCategory: PhotoCategory[]
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const { blog, draftKey, body, toc, category, currentCategory } = props
+  const {
+    blog,
+    draftKey,
+    body,
+    toc,
+    category,
+    currentCategory,
+    photoCategory,
+  } = props
 
   const meta = {
     path: 'blog',
@@ -40,7 +50,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
   return blog ? (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo
         title={blog.title ? `${blog.title} | mismith.me` : ''}
         description={blog.description ? blog.description : ''}
@@ -102,6 +112,10 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       endpoint: 'blog-category',
     })
 
+    const photoCategory = await client.get({
+      endpoint: 'photo-category',
+    })
+
     return {
       props: {
         blog: data,
@@ -109,6 +123,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
         toc: toc,
         category: category.contents,
         currentCategory: toStringId(params.category),
+        photoCategory: photoCategory.contents,
         ...draftKey,
       },
     }

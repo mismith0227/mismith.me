@@ -5,25 +5,26 @@ import { client } from '@/libs/client'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { TopContent } from '@/components/pages/TopContent'
+import { PhotoContent } from '@/components/pages/PhotoContent'
 
 type Props = {
   readonly photos: Photo[]
   readonly totalCount: number
-  readonly category: PhotoCategory[]
+  readonly photoCategory: PhotoCategory[]
 }
 
-const Gallery: NextPage<Props> = ({ photos, totalCount, category }) => {
+const Gallery: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
   const meta = {
-    title: 'Home | mismith.me',
-    description: 'トップページ',
-    path: 'home',
+    title: 'Gallery | mismith.me',
+    description: 'ギャラリー',
+    path: 'gallery',
   }
 
   return (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <TopContent data={photos} />
+      <PhotoContent data={photos} />
     </Layout>
   )
 }
@@ -44,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       photos: data.contents,
       totalCount: data.totalCount,
-      category: category.contents,
+      photoCategory: category.contents,
     },
   }
 }

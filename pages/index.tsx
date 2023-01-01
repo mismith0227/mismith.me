@@ -9,10 +9,10 @@ import { TopContent } from '@/components/pages/TopContent'
 type Props = {
   readonly photos: Photo[]
   readonly totalCount: number
-  readonly category: PhotoCategory[]
+  readonly photoCategory: PhotoCategory[]
 }
 
-const Home: NextPage<Props> = ({ photos, totalCount, category }) => {
+const Home: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
   const meta = {
     title: 'Home | mismith.me',
     description: 'トップページ',
@@ -20,7 +20,7 @@ const Home: NextPage<Props> = ({ photos, totalCount, category }) => {
   }
 
   return (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
       <TopContent data={photos} />
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       photos: data.contents,
       totalCount: data.totalCount,
-      category: category.contents,
+      photoCategory: category.contents,
     },
   }
 }

@@ -11,25 +11,26 @@ type Props = {
   readonly content: Photo[]
   readonly totalCount: number
   readonly currentPage: number
-  readonly category: PhotoCategory[]
+  readonly photoCategory: PhotoCategory[]
   readonly currentCategory: string
 }
 
 const PhotoCategoryPage: NextPage<Props> = ({
   content,
   currentPage,
-  category,
+  currentCategory,
+  photoCategory,
 }) => {
   const meta = {
-    title: `Blog: Page${currentPage} | mismith.me`,
-    description: `ブログです: ページ${currentPage}`,
-    path: 'blog',
+    title: `Gallery | mismith.me`,
+    description: `ギャラリー`,
+    path: `gallery/${currentCategory}`,
   }
 
   return (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <PhotoContent data={content} category={category} />
+      <PhotoContent data={content} />
     </Layout>
   )
 }
@@ -65,7 +66,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       content: data.contents,
       totalCount: data.totalCount,
-      category: category.contents,
+      photoCategory: category.contents,
       currentCategory: params.category,
     },
   }

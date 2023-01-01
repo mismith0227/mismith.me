@@ -1,24 +1,22 @@
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
 import media from '@/styles/media'
+import { Navigation } from '@/components/organisms/Navigation'
 import { Footer } from '../Footer'
 
-type MainProps = {
-  readonly path: string
-}
+export const Wrap = styled.div`
+  display: flex;
+`
 
-const getContentStyles = () => {
-  return css`
-    margin-top: 180px;
+export const StyledNavigation = styled(Navigation)`
+  padding-left: 24px;
+  width: 300px;
+  box-sizing: border-box;
+`
 
-    ${media.small} {
-      margin-top: 80px;
-    }
-  `
-}
-
-export const StyledMain = styled.main<MainProps>`
-  ${({ path }) => path !== 'home' && getContentStyles}
+export const StyledMain = styled.main`
+  flex: 1;
+  margin-top: 80px;
+  margin-right: 24px;
 `
 
 export const StyledFooter = styled(Footer)`
