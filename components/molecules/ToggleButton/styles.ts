@@ -69,7 +69,7 @@ export const Container = styled.button<Props>`
   padding: 0;
   background-color: transparent;
   transition: 0.2s;
-  color: ${({ isOpen }) => (isOpen ? '#fff' : '#000')};
+  color: #000;
 
   &:hover {
     cursor: pointer;

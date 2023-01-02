@@ -1,6 +1,6 @@
 export const sizes = {
-  small: 600,
-  medium: 768,
+  small: 599,
+  medium: 899,
   large: 1024,
 }
 

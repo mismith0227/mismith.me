@@ -7,12 +7,10 @@ export const Layout = ({ children, path, photoCategory }: Props) => {
   return (
     <>
       <Global styles={globalStyle} />
-
       <Wrap>
         <StyledNavigation path={path} photoCategory={photoCategory} />
         <StyledMain>{children}</StyledMain>
       </Wrap>
-
       <StyledFooter />
     </>
   )

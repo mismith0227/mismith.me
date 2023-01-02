@@ -1,19 +1,64 @@
 import styled from '@emotion/styled'
-import media from '@/styles/media'
-import { ToggleButton } from '@/components/molecules/ToggleButton'
 import Link from 'next/link'
+import media from '@/styles/media'
+import { Logo } from '@/components/atoms/Icon/Logo'
+import { ToggleButton } from '@/components/molecules/ToggleButton'
 
-export const Container = styled.nav``
+type Props = {
+  isOpen: boolean
+}
+
+export const Container = styled.nav<Props>`
+  padding-left: 48px;
+  width: 240px;
+  box-sizing: border-box;
+
+  ${media.medium} {
+    padding-left: 32px;
+    width: 200px;
+  }
+
+  ${media.small} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    z-index: ${({ isOpen }) => (isOpen ? 10 : -1)};
+    opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
+    visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
+    transition: opacity 0.2s;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+`
+
+export const Inner = styled.div`
+  position: sticky;
+  top: 24px;
+
+  ${media.small} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+`
+
+export const StyledLogo = styled(Logo)`
+  font-size: 3rem;
+`
 
 export const NavList = styled.ul`
   display: flex;
-  position: sticky;
-  top: 80px;
   flex-direction: column;
-  margin: 0;
+  margin: 40px 0 0;
   padding: 0;
   list-style: none;
   gap: 12px 0;
+
+  ${media.small} {
+    padding: 0 24px;
+  }
 `
 
 type LinkProps = {
@@ -28,10 +73,13 @@ export const NavListItem = styled.li<LinkProps>`
 
 export const StyledLink = styled(Link)`
   display: inline-block;
-  padding: 0 16px;
   text-decoration: none;
   color: #000;
   transition: 0.2s;
+
+  ${media.small} {
+    font-size: 18px;
+  }
 `
 
 export const ChildList = styled.ul`
@@ -45,4 +93,16 @@ export const ChildList = styled.ul`
 
 export const ChildListItem = styled.li<LinkProps>`
   font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+`
+
+export const StyledToggleButton = styled(ToggleButton)`
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+
+  ${media.small} {
+    display: block;
+  }
 `
