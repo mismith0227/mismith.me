@@ -24,12 +24,12 @@ export const Container = styled.nav<Props>`
     left: 0;
     width: 100%;
     height: 100%;
-    padding-left: 0;
+    padding: 16px 24px;
     z-index: ${({ isOpen }) => (isOpen ? 10 : -1)};
     opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
     visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
     transition: opacity 0.2s;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 `
 
@@ -39,6 +39,7 @@ export const Inner = styled.div`
 
   ${media.small} {
     position: relative;
+    top: 0;
     display: flex;
     flex-direction: column;
   }
@@ -55,10 +56,6 @@ export const NavList = styled.ul`
   padding: 0;
   list-style: none;
   gap: 12px 0;
-
-  ${media.small} {
-    padding: 0 24px;
-  }
 `
 
 type LinkProps = {
