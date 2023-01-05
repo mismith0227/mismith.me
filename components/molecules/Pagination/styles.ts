@@ -21,7 +21,9 @@ type Props = {
   isCurrent?: boolean
 }
 
-export const StyledLink = styled(Link)<Props>`
+export const StyledLink = styled(Link, {
+  shouldForwardProp: (prop) => prop !== 'isCurrent',
+})<Props>`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -4,7 +4,7 @@ import { Seo } from '@/components/organisms/Seo'
 import { client } from '@/libs/client'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
-import { TopContent } from '@/components/pages/TopContent'
+import { PhotoContent } from '@/components/pages/PhotoContent'
 
 type Props = {
   readonly photos: Photo[]
@@ -23,7 +23,7 @@ const Gallery: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <TopContent data={photos} />
+      <PhotoContent data={photos} />
     </Layout>
   )
 }

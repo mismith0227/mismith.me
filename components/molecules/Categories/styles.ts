@@ -26,7 +26,9 @@ type LinkProps = {
   isActive?: boolean
 }
 
-export const StyledLink = styled(Link)<LinkProps>`
+export const StyledLink = styled(Link, {
+  shouldForwardProp: (prop) => prop !== 'isActive',
+})<LinkProps>`
   display: inline-block;
   padding: 8px 12px;
   position: relative;

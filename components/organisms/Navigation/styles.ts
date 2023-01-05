@@ -67,7 +67,9 @@ export const NavListItem = styled.li`
   transition: 0.2s;
 `
 
-export const StyledLink = styled(Link)<LinkProps>`
+export const StyledLink = styled(Link, {
+  shouldForwardProp: (prop) => prop !== 'isActive',
+})<LinkProps>`
   position: relative;
   display: inline-block;
   text-decoration: none;
