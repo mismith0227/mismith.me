@@ -1,75 +1,17 @@
 import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
 
 type Props = {
   isOpen: boolean
 }
 
-const openBorderTop = keyframes`
-  0% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-
-  50% {
-    transform: translate3d(0, 14px, 0) rotate(0);
-  }
-
-  100% {
-    transform: translate3d(0, 14px, 0) rotate(45deg);
-  }
-`
-
-const closeBorderTop = keyframes`
-  0% {
-    transform: translate3d(0, 14px, 0) rotate(45deg);
-  }
-
-  50% {
-    transform: translate3d(0, 14px, 0) rotate(0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-`
-
-const openBorderBottom = keyframes`
-  0% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-
-  50% {
-    transform: translate3d(0, -14px, 0) rotate(0);
-  }
-
-  100% {
-    transform: translate3d(0, -14px, 0) rotate(-45deg);
-  }
-`
-
-const closeBorderBottom = keyframes`
-  0% {
-    transform: translate3d(0, -14px, 0) rotate(-45deg);
-  }
-
-  50% {
-    transform: translate3d(0, -14px, 0) rotate(0);
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-`
-
 export const Container = styled.button<Props>`
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border: none;
   padding: 0;
   background-color: transparent;
   transition: 0.2s;
-  color: #000;
 
   &:hover {
     cursor: pointer;
@@ -84,21 +26,15 @@ export const Container = styled.button<Props>`
     background-color: currentColor;
     position: absolute;
     left: 0;
+    opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
   }
 
   &::before {
     top: 5px;
-    animation: ${({ isOpen }) => (isOpen ? openBorderTop : closeBorderTop)};
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
   }
 
   &::after {
     bottom: 5px;
-    animation: ${({ isOpen }) =>
-      isOpen ? openBorderBottom : closeBorderBottom};
-    animation-duration: 0.6s;
-    animation-fill-mode: forwards;
   }
 `
 
@@ -106,14 +42,29 @@ export const ToggleBorder = styled.span<Props>`
   display: block;
   width: 100%;
   height: 2px;
-  background-color: currentColor;
+  background-color: #000;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   margin: auto;
   transition: 0.2s;
-  opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+  transform: ${({ isOpen }) => (isOpen ? 'rotate(135deg)' : 'rotate(0)')};
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: 0.2s;
+    transform: ${({ isOpen }) => (isOpen ? 'rotate(90deg)' : 'rotate(0)')};
+  }
 `
 
 export const ScreenReaderText = styled.span`

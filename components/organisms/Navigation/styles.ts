@@ -62,20 +62,49 @@ type LinkProps = {
   isActive?: boolean
 }
 
-export const NavListItem = styled.li<LinkProps>`
+export const NavListItem = styled.li`
   position: relative;
-  font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
   transition: 0.2s;
 `
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<LinkProps>`
+  position: relative;
   display: inline-block;
   text-decoration: none;
   color: #000;
   transition: 0.2s;
+  font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform-origin: top right;
+    ${({ isActive }) => !isActive && 'transition: transform 0.3s;'};
+    transform: ${({ isActive }) => (isActive ? 'scaleX(1)' : 'scaleX(0)')};
+  }
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: top left;
+    }
+  }
 
   ${media.small} {
     font-size: 18px;
+
+    &:hover {
+      &::before {
+        transform: scaleX(0);
+      }
+    }
   }
 `
 
@@ -88,9 +117,7 @@ export const ChildList = styled.ul`
   list-style: none;
 `
 
-export const ChildListItem = styled.li<LinkProps>`
-  font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
-`
+export const ChildListItem = styled.li<LinkProps>``
 
 export const StyledToggleButton = styled(ToggleButton)`
   display: none;
