@@ -39,10 +39,10 @@ export const DateLabel = styled.span`
 
 export const BodyWrap = styled.div`
   position: relative;
-  margin-top: 180px;
+  margin-top: 120px;
 
   ${media.medium} {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 `
 
@@ -62,17 +62,6 @@ export const Body = styled.div`
 
     ${media.medium} {
       margin: 42px 0 18px;
-    }
-
-    &::before {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 6px;
-      background-color: #000;
-      position: absolute;
-      top: 26px;
-      left: -66px;
     }
   }
 
@@ -125,8 +114,6 @@ export const Body = styled.div`
     code {
       font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
       font-size: 14px;
-      margin-left: -20px;
-      margin-right: -20px;
 
       ${media.medium} {
         margin-left: 0;
@@ -143,15 +130,9 @@ export const Body = styled.div`
   }
 
   img {
-    width: calc(100% + 200px);
-    margin: 0 -100px;
     margin-top: 36px;
+    width: 100%;
     height: auto;
-
-    ${media.medium} {
-      width: 100vw;
-      margin: 0 calc(50% - 50vw);
-    }
   }
 
   iframe {
@@ -224,7 +205,9 @@ export const WrittenByTitle = styled.h2`
   margin: 0;
 `
 
-export const WrittenByText = styled.p``
+export const WrittenByText = styled.p`
+  margin: 0;
+`
 
 export const StyledIconList = styled(IconList)`
   margin: 32px 0 0;
@@ -258,7 +241,7 @@ export const StyledReadNext = styled(ReadNext)`
 export const ShareButtonsArea = styled.div`
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 0;
   height: 100%;
 
   ${media.large} {

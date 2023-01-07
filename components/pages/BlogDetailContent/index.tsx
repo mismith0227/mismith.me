@@ -72,23 +72,10 @@ export const BlogDetailContent = ({
         <WrittenByTitle>About the author</WrittenByTitle>
 
         <WrittenByText>
-          大阪でフロントエンドエンジニアをしています。写真を撮るのが趣味です。よかったら500pxに載せてる写真も見てください。
-          <br />
-          web上に公開しているので、正確さに可能な限り努力してますが、個人の備忘録程度に書いてるので、ご自身の判断で参考程度に読んでください。
           <br />
           間違いやご意見があれば、コンタクトやSNSに気軽にご連絡ください。
         </WrittenByText>
         <StyledIconList>
-          <StyledIconListItem>
-            <ExternalLink
-              href="https://github.com/mismith0227"
-              target="_blank"
-              aria-label="GitHub"
-              rel="noopener"
-            >
-              <GitHub />
-            </ExternalLink>
-          </StyledIconListItem>
           <StyledIconListItem>
             <ExternalLink
               href="https://twitter.com/misumi_takuma/"
@@ -121,12 +108,12 @@ export const BlogDetailContent = ({
           </StyledIconListItem>
           <StyledIconListItem>
             <ExternalLink
-              href="https://www.mismith.me/feed"
+              href="https://github.com/mismith0227"
               target="_blank"
-              aria-label="rss"
+              aria-label="GitHub"
               rel="noopener"
             >
-              <Rss />
+              <GitHub />
             </ExternalLink>
           </StyledIconListItem>
         </StyledIconList>
