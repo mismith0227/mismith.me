@@ -26,14 +26,19 @@ import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Biography } from './types'
 
-export const HomeContent = () => {
+export const AboutContent = () => {
   return (
     <>
       <StyledContainer>
-        <Title>
-          <StyledLogo />
-          mismith.me
-        </Title>
+        <Heading level={2}>About me</Heading>
+        <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
+        <Text>
+          情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
+        </Text>
+        <Text>
+          フロントエンドの中でも、画面制作や使いやすいUIを考慮しつつコードを書くことが得意です。
+        </Text>
+
         <Biographies>
           {biographies.map((item: Biography) => (
             <BiographyItem key={item.id}>
@@ -50,32 +55,16 @@ export const HomeContent = () => {
         </Biographies>
 
         <Section>
-          <Heading level={2}>About me</Heading>
-
           <SectionInner>
-            <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
+            <SubTitle level={3}>Contact</SubTitle>
             <Text>
-              情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。その上で、さりげなく実装されているアニメーションも好きです。
+              お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘いは、以下のメールよりお問い合わせください。
+              <br />
+              もしくはSNSのDMでも大丈夫です。
             </Text>
-            <Text>
-              フロントエンドの中でも、画面制作や使いやすいUIを考慮しつつコードを書くことが得意です。
-            </Text>
+            <Email>mismith2227@gmail.com</Email>
 
-            <SubTitle level={3}>SNS</SubTitle>
-            <Text>
-              趣味は写真を撮ることで、休日や仕事の気分転換に写真を撮っています。ストリートフォトやポートレートを中心に撮影し、500pxやインスタグラムで写真を公開しています。
-            </Text>
             <StyledIconList>
-              <StyledIconListItem>
-                <ExternalLink
-                  href="https://github.com/mismith0227"
-                  target="_blank"
-                  aria-label="GitHub"
-                  rel="noopener"
-                >
-                  <GitHub />
-                </ExternalLink>
-              </StyledIconListItem>
               <StyledIconListItem>
                 <ExternalLink
                   href="https://twitter.com/misumi_takuma/"
@@ -106,15 +95,17 @@ export const HomeContent = () => {
                   <Fivehundredpx />
                 </ExternalLink>
               </StyledIconListItem>
+              <StyledIconListItem>
+                <ExternalLink
+                  href="https://github.com/mismith0227"
+                  target="_blank"
+                  aria-label="GitHub"
+                  rel="noopener"
+                >
+                  <GitHub />
+                </ExternalLink>
+              </StyledIconListItem>
             </StyledIconList>
-
-            <SubTitle level={3}>Contact</SubTitle>
-            <Text>
-              お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘いは、以下のメールよりお問い合わせください。
-              <br />
-              もしくはSNSのDMでも大丈夫です。
-            </Text>
-            <Email>mail@mismith.me</Email>
           </SectionInner>
         </Section>
       </StyledContainer>

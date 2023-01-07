@@ -24,6 +24,12 @@ export const Footer = ({ className }: Props) => {
                 <StyledLink href="/">Home</StyledLink>
               </ListItem>
               <ListItem>
+                <StyledLink href="/gallery">Gallery</StyledLink>
+              </ListItem>
+              <ListItem>
+                <StyledLink href="/about">About</StyledLink>
+              </ListItem>
+              <ListItem>
                 <StyledLink href="/blog">Blog</StyledLink>
               </ListItem>
             </List>
@@ -41,26 +47,6 @@ export const Footer = ({ className }: Props) => {
           <ListWrap>
             <ListTitle>Links</ListTitle>
             <List>
-              <ListItem>
-                <StyledLink
-                  href="https://github.com/mismith0227"
-                  target="_blank"
-                  aria-label="GitHub"
-                  rel="noopener"
-                >
-                  GitHub
-                </StyledLink>
-              </ListItem>
-              <ListItem>
-                <StyledLink
-                  href="https://zenn.dev/misumith"
-                  target="_blank"
-                  aria-label="Zenn"
-                  rel="noopener"
-                >
-                  Zenn
-                </StyledLink>
-              </ListItem>
               <ListItem>
                 <StyledLink
                   href="https://twitter.com/misumi_takuma/"
@@ -93,12 +79,12 @@ export const Footer = ({ className }: Props) => {
               </ListItem>
               <ListItem>
                 <StyledLink
-                  href="https://codepen.io/mismith0227"
+                  href="https://github.com/mismith0227"
                   target="_blank"
-                  aria-label="codepen"
+                  aria-label="GitHub"
                   rel="noopener"
                 >
-                  Codepen
+                  GitHub
                 </StyledLink>
               </ListItem>
             </List>

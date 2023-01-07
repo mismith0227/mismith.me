@@ -12,7 +12,6 @@ export const Scroll = styled.div`
   right: 20px;
   bottom: 0;
   width: 1px;
-  height: 15vh;
   background-color: #d3d3d3;
   overflow: hidden;
 `
@@ -43,9 +42,7 @@ export const ScrollInner = styled.span`
   animation: ${scrollAnimation} 1.5s linear infinite;
 `
 
-export const StyledContainer = styled(Container)`
-  margin-top: 35vh;
-`
+export const StyledContainer = styled(Container)``
 
 export const Title = styled.h1`
   display: flex;
@@ -59,7 +56,7 @@ export const StyledLogo = styled(Logo)`
 `
 
 export const Section = styled.section`
-  margin: 180px 0 0;
+  margin: 120px 0 0;
 
   ${media.small} {
     margin: 80px auto 0;
@@ -79,7 +76,7 @@ export const StyledTagList = styled(TagList)`
 `
 
 export const Biographies = styled.ul`
-  margin: 24px 0 0;
+  margin: 80px 0 0;
   padding: 0;
   list-style: none;
 `
@@ -120,8 +117,6 @@ export const BiographyItem = styled.li`
   }
 
   &:first-of-type {
-    height: 50vh;
-
     &::before {
       background-color: #000;
     }

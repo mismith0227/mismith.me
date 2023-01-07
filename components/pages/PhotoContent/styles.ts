@@ -8,9 +8,23 @@ export const StyledMasonry = styled(Masonry)`
   margin: 0 !important;
 `
 
+export const ImageWrap = styled.div`
+  overflow: hidden;
+
+  &:hover {
+    cursor: zoom-in;
+
+    img {
+      transform: scale(1.1);
+    }
+  }
+`
+
 export const StyledImage = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s;
 `
 
 export const ImageModal = styled.div`

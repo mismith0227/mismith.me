@@ -8,6 +8,7 @@ import {
   ModalImage,
   CloseModal,
   ScreenReaderText,
+  ImageWrap,
 } from './styles'
 import { Props } from './types'
 
@@ -50,12 +51,8 @@ export const PhotoContent = ({ data }: Props) => {
         spacing={{ xs: 1, sm: 2, md: 3 }}
       >
         {data.map((item) => (
-          <StyledImage
+          <ImageWrap
             key={item.id}
-            src={item.image.url}
-            alt={item.title}
-            width={item.image.width}
-            height={item.image.height}
             onClick={() =>
               onOpenImageModal(
                 item.image.url,
@@ -63,7 +60,14 @@ export const PhotoContent = ({ data }: Props) => {
                 item.image.height
               )
             }
-          />
+          >
+            <StyledImage
+              src={item.image.url}
+              alt={item.title}
+              width={item.image.width}
+              height={item.image.height}
+            />
+          </ImageWrap>
         ))}
       </StyledMasonry>
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
