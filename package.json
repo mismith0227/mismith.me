@@ -28,6 +28,7 @@
     "eslint-config-next": "13.0.6",
     "highlight.js": "^11.7.0",
     "jsdom": "^20.0.3",
+    "keen-slider": "^6.8.5",
     "microcms-js-sdk": "^2.3.2",
     "next": "13.0.6",
     "react": "18.2.0",

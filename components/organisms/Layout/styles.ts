@@ -10,13 +10,19 @@ export const Wrap = styled.div`
 export const StyledNavigation = styled(Navigation)``
 
 export const StyledMain = styled.main`
-  flex: 1;
+  width: calc(100% - 264px);
   margin-top: 120px;
   margin-right: 24px;
 
   ${media.medium} {
-    margin: 80px auto 0;
-    padding: 0 16px;
+    margin-top: 80px;
+    margin-right: 12px;
+    width: calc(100% - 212px);
+  }
+
+  ${media.small} {
+    margin: 80px auto;
+    width: 100%;
   }
 `
 
