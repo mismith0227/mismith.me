@@ -7,9 +7,9 @@ import { useKeenSlider } from 'keen-slider/react'
 import { useState } from 'react'
 import {
   Wrap,
-  List,
-  Item,
   StyledImage,
+  ArrowLeft,
+  ArrowRight,
   Dots,
   Dot,
   Profile,
@@ -18,6 +18,7 @@ import {
   StyledIconList,
   StyledIconListItem,
   ExternalLink,
+  SlideWrap,
 } from './styles'
 import { Props } from './types'
 
@@ -36,36 +37,45 @@ export const TopContent = ({ data }: Props) => {
 
   return (
     <Wrap>
-      <div ref={sliderRef} className="keen-slider">
-        {data.map((item) => (
-          <div key={item.id} className="keen-slider__slide">
-            <StyledImage
-              key={item.id}
-              src={item.image.url}
-              alt={item.title}
-              width={item.image.width}
-              height={item.image.height}
-            />
-          </div>
-        ))}
-      </div>
-      {loaded && instanceRef.current && (
-        <Dots>
-          {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => {
-            return (
-              <Dot
-                key={idx}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(idx)
-                }}
-                isCurrent={currentSlide === idx}
+      <SlideWrap>
+        <div ref={sliderRef} className="keen-slider">
+          {data.map((item) => (
+            <div key={item.id} className="keen-slider__slide">
+              <StyledImage
+                key={item.id}
+                src={item.image.url}
+                alt={item.title}
+                width={item.image.width}
+                height={item.image.height}
               />
-            )
-          })}
-        </Dots>
-      )}
+            </div>
+          ))}
+        </div>
+        {loaded && instanceRef.current && (
+          <>
+            <ArrowLeft onClick={() => instanceRef.current?.prev()} />
+
+            <ArrowRight onClick={() => instanceRef.current?.next()} />
+          </>
+        )}
+        {loaded && instanceRef.current && (
+          <Dots>
+            {[
+              ...Array(instanceRef.current.track.details.slides.length).keys(),
+            ].map((idx) => {
+              return (
+                <Dot
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx)
+                  }}
+                  isCurrent={currentSlide === idx}
+                />
+              )
+            })}
+          </Dots>
+        )}
+      </SlideWrap>
 
       <Profile>
         <Name>Misumi Takuma</Name>
