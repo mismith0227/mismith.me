@@ -13,10 +13,6 @@ export const ImageWrap = styled.div`
 
   &:hover {
     cursor: zoom-in;
-
-    img {
-      transform: scale(1.1);
-    }
   }
 `
 
@@ -38,7 +34,7 @@ export const ImageModal = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 32px 24px;
   box-sizing: border-box;
 `
 
@@ -50,6 +46,15 @@ export const ModalImage = styled(Image)`
   width: 100%;
   height: 100%;
   object-fit: contain;
+`
+
+export const Taken = styled.p`
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
 `
 
 export const CloseModal = styled.button`

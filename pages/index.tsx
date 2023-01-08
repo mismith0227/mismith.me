@@ -33,7 +33,7 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({
     endpoint: 'photo',
-    queries: { limit: 20, offset: 0, filters: 'pickUp[equals]true' },
+    queries: { limit: 10, offset: 0, filters: 'pickUp[equals]true' },
   })
 
   const category = await client.get({

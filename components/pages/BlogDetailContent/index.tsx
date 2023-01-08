@@ -25,7 +25,6 @@ import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
-import { Rss } from '@/components/atoms/Icon/Rss'
 import { Props } from './types'
 import 'highlight.js/styles/stackoverflow-light.css'
 

@@ -33,7 +33,7 @@ export default Gallery
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({
     endpoint: 'photo',
-    queries: { limit: 20, offset: 0 },
+    queries: { limit: 99, offset: 0 },
   })
 
   const category = await client.get({

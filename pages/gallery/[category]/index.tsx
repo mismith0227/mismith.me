@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const data = await client.get({
     endpoint: 'photo',
     queries: {
-      limit: BLOG_PER_PAGE,
+      limit: 99,
       filters: `category[equals]${params.category}`,
     },
   })

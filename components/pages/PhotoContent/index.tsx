@@ -1,4 +1,5 @@
 import { Modal } from '@mui/material'
+import dayjs from 'dayjs'
 import { useState } from 'react'
 import {
   Wrap,
@@ -9,6 +10,7 @@ import {
   CloseModal,
   ScreenReaderText,
   ImageWrap,
+  Taken,
 } from './styles'
 import { Props } from './types'
 
@@ -17,6 +19,7 @@ export type modalState = {
   readonly src: string
   readonly width: number
   readonly height: number
+  readonly taken: string
 }
 
 export const PhotoContent = ({ data }: Props) => {
@@ -25,14 +28,21 @@ export const PhotoContent = ({ data }: Props) => {
     src: '',
     width: 0,
     height: 0,
+    taken: '',
   })
 
-  const onOpenImageModal = (src: string, width: number, height: number) => {
+  const onOpenImageModal = (
+    src: string,
+    width: number,
+    height: number,
+    taken: string
+  ) => {
     setModalState({
       isOpen: true,
       src: src,
       width: width,
       height: height,
+      taken: taken,
     })
   }
 
@@ -42,6 +52,7 @@ export const PhotoContent = ({ data }: Props) => {
       src: '',
       width: 0,
       height: 0,
+      taken: '',
     })
   }
   return (
@@ -57,13 +68,14 @@ export const PhotoContent = ({ data }: Props) => {
               onOpenImageModal(
                 item.image.url,
                 item.image.width,
-                item.image.height
+                item.image.height,
+                item.date
               )
             }
           >
             <StyledImage
               src={item.image.url}
-              alt={item.title}
+              alt={item.title || ''}
               width={item.image.width}
               height={item.image.height}
             />
@@ -78,6 +90,7 @@ export const PhotoContent = ({ data }: Props) => {
             height={modalState.height}
             alt=""
           />
+          <Taken>Taken: {dayjs(modalState.taken).format('YYYY年M月D日')}</Taken>
           <CloseModal onClick={onCloseImageModal}>
             <ScreenReaderText>閉じる</ScreenReaderText>
           </CloseModal>

@@ -44,7 +44,7 @@ export const TopContent = ({ data }: Props) => {
               <StyledImage
                 key={item.id}
                 src={item.image.url}
-                alt={item.title}
+                alt={item.title || ''}
                 width={item.image.width}
                 height={item.image.height}
               />
