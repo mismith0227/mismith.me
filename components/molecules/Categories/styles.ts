@@ -26,19 +26,9 @@ type LinkProps = {
   isActive?: boolean
 }
 
-export const StyledLink = styled(Link, {
-  shouldForwardProp: (prop) => prop !== 'isActive',
-})<LinkProps>`
-  display: inline-block;
-  padding: 8px 12px;
+export const ItemInner = styled.span<LinkProps>`
   position: relative;
-  font-size: 18px;
-  text-decoration: none;
-  color: #000;
-
-  ${media.small} {
-    font-size: 14px;
-  }
+  display: inline-block;
 
   &::before {
     content: '';
@@ -61,5 +51,17 @@ export const StyledLink = styled(Link, {
       transform: scaleX(1);
       transform-origin: top left;
     }
+  }
+`
+
+export const StyledLink = styled(Link)`
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+
+  ${media.small} {
+    font-size: 14px;
   }
 `

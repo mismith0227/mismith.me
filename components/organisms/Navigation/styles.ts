@@ -67,21 +67,17 @@ export const NavListItem = styled.li`
   transition: 0.2s;
 `
 
-export const StyledLink = styled(Link, {
-  shouldForwardProp: (prop) => prop !== 'isActive',
-})<LinkProps>`
+export const NavListItemInner = styled.span<LinkProps>`
   position: relative;
   display: inline-block;
-  text-decoration: none;
-  color: #000;
-  transition: 0.2s;
   font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+  transition: 0.2s;
 
   &::before {
     content: '';
     display: block;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: #000;
     position: absolute;
     bottom: 0;
@@ -100,13 +96,21 @@ export const StyledLink = styled(Link, {
   }
 
   ${media.small} {
-    font-size: 18px;
-
     &:hover {
       &::before {
         transform: scaleX(0);
       }
     }
+  }
+`
+
+export const StyledLink = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+
+  ${media.small} {
+    font-size: 18px;
   }
 `
 

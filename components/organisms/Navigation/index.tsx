@@ -9,6 +9,7 @@ import {
   ChildListItem,
   StyledLogo,
   StyledToggleButton,
+  NavListItemInner,
 } from './styles'
 import { Props } from './types'
 
@@ -22,51 +23,50 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
           <StyledLogo />
           <NavList>
             <NavListItem>
-              <StyledLink href="/" aria-label="Home" isActive={path === 'home'}>
-                Home
-              </StyledLink>
+              <NavListItemInner isActive={path === 'home'}>
+                <StyledLink href="/" aria-label="Home">
+                  Home
+                </StyledLink>
+              </NavListItemInner>
             </NavListItem>
             <NavListItem>
-              <StyledLink
-                href="/gallery"
-                aria-label="Gallery"
-                isActive={path === 'gallery'}
-              >
-                Gallery
-              </StyledLink>
+              <NavListItemInner isActive={path === 'gallery'}>
+                <StyledLink href="/gallery" aria-label="Gallery">
+                  Gallery
+                </StyledLink>
+              </NavListItemInner>
               {photoCategory.length > 0 && (
                 <ChildList>
                   {photoCategory.map((item) => (
                     <ChildListItem key={item.id}>
-                      <StyledLink
-                        href={`/gallery/${item.id}`}
-                        aria-label="Gallery"
+                      <NavListItemInner
                         isActive={path === `gallery/${item.id}`}
                       >
-                        {item.category_name}
-                      </StyledLink>
+                        <StyledLink
+                          href={`/gallery/${item.id}`}
+                          aria-label="Gallery"
+                        >
+                          {item.category_name}
+                        </StyledLink>
+                      </NavListItemInner>
                     </ChildListItem>
                   ))}
                 </ChildList>
               )}
             </NavListItem>
             <NavListItem>
-              <StyledLink
-                href="/about"
-                aria-label="About"
-                isActive={path === 'about'}
-              >
-                About
-              </StyledLink>
+              <NavListItemInner isActive={path === 'about'}>
+                <StyledLink href="/about" aria-label="About">
+                  About
+                </StyledLink>
+              </NavListItemInner>
             </NavListItem>
             <NavListItem>
-              <StyledLink
-                href="/blog"
-                aria-label="Blog"
-                isActive={path === 'blog'}
-              >
-                Blog
-              </StyledLink>
+              <NavListItemInner isActive={path === 'blog'}>
+                <StyledLink href="/blog" aria-label="Blog">
+                  Blog
+                </StyledLink>
+              </NavListItemInner>
             </NavListItem>
           </NavList>
         </Inner>

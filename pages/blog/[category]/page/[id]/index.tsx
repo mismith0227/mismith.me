@@ -83,7 +83,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { params, previewData } = context
+  const { params } = context
   if (!params?.category || !params?.id) {
     throw new Error('Error: ID not found')
   }
