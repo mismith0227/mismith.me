@@ -1,21 +1,17 @@
-import PropTypes from 'prop-types'
 import { Global } from '@emotion/react'
 import { globalStyle } from '@/styles/globalStyles'
-import { Header } from '@/components/organisms/Header'
-import { StyledFooter, StyledMain } from './styles'
+import { Wrap, StyledNavigation, StyledFooter, StyledMain } from './styles'
 import { Props } from './types'
 
-export const Layout = ({ children, path }: Props) => {
+export const Layout = ({ children, path, photoCategory }: Props) => {
   return (
     <>
       <Global styles={globalStyle} />
-      <Header path={path} />
-      <StyledMain path={path}>{children}</StyledMain>
+      <Wrap>
+        <StyledNavigation path={path} photoCategory={photoCategory} />
+        <StyledMain>{children}</StyledMain>
+      </Wrap>
       <StyledFooter />
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }

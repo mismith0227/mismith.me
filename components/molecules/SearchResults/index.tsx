@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { connectPoweredBy } from 'react-instantsearch-dom'
 import {
   Wrap,
@@ -21,9 +20,7 @@ export const SearchResults = ({ className, hits }: Props) => {
         <List>
           {hits.map((hit: HitDoc) => (
             <Item key={hit.objectID}>
-              <Link href={hit.url} passHref>
-                <StyledLink>{hit.title}</StyledLink>
-              </Link>
+              <StyledLink href={hit.url}>{hit.title}</StyledLink>
               <Description>{hit.description}</Description>
             </Item>
           ))}
@@ -34,7 +31,7 @@ export const SearchResults = ({ className, hits }: Props) => {
         </EmptyContent>
       )}
 
-      <CustomPoweredBy />
+      {/* <CustomPoweredBy /> */}
     </Wrap>
   )
 }

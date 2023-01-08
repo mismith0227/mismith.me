@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 
@@ -27,7 +28,7 @@ export const Date = styled.span`
   font-weight: bold;
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   font-weight: bold;
   color: #000;
 

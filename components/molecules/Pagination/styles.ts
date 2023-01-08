@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import media from '@/styles/media'
 import styled from '@emotion/styled'
 import { Chevron } from '@/components/atoms/Icon/Chevron'
@@ -20,7 +21,7 @@ type Props = {
   isCurrent?: boolean
 }
 
-export const StyledLink = styled.a<Props>`
+export const ItemInner = styled.span<Props>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,9 +29,6 @@ export const StyledLink = styled.a<Props>`
   height: 56px;
   box-sizing: border-box;
   border: 1px solid #000;
-  text-decoration: none;
-  color: ${({ isCurrent }) => (isCurrent ? `#fff` : `#000`)};
-  background-color: ${({ isCurrent }) => (isCurrent ? `#000` : `#fff`)};
   transition: 0.2s;
   ${({ isCurrent }) => isCurrent && `pointer-events: none;`}
 
@@ -38,6 +36,20 @@ export const StyledLink = styled.a<Props>`
     width: 28px;
     height: 46px;
   }
+
+  a {
+    color: ${({ isCurrent }) => (isCurrent ? `#fff` : `#000`)};
+    background-color: ${({ isCurrent }) => (isCurrent ? `#000` : `#fff`)};
+  }
+`
+
+export const StyledLink = styled(Link)<Props>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 
   &:hover {
     background-color: #000;

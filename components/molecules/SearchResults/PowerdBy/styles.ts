@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
 export const Wrap = styled.div`
@@ -5,7 +6,7 @@ export const Wrap = styled.div`
   align-items: center;
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   display: inline-block;
   width: 100px;
   margin-left: 8px;

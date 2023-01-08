@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { ToggleButton } from '@/components/molecules/ToggleButton'
+import Link from 'next/link'
 
 export const Container = styled.header`
   position: fixed;
@@ -96,7 +97,7 @@ export const NavListItem = styled.li<LinkProps>`
   }
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   display: block;
   padding: 16px;
   text-decoration: none;

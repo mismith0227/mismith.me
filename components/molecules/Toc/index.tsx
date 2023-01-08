@@ -1,4 +1,4 @@
-import { Details, Summary, List, Item, StyledLink } from './styles'
+import { Details, Summary, List, Item } from './styles'
 import { Props } from './types'
 
 export const Toc = ({ className, items }: Props) => {
@@ -8,9 +8,7 @@ export const Toc = ({ className, items }: Props) => {
       <List className={className}>
         {items.map((item, index) => (
           <Item key={`${item.id}-${index}`} name={item.name}>
-            <StyledLink to={item.id} smooth duration={400}>
-              {item.text}
-            </StyledLink>
+            {item.text}
           </Item>
         ))}
       </List>

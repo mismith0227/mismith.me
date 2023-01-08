@@ -7,14 +7,21 @@ import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { generateIndex } from '@/libs/algolia'
+import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
   readonly blog: Blog[]
   readonly totalCount: number
   readonly category: BlogCategory[]
+  readonly photoCategory: PhotoCategory[]
 }
 
-const BlogPage: NextPage<Props> = ({ blog, totalCount, category }) => {
+const BlogPage: NextPage<Props> = ({
+  blog,
+  totalCount,
+  category,
+  photoCategory,
+}) => {
   const meta = {
     title: 'Blog | mismith.me',
     description: 'ブログです',
@@ -22,7 +29,7 @@ const BlogPage: NextPage<Props> = ({ blog, totalCount, category }) => {
   }
 
   return (
-    <Layout path={meta.path}>
+    <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
       <BlogContent
         data={blog}
@@ -45,6 +52,10 @@ export const getStaticProps: GetStaticProps = async () => {
     endpoint: 'blog-category',
   })
 
+  const photoCategory = await client.get({
+    endpoint: 'photo-category',
+  })
+
   await generateIndex()
 
   return {
@@ -52,6 +63,7 @@ export const getStaticProps: GetStaticProps = async () => {
       blog: data.contents,
       totalCount: data.totalCount,
       category: category.contents,
+      photoCategory: photoCategory.contents,
     },
   }
 }

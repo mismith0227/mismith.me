@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import Link from 'next/link'
 import { Container } from '@/components/organisms/Container'
 
 export const Wrap = styled.footer`
@@ -53,7 +54,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li``
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   position: relative;
   color: #fff;
   text-decoration: none;

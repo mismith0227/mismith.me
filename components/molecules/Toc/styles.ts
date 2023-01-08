@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
-import { Link } from 'react-scroll'
 
 export const Wrap = styled.div``
 
@@ -74,14 +73,4 @@ const getItemStyles = ({ name = 'H1' }: ItemProps) => {
 
 export const Item = styled.li<ItemProps>`
   ${getItemStyles};
-`
-
-export const StyledLink = styled(Link)`
-  color: #000;
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
 `

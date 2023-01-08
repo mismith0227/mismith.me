@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import dayjs from 'dayjs'
 import { Heading } from '@/components/atoms/Heading'
 import {
@@ -43,23 +42,21 @@ export const BlogContent = ({
       <BlogList>
         {data.map((blog) => (
           <BlogListItem key={blog.id}>
-            <Link href={`/blog/${blog.category.id}/${blog.id}`} passHref>
-              <StyledLink>
-                <StyledTag>{blog.category.category_name}</StyledTag>
-                <BlogTitle>{blog.title}</BlogTitle>
+            <StyledLink href={`/blog/${blog.category.id}/${blog.id}`}>
+              <StyledTag>{blog.category.category_name}</StyledTag>
+              <BlogTitle>{blog.title}</BlogTitle>
 
-                <DateArea>
-                  <Date>
-                    <DateLabel>公開日:</DateLabel>
-                    {dayjs(blog.createdAt).format('YYYY年M月D日')}
-                  </Date>
-                  <Date>
-                    <DateLabel>最終更新日:</DateLabel>
-                    {dayjs(blog.updatedAt).format('YYYY年M月D日')}
-                  </Date>
-                </DateArea>
-              </StyledLink>
-            </Link>
+              <DateArea>
+                <Date>
+                  <DateLabel>公開日:</DateLabel>
+                  {dayjs(blog.createdAt).format('YYYY年M月D日')}
+                </Date>
+                <Date>
+                  <DateLabel>最終更新日:</DateLabel>
+                  {dayjs(blog.updatedAt).format('YYYY年M月D日')}
+                </Date>
+              </DateArea>
+            </StyledLink>
           </BlogListItem>
         ))}
       </BlogList>

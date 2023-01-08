@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;

@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { Container, Title, List, Item, StyledLink } from './styles'
+import { Container, Title, List, Item, StyledLink, ItemInner } from './styles'
 import { Props } from './types'
 
 export const Categories = ({ className, category, currentCategory }: Props) => {
@@ -9,11 +8,11 @@ export const Categories = ({ className, category, currentCategory }: Props) => {
       <List>
         {category.map((item) => (
           <Item key={item.id}>
-            <Link href={`/blog/${item.id}/page/1`} passHref>
-              <StyledLink isActive={currentCategory === item.id}>
+            <ItemInner isActive={currentCategory === item.id}>
+              <StyledLink href={`/blog/${item.id}/page/1`}>
                 {item.category_name}
               </StyledLink>
-            </Link>
+            </ItemInner>
           </Item>
         ))}
       </List>
