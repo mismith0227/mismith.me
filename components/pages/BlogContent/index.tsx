@@ -11,7 +11,6 @@ import {
   Date,
   DateLabel,
   StyledPagination,
-  StyledCategories,
   CategoryLabel,
 } from './styles'
 import { Props } from './types'
@@ -67,7 +66,6 @@ export const BlogContent = ({
           currentCategory={currentCategory}
         />
       )}
-      <StyledCategories category={category} currentCategory={currentCategory} />
     </StyledContainer>
   )
 }
