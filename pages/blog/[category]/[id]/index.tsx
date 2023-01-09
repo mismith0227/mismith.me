@@ -49,6 +49,8 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     ? blog.thumbnail.url
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
+  console.log(ogpImageUrl)
+
   return blog ? (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo

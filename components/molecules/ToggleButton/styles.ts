@@ -23,7 +23,7 @@ export const Container = styled.button<Props>`
     display: block;
     width: 100%;
     height: 2px;
-    background-color: currentColor;
+    background-color: #000;
     position: absolute;
     left: 0;
     opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
