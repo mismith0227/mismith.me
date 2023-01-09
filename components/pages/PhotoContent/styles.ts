@@ -1,6 +1,7 @@
 import Masonry from '@mui/lab/Masonry'
 import Image from 'next/image'
 import styled from '@emotion/styled'
+import media from '@/styles/media'
 
 export const Wrap = styled.div``
 
@@ -36,6 +37,12 @@ export const ImageModal = styled.div`
   justify-content: center;
   padding: 32px 24px;
   box-sizing: border-box;
+
+  ${media.small} {
+    width: 98vw;
+    height: 90vh;
+    padding: 32px 8px;
+  }
 `
 
 export const ImageModalInner = styled.div`

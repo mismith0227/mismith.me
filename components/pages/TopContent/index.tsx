@@ -1,6 +1,7 @@
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
+import { Note } from '@/components/atoms/Icon/Note'
 import { Twitter } from '@/components/atoms/Icon/Twitter'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
@@ -128,6 +129,16 @@ export const TopContent = ({ data }: Props) => {
               rel="noopener"
             >
               <GitHub />
+            </ExternalLink>
+          </StyledIconListItem>
+          <StyledIconListItem>
+            <ExternalLink
+              href="https://note.com/mismith"
+              target="_blank"
+              aria-label="note"
+              rel="noopener"
+            >
+              <Note />
             </ExternalLink>
           </StyledIconListItem>
         </StyledIconList>

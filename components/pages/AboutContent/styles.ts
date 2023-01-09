@@ -58,12 +58,18 @@ export const StyledLogo = styled(Logo)`
 export const Section = styled.section`
   margin: 120px 0 0;
 
+  &:first-of-type {
+    margin-top: 0;
+  }
+
   ${media.small} {
     margin: 80px auto 0;
   }
 `
 
-export const SectionInner = styled.div``
+export const SectionInner = styled.div`
+  padding: 0 8px;
+`
 
 export const SubTitle = styled(Heading)`
   margin-top: 32px;
@@ -76,7 +82,7 @@ export const StyledTagList = styled(TagList)`
 `
 
 export const Biographies = styled.ul`
-  margin: 80px 0 0;
+  margin: 36px 0 0;
   padding: 0;
   list-style: none;
 `
