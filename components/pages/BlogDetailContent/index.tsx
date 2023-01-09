@@ -13,6 +13,7 @@ import {
   WrittenByTitle,
   WrittenByText,
   ExternalLink,
+  StyledCategories,
   StyledReadNext,
   ShareButtonsArea,
   StyledShareButtons,
@@ -119,5 +120,7 @@ export const BlogDetailContent = ({
     </WrittenBy>
 
     {data.related_post && <StyledReadNext readNestPosts={data.related_post} />}
+
+    <StyledCategories category={category} currentCategory={currentCategory} />
   </StyledContainer>
 )
