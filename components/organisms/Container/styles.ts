@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import media from '@/styles/media'
 
 type ContainerProps = {
   readonly size?: 'full' | 'lg' | 'md' | 'sm'
@@ -29,7 +30,11 @@ const getContentStyles = ({ size = 'md' }: ContainerProps) => {
 export const Wrap = styled.div`
   display: block;
   ${getContentStyles};
-  width: 96%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+
+  ${media.small} {
+    width: 96%;
+  }
 `

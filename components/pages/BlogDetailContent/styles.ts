@@ -47,12 +47,11 @@ export const BodyWrap = styled.div`
 `
 
 export const StyledToc = styled(Toc)`
-  margin: 0 auto 40px;
+  margin: 0 0 40px;
   max-width: 640px;
 `
 
 export const Body = styled.div`
-  margin: 0 auto;
   max-width: 640px;
 
   h2 {
@@ -149,11 +148,11 @@ export const Body = styled.div`
 
 export const WrittenBy = styled.div`
   position: relative;
-  margin: 180px auto 0;
+  margin: 180px 0 0;
   max-width: 640px;
 
   ${media.medium} {
-    margin: 80px auto 0;
+    margin: 80px 0 0;
   }
 
   &::before,
@@ -221,20 +220,20 @@ export const ExternalLink = styled.a`
 `
 
 export const StyledCategories = styled(Categories)`
-  margin: 120px auto 0;
+  margin: 120px 0 0;
   max-width: 640px;
 
   ${media.medium} {
-    margin: 60px auto 0;
+    margin: 60px 0 0;
   }
 `
 
 export const StyledReadNext = styled(ReadNext)`
-  margin: 120px auto 0;
+  margin: 120px 0 0;
   max-width: 640px;
 
   ${media.medium} {
-    margin: 60px auto 0;
+    margin: 60px 0 0;
   }
 `
 
