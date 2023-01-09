@@ -27,6 +27,7 @@ import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { Props } from './types'
 import 'highlight.js/styles/stackoverflow-light.css'
+import { Note } from '@/components/atoms/Icon/Note'
 
 export const BlogDetailContent = ({
   data,
@@ -71,6 +72,7 @@ export const BlogDetailContent = ({
         <WrittenByTitle>About the author</WrittenByTitle>
 
         <WrittenByText>
+          よかったらSNSもご覧ください。
           <br />
           間違いやご意見があれば、コンタクトやSNSに気軽にご連絡ください。
         </WrittenByText>
@@ -113,6 +115,16 @@ export const BlogDetailContent = ({
               rel="noopener"
             >
               <GitHub />
+            </ExternalLink>
+          </StyledIconListItem>
+          <StyledIconListItem>
+            <ExternalLink
+              href="https://note.com/mismith"
+              target="_blank"
+              aria-label="note"
+              rel="noopener"
+            >
+              <Note />
             </ExternalLink>
           </StyledIconListItem>
         </StyledIconList>

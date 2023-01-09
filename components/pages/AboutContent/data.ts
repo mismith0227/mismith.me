@@ -4,7 +4,8 @@ export const biographies = [
     startDate: '2022年2月',
     belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
-    detail: 'webサイトやwebアプリの制作に携わっています',
+    detail: 'webサイトやwebアプリの制作に携わっています。',
+    skills: ['JavaScript', 'React', 'Next.js', 'Git'],
   },
   {
     id: '2021-09',

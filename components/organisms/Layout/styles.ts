@@ -21,7 +21,7 @@ export const StyledMain = styled.main`
   }
 
   ${media.small} {
-    margin: 64px auto;
+    margin: 80px auto;
     width: 100%;
   }
 `
