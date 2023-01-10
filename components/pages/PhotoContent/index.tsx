@@ -2,7 +2,7 @@ import { Modal } from '@mui/material'
 import dayjs from 'dayjs'
 import { useState } from 'react'
 import {
-  Wrap,
+  StyledContainer,
   StyledMasonry,
   StyledImage,
   ImageModal,
@@ -11,6 +11,7 @@ import {
   ScreenReaderText,
   ImageWrap,
   Taken,
+  StyledHeading,
 } from './styles'
 import { Props } from './types'
 
@@ -56,7 +57,9 @@ export const PhotoContent = ({ data }: Props) => {
     })
   }
   return (
-    <Wrap>
+    <StyledContainer size="full">
+      <StyledHeading>Gallery</StyledHeading>
+
       <StyledMasonry
         columns={{ xs: 1, sm: 2, md: 3 }}
         spacing={{ xs: 1, sm: 2, md: 3 }}
@@ -96,6 +99,6 @@ export const PhotoContent = ({ data }: Props) => {
           </CloseModal>
         </ImageModal>
       </Modal>
-    </Wrap>
+    </StyledContainer>
   )
 }

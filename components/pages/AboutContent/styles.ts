@@ -44,10 +44,12 @@ export const ScrollInner = styled.span`
 
 export const StyledContainer = styled(Container)``
 
-export const Title = styled.h1`
-  display: flex;
-  align-items: center;
-  margin: 0;
+export const StyledHeading = styled(Heading)`
+  display: none;
+
+  ${media.small} {
+    display: block;
+  }
 `
 
 export const StyledLogo = styled(Logo)`
@@ -69,10 +71,6 @@ export const Section = styled.section`
 
 export const SectionInner = styled.div`
   padding: 0 8px;
-`
-
-export const SubTitle = styled(Heading)`
-  margin-top: 32px;
 `
 
 export const Text = styled.p``
@@ -158,6 +156,7 @@ export const BiographyRole = styled.p`
 export const BiographyDetail = styled.p`
   margin: 14px 0 0;
   font-size: 14px;
+  white-space: pre;
 `
 
 export const StyledIconList = styled(IconList)`

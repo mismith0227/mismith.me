@@ -10,11 +10,11 @@ import {
   BiographyRole,
   BiographyDetail,
   ExternalLink,
-  SubTitle,
   StyledTagList,
   StyledIconList,
   StyledIconListItem,
   Email,
+  StyledHeading,
 } from './styles'
 import { biographies } from './data'
 import { Heading } from '@/components/atoms/Heading'
@@ -23,16 +23,16 @@ import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Biography } from './types'
 
 export const AboutContent = () => (
-  <StyledContainer>
+  <StyledContainer size="lg">
+    <StyledHeading>About</StyledHeading>
+
     <Section>
-      <Heading level={2}>About me</Heading>
+      <Heading level={2}>Profile</Heading>
       <SectionInner>
-        <Text>1989年2月27日生まれ。大阪在住のwebエンジニア</Text>
         <Text>
-          情報整理や導線が考えられていて、ユーザーが意図した通りに操作できるようなユーザビリティの高いサイトやサービスが好きです。
-        </Text>
-        <Text>
-          フロントエンドの中でも、画面制作や使いやすいUIを考慮しつつ開発することが得意です。
+          1989年2月27日生まれ。大阪在住のwebエンジニア。
+          <br />
+          現在は個人で主にフロントエンド業務の仕事をしています。
         </Text>
       </SectionInner>
     </Section>
@@ -61,7 +61,7 @@ export const AboutContent = () => (
       <Heading level={2}>Contact</Heading>
       <SectionInner>
         <Text>
-          お仕事の相談、ブログに関するご意見、趣味の写真に関するお誘いは、以下のメールよりお問い合わせください。
+          お仕事の相談、ブログに関するご意見は、以下のメールよりお問い合わせください。
           <br />
           もしくは下記SNSのDMでも大丈夫です。
         </Text>

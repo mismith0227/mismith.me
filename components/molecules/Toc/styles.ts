@@ -1,12 +1,13 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 
-export const Wrap = styled.div``
-
-export const Details = styled.details``
+export const Details = styled.details`
+  padding: 8px;
+  background-color: #f5f8fa;
+`
 
 export const Summary = styled.summary`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
 
   &:hover {
@@ -18,8 +19,9 @@ export const Title = styled.h2``
 
 export const List = styled.ul`
   margin: 0;
-  padding: 8px 24px 0;
+  padding: 8px 16px 8px;
   list-style: none;
+  font-size: 14px;
 `
 
 type ItemProps = {
@@ -73,4 +75,13 @@ const getItemStyles = ({ name = 'H1' }: ItemProps) => {
 
 export const Item = styled.li<ItemProps>`
   ${getItemStyles};
+`
+
+export const Link = styled.a`
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
