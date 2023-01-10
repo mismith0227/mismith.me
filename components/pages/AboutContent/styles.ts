@@ -7,41 +7,6 @@ import { Container } from '@/components/organisms/Container'
 import { Heading } from '@/components/atoms/Heading'
 import { Logo } from '@/components/atoms/Icon/Logo'
 
-export const Scroll = styled.div`
-  position: absolute;
-  right: 20px;
-  bottom: 0;
-  width: 1px;
-  background-color: #d3d3d3;
-  overflow: hidden;
-`
-
-const scrollAnimation = keyframes`
-  0% {
-    transform: translate3d(0, -8vh, 0);
-  }
-
-  60% {
-    transform: translate3d(0, 10vh, 0);
-  }
-
-  100% {
-    transform: translate3d(0, 16vh, 0);
-  }
-`
-
-export const ScrollInner = styled.span`
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 4vh;
-  background: #222;
-  transform: translate3d(0, -8vh, 0);
-  animation: ${scrollAnimation} 1.5s linear infinite;
-`
-
 export const StyledContainer = styled(Container)``
 
 export const StyledHeading = styled(Heading)`
@@ -65,7 +30,11 @@ export const Section = styled.section`
   }
 
   ${media.small} {
-    margin: 80px auto 0;
+    margin: 64px auto 0;
+
+    &:first-of-type {
+      margin: 64px auto 0;
+    }
   }
 `
 
@@ -156,7 +125,7 @@ export const BiographyRole = styled.p`
 export const BiographyDetail = styled.p`
   margin: 14px 0 0;
   font-size: 14px;
-  white-space: pre;
+  white-space: pre-wrap;
 `
 
 export const StyledIconList = styled(IconList)`

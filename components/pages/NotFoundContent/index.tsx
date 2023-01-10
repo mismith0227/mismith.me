@@ -1,4 +1,4 @@
-import { Content, StyledContainer } from './styles'
+import { StyledContainer } from './styles'
 import { Heading } from '@/components/atoms/Heading'
 
 export const NotFoundContent = () => (
