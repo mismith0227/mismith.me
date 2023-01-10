@@ -5,7 +5,8 @@ import media from '@/styles/media'
 export const Container = styled.div``
 
 export const Title = styled.h3`
-  font-size: 48px;
+  margin: 0;
+  font-size: 32px;
 
   ${media.small} {
     font-size: 24px;
@@ -16,7 +17,7 @@ export const List = styled.ul`
   display: flex;
   gap: 16px;
   list-style: none;
-  margin: 0;
+  margin: 24px 0 0;
   padding: 0;
 `
 

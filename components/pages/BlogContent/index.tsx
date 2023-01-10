@@ -13,6 +13,7 @@ import {
   StyledPagination,
   StyledCategories,
   CategoryLabel,
+  StyledHeading,
 } from './styles'
 import { Props } from './types'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
@@ -32,12 +33,12 @@ export const BlogContent = ({
 
   return (
     <StyledContainer size="lg">
-      <Heading>
+      <StyledHeading>
         Blog
         {categoryLabel && (
           <CategoryLabel>Category: {categoryLabel}</CategoryLabel>
         )}
-      </Heading>
+      </StyledHeading>
 
       <BlogList>
         {data.map((blog) => (

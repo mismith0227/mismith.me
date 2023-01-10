@@ -2,11 +2,25 @@ import Masonry from '@mui/lab/Masonry'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import media from '@/styles/media'
+import { Heading } from '@/components/atoms/Heading'
+import { Container } from '@/components/organisms/Container'
 
-export const Wrap = styled.div``
+export const StyledContainer = styled(Container)``
+
+export const StyledHeading = styled(Heading)`
+  display: none;
+
+  ${media.small} {
+    display: block;
+  }
+`
 
 export const StyledMasonry = styled(Masonry)`
   margin: 0 !important;
+
+  ${media.small} {
+    margin: 80px 0 0 !important;
+  }
 `
 
 export const ImageWrap = styled.div`

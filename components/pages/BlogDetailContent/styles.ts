@@ -5,17 +5,29 @@ import { Categories } from '@/components/molecules/Categories'
 import { ReadNext } from '@/components/molecules/ReadNext'
 import { ShareButtons } from '@/components/molecules/ShareButtons'
 import { Tag } from '@/components/atoms/Tag'
-import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { Heading } from '@/components/atoms/Heading'
 import { Toc } from '@/components/molecules/Toc'
 
-export const StyledContainer = styled(Container)``
+export const StyledContainer = styled(Container)`
+  padding-right: 216px;
+  box-sizing: border-box;
+
+  ${media.large} {
+    padding-right: 0;
+  }
+`
+
+export const Inner = styled.div`
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+`
 
 export const Title = styled(Heading)`
-  font-size: 48px;
+  font-size: 36px;
 
   ${media.medium} {
-    font-size: 36px;
+    font-size: 24px;
   }
 `
 
@@ -39,7 +51,7 @@ export const DateLabel = styled.span`
 
 export const BodyWrap = styled.div`
   position: relative;
-  margin-top: 120px;
+  margin-top: 80px;
 
   ${media.medium} {
     margin-top: 60px;
@@ -48,16 +60,15 @@ export const BodyWrap = styled.div`
 
 export const StyledToc = styled(Toc)`
   margin: 0 0 40px;
-  max-width: 640px;
 `
 
 export const Body = styled.div`
-  max-width: 640px;
+  margin: 0;
 
   h2 {
     position: relative;
-    margin: 84px 0 32px;
-    font-size: 32px;
+    margin: 40px 0 16px;
+    font-size: 26px;
 
     ${media.medium} {
       margin: 42px 0 18px;
@@ -65,13 +76,13 @@ export const Body = styled.div`
   }
 
   h3 {
-    margin: 32px 0;
-    font-size: 24px;
+    margin: 22px 0;
+    font-size: 18px;
   }
 
   h4 {
     margin: 24px 0;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   a {
@@ -146,79 +157,6 @@ export const Body = styled.div`
   }
 `
 
-export const WrittenBy = styled.div`
-  position: relative;
-  margin: 180px 0 0;
-  max-width: 640px;
-
-  ${media.medium} {
-    margin: 80px 0 0;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    background-color: #000;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  &::before {
-    width: 80px;
-    height: 1px;
-  }
-
-  &::after {
-    width: 1px;
-    height: 80px;
-  }
-`
-
-export const WrittenByInner = styled.div`
-  padding: 24px;
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    background-color: #000;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-
-  &::before {
-    width: 80px;
-    height: 1px;
-  }
-
-  &::after {
-    width: 1px;
-    height: 80px;
-  }
-`
-
-export const WrittenByTitle = styled.h2`
-  margin: 0;
-`
-
-export const WrittenByText = styled.p`
-  margin: 0;
-`
-
-export const StyledIconList = styled(IconList)`
-  margin: 32px 0 0;
-`
-
-export const StyledIconListItem = styled(IconListItem)``
-
-export const ExternalLink = styled.a`
-  display: block;
-  color: #000;
-`
-
 export const StyledCategories = styled(Categories)`
   margin: 120px 0 0;
   max-width: 640px;
@@ -240,7 +178,7 @@ export const StyledReadNext = styled(ReadNext)`
 export const ShareButtonsArea = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: -120px;
   height: 100%;
 
   ${media.large} {

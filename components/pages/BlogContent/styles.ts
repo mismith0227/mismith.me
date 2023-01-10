@@ -5,8 +5,17 @@ import { Container } from '@/components/organisms/Container'
 import { Pagination } from '@/components/molecules/Pagination'
 import { Categories } from '@/components/molecules/Categories'
 import { Tag } from '@/components/atoms/Tag'
+import { Heading } from '@/components/atoms/Heading'
 
 export const StyledContainer = styled(Container)``
+
+export const StyledHeading = styled(Heading)`
+  display: none;
+
+  ${media.small} {
+    display: block;
+  }
+`
 
 export const CategoryLabel = styled.span`
   display: inline-block;
@@ -22,7 +31,7 @@ export const CategoryLabel = styled.span`
 
 export const BlogList = styled.ul`
   list-style: none;
-  margin: 180px 0 0;
+  margin: 0;
   padding: 0;
 
   ${media.small} {
