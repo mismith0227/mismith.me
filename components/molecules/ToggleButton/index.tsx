@@ -6,17 +6,15 @@ export const ToggleButton = ({
   onToggleClick,
   ariaControls,
   className,
-}: Props) => {
-  return (
-    <Container
-      isOpen={isOpen}
-      aria-expanded={isOpen}
-      aria-controls={ariaControls}
-      onClick={onToggleClick}
-      className={className}
-    >
-      <ToggleBorder isOpen={isOpen} />
-      <ScreenReaderText>menu</ScreenReaderText>
-    </Container>
-  )
-}
+}: Props) => (
+  <Container
+    isOpen={isOpen}
+    aria-expanded={isOpen}
+    aria-controls={ariaControls}
+    onClick={onToggleClick}
+    className={className}
+  >
+    <ToggleBorder isOpen={isOpen} />
+    <ScreenReaderText>menu</ScreenReaderText>
+  </Container>
+)
