@@ -1,7 +1,7 @@
 import { PhotoCategory } from '@/types/PhotoCategory'
 
 export type Props = {
-  readonly children: React.ReactNode
-  readonly path: string
-  readonly photoCategory: PhotoCategory[]
+  children: React.ReactNode
+  path: string
+  photoCategory: PhotoCategory[]
 }

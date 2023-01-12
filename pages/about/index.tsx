@@ -1,12 +1,12 @@
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
-import { AboutContent } from '@/components/pages/AboutContent'
+import { AboutContainer } from '@/components/pages/AboutContainer'
 import { client } from '@/libs/client'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { GetStaticProps, NextPage } from 'next'
 
 type Props = {
-  readonly photoCategory: PhotoCategory[]
+  photoCategory: PhotoCategory[]
 }
 
 const About: NextPage<Props> = ({ photoCategory }) => {
@@ -19,7 +19,7 @@ const About: NextPage<Props> = ({ photoCategory }) => {
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <AboutContent />
+      <AboutContainer />
     </Layout>
   )
 }

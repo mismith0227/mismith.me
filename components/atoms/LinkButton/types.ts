@@ -1,5 +1,5 @@
 export type Props = {
-  readonly className?: string
-  readonly children: React.ReactNode
-  readonly href: string
+  className?: string
+  children: React.ReactNode
+  href: string
 }

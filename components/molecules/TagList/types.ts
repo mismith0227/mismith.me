@@ -1,4 +1,4 @@
 export type Props = {
-  readonly className?: string
-  readonly items: string[]
+  className?: string
+  items: string[]
 }

@@ -1,12 +1,12 @@
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
-import { NotFoundContent } from '@/components/pages/NotFoundContent'
+import { NotFoundContainer } from '@/components/pages/NotFoundContainer'
 import { client } from '@/libs/client'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { GetStaticProps, NextPage } from 'next'
 
 type Props = {
-  readonly photoCategory: PhotoCategory[]
+  photoCategory: PhotoCategory[]
 }
 
 const NotFoundPage: NextPage<Props> = ({ photoCategory }) => {
@@ -19,7 +19,7 @@ const NotFoundPage: NextPage<Props> = ({ photoCategory }) => {
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <NotFoundContent />
+      <NotFoundContainer />
     </Layout>
   )
 }

@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import media from '@/styles/media'
 
 type ContainerProps = {
-  readonly size?: 'full' | 'lg' | 'md' | 'sm'
+  size?: 'full' | 'lg' | 'md' | 'sm'
 }
 
 const getContentStyles = ({ size = 'md' }: ContainerProps) => {

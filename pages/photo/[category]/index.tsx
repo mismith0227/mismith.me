@@ -3,21 +3,18 @@ import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-import { PhotoContent } from '@/components/pages/PhotoContent'
+import { PhotoContainer } from '@/components/pages/PhotoContainer'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
-  readonly content: Photo[]
-  readonly totalCount: number
-  readonly currentPage: number
-  readonly photoCategory: PhotoCategory[]
-  readonly currentCategory: string
+  content: Photo[]
+  photoCategory: PhotoCategory[]
+  currentCategory: string
 }
 
 const PhotoCategoryPage: NextPage<Props> = ({
   content,
-  currentPage,
   currentCategory,
   photoCategory,
 }) => {
@@ -30,7 +27,7 @@ const PhotoCategoryPage: NextPage<Props> = ({
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <PhotoContent data={content} />
+      <PhotoContainer data={content} />
     </Layout>
   )
 }
@@ -65,7 +62,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       content: data.contents,
-      totalCount: data.totalCount,
       photoCategory: category.contents,
       currentCategory: params.category,
     },

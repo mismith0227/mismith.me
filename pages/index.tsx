@@ -4,12 +4,12 @@ import { Seo } from '@/components/organisms/Seo'
 import { client } from '@/libs/client'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
-import { TopContent } from '@/components/pages/TopContent'
+import { HomeContainer } from '@/components/pages/HomeContainer'
 
 type Props = {
-  readonly photos: Photo[]
-  readonly totalCount: number
-  readonly photoCategory: PhotoCategory[]
+  photos: Photo[]
+  totalCount: number
+  photoCategory: PhotoCategory[]
 }
 
 const Home: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <TopContent data={photos} />
+      <HomeContainer data={photos} />
     </Layout>
   )
 }

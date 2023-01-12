@@ -4,16 +4,14 @@ import { Seo } from '@/components/organisms/Seo'
 import { client } from '@/libs/client'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
-import { TopContent } from '@/components/pages/TopContent'
-import { PhotoContent } from '@/components/pages/PhotoContent'
+import { PhotoContainer } from '@/components/pages/PhotoContainer'
 
 type Props = {
-  readonly photos: Photo[]
-  readonly totalCount: number
-  readonly photoCategory: PhotoCategory[]
+  photos: Photo[]
+  photoCategory: PhotoCategory[]
 }
 
-const Gallery: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
+const Gallery: NextPage<Props> = ({ photos, photoCategory }) => {
   const meta = {
     title: 'Gallery | mismith.me',
     description: 'ギャラリー',
@@ -24,7 +22,7 @@ const Gallery: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <PhotoContent data={photos} />
+      <PhotoContainer data={photos} />
     </Layout>
   )
 }
@@ -44,7 +42,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       photos: data.contents,
-      totalCount: data.totalCount,
       photoCategory: category.contents,
     },
   }
