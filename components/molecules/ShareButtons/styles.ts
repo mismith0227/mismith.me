@@ -29,7 +29,7 @@ export const Item = styled.li`
 `
 
 type LinkProps = {
-  readonly service?: 'twitter' | 'hatena'
+  service?: 'twitter' | 'hatena'
 }
 
 const getContentStyles = ({ service = 'twitter' }: LinkProps) => {

@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage, GetStaticPaths } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
-import { BlogContent } from '@/components/pages/BlogContent'
+import { BlogContainer } from '@/components/pages/BlogContainer'
 import { Seo } from '@/components/organisms/Seo'
 import { toNumberId } from '@/utils/toNumberId'
 import { Blog } from '@/types/Blog'
@@ -10,12 +10,12 @@ import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
-  readonly blog: Blog[]
-  readonly totalCount: number
-  readonly currentPage: number
-  readonly category: BlogCategory[]
-  readonly currentCategory: string
-  readonly photoCategory: PhotoCategory[]
+  blog: Blog[]
+  totalCount: number
+  currentPage: number
+  category: BlogCategory[]
+  currentCategory: string
+  photoCategory: PhotoCategory[]
 }
 
 const CategoryPage: NextPage<Props> = ({
@@ -35,7 +35,7 @@ const CategoryPage: NextPage<Props> = ({
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <BlogContent
+      <BlogContainer
         data={blog}
         totalCount={totalCount}
         currentPage={currentPage}

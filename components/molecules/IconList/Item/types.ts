@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
 export type ExternalProps = {
-  readonly children?: ReactNode
-  readonly className?: string
+  children?: ReactNode
+  className?: string
 }
 
 export type Props = ExternalProps

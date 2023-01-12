@@ -1,10 +1,10 @@
 export type ParentProps = {
-  readonly className?: string
-  readonly role?: string
-  readonly rotate?: number
+  className?: string
+  role?: string
+  rotate?: number
 }
 
 export type Props = ParentProps & {
-  readonly viewBox: string
-  readonly children: React.ReactNode
+  viewBox: string
+  children: React.ReactNode
 }

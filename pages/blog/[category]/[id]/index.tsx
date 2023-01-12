@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
-import { BlogDetailContent } from '@/components/pages/BlogDetailContent'
+import { BlogDetailContainer } from '@/components/pages/BlogDetailContainer'
 import { toStringId } from '@/utils/toStringId'
 import { isDraft } from '@/utils/isDraft'
 import { convertToHtml } from '@/utils/postUtils'
@@ -19,13 +19,13 @@ import { Toc } from '@/types/Toc'
 import { PhotoCategory } from '@/types/PhotoCategory'
 
 type StaticProps = {
-  readonly blog: Blog
-  readonly body: string
-  readonly toc: Toc[]
-  readonly draftKey?: string
-  readonly category: BlogCategory[]
-  readonly currentCategory: string
-  readonly photoCategory: PhotoCategory[]
+  blog: Blog
+  body: string
+  toc: Toc[]
+  draftKey?: string
+  category: BlogCategory[]
+  currentCategory: string
+  photoCategory: PhotoCategory[]
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
@@ -49,8 +49,6 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     ? blog.thumbnail.url
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
-  console.log(ogpImageUrl)
-
   return blog ? (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo
@@ -65,7 +63,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
           <Link href={`/api/exitPreview?id=${blog.id}`}>プレビューを解除</Link>
         </div>
       )}
-      <BlogDetailContent
+      <BlogDetailContainer
         data={blog}
         body={body}
         toc={toc}

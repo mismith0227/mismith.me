@@ -1,3 +1,3 @@
 export type Props = {
-  readonly className?: string
+  className?: string
 }

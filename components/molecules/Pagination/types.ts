@@ -1,6 +1,6 @@
 export type Props = {
-  readonly totalCount: number
-  readonly currentPage: number
-  readonly className?: string
-  readonly currentCategory?: string
+  totalCount: number
+  currentPage: number
+  className?: string
+  currentCategory?: string
 }
