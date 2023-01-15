@@ -5,7 +5,7 @@ import media from '@/styles/media'
 export const Container = styled.div``
 
 export const Title = styled.h3`
-  font-size: 48px;
+  font-size: 32px;
 
   ${media.small} {
     font-size: 24px;
