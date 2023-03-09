@@ -16,10 +16,6 @@ const About: NextPage<Props> = ({ photoCategory }) => {
     path: 'about',
   }
 
-  const now = new Date()
-
-  console.log(now)
-
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
