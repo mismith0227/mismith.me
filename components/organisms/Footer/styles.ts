@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import media from '@/styles/media'
 import Link from 'next/link'
 import { Container } from '@/components/organisms/Container'
+import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 
 export const Wrap = styled.footer`
   padding: 64px 0;
@@ -55,6 +56,8 @@ export const List = styled.ul`
 export const ListItem = styled.li``
 
 export const StyledLink = styled(Link)`
+  display: inline-flex;
+  align-items: center;
   position: relative;
   color: #fff;
   text-decoration: none;
@@ -67,7 +70,7 @@ export const StyledLink = styled(Link)`
     height: 1px;
     background: #fff;
     position: absolute;
-    top: 0.6em;
+    top: 0.8em;
     left: 0;
     transform: scaleX(0);
     transition: 0.2s;
@@ -78,4 +81,9 @@ export const StyledLink = styled(Link)`
       transform: scaleX(1);
     }
   }
+`
+
+export const StyledOpenInNew = styled(OpenInNew)`
+  margin-left: 4px;
+  font-size: 14px;
 `

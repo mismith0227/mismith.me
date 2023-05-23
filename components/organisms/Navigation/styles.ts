@@ -3,6 +3,7 @@ import Link from 'next/link'
 import media from '@/styles/media'
 import { Logo } from '@/components/atoms/Icon/Logo'
 import { ToggleButton } from '@/components/molecules/ToggleButton'
+import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 
 type Props = {
   isOpen: boolean
@@ -105,7 +106,8 @@ export const NavListItemInner = styled.span<LinkProps>`
 `
 
 export const StyledLink = styled(Link)`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: #000;
 
@@ -135,4 +137,9 @@ export const StyledToggleButton = styled(ToggleButton)`
   ${media.small} {
     display: block;
   }
+`
+
+export const StyledOpenInNew = styled(OpenInNew)`
+  margin-left: 4px;
+  font-size: 14px;
 `

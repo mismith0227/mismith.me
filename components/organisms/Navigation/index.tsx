@@ -10,6 +10,7 @@ import {
   StyledLogo,
   StyledToggleButton,
   NavListItemInner,
+  StyledOpenInNew,
 } from './styles'
 import { Props } from './types'
 
@@ -65,6 +66,18 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
               <NavListItemInner isActive={path === 'blog'}>
                 <StyledLink href="/blog" aria-label="Blog">
                   Blog
+                </StyledLink>
+              </NavListItemInner>
+            </NavListItem>
+            <NavListItem>
+              <NavListItemInner>
+                <StyledLink
+                  href="https://shop.mismith.me/"
+                  aria-label="Shop"
+                  target="_blank"
+                >
+                  Shop
+                  <StyledOpenInNew />
                 </StyledLink>
               </NavListItemInner>
             </NavListItem>
