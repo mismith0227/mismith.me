@@ -9,6 +9,7 @@ import {
   ListTitle,
   List,
   ListItem,
+  StyledOpenInNew,
 } from './styles'
 import { Props } from './types'
 
@@ -30,6 +31,12 @@ export const Footer = ({ className }: Props) => (
             </ListItem>
             <ListItem>
               <StyledLink href="/blog">Blog</StyledLink>
+            </ListItem>
+            <ListItem>
+              <StyledLink href="https://shop.mismith.me/">
+                Shop
+                <StyledOpenInNew />
+              </StyledLink>
             </ListItem>
           </List>
         </ListWrap>
