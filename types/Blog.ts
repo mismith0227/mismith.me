@@ -15,6 +15,7 @@ export type Blog = {
   slug: string
   createdAt: Date
   updatedAt: Date
+  publishedAt: Date
   related_post?: Blog[]
   thumbnail?: Thumbnail
 }

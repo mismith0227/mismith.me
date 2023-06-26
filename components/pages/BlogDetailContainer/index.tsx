@@ -32,7 +32,7 @@ export const BlogDetailContainer = ({
       <DateArea>
         <Date>
           <DateLabel>公開日:</DateLabel>
-          {dayjs(data.createdAt).format('YYYY年M月D日')}
+          {dayjs(data.publishedAt).format('YYYY年M月D日')}
         </Date>
         <Date>
           <DateLabel>最終更新日:</DateLabel>
