@@ -9,7 +9,7 @@ export const ReadNext = ({ readNestPosts, className }: Props) => (
       {readNestPosts.map((item) => {
         return (
           <Item key={item.id}>
-            <Date>{dayjs(item.createdAt).format('YYYY年M月D日')}</Date>
+            <Date>{dayjs(item.publishedAt).format('YYYY年M月D日')}</Date>
             <StyledLink href={`/blog/${item.category.id}/${item.id}`}>
               {item.title}
             </StyledLink>
