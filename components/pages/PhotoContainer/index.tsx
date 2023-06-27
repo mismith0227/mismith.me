@@ -78,7 +78,7 @@ export const PhotoContainer = ({ data }: Props) => {
             }
           >
             <StyledImage
-              src={item.image.url}
+              src={`${item.image.url}?w=400?fm=webp`}
               alt={item.title || ''}
               width={item.image.width}
               height={item.image.height}
@@ -89,7 +89,7 @@ export const PhotoContainer = ({ data }: Props) => {
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage
-            src={modalState.src}
+            src={`${modalState.src}?fm=webp`}
             width={modalState.width}
             height={modalState.height}
             alt=""
