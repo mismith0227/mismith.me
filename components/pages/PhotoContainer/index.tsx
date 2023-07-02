@@ -65,7 +65,7 @@ export const PhotoContainer = ({ data }: Props) => {
         columns={{ xs: 1, sm: 2, md: 3 }}
         spacing={{ xs: 1, sm: 2, md: 3 }}
       >
-        {data.map((item) => (
+        {data.map((item, index) => (
           <ImageWrap
             key={item.id}
             onClick={() =>
@@ -78,10 +78,11 @@ export const PhotoContainer = ({ data }: Props) => {
             }
           >
             <StyledImage
-              src={`${item.image.url}?w=400?fm=webp`}
+              src={`${item.image.url}?fit=clip&w=800&h=800?fm=webp`}
               alt={item.title || ''}
               width={item.image.width}
               height={item.image.height}
+              loading={index > 6 ? 'lazy' : 'eager'}
             />
           </ImageWrap>
         ))}
