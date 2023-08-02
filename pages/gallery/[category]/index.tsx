@@ -24,14 +24,20 @@ const PhotoCategoryPage: NextPage<Props> = ({
   currentCategoryDescription,
 }) => {
   const meta = {
-    title: `Gallery | mismith.me`,
-    description: 'ギャラリー',
+    title: `${currentCategoryName} | Gallery | mismith.me`,
+    description: currentCategoryDescription || 'ギャラリー',
     path: `gallery/${currentCategoryId}`,
+    ogpImageUrl: pickUpPhoto?.image.url,
   }
 
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
-      <Seo title={meta.title} description={meta.description} path={meta.path} />
+      <Seo
+        title={meta.title}
+        description={meta.description}
+        path={meta.path}
+        ogpImageUrl={meta.ogpImageUrl}
+      />
       <PhotoContainer
         data={content}
         pickUpPhoto={pickUpPhoto}

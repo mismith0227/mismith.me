@@ -9,6 +9,7 @@ export const StyledContainer = styled(Container)``
 export const StyledHeading = styled(Heading)``
 
 export const Description = styled.p`
+  max-width: 980px;
   white-space: pre-wrap;
   word-wrap: break-word;
 `
@@ -24,6 +25,7 @@ export const StyledImageList = styled.div`
   justify-self: center;
   align-self: center;
   gap: 16px;
+  margin-top: 64px;
 
   ${media.medium} {
     grid-template-columns: repeat(3, minmax(0, 1fr));

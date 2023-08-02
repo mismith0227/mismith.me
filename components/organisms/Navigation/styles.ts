@@ -116,6 +116,18 @@ export const StyledLink = styled(Link)`
   }
 `
 
+export const ParentItem = styled.div`
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: 8px;
+    width: 12px;
+    height: 8px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background-color: currentColor;
+  }
+`
+
 export const ChildList = styled.ul`
   display: flex;
   flex-direction: column;

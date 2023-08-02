@@ -11,6 +11,7 @@ import {
   StyledToggleButton,
   NavListItemInner,
   StyledOpenInNew,
+  ParentItem,
 } from './styles'
 import { Props } from './types'
 
@@ -31,11 +32,7 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
               </NavListItemInner>
             </NavListItem>
             <NavListItem>
-              <NavListItemInner isActive={path === 'gallery'}>
-                <StyledLink href="/gallery" aria-label="Gallery">
-                  Gallery
-                </StyledLink>
-              </NavListItemInner>
+              <ParentItem aria-label="Gallery">Gallery</ParentItem>
               {photoCategory.length > 0 && (
                 <ChildList>
                   {photoCategory.map((item) => (
