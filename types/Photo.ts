@@ -4,4 +4,6 @@ export type Photo = {
   image: { url: string; width: number; height: number }
   equipment: string
   date: string
+  pickUp: boolean
+  categoryPickUp: boolean
 }

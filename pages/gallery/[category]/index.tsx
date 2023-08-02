@@ -2,7 +2,6 @@ import { GetStaticProps, NextPage, GetStaticPaths } from 'next'
 import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
-import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { PhotoContainer } from '@/components/pages/PhotoContainer'
 import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
@@ -10,24 +9,35 @@ import { PhotoCategory } from '@/types/PhotoCategory'
 type Props = {
   content: Photo[]
   photoCategory: PhotoCategory[]
-  currentCategory: string
+  currentCategoryId: string
+  currentCategoryName: string
+  currentCategoryDescription: string
+  pickUpPhoto?: Photo
 }
 
 const PhotoCategoryPage: NextPage<Props> = ({
   content,
-  currentCategory,
+  currentCategoryId,
+  currentCategoryName,
   photoCategory,
+  pickUpPhoto,
+  currentCategoryDescription,
 }) => {
   const meta = {
     title: `Gallery | mismith.me`,
     description: 'ギャラリー',
-    path: `gallery/${currentCategory}`,
+    path: `gallery/${currentCategoryId}`,
   }
 
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <PhotoContainer data={content} />
+      <PhotoContainer
+        data={content}
+        pickUpPhoto={pickUpPhoto}
+        currentCategoryName={currentCategoryName}
+        currentCategoryDescription={currentCategoryDescription}
+      />
     </Layout>
   )
 }
@@ -47,7 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     throw new Error('Error: ID not found')
   }
 
-  const data = await client.get({
+  const { contents }: { contents: Photo[] } = await client.get({
     endpoint: 'photo',
     queries: {
       limit: 99,
@@ -59,12 +69,28 @@ export const getStaticProps: GetStaticProps = async (context) => {
     endpoint: 'photo-category',
   })
 
+  const currentCategory: PhotoCategory | undefined = category.contents.find(
+    (item: PhotoCategory) => item.id === params.category
+  )
+
+  const pickUpPhoto: Photo | undefined = contents.find(
+    (item) => item.categoryPickUp
+  )
+
+  console.log(currentCategory)
+  console.log(currentCategory && currentCategory.description)
+
   return {
     props: {
-      content: data.contents,
-      totalCount: data.totalCount,
+      content: contents,
       photoCategory: category.contents,
-      currentCategory: params.category,
+      currentCategoryId: currentCategory ? currentCategory.id : '',
+      currentCategoryName: currentCategory ? currentCategory.category_name : '',
+      currentCategoryDescription:
+        currentCategory && currentCategory.description
+          ? currentCategory.description
+          : null,
+      pickUpPhoto: pickUpPhoto ? pickUpPhoto : null,
     },
   }
 }
