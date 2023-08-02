@@ -83,9 +83,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     (item) => item.categoryPickUp
   )
 
-  console.log(currentCategory)
-  console.log(currentCategory && currentCategory.description)
-
   return {
     props: {
       content: contents,
