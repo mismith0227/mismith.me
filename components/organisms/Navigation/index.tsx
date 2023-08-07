@@ -32,17 +32,15 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
               </NavListItemInner>
             </NavListItem>
             <NavListItem>
-              <ParentItem aria-label="Gallery">Gallery</ParentItem>
+              <ParentItem aria-label="Series">Series</ParentItem>
               {photoCategory.length > 0 && (
                 <ChildList>
                   {photoCategory.map((item) => (
                     <ChildListItem key={item.id}>
-                      <NavListItemInner
-                        isActive={path === `gallery/${item.id}`}
-                      >
+                      <NavListItemInner isActive={path === `series/${item.id}`}>
                         <StyledLink
-                          href={`/gallery/${item.id}`}
-                          aria-label="Gallery"
+                          href={`/series/${item.id}`}
+                          aria-label="series"
                         >
                           {item.category_name}
                         </StyledLink>

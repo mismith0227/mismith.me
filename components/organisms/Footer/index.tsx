@@ -9,10 +9,13 @@ import {
   List,
   ListItem,
   StyledOpenInNew,
+  ParentItem,
+  ChildList,
+  ChildListItem,
 } from './styles'
 import { Props } from './types'
 
-export const Footer = ({ className }: Props) => (
+export const Footer = ({ className, photoCategory }: Props) => (
   <Wrap className={className}>
     <StyledContainer size="lg">
       <Content>
@@ -23,7 +26,21 @@ export const Footer = ({ className }: Props) => (
               <StyledLink href="/">Home</StyledLink>
             </ListItem>
             <ListItem>
-              <StyledLink href="/gallery">Gallery</StyledLink>
+              <ParentItem>Series</ParentItem>
+              {photoCategory.length > 0 && (
+                <ChildList>
+                  {photoCategory.map((item) => (
+                    <ChildListItem key={item.id}>
+                      <StyledLink
+                        href={`/series/${item.id}`}
+                        aria-label="series"
+                      >
+                        {item.category_name}
+                      </StyledLink>
+                    </ChildListItem>
+                  ))}
+                </ChildList>
+              )}
             </ListItem>
             <ListItem>
               <StyledLink href="/about">About</StyledLink>
