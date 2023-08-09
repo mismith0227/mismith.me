@@ -15,7 +15,7 @@ export const Description = styled.p`
 `
 
 export const StyledPickUpImage = styled(Image)`
-  width: 100%;
+  width: min(100%, 1000px);
   height: auto;
 `
 

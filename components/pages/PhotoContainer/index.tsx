@@ -68,7 +68,7 @@ export const PhotoContainer = ({
     <StyledContainer size="full">
       {pickUpPhoto && (
         <StyledPickUpImage
-          src={`${pickUpPhoto.image.url}?fit=clip&w=1200&h=1800?fm=webp`}
+          src={`${pickUpPhoto.image.url}?fit=clip&w=1500&h=1000?fm=webp`}
           alt={pickUpPhoto.title || ''}
           width={pickUpPhoto.image.width}
           height={pickUpPhoto.image.height}
