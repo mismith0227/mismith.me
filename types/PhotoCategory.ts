@@ -5,4 +5,5 @@ export type PhotoCategory = {
   publishedAt: Date
   revisedAt: Date
   category_name: string
+  description: string
 }

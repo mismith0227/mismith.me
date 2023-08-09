@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import { useState } from 'react'
 import {
   StyledContainer,
-  StyledMasonry,
+  StyledImageList,
   StyledImage,
   ImageModal,
   ModalImage,
@@ -12,6 +12,8 @@ import {
   ImageWrap,
   Taken,
   StyledHeading,
+  StyledPickUpImage,
+  Description,
 } from './styles'
 import { Props } from './types'
 
@@ -23,7 +25,12 @@ export type modalState = {
   taken: string
 }
 
-export const PhotoContainer = ({ data }: Props) => {
+export const PhotoContainer = ({
+  data,
+  pickUpPhoto,
+  currentCategoryName,
+  currentCategoryDescription,
+}: Props) => {
   const [modalState, setModalState] = useState<modalState>({
     isOpen: false,
     src: '',
@@ -59,12 +66,23 @@ export const PhotoContainer = ({ data }: Props) => {
 
   return (
     <StyledContainer size="full">
-      <StyledHeading>Gallery</StyledHeading>
+      {pickUpPhoto && (
+        <StyledPickUpImage
+          src={`${pickUpPhoto.image.url}?fit=clip&w=1500&h=1000?fm=webp`}
+          alt={pickUpPhoto.title || ''}
+          width={pickUpPhoto.image.width}
+          height={pickUpPhoto.image.height}
+          loading="eager"
+        />
+      )}
 
-      <StyledMasonry
-        columns={{ xs: 1, sm: 2, md: 3 }}
-        spacing={{ xs: 1, sm: 2, md: 3 }}
-      >
+      <StyledHeading>{currentCategoryName}</StyledHeading>
+
+      {currentCategoryDescription && (
+        <Description>{currentCategoryDescription}</Description>
+      )}
+
+      <StyledImageList>
         {data.map((item, index) => (
           <ImageWrap
             key={item.id}
@@ -82,11 +100,11 @@ export const PhotoContainer = ({ data }: Props) => {
               alt={item.title || ''}
               width={item.image.width}
               height={item.image.height}
-              loading={index > 6 ? 'lazy' : 'eager'}
+              loading="lazy"
             />
           </ImageWrap>
         ))}
-      </StyledMasonry>
+      </StyledImageList>
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage

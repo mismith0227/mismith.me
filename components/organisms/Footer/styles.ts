@@ -83,7 +83,28 @@ export const StyledLink = styled(Link)`
   }
 `
 
+export const ParentItem = styled.div`
+  padding-left: 16px;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: 8px;
+    width: 12px;
+    height: 8px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    background-color: currentColor;
+  }
+`
+
 export const StyledOpenInNew = styled(OpenInNew)`
   margin-left: 4px;
   font-size: 14px;
 `
+
+export const ChildList = styled.ul`
+  list-style: none;
+  padding-left: 16px;
+`
+
+export const ChildListItem = styled.li``

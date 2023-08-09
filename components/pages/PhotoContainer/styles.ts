@@ -1,4 +1,3 @@
-import Masonry from '@mui/lab/Masonry'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import media from '@/styles/media'
@@ -7,16 +6,30 @@ import { Container } from '@/components/organisms/Container'
 
 export const StyledContainer = styled(Container)``
 
-export const StyledHeading = styled(Heading)`
-  display: none;
+export const StyledHeading = styled(Heading)``
 
-  ${media.small} {
-    display: block;
-  }
+export const Description = styled.p`
+  max-width: 980px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 `
 
-export const StyledMasonry = styled(Masonry)`
-  margin: 0 !important;
+export const StyledPickUpImage = styled(Image)`
+  width: min(100%, 1000px);
+  height: auto;
+`
+
+export const StyledImageList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-self: center;
+  align-self: center;
+  gap: 16px;
+  margin-top: 64px;
+
+  ${media.medium} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   ${media.small} {
     margin: 80px 0 0 !important;
@@ -24,7 +37,10 @@ export const StyledMasonry = styled(Masonry)`
 `
 
 export const ImageWrap = styled.div`
+  position: relative;
   overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
 
   &:hover {
     cursor: zoom-in;
@@ -32,9 +48,10 @@ export const ImageWrap = styled.div`
 `
 
 export const StyledImage = styled(Image)`
+  position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: 0.2s;
 `
 

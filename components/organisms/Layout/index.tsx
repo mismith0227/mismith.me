@@ -10,6 +10,6 @@ export const Layout = ({ children, path, photoCategory }: Props) => (
       <StyledNavigation path={path} photoCategory={photoCategory} />
       <StyledMain>{children}</StyledMain>
     </Wrap>
-    <StyledFooter />
+    <StyledFooter photoCategory={photoCategory} />
   </>
 )
