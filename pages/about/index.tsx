@@ -11,7 +11,7 @@ type Props = {
 
 const About: NextPage<Props> = ({ photoCategory }) => {
   const meta = {
-    title: 'About | mismith.me',
+    title: 'About | mismith',
     description: 'プライバシーポリシー',
     path: 'about',
   }

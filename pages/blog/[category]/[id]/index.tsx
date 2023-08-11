@@ -52,7 +52,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
   return blog ? (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo
-        title={blog.title ? `${blog.title} | mismith.me` : ''}
+        title={blog.title ? `${blog.title} | mismith` : ''}
         description={blog.description ? blog.description : ''}
         path={meta.path}
         ogpImageUrl={ogpImageUrl}

@@ -25,7 +25,7 @@ const BlogPage: NextPage<Props> = ({
   photoCategory,
 }) => {
   const meta = {
-    title: `Blog: Page${currentPage} | mismith.me`,
+    title: `Blog: Page${currentPage} | mismith`,
     description: `ブログです: ページ${currentPage}`,
     path: 'blog',
   }

@@ -12,9 +12,9 @@ type Props = {
   photoCategory: PhotoCategory[]
 }
 
-const Home: NextPage<Props> = ({ photos, totalCount, photoCategory }) => {
+const Home: NextPage<Props> = ({ photos, photoCategory }) => {
   const meta = {
-    title: 'Home | mismith.me',
+    title: 'Home | mismith',
     description: 'トップページ',
     path: 'home',
   }
