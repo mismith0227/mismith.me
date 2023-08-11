@@ -24,7 +24,7 @@ const PhotoCategoryPage: NextPage<Props> = ({
   currentCategoryDescription,
 }) => {
   const meta = {
-    title: `${currentCategoryName} | Series | mismith.me`,
+    title: `${currentCategoryName} | Series | mismith`,
     description: currentCategoryDescription || 'シリーズ',
     path: `series/${currentCategoryId}`,
     ogpImageUrl: pickUpPhoto?.image.url,

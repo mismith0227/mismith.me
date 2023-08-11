@@ -11,7 +11,7 @@ type Props = {
 
 const Policy: NextPage<Props> = ({ photoCategory }) => {
   const meta = {
-    title: 'Privacy Policy | mismith.me',
+    title: 'Privacy Policy | mismith',
     description: 'プライバシーポリシー',
     path: 'policy',
   }
