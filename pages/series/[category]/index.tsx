@@ -50,9 +50,15 @@ const PhotoCategoryPage: NextPage<Props> = ({
 export default PhotoCategoryPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const data = await client.get({ endpoint: 'photo-category' })
+
+  const paths = data.contents.map(
+    (content: { id: string }) => `/series/${content.id}`
+  )
+
   return {
-    fallback: 'blocking',
-    paths: [],
+    fallback: false,
+    paths,
   }
 }
 
