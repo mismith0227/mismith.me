@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Container,
   Inner,
@@ -14,9 +14,24 @@ import {
   ParentItem,
 } from './styles'
 import { Props } from './types'
+import { useRouter } from 'next/router'
 
 export const Navigation = ({ path, className, photoCategory }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+
+  const router = useRouter()
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', handleChangeRoute)
+
+    return () => {
+      router.events.off('routeChangeComplete', handleChangeRoute)
+    }
+  }, [])
+
+  const handleChangeRoute = () => {
+    setIsMenuOpen(false)
+  }
 
   return (
     <>
