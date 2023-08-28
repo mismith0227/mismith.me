@@ -44,10 +44,11 @@ export const HomeContainer = ({ data }: Props) => {
             <div key={item.id} className="keen-slider__slide">
               <StyledImage
                 key={item.id}
-                src={`${item.image.url}?fit=clip&w=1400&h=1400?fm=webp`}
+                src={`${item.image.url}?fit=clip&w=1400&h=934?fm=webp`}
                 alt={item.title || ''}
                 width={item.image.width}
                 height={item.image.height}
+                priority
               />
             </div>
           ))}
