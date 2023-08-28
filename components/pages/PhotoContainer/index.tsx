@@ -14,6 +14,7 @@ import {
   StyledHeading,
   StyledPickUpImage,
   Description,
+  Loading,
 } from './styles'
 import { Props } from './types'
 
@@ -38,6 +39,7 @@ export const PhotoContainer = ({
     height: 0,
     taken: '',
   })
+  const [isLoadingModalImage, setIsLoadingModalImage] = useState<boolean>(false)
 
   const onOpenImageModal = (
     src: string,
@@ -52,6 +54,7 @@ export const PhotoContainer = ({
       height: height,
       taken: taken,
     })
+    setIsLoadingModalImage(true)
   }
 
   const onCloseImageModal = () => {
@@ -73,6 +76,7 @@ export const PhotoContainer = ({
           width={pickUpPhoto.image.width}
           height={pickUpPhoto.image.height}
           loading="eager"
+          priority
         />
       )}
 
@@ -83,7 +87,7 @@ export const PhotoContainer = ({
       )}
 
       <StyledImageList>
-        {data.map((item, index) => (
+        {data.map((item) => (
           <ImageWrap
             key={item.id}
             onClick={() =>
@@ -112,11 +116,13 @@ export const PhotoContainer = ({
             width={modalState.width}
             height={modalState.height}
             alt=""
+            onLoadingComplete={() => setIsLoadingModalImage(false)}
           />
           <Taken>Taken: {dayjs(modalState.taken).format('YYYY年M月D日')}</Taken>
           <CloseModal onClick={onCloseImageModal}>
             <ScreenReaderText>閉じる</ScreenReaderText>
           </CloseModal>
+          {isLoadingModalImage && <Loading>Loading...</Loading>}
         </ImageModal>
       </Modal>
     </StyledContainer>

@@ -137,3 +137,11 @@ export const ScreenReaderText = styled.span`
   width: 1px;
   overflow: hidden;
 `
+
+export const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: gray;
+`
