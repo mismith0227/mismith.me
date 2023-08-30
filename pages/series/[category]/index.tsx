@@ -74,6 +74,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     queries: {
       limit: 99,
       filters: `category[equals]${params.category}`,
+      fields: 'id,image,date,categoryPickUp',
     },
   })
 
