@@ -17,6 +17,18 @@ import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { Toc } from '@/types/Toc'
 import { PhotoCategory } from '@/types/PhotoCategory'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+
+declare global {
+  interface Window {
+    twttr: {
+      widgets: {
+        load(): void
+      }
+    }
+  }
+}
 
 type StaticProps = {
   blog: Blog
@@ -40,6 +52,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     currentCategory,
     photoCategory,
   } = props
+  const { asPath } = useRouter()
 
   const meta = {
     path: 'blog',
@@ -48,6 +61,14 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
   const ogpImageUrl = blog.thumbnail
     ? blog.thumbnail.url
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
+
+  useEffect(() => {
+    try {
+      window.twttr.widgets.load()
+    } catch (err) {
+      console.error(err)
+    }
+  }, [asPath])
 
   return blog ? (
     <Layout path={meta.path} photoCategory={photoCategory}>
