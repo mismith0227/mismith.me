@@ -86,15 +86,6 @@ export const ModalImage = styled(Image)`
   object-fit: contain;
 `
 
-export const Taken = styled.p`
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  margin: 0;
-  color: #fff;
-  font-size: 12px;
-`
-
 export const CloseModal = styled.button`
   position: fixed;
   top: 12px;

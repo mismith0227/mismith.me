@@ -6,4 +6,10 @@ export type PhotoCategory = {
   revisedAt: Date
   category_name: string
   description: string
+  feature_image?: string
+  images?: {
+    url: string
+    width: number
+    height: number
+  }[]
 }

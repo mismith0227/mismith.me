@@ -3,16 +3,16 @@ import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { PhotoContainer } from '@/components/pages/PhotoContainer'
-import { Photo } from '@/types/Photo'
+import { Image } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
-  content: Photo[]
+  content: Image[]
   photoCategory: PhotoCategory[]
   currentCategoryId: string
   currentCategoryName: string
   currentCategoryDescription: string
-  pickUpPhoto?: Photo
+  pickUpPhoto?: Image
 }
 
 const PhotoCategoryPage: NextPage<Props> = ({
@@ -27,7 +27,7 @@ const PhotoCategoryPage: NextPage<Props> = ({
     title: `${currentCategoryName} | Series | mismith`,
     description: currentCategoryDescription || 'シリーズ',
     path: `series/${currentCategoryId}`,
-    ogpImageUrl: pickUpPhoto?.image.url,
+    ogpImageUrl: pickUpPhoto?.url,
   }
 
   return (
@@ -69,14 +69,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     throw new Error('Error: ID not found')
   }
 
-  const { contents }: { contents: Photo[] } = await client.get({
-    endpoint: 'photo',
-    queries: {
-      limit: 99,
-      filters: `category[equals]${params.category}`,
-    },
-  })
-
   const category = await client.get({
     endpoint: 'photo-category',
   })
@@ -85,13 +77,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     (item: PhotoCategory) => item.id === params.category
   )
 
-  const pickUpPhoto: Photo | undefined = contents.find(
-    (item) => item.categoryPickUp
-  )
-
   return {
     props: {
-      content: contents,
+      content: currentCategory ? currentCategory.images : [],
       photoCategory: category.contents,
       currentCategoryId: currentCategory ? currentCategory.id : '',
       currentCategoryName: currentCategory ? currentCategory.category_name : '',
@@ -99,7 +87,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
         currentCategory && currentCategory.description
           ? currentCategory.description
           : null,
-      pickUpPhoto: pickUpPhoto ? pickUpPhoto : null,
+      pickUpPhoto:
+        currentCategory && currentCategory.feature_image
+          ? currentCategory.feature_image
+          : null,
     },
   }
 }
