@@ -63,10 +63,8 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
     : `${process.env.NEXT_PUBLIC_WEB_URL}/api/blog/${currentCategory}/${blog.id}/ogp`
 
   useEffect(() => {
-    try {
+    if (window.twttr && window.twttr.widgets) {
       window.twttr.widgets.load()
-    } catch (err) {
-      console.error(err)
     }
   }, [asPath])
 
