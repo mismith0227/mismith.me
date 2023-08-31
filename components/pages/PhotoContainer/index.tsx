@@ -1,5 +1,4 @@
 import { Modal } from '@mui/material'
-import dayjs from 'dayjs'
 import { useState } from 'react'
 import {
   StyledContainer,
@@ -10,7 +9,6 @@ import {
   CloseModal,
   ScreenReaderText,
   ImageWrap,
-  Taken,
   StyledHeading,
   StyledPickUpImage,
   Description,
@@ -23,7 +21,6 @@ export type modalState = {
   src: string
   width: number
   height: number
-  taken: string
 }
 
 export const PhotoContainer = ({
@@ -37,22 +34,15 @@ export const PhotoContainer = ({
     src: '',
     width: 0,
     height: 0,
-    taken: '',
   })
   const [isLoadingModalImage, setIsLoadingModalImage] = useState<boolean>(false)
 
-  const onOpenImageModal = (
-    src: string,
-    width: number,
-    height: number,
-    taken: string
-  ) => {
+  const onOpenImageModal = (src: string, width: number, height: number) => {
     setModalState({
       isOpen: true,
       src: src,
       width: width,
       height: height,
-      taken: taken,
     })
     setIsLoadingModalImage(true)
   }
@@ -63,7 +53,6 @@ export const PhotoContainer = ({
       src: '',
       width: 0,
       height: 0,
-      taken: '',
     })
   }
 
@@ -71,10 +60,10 @@ export const PhotoContainer = ({
     <StyledContainer size="full">
       {pickUpPhoto && (
         <StyledPickUpImage
-          src={`${pickUpPhoto.image.url}?fit=clip&w=1500&h=1000?fm=webp`}
-          alt={pickUpPhoto.title || ''}
-          width={pickUpPhoto.image.width}
-          height={pickUpPhoto.image.height}
+          src={`${pickUpPhoto.url}?fit=clip&w=1500&h=1000?fm=webp`}
+          alt=""
+          width={pickUpPhoto.width}
+          height={pickUpPhoto.height}
           loading="eager"
           priority
         />
@@ -89,21 +78,14 @@ export const PhotoContainer = ({
       <StyledImageList>
         {data.map((item) => (
           <ImageWrap
-            key={item.id}
-            onClick={() =>
-              onOpenImageModal(
-                item.image.url,
-                item.image.width,
-                item.image.height,
-                item.date
-              )
-            }
+            key={item.url}
+            onClick={() => onOpenImageModal(item.url, item.width, item.height)}
           >
             <StyledImage
-              src={`${item.image.url}?fit=clip&w=800&h=800?fm=webp`}
-              alt={item.title || ''}
-              width={item.image.width}
-              height={item.image.height}
+              src={`${item.url}?fit=clip&w=800&h=800?fm=webp`}
+              alt=""
+              width={item.width}
+              height={item.height}
               loading="lazy"
             />
           </ImageWrap>
@@ -118,7 +100,6 @@ export const PhotoContainer = ({
             alt=""
             onLoadingComplete={() => setIsLoadingModalImage(false)}
           />
-          <Taken>Taken: {dayjs(modalState.taken).format('YYYY年M月D日')}</Taken>
           <CloseModal onClick={onCloseImageModal}>
             <ScreenReaderText>閉じる</ScreenReaderText>
           </CloseModal>
