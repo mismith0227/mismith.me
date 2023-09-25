@@ -24,57 +24,32 @@ export const List = styled.ul`
   font-size: 14px;
 `
 
-type ItemProps = {
-  name: string
-}
+export const Item = styled.li`
+  padding-left: 16px;
+  position: relative;
+  font-weight: bold;
+  margin-top: 8px;
 
-const getItemStyles = ({ name = 'H1' }: ItemProps) => {
-  switch (name) {
-    case 'H1':
-      return css`
-        padding-left: 0;
-      `
-    case 'H2':
-      return css`
-        padding-left: 16px;
-        position: relative;
-        font-weight: bold;
-        margin-top: 8px;
-
-        &:first-of-type {
-          margin-top: 0;
-        }
-
-        &:before {
-          content: '';
-          display: before;
-          height: 1px;
-          width: 8px;
-          background: #000;
-          position: absolute;
-          left: 0;
-          top: 0.9em;
-        }
-      `
-    case 'H3':
-      return css`
-        padding-left: 16px;
-
-        &:before {
-          content: '・';
-        }
-      `
-    case 'H4':
-    case 'H5':
-    case 'H6':
-      return css`
-        padding-left: 48px;
-      `
+  &:first-of-type {
+    margin-top: 0;
   }
-}
 
-export const Item = styled.li<ItemProps>`
-  ${getItemStyles};
+  &:before {
+    content: '';
+    display: before;
+    height: 1px;
+    width: 8px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0.9em;
+  }
+`
+
+export const ChildList = styled.ul`
+  margin: 0;
+  padding: 8px 0 8px;
+  list-style: none;
 `
 
 export const Link = styled.a`

@@ -12,7 +12,7 @@ import { BlogDetailContainer } from '@/components/pages/BlogDetailContainer'
 import { toStringId } from '@/utils/toStringId'
 import { isDraft } from '@/utils/isDraft'
 import { convertToHtml } from '@/utils/postUtils'
-import { convertToToc } from '@/utils/TocUtil'
+import { convertToToc, makeToc } from '@/utils/tocUtils'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { Toc } from '@/types/Toc'
@@ -134,6 +134,8 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
     const body = convertToHtml(data.content)
     const toc = convertToToc(data.content)
 
+    const madeToc = makeToc(toc)
+
     const category = await client.get({
       endpoint: 'blog-category',
     })
@@ -146,7 +148,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       props: {
         blog: data,
         body: body,
-        toc: toc,
+        toc: madeToc,
         category: category.contents,
         currentCategory: toStringId(params.category),
         photoCategory: photoCategory.contents,
