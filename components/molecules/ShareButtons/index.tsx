@@ -1,5 +1,5 @@
 import { BASE_URL } from '@/settings/siteSettings'
-import { List, Item, StyledLink, StyledTwitter, StyledHatena } from './styles'
+import { List, Item, StyledLink, StyledXlogo, StyledHatena } from './styles'
 import { Props } from './types'
 
 export const ShareButtons = ({
@@ -9,30 +9,18 @@ export const ShareButtons = ({
   contentId,
 }: Props) => {
   const shareUrl = `${BASE_URL}/blog/${currentCategory}/${contentId}`
-  const twitterLink = `https://twitter.com/intent/tweet?text=${title}&url=${shareUrl}`
-  const hatenaLink = `https://b.hatena.ne.jp/entry/${shareUrl}`
+  const xLink = `https://twitter.com/intent/tweet?text=${title}&url=${shareUrl}`
   return (
     <List className={className}>
-      <Item key="twitter">
+      <Item key="x">
         <StyledLink
-          aria-label="twitter share"
-          href={twitterLink}
+          aria-label="x share"
+          href={xLink}
           target="_blank"
           rel="noopener noreferrer"
-          service="twitter"
+          service="x"
         >
-          <StyledTwitter />
-        </StyledLink>
-      </Item>
-      <Item key="hatena">
-        <StyledLink
-          aria-label="hatena bookmark share"
-          href={hatenaLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          service="hatena"
-        >
-          <StyledHatena />
+          <StyledXlogo />
         </StyledLink>
       </Item>
     </List>

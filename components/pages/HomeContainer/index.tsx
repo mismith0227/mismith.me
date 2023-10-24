@@ -2,7 +2,7 @@ import { Fivehundredpx } from '@/components/atoms/Icon/Fivehundredpx'
 import { GitHub } from '@/components/atoms/Icon/GitHub'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Note } from '@/components/atoms/Icon/Note'
-import { Twitter } from '@/components/atoms/Icon/Twitter'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import { useState } from 'react'
@@ -84,10 +84,6 @@ export const HomeContainer = ({ data }: Props) => {
         <Description>
           Street, portrait, etc.
           <br />
-          Digital: X-S10 / RX100 M6
-          <br />
-          Film: Rollei B35
-          <br />
           Free-lance web engineer / photographer based in Osaka, Japan.
         </Description>
 
@@ -96,10 +92,10 @@ export const HomeContainer = ({ data }: Props) => {
             <ExternalLink
               href="https://twitter.com/misumi_takuma/"
               target="_blank"
-              aria-label="Twitter"
+              aria-label="X"
               rel="noopener"
             >
-              <Twitter />
+              <Xlogo />
             </ExternalLink>
           </StyledIconListItem>
           <StyledIconListItem>
