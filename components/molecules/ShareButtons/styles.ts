@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/react'
 import media from '@/styles/media'
-import { Twitter } from '@/components/atoms/Icon/Twitter'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Hatena } from '@/components/atoms/Icon/Hatena'
 
 export const List = styled.ul`
@@ -29,14 +29,14 @@ export const Item = styled.li`
 `
 
 type LinkProps = {
-  service?: 'twitter' | 'hatena'
+  service?: 'x' | 'hatena'
 }
 
-const getContentStyles = ({ service = 'twitter' }: LinkProps) => {
+const getContentStyles = ({ service = 'x' }: LinkProps) => {
   switch (service) {
-    case 'twitter':
+    case 'x':
       return css`
-        background: #1d9bf0;
+        background: #000;
       `
     case 'hatena':
       return css`
@@ -62,7 +62,7 @@ export const StyledLink = styled.a<LinkProps>`
   }
 `
 
-export const StyledTwitter = styled(Twitter)`
+export const StyledXlogo = styled(Xlogo)`
   width: 24px;
   height: auto;
 `

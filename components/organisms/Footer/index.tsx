@@ -73,10 +73,10 @@ export const Footer = ({ className, photoCategory }: Props) => (
               <StyledLink
                 href="https://twitter.com/misumi_takuma/"
                 target="_blank"
-                aria-label="Twitter"
+                aria-label="X"
                 rel="noopener"
               >
-                Twitter
+                X
               </StyledLink>
             </ListItem>
             <ListItem>

@@ -18,7 +18,7 @@ import {
 } from './styles'
 import { biographies } from './data'
 import { Heading } from '@/components/atoms/Heading'
-import { Twitter } from '@/components/atoms/Icon/Twitter'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Biography } from './types'
 
@@ -72,10 +72,10 @@ export const AboutContainer = () => (
             <ExternalLink
               href="https://twitter.com/misumi_takuma/"
               target="_blank"
-              aria-label="Twitter"
+              aria-label="X"
               rel="noopener"
             >
-              <Twitter />
+              <Xlogo />
             </ExternalLink>
           </StyledIconListItem>
           <StyledIconListItem>
