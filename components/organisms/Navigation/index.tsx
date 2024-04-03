@@ -7,11 +7,11 @@ import {
   StyledLink,
   ChildList,
   ChildListItem,
-  StyledLogo,
   StyledToggleButton,
   NavListItemInner,
   StyledOpenInNew,
   ParentItem,
+  StyledSiteTitle,
 } from './styles'
 import { Props } from './types'
 import { useRouter } from 'next/router'
@@ -35,9 +35,9 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
 
   return (
     <>
+      <StyledSiteTitle isOpen={isMenuOpen} />
       <Container className={className} id="navigation" isOpen={isMenuOpen}>
         <Inner>
-          <StyledLogo />
           <NavList>
             <NavListItem>
               <NavListItemInner isActive={path === 'home'}>

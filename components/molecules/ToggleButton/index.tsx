@@ -14,7 +14,6 @@ export const ToggleButton = ({
     onClick={onToggleClick}
     className={className}
   >
-    <ToggleBorder isOpen={isOpen} />
-    <ScreenReaderText>menu</ScreenReaderText>
+    {isOpen ? 'Close' : 'Menu'}
   </Container>
 )

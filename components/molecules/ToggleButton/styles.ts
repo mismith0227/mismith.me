@@ -6,35 +6,17 @@ type Props = {
 
 export const Container = styled.button<Props>`
   display: block;
-  width: 30px;
   height: 30px;
   border: none;
   padding: 0;
   background-color: transparent;
   transition: 0.2s;
+  color: ${({ isOpen }) => (isOpen ? '#000' : '#fff')};
+  letter-spacing: 0.08em;
+  font-weight: 700;
 
   &:hover {
     cursor: pointer;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #000;
-    position: absolute;
-    left: 0;
-    opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
-  }
-
-  &::before {
-    top: 5px;
-  }
-
-  &::after {
-    bottom: 5px;
   }
 `
 
@@ -42,7 +24,7 @@ export const ToggleBorder = styled.span<Props>`
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #000;
+  background-color: ${({ isOpen }) => (isOpen ? '#000' : '#fff')};
   position: absolute;
   top: 0;
   bottom: 0;
@@ -56,7 +38,7 @@ export const ToggleBorder = styled.span<Props>`
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: ${({ isOpen }) => (isOpen ? '#000' : '#fff')};
     position: absolute;
     top: 0;
     bottom: 0;

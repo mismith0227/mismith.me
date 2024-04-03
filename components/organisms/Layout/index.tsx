@@ -8,8 +8,7 @@ export const Layout = ({ children, path, photoCategory }: Props) => (
     <Global styles={globalStyle} />
     <Wrap>
       <StyledNavigation path={path} photoCategory={photoCategory} />
-      <StyledMain>{children}</StyledMain>
+      {children}
     </Wrap>
-    <StyledFooter photoCategory={photoCategory} />
   </>
 )
