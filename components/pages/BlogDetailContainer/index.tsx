@@ -25,7 +25,7 @@ export const BlogDetailContainer = ({
   category,
   currentCategory,
 }: Props) => (
-  <StyledContainer size="full">
+  <StyledContainer size="lg">
     <Inner>
       <StyledTag>{data.category.category_name}</StyledTag>
       <Title>{data.title}</Title>

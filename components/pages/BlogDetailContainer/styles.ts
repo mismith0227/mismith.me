@@ -9,18 +9,12 @@ import { Heading } from '@/components/atoms/Heading'
 import { Toc } from '@/components/molecules/Toc'
 
 export const StyledContainer = styled(Container)`
-  padding-right: 216px;
   box-sizing: border-box;
-
-  ${media.large} {
-    padding-right: 0;
-  }
 `
 
 export const Inner = styled.div`
   max-width: 640px;
   width: 100%;
-  margin: 0 auto;
 `
 
 export const Title = styled(Heading)`
@@ -159,7 +153,6 @@ export const Body = styled.div`
 
 export const StyledCategories = styled(Categories)`
   margin: 120px 0 0;
-  max-width: 640px;
 
   ${media.medium} {
     margin: 60px 0 0;
@@ -168,7 +161,6 @@ export const StyledCategories = styled(Categories)`
 
 export const StyledReadNext = styled(ReadNext)`
   margin: 120px 0 0;
-  max-width: 640px;
 
   ${media.medium} {
     margin: 60px 0 0;
@@ -183,8 +175,7 @@ export const ShareButtonsArea = styled.div`
 
   ${media.large} {
     position: initial;
-    margin: 120px auto 0;
-    max-width: 640px;
+    margin: 120px 0 0;
   }
 
   ${media.medium} {

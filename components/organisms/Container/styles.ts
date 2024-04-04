@@ -14,15 +14,15 @@ const getContentStyles = ({ size = 'md' }: ContainerProps) => {
       `
     case 'lg':
       return css`
-        max-width: 1024px;
+        padding-left: 240px;
       `
     case 'md':
       return css`
-        max-width: 800px;
+        padding-left: 240px;
       `
     case 'sm':
       return css`
-        max-width: 650px;
+        padding-left: 240px;
       `
   }
 }
@@ -30,11 +30,16 @@ const getContentStyles = ({ size = 'md' }: ContainerProps) => {
 export const Wrap = styled.div`
   display: block;
   ${getContentStyles};
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  padding-right: 40px;
+
+  ${media.medium} {
+    padding-left: 200px;
+  }
 
   ${media.small} {
     width: 96%;
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
   }
 `

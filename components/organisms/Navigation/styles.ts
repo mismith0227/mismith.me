@@ -33,13 +33,11 @@ export const StyledSiteTitle = styled(SiteTitle)<Props>`
 
 export const Container = styled.nav<Props>`
   padding-left: 48px;
-  width: 240px;
   box-sizing: border-box;
   color: ${({ isHome }) => (isHome ? '#fff' : '#000')};
 
   ${media.medium} {
     padding-left: 32px;
-    width: 200px;
   }
 
   ${media.small} {
