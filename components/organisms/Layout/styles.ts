@@ -8,7 +8,7 @@ export const Wrap = styled.div`
 `
 
 export const StyledNavigation = styled(Navigation)`
-  position: absolute;
+  position: fixed;
   top: 96px;
   left: 0;
   z-index: 5;

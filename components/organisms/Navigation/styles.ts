@@ -63,9 +63,6 @@ export const Container = styled.nav<Props>`
 `
 
 export const Inner = styled.div`
-  position: sticky;
-  top: 24px;
-
   ${media.small} {
     position: relative;
     display: flex;
