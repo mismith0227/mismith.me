@@ -7,6 +7,7 @@ import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 
 type Props = {
   isOpen: boolean
+  isHome: boolean
 }
 
 export const StyledSiteTitle = styled(SiteTitle)<Props>`
@@ -15,7 +16,7 @@ export const StyledSiteTitle = styled(SiteTitle)<Props>`
   left: 48px;
   z-index: 100;
   font-size: 24px;
-  color: #fff;
+  color: ${({ isHome }) => (isHome ? '#fff' : '#000')};
 
   ${media.medium} {
     left: 32px;
@@ -25,7 +26,8 @@ export const StyledSiteTitle = styled(SiteTitle)<Props>`
     top: 16px;
     left: 16px;
     font-size: 14px;
-    color: ${({ isOpen }) => (isOpen ? '#000' : '#fff')};
+    color: ${({ isOpen, isHome }) =>
+      isOpen ? '#000' : isHome ? '#fff' : '#000'};
   }
 `
 
@@ -33,6 +35,7 @@ export const Container = styled.nav<Props>`
   padding-left: 48px;
   width: 240px;
   box-sizing: border-box;
+  color: ${({ isHome }) => (isHome ? '#fff' : '#000')};
 
   ${media.medium} {
     padding-left: 32px;
@@ -54,6 +57,8 @@ export const Container = styled.nav<Props>`
     visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
     transition: opacity 0.2s;
     background-color: rgba(255, 255, 255, 0.8);
+    color: ${({ isOpen, isHome }) =>
+      isOpen ? '#000' : isHome ? '#fff' : '#000'};
   }
 `
 
@@ -101,7 +106,7 @@ export const NavListItemInner = styled.span<LinkProps>`
     display: block;
     width: 100%;
     height: 1px;
-    background: #fff;
+    background: currentColor;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -131,20 +136,20 @@ export const StyledLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #fff;
+  color: currentColor;
 
   ${media.small} {
     font-size: 20px;
-    color: #000;
+    color: currentColor;
   }
 `
 
 export const ParentItem = styled.div`
-  color: #fff;
+  color: currentColor;
 
   ${media.small} {
     font-size: 20px;
-    color: #000;
+    color: currentColor;
   }
 
   &::after {

@@ -35,8 +35,13 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
 
   return (
     <>
-      <StyledSiteTitle isOpen={isMenuOpen} />
-      <Container className={className} id="navigation" isOpen={isMenuOpen}>
+      <StyledSiteTitle isOpen={isMenuOpen} isHome={path === 'home'} />
+      <Container
+        className={className}
+        id="navigation"
+        isOpen={isMenuOpen}
+        isHome={path === 'home'}
+      >
         <Inner>
           <NavList>
             <NavListItem>

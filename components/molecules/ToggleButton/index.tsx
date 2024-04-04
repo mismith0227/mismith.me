@@ -1,4 +1,4 @@
-import { Container, ToggleBorder, ScreenReaderText } from './styles'
+import { Container } from './styles'
 import { Props } from './types'
 
 export const ToggleButton = ({
@@ -8,7 +8,6 @@ export const ToggleButton = ({
   className,
 }: Props) => (
   <Container
-    isOpen={isOpen}
     aria-expanded={isOpen}
     aria-controls={ariaControls}
     onClick={onToggleClick}
