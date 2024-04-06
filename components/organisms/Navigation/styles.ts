@@ -55,7 +55,8 @@ export const Container = styled.nav<Props>`
     opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
     visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
     transition: opacity 0.2s;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: ${({ isHome }) =>
+      isHome ? 'rgba(255, 255, 255, 0.8)' : 'rgba(255, 255, 255, 1)'};
     color: ${({ isOpen, isHome }) =>
       isOpen ? '#000' : isHome ? '#fff' : '#000'};
   }
