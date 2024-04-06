@@ -108,6 +108,7 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
       </Container>
       <StyledToggleButton
         isOpen={isMenuOpen}
+        isHome={path === 'home'}
         ariaControls="navigation"
         onToggleClick={() => setIsMenuOpen(!isMenuOpen)}
       />

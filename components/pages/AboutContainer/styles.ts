@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { keyframes } from '@emotion/react'
 import media from '@/styles/media'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
 import { TagList } from '@/components/molecules/TagList'

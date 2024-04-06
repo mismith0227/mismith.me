@@ -35,6 +35,7 @@ export const Container = styled.nav<Props>`
   padding-left: 48px;
   box-sizing: border-box;
   color: ${({ isHome }) => (isHome ? '#fff' : '#000')};
+  letter-spacing: 0.08em;
 
   ${media.medium} {
     padding-left: 32px;
@@ -173,7 +174,7 @@ export const ChildList = styled.ul`
 
 export const ChildListItem = styled.li<LinkProps>``
 
-export const StyledToggleButton = styled(ToggleButton)`
+export const StyledToggleButton = styled(ToggleButton)<Props>`
   display: none;
   position: fixed;
   top: 16px;
@@ -182,6 +183,8 @@ export const StyledToggleButton = styled(ToggleButton)`
 
   ${media.small} {
     display: block;
+    color: ${({ isOpen, isHome }) =>
+      isOpen ? '#000' : isHome ? '#fff' : '#000'};
   }
 `
 
