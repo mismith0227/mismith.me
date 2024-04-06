@@ -5,7 +5,7 @@ import { Container } from '@/components/organisms/Container'
 export const StyledContainer = styled(Container)``
 
 export const Content = styled.div`
-  margin: 180px auto 0;
+  margin: 80px 0 0;
   max-width: 650px;
 
   ${media.small} {

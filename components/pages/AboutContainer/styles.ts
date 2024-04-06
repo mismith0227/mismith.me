@@ -39,9 +39,7 @@ export const Section = styled.section`
   }
 `
 
-export const SectionInner = styled.div`
-  padding: 0 8px;
-`
+export const SectionInner = styled.div``
 
 export const SectionContent = styled.div`
   margin: 24px 0 0;

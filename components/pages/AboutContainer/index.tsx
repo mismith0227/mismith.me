@@ -28,6 +28,8 @@ import { Heading } from '@/components/atoms/Heading'
 import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
 import { Biography } from './types'
+import { GitHub } from '@/components/atoms/Icon/GitHub'
+import { Note } from '@/components/atoms/Icon/Note'
 
 export const AboutContainer = () => (
   <StyledContainer size="lg">
@@ -43,6 +45,52 @@ export const AboutContainer = () => (
           <br />
           2023年7月頃からは全国のお祭りを中心に撮影している。
         </Text>
+
+        <SectionContent>
+          <Heading level={3}>Links</Heading>
+          <StyledIconList>
+            <StyledIconListItem>
+              <ExternalLink
+                href="https://twitter.com/misumi_takuma/"
+                target="_blank"
+                aria-label="X"
+                rel="noopener"
+              >
+                <Xlogo />
+              </ExternalLink>
+            </StyledIconListItem>
+            <StyledIconListItem>
+              <ExternalLink
+                href="https://www.instagram.com/mismith0227/?hl=ja"
+                target="_blank"
+                aria-label="Instagram"
+                rel="noopener"
+              >
+                <Instagram />
+              </ExternalLink>
+            </StyledIconListItem>
+            <StyledIconListItem>
+              <ExternalLink
+                href="https://note.com/mismith"
+                target="_blank"
+                aria-label="Note"
+                rel="noopener"
+              >
+                <Note />
+              </ExternalLink>
+            </StyledIconListItem>
+            <StyledIconListItem>
+              <ExternalLink
+                href="https://github.com/mismith0227"
+                target="_blank"
+                aria-label="GitHub"
+                rel="noopener"
+              >
+                <GitHub />
+              </ExternalLink>
+            </StyledIconListItem>
+          </StyledIconList>
+        </SectionContent>
       </SectionInner>
     </Section>
 

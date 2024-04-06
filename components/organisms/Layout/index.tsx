@@ -1,6 +1,6 @@
 import { Global } from '@emotion/react'
 import { globalStyle } from '@/styles/globalStyles'
-import { Wrap, StyledNavigation, StyledFooter, StyledMain } from './styles'
+import { Wrap, StyledNavigation } from './styles'
 import { Props } from './types'
 
 export const Layout = ({ children, path, photoCategory }: Props) => (
