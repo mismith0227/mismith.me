@@ -30,7 +30,9 @@ const getContentStyles = ({ size = 'md' }: ContainerProps) => {
 export const Wrap = styled.div`
   display: block;
   ${getContentStyles};
+  padding-top: 120px;
   padding-right: 40px;
+  padding-bottom: 120px;
 
   ${media.medium} {
     padding-left: 200px;
