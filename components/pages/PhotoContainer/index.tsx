@@ -57,7 +57,7 @@ export const PhotoContainer = ({
   }
 
   return (
-    <StyledContainer size="full">
+    <StyledContainer size="lg">
       {pickUpPhoto && (
         <StyledPickUpImage
           src={`${pickUpPhoto.url}?fit=clip&w=1500&h=1000?fm=webp`}
@@ -82,7 +82,7 @@ export const PhotoContainer = ({
             onClick={() => onOpenImageModal(item.url, item.width, item.height)}
           >
             <StyledImage
-              src={`${item.url}?fit=clip&w=800&h=800?fm=webp`}
+              src={`${item.url}?fit=clip&w=1500&h=1500?fm=webp`}
               alt=""
               width={item.width}
               height={item.height}
@@ -94,7 +94,7 @@ export const PhotoContainer = ({
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage
-            src={`${modalState.src}?fm=webp`}
+            src={`${modalState.src}?fit=clip&w=1500&h=1500?fm=webp`}
             width={modalState.width}
             height={modalState.height}
             alt=""

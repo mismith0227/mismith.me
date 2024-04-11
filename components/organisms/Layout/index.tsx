@@ -3,11 +3,11 @@ import { globalStyle } from '@/styles/globalStyles'
 import { Wrap, StyledNavigation } from './styles'
 import { Props } from './types'
 
-export const Layout = ({ children, path, photoCategory }: Props) => (
+export const Layout = ({ children, path }: Props) => (
   <>
     <Global styles={globalStyle} />
     <Wrap>
-      <StyledNavigation path={path} photoCategory={photoCategory} />
+      <StyledNavigation path={path} />
       {children}
     </Wrap>
   </>

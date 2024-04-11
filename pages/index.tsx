@@ -2,17 +2,15 @@ import type { GetStaticProps, NextPage } from 'next'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { client } from '@/libs/client'
-import { Photo } from '@/types/Photo'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { HomeContainer } from '@/components/pages/HomeContainer'
 
 type Props = {
-  photos: Photo[]
   totalCount: number
   photoCategory: PhotoCategory[]
 }
 
-const Home: NextPage<Props> = ({ photos, photoCategory }) => {
+const Home: NextPage<Props> = ({ photoCategory }) => {
   const meta = {
     title: 'Home | mismith',
     description: 'トップページ',
@@ -23,7 +21,7 @@ const Home: NextPage<Props> = ({ photos, photoCategory }) => {
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
 
-      <HomeContainer data={photos} />
+      <HomeContainer />
     </Layout>
   )
 }

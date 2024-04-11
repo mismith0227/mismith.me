@@ -141,40 +141,6 @@ export const StyledLink = styled(Link)`
   }
 `
 
-export const ParentItem = styled.div`
-  color: currentColor;
-
-  ${media.small} {
-    font-size: 20px;
-    color: currentColor;
-  }
-
-  &::after {
-    content: '';
-    display: inline-block;
-    margin-left: 8px;
-    width: 12px;
-    height: 8px;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    background-color: currentColor;
-  }
-`
-
-export const ChildList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 8px 0;
-  margin: 12px 0 0;
-  padding: 0 0 0 16px;
-  list-style: none;
-
-  ${media.small} {
-    padding: 0 0 0 16px;
-  }
-`
-
-export const ChildListItem = styled.li<LinkProps>``
-
 export const StyledToggleButton = styled(ToggleButton)<Props>`
   display: none;
   position: fixed;

@@ -5,18 +5,15 @@ import {
   NavList,
   NavListItem,
   StyledLink,
-  ChildList,
-  ChildListItem,
   StyledToggleButton,
   NavListItemInner,
   StyledOpenInNew,
-  ParentItem,
   StyledSiteTitle,
 } from './styles'
 import { Props } from './types'
 import { useRouter } from 'next/router'
 
-export const Navigation = ({ path, className, photoCategory }: Props) => {
+export const Navigation = ({ path, className }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
   const router = useRouter()
@@ -52,23 +49,11 @@ export const Navigation = ({ path, className, photoCategory }: Props) => {
               </NavListItemInner>
             </NavListItem>
             <NavListItem>
-              <ParentItem aria-label="Series">Series</ParentItem>
-              {photoCategory.length > 0 && (
-                <ChildList>
-                  {photoCategory.map((item) => (
-                    <ChildListItem key={item.id}>
-                      <NavListItemInner isActive={path === `series/${item.id}`}>
-                        <StyledLink
-                          href={`/series/${item.id}`}
-                          aria-label="series"
-                        >
-                          {item.category_name}
-                        </StyledLink>
-                      </NavListItemInner>
-                    </ChildListItem>
-                  ))}
-                </ChildList>
-              )}
+              <NavListItemInner isActive={path === 'series'}>
+                <StyledLink href="/series" aria-label="Series">
+                  Series
+                </StyledLink>
+              </NavListItemInner>
             </NavListItem>
             <NavListItem>
               <NavListItemInner isActive={path === 'about'}>

@@ -1,8 +1,5 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
-import media from '@/styles/media'
-import { IconList, IconListItem } from '@/components/molecules/IconList'
 
 export const Wrap = styled.div`
   position: relative;
