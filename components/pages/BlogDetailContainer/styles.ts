@@ -9,12 +9,27 @@ import { Heading } from '@/components/atoms/Heading'
 import { Toc } from '@/components/molecules/Toc'
 
 export const StyledContainer = styled(Container)`
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
 `
 
 export const Inner = styled.div`
+  margin-right: 200px;
   max-width: 640px;
   width: 100%;
+
+  ${media.large} {
+    margin-right: 80px;
+  }
+
+  ${media.medium} {
+    margin-right: 40px;
+  }
+
+  ${media.small} {
+    margin-right: 0;
+  }
 `
 
 export const Title = styled(Heading)`

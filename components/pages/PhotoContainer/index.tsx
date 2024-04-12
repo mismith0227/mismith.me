@@ -15,6 +15,7 @@ import {
   Loading,
 } from './styles'
 import { Props } from './types'
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 export type modalState = {
   isOpen: boolean
@@ -27,8 +28,10 @@ export const PhotoContainer = ({
   data,
   pickUpPhoto,
   currentCategoryName,
-  currentCategoryDescription,
+  currentCategoryBody,
 }: Props) => {
+  const [windowWidth] = useWindowSize()
+
   const [modalState, setModalState] = useState<modalState>({
     isOpen: false,
     src: '',
@@ -38,6 +41,9 @@ export const PhotoContainer = ({
   const [isLoadingModalImage, setIsLoadingModalImage] = useState<boolean>(false)
 
   const onOpenImageModal = (src: string, width: number, height: number) => {
+    if (windowWidth < 600) {
+      return
+    }
     setModalState({
       isOpen: true,
       src: src,
@@ -71,9 +77,7 @@ export const PhotoContainer = ({
 
       <StyledHeading>{currentCategoryName}</StyledHeading>
 
-      {currentCategoryDescription && (
-        <Description>{currentCategoryDescription}</Description>
-      )}
+      {currentCategoryBody && <Description>{currentCategoryBody}</Description>}
 
       <StyledImageList>
         {data.map((item) => (

@@ -24,8 +24,6 @@ const SeriesPage: NextPage<Props> = ({
     ogpImageUrl: pickUpPhoto?.url,
   }
 
-  console.log(photoCategory)
-
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo
