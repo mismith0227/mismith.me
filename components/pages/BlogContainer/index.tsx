@@ -63,6 +63,7 @@ export const BlogContainer = ({
       </BlogList>
       {totalCount > BLOG_PER_PAGE && (
         <StyledPagination
+          pageRoot="/blog"
           totalCount={totalCount}
           currentPage={currentPage}
           currentCategory={currentCategory}

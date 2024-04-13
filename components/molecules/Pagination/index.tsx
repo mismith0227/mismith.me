@@ -3,6 +3,7 @@ import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { Props } from './types'
 
 export const Pagination = ({
+  pageRoot,
   totalCount,
   currentPage,
   className,
@@ -12,8 +13,8 @@ export const Pagination = ({
     [...Array(end - start + 1)].map((_, i) => start + i)
 
   const paginationPath = currentCategory
-    ? `/blog/${currentCategory}/page`
-    : `/blog/page`
+    ? `${pageRoot}/${currentCategory}/page`
+    : `${pageRoot}/page`
 
   const lastPage = Math.ceil(totalCount / BLOG_PER_PAGE)
 
@@ -22,7 +23,13 @@ export const Pagination = ({
       {currentPage !== 1 && (
         <Item>
           <ItemInner>
-            <StyledLink href={`${paginationPath}/${currentPage - 1}`}>
+            <StyledLink
+              href={
+                currentPage - 1 === 1
+                  ? pageRoot
+                  : `${paginationPath}/${currentPage - 1}`
+              }
+            >
               <StyledChevron />
             </StyledLink>
           </ItemInner>
@@ -31,7 +38,7 @@ export const Pagination = ({
 
       <Item key={1}>
         <ItemInner isCurrent={currentPage === 1}>
-          <StyledLink href={`${paginationPath}/${1}`}>{1}</StyledLink>
+          <StyledLink href={pageRoot}>{1}</StyledLink>
         </ItemInner>
       </Item>
       {range(2, lastPage - 1).map((number, index) => {

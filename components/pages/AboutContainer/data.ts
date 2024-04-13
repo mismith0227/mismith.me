@@ -4,7 +4,7 @@ export const biographies = [
     startDate: '2022年2月',
     belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
-    detail: 'webサイトやwebアプリの制作に携わっています。',
+    detail: 'webアプリやwebサービスの制作に携わっています。',
     skills: ['JavaScript', 'React', 'Next.js', 'Git'],
   },
   {
@@ -101,5 +101,35 @@ export const biographies = [
     endDate: '2013年2月',
     belongs: '証券会社',
     role: '営業',
+  },
+]
+
+export const booksData = [
+  {
+    id: 'zine',
+    heading: 'Zine',
+    items: [
+      {
+        id: '2023-06-one',
+        date: '2023年6月',
+        name: '「ONE」',
+        link: 'https://shop.mismith.me/items/75504256',
+      },
+    ],
+  },
+]
+
+export const exhibitionsData = [
+  {
+    id: 'solo',
+    heading: '個展',
+    items: [
+      {
+        id: '2024-03-saien',
+        date: '2024年3月',
+        name: '「祭縁」',
+        link: 'https://note.com/mismith/n/n31cfecb99fae',
+      },
+    ],
   },
 ]

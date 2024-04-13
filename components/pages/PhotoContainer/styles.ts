@@ -21,7 +21,7 @@ export const StyledPickUpImage = styled(Image)`
 
 export const StyledImageList = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   justify-self: center;
   align-self: center;
   gap: 16px;
@@ -32,7 +32,8 @@ export const StyledImageList = styled.div`
   }
 
   ${media.small} {
-    margin: 80px 0 0 !important;
+    margin: 40px 0 0 !important;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `
 
@@ -45,6 +46,15 @@ export const ImageWrap = styled.div`
   &:hover {
     cursor: zoom-in;
   }
+
+  ${media.small} {
+    height: auto;
+    padding-bottom: 0;
+
+    &:hover {
+      cursor: default;
+    }
+  }
 `
 
 export const StyledImage = styled(Image)`
@@ -53,6 +63,10 @@ export const StyledImage = styled(Image)`
   height: 100%;
   object-fit: contain;
   transition: 0.2s;
+
+  ${media.small} {
+    position: inherit;
+  }
 `
 
 export const ImageModal = styled.div`

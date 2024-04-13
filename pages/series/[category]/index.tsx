@@ -11,7 +11,7 @@ type Props = {
   photoCategory: PhotoCategory[]
   currentCategoryId: string
   currentCategoryName: string
-  currentCategoryDescription: string
+  currentCategoryBody: string
   pickUpPhoto?: Image
 }
 
@@ -21,11 +21,11 @@ const PhotoCategoryPage: NextPage<Props> = ({
   currentCategoryName,
   photoCategory,
   pickUpPhoto,
-  currentCategoryDescription,
+  currentCategoryBody,
 }) => {
   const meta = {
     title: `${currentCategoryName} | Series | mismith`,
-    description: currentCategoryDescription || 'シリーズ',
+    description: currentCategoryBody || 'シリーズ',
     path: `series/${currentCategoryId}`,
     ogpImageUrl: pickUpPhoto?.url,
   }
@@ -42,7 +42,7 @@ const PhotoCategoryPage: NextPage<Props> = ({
         data={content}
         pickUpPhoto={pickUpPhoto}
         currentCategoryName={currentCategoryName}
-        currentCategoryDescription={currentCategoryDescription}
+        currentCategoryBody={currentCategoryBody}
       />
     </Layout>
   )
@@ -83,10 +83,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       photoCategory: category.contents,
       currentCategoryId: currentCategory ? currentCategory.id : '',
       currentCategoryName: currentCategory ? currentCategory.category_name : '',
-      currentCategoryDescription:
-        currentCategory && currentCategory.description
-          ? currentCategory.description
-          : null,
+      currentCategoryBody:
+        currentCategory && currentCategory.body ? currentCategory.body : null,
       pickUpPhoto:
         currentCategory && currentCategory.feature_image
           ? currentCategory.feature_image

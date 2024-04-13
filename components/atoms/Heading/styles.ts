@@ -5,6 +5,7 @@ import media from '@/styles/media'
 const getHeadingCommonStyles = () => {
   return css`
     margin: 0;
+    letter-spacing: 0.04em;
   `
 }
 
