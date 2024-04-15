@@ -33,6 +33,14 @@ export const ThumbnailList = styled(Link)`
   width: 100%;
   margin: 24px 0 0;
   transition: 0.2s;
+  &:hover {
+    opacity: 0.8;
+
+    .more {
+      color: #fff;
+      background-color: #000;
+    }
+  }
 
   ${media.medium} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -40,14 +48,14 @@ export const ThumbnailList = styled(Link)`
 
   ${media.small} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
-  &:hover {
-    opacity: 0.8;
+    &:hover {
+      opacity: 1;
 
-    .more {
-      color: #fff;
-      background-color: #000;
+      .more {
+        color: #000;
+        background-color: #fff;
+      }
     }
   }
 `

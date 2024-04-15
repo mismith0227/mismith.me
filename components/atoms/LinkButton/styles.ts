@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
+import { OpenInNew } from '../Icon/OpenInNew'
 
 export const StyledLink = styled(Link)`
   position: relative;
@@ -17,21 +18,13 @@ export const StyledLink = styled(Link)`
   transition: 0.2s;
   box-sizing: border-box;
 
-  &:after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: currentColor;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-  }
-
   &:hover {
     color: #000;
     background: #fff;
   }
+`
+
+export const StyledOpenInNew = styled(OpenInNew)`
+  margin-left: 8px;
+  font-size: 1em;
 `
