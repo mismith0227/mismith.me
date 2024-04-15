@@ -8,6 +8,7 @@ import {
   Content,
   More,
   SubTitle,
+  StyledHeading,
 } from './styles'
 import { Props } from './types'
 import { useWindowSize } from '@/hooks/useWindowSize'
@@ -50,6 +51,7 @@ export const SeriesContainer = ({ data }: Props) => {
   }
   return (
     <StyledContainer size="lg">
+      <StyledHeading>Series</StyledHeading>
       <Inner>
         {data.map((item) => (
           <Content key={item.id}>
