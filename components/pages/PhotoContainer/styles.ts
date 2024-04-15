@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Heading } from '@/components/atoms/Heading'
 import { Container } from '@/components/organisms/Container'
+import { LinkButton } from '@/components/atoms/LinkButton'
 
 export const StyledContainer = styled(Container)``
 
@@ -149,4 +150,13 @@ export const Loading = styled.div`
   justify-content: center;
   position: absolute;
   color: gray;
+`
+
+export const StyledProductLink = styled(LinkButton)`
+  display: inline-flex;
+`
+
+export const BackLink = styled(LinkButton)`
+  margin: 80px auto 0;
+  width: min(100%, 300px);
 `

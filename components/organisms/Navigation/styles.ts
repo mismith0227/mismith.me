@@ -25,7 +25,7 @@ export const StyledSiteTitle = styled(SiteTitle)<Props>`
   ${media.small} {
     top: 16px;
     left: 16px;
-    font-size: 14px;
+    font-size: 16px;
     color: ${({ isOpen, isHome }) =>
       isOpen ? '#000' : isHome ? '#fff' : '#000'};
   }
@@ -147,6 +147,7 @@ export const StyledToggleButton = styled(ToggleButton)<Props>`
   top: 16px;
   right: 16px;
   z-index: 100;
+  font-size: 16px;
 
   ${media.small} {
     display: block;

@@ -5,4 +5,5 @@ export type Props = {
   currentCategoryName: string
   currentCategoryBody?: string
   pickUpPhoto?: Image
+  link?: string
 }

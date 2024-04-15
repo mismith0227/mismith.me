@@ -13,6 +13,8 @@ import {
   StyledPickUpImage,
   Description,
   Loading,
+  StyledProductLink,
+  BackLink,
 } from './styles'
 import { Props } from './types'
 import { useWindowSize } from '@/hooks/useWindowSize'
@@ -29,6 +31,7 @@ export const PhotoContainer = ({
   pickUpPhoto,
   currentCategoryName,
   currentCategoryBody,
+  link,
 }: Props) => {
   const [windowWidth] = useWindowSize()
 
@@ -79,6 +82,12 @@ export const PhotoContainer = ({
 
       {currentCategoryBody && <Description>{currentCategoryBody}</Description>}
 
+      {link && (
+        <StyledProductLink href={link} isexternal>
+          プロダクトへ
+        </StyledProductLink>
+      )}
+
       <StyledImageList>
         {data.map((item) => (
           <ImageWrap
@@ -95,6 +104,7 @@ export const PhotoContainer = ({
           </ImageWrap>
         ))}
       </StyledImageList>
+      <BackLink href={`/series`}>Seriesへ</BackLink>
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage
