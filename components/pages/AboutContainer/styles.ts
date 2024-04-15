@@ -145,8 +145,6 @@ export const ExternalLink = styled.a`
   color: #000;
 `
 
-export const Email = styled.p``
-
 export const List = styled.ul`
   list-style: none;
   margin: 0;
@@ -158,9 +156,13 @@ export const ListItem = styled.li`
   gap: 0 16px;
 `
 
-export const ListItemText = styled.p``
+export const ListItemText = styled.p`
+  margin: 0;
+  width: 100px;
+`
 
 export const ListItemNote = styled.p`
+  margin: 0;
   font-weight: bold;
 `
 

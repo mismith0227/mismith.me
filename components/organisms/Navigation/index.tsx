@@ -70,6 +70,13 @@ export const Navigation = ({ path, className }: Props) => {
               </NavListItemInner>
             </NavListItem>
             <NavListItem>
+              <NavListItemInner isActive={path === 'request'}>
+                <StyledLink href="/request" aria-label="Request">
+                  Request
+                </StyledLink>
+              </NavListItemInner>
+            </NavListItem>
+            <NavListItem>
               <NavListItemInner>
                 <StyledLink
                   href="https://shop.mismith.me/"
@@ -78,13 +85,6 @@ export const Navigation = ({ path, className }: Props) => {
                 >
                   Shop
                   <StyledOpenInNew />
-                </StyledLink>
-              </NavListItemInner>
-            </NavListItem>
-            <NavListItem>
-              <NavListItemInner isActive={path === 'policy'}>
-                <StyledLink href="/policy" aria-label="Policy">
-                  Policy
                 </StyledLink>
               </NavListItemInner>
             </NavListItem>

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import media from '@/styles/media'
 import { Container } from '@/components/organisms/Container'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
 
 export const StyledContainer = styled(Container)``
 
@@ -26,3 +27,16 @@ export const SectionTitleSecondary = styled.h4`
 `
 
 export const Text = styled.p``
+
+export const Email = styled.p``
+
+export const StyledIconList = styled(IconList)`
+  margin: 32px 0 0;
+`
+
+export const StyledIconListItem = styled(IconListItem)``
+
+export const ExternalLink = styled.a`
+  display: block;
+  color: #000;
+`

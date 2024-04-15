@@ -3,14 +3,28 @@ import styled from '@emotion/styled'
 import { Container } from '@/components/organisms/Container'
 import Link from 'next/link'
 import media from '@/styles/media'
+import { Heading } from '@/components/atoms/Heading'
 
 export const StyledContainer = styled(Container)``
+
+export const StyledHeading = styled(Heading)`
+  display: none;
+
+  ${media.small} {
+    display: block;
+  }
+`
 
 export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   gap: 160px 0;
   max-width: 900px;
+
+  ${media.small} {
+    margin-top: 64px;
+    gap: 80px 0;
+  }
 `
 
 export const Content = styled.div`
@@ -22,6 +36,16 @@ export const SubTitle = styled.span`
   display: inline-block;
   margin-left: 16px;
   font-size: 16px;
+
+  ${media.small} {
+    margin-left: 4px;
+    font-size: 12px;
+  }
+`
+
+export const Description = styled.p`
+  margin: 8px 0 0;
+  white-space: pre-wrap;
 `
 
 export const ThumbnailList = styled(Link)`

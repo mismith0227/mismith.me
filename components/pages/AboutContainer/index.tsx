@@ -13,7 +13,6 @@ import {
   StyledTagList,
   StyledIconList,
   StyledIconListItem,
-  Email,
   StyledHeading,
   List,
   ListItem,
@@ -23,7 +22,7 @@ import {
   ListItemLink,
   StyledOpenInNew,
 } from './styles'
-import { biographies, booksData, exhibitionsData } from './data'
+import { biographies, booksData, exhibitionsData, worksData } from './data'
 import { Heading } from '@/components/atoms/Heading'
 import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
@@ -43,7 +42,7 @@ export const AboutContainer = () => (
           <br />
           2017年から写真を始め、ストリートフォトやポートレートなど様々なジャンルを撮影。
           <br />
-          2023年7月頃からは全国のお祭りを中心に撮影している。
+          2023年7月頃からは全国のお祭りを中心に撮影しています。
         </Text>
 
         <SectionContent>
@@ -131,24 +130,52 @@ export const AboutContainer = () => (
           return (
             <SectionContent key={item.id}>
               <Heading level={3}>{item.heading}</Heading>
-              {item.items.map((data) => {
-                return (
-                  <ListItem key={data.id}>
-                    <ListItemText>{data.date}</ListItemText>
-                    {data.link ? (
-                      <ListItemLink href={data.link} target="_blank">
+              <List>
+                {item.items.map((data) => {
+                  return (
+                    <ListItem key={data.id}>
+                      <ListItemText>{data.date}</ListItemText>
+                      {data.link ? (
+                        <ListItemLink href={data.link} target="_blank">
+                          <ListItemNote>{data.name}</ListItemNote>
+                          <StyledOpenInNew />
+                        </ListItemLink>
+                      ) : (
                         <ListItemNote>{data.name}</ListItemNote>
-                        <StyledOpenInNew />
-                      </ListItemLink>
-                    ) : (
-                      <ListItemNote>{data.name}</ListItemNote>
-                    )}
-                  </ListItem>
-                )
-              })}
+                      )}
+                    </ListItem>
+                  )
+                })}
+              </List>
             </SectionContent>
           )
         })}
+      </SectionInner>
+    </Section>
+
+    <Section>
+      <Heading level={2}>Works</Heading>
+      <SectionInner>
+        <List>
+          {worksData.map((data) => {
+            return (
+              <ListItem key={data.id}>
+                <ListItemText>{data.date}</ListItemText>
+                {data.link ? (
+                  <ListItemLink
+                    href={data.link}
+                    target={data.isExternal ? '_blank' : undefined}
+                  >
+                    <ListItemNote>{data.name}</ListItemNote>
+                    {data.isExternal && <StyledOpenInNew />}
+                  </ListItemLink>
+                ) : (
+                  <ListItemNote>{data.name}</ListItemNote>
+                )}
+              </ListItem>
+            )
+          })}
+        </List>
       </SectionInner>
     </Section>
 
@@ -169,41 +196,6 @@ export const AboutContainer = () => (
             </BiographyItem>
           ))}
         </Biographies>
-      </SectionInner>
-    </Section>
-
-    <Section>
-      <Heading level={2}>Contact</Heading>
-      <SectionInner>
-        <Text>
-          お仕事の相談、ブログに関するご意見は、以下のメールよりお問い合わせください。
-          <br />
-          もしくは下記SNSのDMでも大丈夫です。
-        </Text>
-        <Email>mismith2227@gmail.com</Email>
-
-        <StyledIconList>
-          <StyledIconListItem>
-            <ExternalLink
-              href="https://twitter.com/misumi_takuma/"
-              target="_blank"
-              aria-label="X"
-              rel="noopener"
-            >
-              <Xlogo />
-            </ExternalLink>
-          </StyledIconListItem>
-          <StyledIconListItem>
-            <ExternalLink
-              href="https://www.instagram.com/mismith0227/?hl=ja"
-              target="_blank"
-              aria-label="Instagram"
-              rel="noopener"
-            >
-              <Instagram />
-            </ExternalLink>
-          </StyledIconListItem>
-        </StyledIconList>
       </SectionInner>
     </Section>
   </StyledContainer>
