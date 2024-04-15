@@ -100,18 +100,31 @@ export const SlideBarItem = styled.div<Props>`
 
 export const ViewMore = styled(Link)`
   position: absolute;
-  right: 8px;
-  bottom: 40px;
+  right: 24px;
+  bottom: 64px;
   z-index: 5;
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 4px 16px;
   color: #fff;
   border: 1px solid #fff;
   text-decoration: none;
+  transition: 0.2s;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
 
   ${media.small} {
-    display: inline-flex;
+    right: 8px;
+    bottom: 40px;
+
+    &:hover {
+      background-color: transparent;
+      color: #fff;
+    }
   }
 `

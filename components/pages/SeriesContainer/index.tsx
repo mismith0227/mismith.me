@@ -9,6 +9,7 @@ import {
   More,
   SubTitle,
   StyledHeading,
+  Description,
 } from './styles'
 import { Props } from './types'
 import { useWindowSize } from '@/hooks/useWindowSize'
@@ -59,7 +60,7 @@ export const SeriesContainer = ({ data }: Props) => {
               {item.category_name}
               <SubTitle>{item.sub_title}</SubTitle>
             </Heading>
-            <p>{item.description}</p>
+            <Description>{item.description}</Description>
 
             {renderImages(item.images, item.id)}
           </Content>

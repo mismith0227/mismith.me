@@ -145,8 +145,6 @@ export const ExternalLink = styled.a`
   color: #000;
 `
 
-export const Email = styled.p``
-
 export const List = styled.ul`
   list-style: none;
   margin: 0;

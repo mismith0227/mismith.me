@@ -1,6 +1,6 @@
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
-import { PolicyContainer } from '@/components/pages/PolicyContainer'
+import { RequestContainer } from '@/components/pages/RequestContainer'
 import { client } from '@/libs/client'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { GetStaticProps, NextPage } from 'next'
@@ -11,15 +11,15 @@ type Props = {
 
 const Policy: NextPage<Props> = ({ photoCategory }) => {
   const meta = {
-    title: 'Privacy Policy | mismith',
-    description: 'プライバシーポリシー',
-    path: 'policy',
+    title: 'Request | mismith',
+    description: 'ご依頼',
+    path: 'request',
   }
 
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
-      <PolicyContainer />
+      <RequestContainer />
     </Layout>
   )
 }

@@ -43,6 +43,11 @@ export const SubTitle = styled.span`
   }
 `
 
+export const Description = styled.p`
+  margin: 8px 0 0;
+  white-space: pre-wrap;
+`
+
 export const ThumbnailList = styled(Link)`
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

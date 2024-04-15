@@ -13,7 +13,6 @@ import {
   StyledTagList,
   StyledIconList,
   StyledIconListItem,
-  Email,
   StyledHeading,
   List,
   ListItem,
@@ -197,41 +196,6 @@ export const AboutContainer = () => (
             </BiographyItem>
           ))}
         </Biographies>
-      </SectionInner>
-    </Section>
-
-    <Section>
-      <Heading level={2}>Contact</Heading>
-      <SectionInner>
-        <Text>
-          お仕事の相談、ブログに関するご意見は、以下のメールよりお問い合わせください。
-          <br />
-          もしくは下記SNSのDMでも大丈夫です。
-        </Text>
-        <Email>mismith2227@gmail.com</Email>
-
-        <StyledIconList>
-          <StyledIconListItem>
-            <ExternalLink
-              href="https://twitter.com/misumi_takuma/"
-              target="_blank"
-              aria-label="X"
-              rel="noopener"
-            >
-              <Xlogo />
-            </ExternalLink>
-          </StyledIconListItem>
-          <StyledIconListItem>
-            <ExternalLink
-              href="https://www.instagram.com/mismith0227/?hl=ja"
-              target="_blank"
-              aria-label="Instagram"
-              rel="noopener"
-            >
-              <Instagram />
-            </ExternalLink>
-          </StyledIconListItem>
-        </StyledIconList>
       </SectionInner>
     </Section>
   </StyledContainer>
