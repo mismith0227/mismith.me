@@ -2176,11 +2176,6 @@ json5@^1.0.2:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
-keen-slider@^6.8.6:
-  version "6.8.6"
-  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.6.tgz#17bb7b219860f291a5ea5fde4496b737bf407a83"
-  integrity sha512-dcEQ7GDBpCjUQA8XZeWh3oBBLLmyn8aoeIQFGL/NTVkoEOsmlnXqA4QykUm/SncolAZYGsEk/PfUhLZ7mwMM2w==
-
 language-subtag-registry@^0.3.20:
   version "0.3.22"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz#2e1500861b2e457eba7e7ae86877cbd08fa1fd1d"
