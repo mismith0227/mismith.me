@@ -1,3 +1,5 @@
+import { isExternal } from 'util/types'
+
 export const biographies = [
   {
     id: '2022-02',
@@ -131,5 +133,15 @@ export const exhibitionsData = [
         link: 'https://note.com/mismith/n/n31cfecb99fae',
       },
     ],
+  },
+]
+
+export const worksData = [
+  {
+    id: '2022-07-tacica',
+    date: '2022年7月',
+    name: 'tacica「singularity」歌詞カード',
+    link: '/blog/other/tacica-singularity',
+    isExternal: false,
   },
 ]

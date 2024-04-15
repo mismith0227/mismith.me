@@ -158,9 +158,13 @@ export const ListItem = styled.li`
   gap: 0 16px;
 `
 
-export const ListItemText = styled.p``
+export const ListItemText = styled.p`
+  margin: 0;
+  width: 100px;
+`
 
 export const ListItemNote = styled.p`
+  margin: 0;
   font-weight: bold;
 `
 
