@@ -37,7 +37,7 @@ export const SeriesContainer = ({ data }: Props) => {
         {filteredImages.map((image) => (
           <ThumbnailWrap key={image.url}>
             <StyledThumbnail
-              src={image.url}
+              src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
               alt=""
               width={image.width}
               height={image.height}

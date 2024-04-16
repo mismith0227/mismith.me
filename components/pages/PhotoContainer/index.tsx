@@ -15,13 +15,15 @@ import {
   Loading,
   StyledProductLink,
   BackLink,
+  NextButton,
+  PrevButton,
 } from './styles'
 import { Props } from './types'
 import { useWindowSize } from '@/hooks/useWindowSize'
 
 export type modalState = {
   isOpen: boolean
-  src: string
+  index: number
   width: number
   height: number
 }
@@ -37,19 +39,19 @@ export const PhotoContainer = ({
 
   const [modalState, setModalState] = useState<modalState>({
     isOpen: false,
-    src: '',
+    index: 0,
     width: 0,
     height: 0,
   })
   const [isLoadingModalImage, setIsLoadingModalImage] = useState<boolean>(false)
 
-  const onOpenImageModal = (src: string, width: number, height: number) => {
+  const onOpenImageModal = (index: number, width: number, height: number) => {
     if (windowWidth < 600) {
       return
     }
     setModalState({
       isOpen: true,
-      src: src,
+      index: index,
       width: width,
       height: height,
     })
@@ -59,9 +61,34 @@ export const PhotoContainer = ({
   const onCloseImageModal = () => {
     setModalState({
       isOpen: false,
-      src: '',
+      index: 0,
       width: 0,
       height: 0,
+    })
+  }
+
+  const onPrev = () => {
+    const maxCount = data.length - 1
+    const prevNumber = modalState.index - 1
+    const nextImageNumber = 0 > prevNumber ? maxCount : prevNumber
+
+    setModalState({
+      isOpen: true,
+      index: nextImageNumber,
+      width: modalState.width,
+      height: modalState.height,
+    })
+  }
+
+  const onNext = () => {
+    const maxCount = data.length - 1
+    const nextNumber = modalState.index + 1
+    const nextImageNumber = maxCount < nextNumber ? 0 : nextNumber
+    setModalState({
+      isOpen: true,
+      index: nextImageNumber,
+      width: modalState.width,
+      height: modalState.height,
     })
   }
 
@@ -89,10 +116,10 @@ export const PhotoContainer = ({
       )}
 
       <StyledImageList>
-        {data.map((item) => (
+        {data.map((item, index) => (
           <ImageWrap
             key={item.url}
-            onClick={() => onOpenImageModal(item.url, item.width, item.height)}
+            onClick={() => onOpenImageModal(index, item.width, item.height)}
           >
             <StyledImage
               src={`${item.url}?fit=clip&w=1500&h=1500?fm=webp`}
@@ -108,12 +135,18 @@ export const PhotoContainer = ({
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage
-            src={`${modalState.src}?fit=clip&w=1500&h=1500?fm=webp`}
+            src={`${data[modalState.index].url}?fit=clip&w=1500&h=1500?fm=webp`}
             width={modalState.width}
             height={modalState.height}
             alt=""
-            onLoadingComplete={() => setIsLoadingModalImage(false)}
+            onLoad={() => setIsLoadingModalImage(false)}
           />
+          <PrevButton onClick={onPrev}>
+            <ScreenReaderText>前へ</ScreenReaderText>
+          </PrevButton>
+          <NextButton onClick={onNext}>
+            <ScreenReaderText>次へ</ScreenReaderText>
+          </NextButton>
           <CloseModal onClick={onCloseImageModal}>
             <ScreenReaderText>閉じる</ScreenReaderText>
           </CloseModal>
