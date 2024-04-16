@@ -4,6 +4,7 @@ import media from '@/styles/media'
 import { Heading } from '@/components/atoms/Heading'
 import { Container } from '@/components/organisms/Container'
 import { LinkButton } from '@/components/atoms/LinkButton'
+import { css } from '@emotion/react'
 
 export const StyledContainer = styled(Container)``
 
@@ -159,4 +160,60 @@ export const StyledProductLink = styled(LinkButton)`
 export const BackLink = styled(LinkButton)`
   margin: 80px auto 0;
   width: min(100%, 300px);
+`
+
+const getButtonCommonStyles = () => {
+  return css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+      transition: 0.2s;
+
+      &::after {
+        opacity: 0.8;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: solid #fff;
+      border-width: 3px 3px 0 0;
+    }
+  `
+}
+
+export const NextButton = styled.button`
+  ${getButtonCommonStyles}
+  right: 4px;
+  width: 40px;
+  height: 40px;
+
+  &::after {
+    transform: rotate(45deg);
+  }
+`
+
+export const PrevButton = styled.button`
+  ${getButtonCommonStyles}
+  left: 4px;
+  width: 40px;
+  height: 40px;
+
+  &::after {
+    transform: rotate(-135deg);
+  }
 `
