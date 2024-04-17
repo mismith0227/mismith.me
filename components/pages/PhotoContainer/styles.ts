@@ -72,7 +72,7 @@ export const StyledImage = styled(Image)`
 `
 
 export const ImageModal = styled.div`
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -122,7 +122,7 @@ export const CloseModal = styled.button`
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: #888;
     position: absolute;
     inset: 0;
     margin: auto;
@@ -180,7 +180,7 @@ const getButtonCommonStyles = () => {
       transition: 0.2s;
 
       &::after {
-        opacity: 0.8;
+        opacity: 0.6;
       }
     }
 
@@ -190,7 +190,7 @@ const getButtonCommonStyles = () => {
       position: relative;
       width: 20px;
       height: 20px;
-      border: solid #fff;
+      border: solid #888;
       border-width: 3px 3px 0 0;
     }
   `
@@ -198,7 +198,7 @@ const getButtonCommonStyles = () => {
 
 export const NextButton = styled.button`
   ${getButtonCommonStyles}
-  right: 4px;
+  right: 0;
   width: 40px;
   height: 40px;
 
@@ -209,7 +209,7 @@ export const NextButton = styled.button`
 
 export const PrevButton = styled.button`
   ${getButtonCommonStyles}
-  left: 4px;
+  left: 0;
   width: 40px;
   height: 40px;
 
