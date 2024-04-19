@@ -145,3 +145,12 @@ export const worksData = [
     isExternal: false,
   },
 ]
+
+export const FeaturedInData = [
+  {
+    id: '2024-04-cizucu',
+    date: '2024年4月',
+    name: 'cizucu Magazine',
+    link: 'https://www.cizucu.com/magazines/2024-04-mismith',
+  },
+]

@@ -22,7 +22,13 @@ import {
   ListItemLink,
   StyledOpenInNew,
 } from './styles'
-import { biographies, booksData, exhibitionsData, worksData } from './data'
+import {
+  biographies,
+  booksData,
+  exhibitionsData,
+  worksData,
+  FeaturedInData,
+} from './data'
 import { Heading } from '@/components/atoms/Heading'
 import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
@@ -168,6 +174,29 @@ export const AboutContainer = () => (
                   >
                     <ListItemNote>{data.name}</ListItemNote>
                     {data.isExternal && <StyledOpenInNew />}
+                  </ListItemLink>
+                ) : (
+                  <ListItemNote>{data.name}</ListItemNote>
+                )}
+              </ListItem>
+            )
+          })}
+        </List>
+      </SectionInner>
+    </Section>
+
+    <Section>
+      <Heading level={2}>Featured in</Heading>
+      <SectionInner>
+        <List>
+          {FeaturedInData.map((data) => {
+            return (
+              <ListItem key={data.id}>
+                <ListItemText>{data.date}</ListItemText>
+                {data.link ? (
+                  <ListItemLink href={data.link} target="_blank">
+                    <ListItemNote>{data.name}</ListItemNote>
+                    <StyledOpenInNew />
                   </ListItemLink>
                 ) : (
                   <ListItemNote>{data.name}</ListItemNote>
