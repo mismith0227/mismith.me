@@ -4,6 +4,7 @@ import { Seo } from '@/components/organisms/Seo'
 import { client } from '@/libs/client'
 import { PhotoCategory } from '@/types/PhotoCategory'
 import { HomeContainer } from '@/components/pages/HomeContainer'
+import ogpImg from '@/public/img/ogp.jpg'
 
 type Props = {
   totalCount: number
@@ -15,6 +16,7 @@ const Home: NextPage<Props> = ({ photoCategory }) => {
     title: 'Home | mismith',
     description: 'トップページ',
     path: 'home',
+    ogpImageUrl: ogpImg,
   }
 
   return (
