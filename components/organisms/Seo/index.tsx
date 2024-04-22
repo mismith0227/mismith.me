@@ -30,7 +30,9 @@ export const Seo: React.FC<Props> = ({
       name="twitter:image"
       key="twitterImage"
       content={
-        ogpImageUrl ? ogpImageUrl : `${process.env.NEXT_PUBLIC_WEB_URL}/ogp.png`
+        ogpImageUrl
+          ? ogpImageUrl
+          : `${process.env.NEXT_PUBLIC_WEB_URL}/img/ogp.jpg`
       }
     />
     <link rel="apple-touch-icon" href="/icon-192x192.png" />

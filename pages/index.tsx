@@ -15,17 +15,11 @@ const Home: NextPage<Props> = ({ photoCategory }) => {
     title: 'Home | mismith',
     description: 'トップページ',
     path: 'home',
-    ogpImageUrl: `${process.env.NEXT_PUBLIC_WEB_URL}/img/ogp.jpg`,
   }
 
   return (
     <Layout path={meta.path} photoCategory={photoCategory}>
-      <Seo
-        title={meta.title}
-        description={meta.description}
-        path={meta.path}
-        ogpImageUrl={meta.ogpImageUrl}
-      />
+      <Seo title={meta.title} description={meta.description} path={meta.path} />
 
       <HomeContainer />
     </Layout>
