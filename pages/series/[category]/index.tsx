@@ -46,6 +46,8 @@ const PhotoCategoryPage: NextPage<Props> = ({
         currentCategoryName={currentCategoryName}
         currentCategoryBody={currentCategoryBody}
         link={link}
+        backText="View all series"
+        backLink="/series"
       />
     </Layout>
   )

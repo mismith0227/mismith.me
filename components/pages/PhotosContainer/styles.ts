@@ -44,6 +44,7 @@ export const StyledLink = styled(Link)`
     left: 0;
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
   }
 
   &::after {
@@ -53,6 +54,13 @@ export const StyledLink = styled(Link)`
     right: 8px;
     z-index: 4;
     color: #fff;
+    font-size: 14px;
+  }
+
+  &:hover {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
   }
 `
 

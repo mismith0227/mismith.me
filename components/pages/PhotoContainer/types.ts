@@ -6,4 +6,6 @@ export type Props = {
   currentCategoryBody?: string
   pickUpPhoto?: Image
   link?: string
+  backLink: string
+  backText: string
 }

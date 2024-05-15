@@ -42,10 +42,11 @@ const PhotoCategoryPage: NextPage<Props> = ({
       />
       <PhotoContainer
         data={content}
-        pickUpPhoto={pickUpPhoto}
         currentCategoryName={currentCategoryTitle}
         currentCategoryBody={currentCategoryBody}
         link={link}
+        backText="View all photos"
+        backLink="/photos"
       />
     </Layout>
   )

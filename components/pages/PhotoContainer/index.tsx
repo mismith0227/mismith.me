@@ -34,6 +34,8 @@ export const PhotoContainer = ({
   currentCategoryName,
   currentCategoryBody,
   link,
+  backText,
+  backLink,
 }: Props) => {
   const [windowWidth] = useWindowSize()
 
@@ -131,7 +133,7 @@ export const PhotoContainer = ({
           </ImageWrap>
         ))}
       </StyledImageList>
-      <BackLink href={`/series`}>Seriesへ</BackLink>
+      <BackLink href={backLink}>{backText}</BackLink>
       <Modal open={modalState.isOpen} onClose={onCloseImageModal}>
         <ImageModal>
           <ModalImage
