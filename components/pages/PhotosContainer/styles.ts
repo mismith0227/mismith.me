@@ -21,8 +21,8 @@ export const Inner = styled.div`
   gap: 160px 40px;
   max-width: 900px;
 
-  ${media.small} {
-    margin-top: 64px;
+  ${media.medium} {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 80px 0;
   }
 `
