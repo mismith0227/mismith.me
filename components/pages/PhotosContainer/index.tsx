@@ -11,8 +11,6 @@ import {
 import { Props } from './types'
 
 export const PhotosContainer = ({ data }: Props) => {
-  console.log(data)
-
   return (
     <StyledContainer size="lg">
       <StyledHeading>Photos</StyledHeading>
