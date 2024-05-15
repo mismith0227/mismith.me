@@ -25,7 +25,7 @@ const PhotosPage: NextPage<Props> = ({
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo
         title={meta.title}
         description={meta.description}

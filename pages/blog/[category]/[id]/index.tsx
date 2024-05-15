@@ -16,7 +16,6 @@ import { convertToToc, makeToc } from '@/utils/tocUtils'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { Toc } from '@/types/Toc'
-import { PhotoCategory } from '@/types/PhotoCategory'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
@@ -37,21 +36,12 @@ type StaticProps = {
   draftKey?: string
   category: BlogCategory[]
   currentCategory: string
-  photoCategory: PhotoCategory[]
 }
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const BlogDetailPage: NextPage<PageProps> = (props) => {
-  const {
-    blog,
-    draftKey,
-    body,
-    toc,
-    category,
-    currentCategory,
-    photoCategory,
-  } = props
+  const { blog, draftKey, body, toc, category, currentCategory } = props
   const { asPath } = useRouter()
 
   const meta = {
@@ -69,7 +59,7 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
   }, [asPath])
 
   return blog ? (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo
         title={blog.title ? `${blog.title} | mismith` : ''}
         description={blog.description ? blog.description : ''}
@@ -140,10 +130,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
       endpoint: 'blog-category',
     })
 
-    const photoCategory = await client.get({
-      endpoint: 'photo-category',
-    })
-
     return {
       props: {
         blog: data,
@@ -151,7 +137,6 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
         toc: madeToc,
         category: category.contents,
         currentCategory: toStringId(params.category),
-        photoCategory: photoCategory.contents,
         ...draftKey,
       },
     }

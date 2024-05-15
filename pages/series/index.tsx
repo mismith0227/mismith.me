@@ -7,13 +7,13 @@ import { SeriesCategory } from '@/types/SeriesCategory'
 import { SeriesContainer } from '@/components/pages/SeriesContainer'
 
 type Props = {
-  photoCategory: SeriesCategory[]
+  seriesCategory: SeriesCategory[]
   currentCategoryDescription: string
   pickUpPhoto?: Image
 }
 
 const SeriesPage: NextPage<Props> = ({
-  photoCategory,
+  seriesCategory,
   pickUpPhoto,
   currentCategoryDescription,
 }) => {
@@ -25,14 +25,14 @@ const SeriesPage: NextPage<Props> = ({
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo
         title={meta.title}
         description={meta.description}
         path={meta.path}
         ogpImageUrl={meta.ogpImageUrl}
       />
-      <SeriesContainer data={photoCategory} />
+      <SeriesContainer data={seriesCategory} />
     </Layout>
   )
 }
@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      photoCategory: category.contents,
+      seriesCategory: category.contents,
     },
   }
 }

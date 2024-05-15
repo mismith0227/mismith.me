@@ -8,8 +8,6 @@ import { SeriesCategory } from '@/types/SeriesCategory'
 
 type Props = {
   content: Image[]
-  photoCategory: SeriesCategory[]
-  currentCategoryId: string
   currentCategoryName: string
   currentCategoryBody: string
   pickUpPhoto?: Image
@@ -18,9 +16,7 @@ type Props = {
 
 const PhotoCategoryPage: NextPage<Props> = ({
   content,
-  currentCategoryId,
   currentCategoryName,
-  photoCategory,
   pickUpPhoto,
   currentCategoryBody,
   link,
@@ -28,12 +24,12 @@ const PhotoCategoryPage: NextPage<Props> = ({
   const meta = {
     title: `${currentCategoryName} | Series | mismith`,
     description: currentCategoryBody || 'シリーズ',
-    path: `series/${currentCategoryId}`,
+    path: `series`,
     ogpImageUrl: pickUpPhoto?.url,
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo
         title={meta.title}
         description={meta.description}
@@ -86,7 +82,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       content: currentCategory ? currentCategory.images : [],
       photoCategory: category.contents,
-      currentCategoryId: currentCategory ? currentCategory.id : '',
       currentCategoryName: currentCategory ? currentCategory.category_name : '',
       currentCategoryBody:
         currentCategory && currentCategory.body ? currentCategory.body : null,

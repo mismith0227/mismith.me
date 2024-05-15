@@ -1,15 +1,10 @@
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { RequestContainer } from '@/components/pages/RequestContainer'
-import { client } from '@/libs/client'
-import { PhotoCategory } from '@/types/PhotoCategory'
-import { GetStaticProps, NextPage } from 'next'
 
-type Props = {
-  photoCategory: PhotoCategory[]
-}
+import { NextPage } from 'next'
 
-const Policy: NextPage<Props> = ({ photoCategory }) => {
+const Policy: NextPage = () => {
   const meta = {
     title: 'Request | mismith',
     description: 'ご依頼',
@@ -17,7 +12,7 @@ const Policy: NextPage<Props> = ({ photoCategory }) => {
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
       <RequestContainer />
     </Layout>
@@ -25,15 +20,3 @@ const Policy: NextPage<Props> = ({ photoCategory }) => {
 }
 
 export default Policy
-
-export const getStaticProps: GetStaticProps = async () => {
-  const category = await client.get({
-    endpoint: 'photo-category',
-  })
-
-  return {
-    props: {
-      photoCategory: category.contents,
-    },
-  }
-}
