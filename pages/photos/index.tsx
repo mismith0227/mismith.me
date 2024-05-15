@@ -3,24 +3,24 @@ import { client } from '@/libs/client'
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { Image } from '@/types/Photo'
-import { SeriesCategory } from '@/types/SeriesCategory'
-import { SeriesContainer } from '@/components/pages/SeriesContainer'
+import { PhotosCategory } from '@/types/PhotosCategory'
+import { PhotosContainer } from '@/components/pages/PhotosContainer'
 
 type Props = {
-  photoCategory: SeriesCategory[]
+  photoCategory: PhotosCategory[]
   currentCategoryDescription: string
   pickUpPhoto?: Image
 }
 
-const SeriesPage: NextPage<Props> = ({
+const PhotosPage: NextPage<Props> = ({
   photoCategory,
   pickUpPhoto,
   currentCategoryDescription,
 }) => {
   const meta = {
-    title: `Series | mismith`,
-    description: currentCategoryDescription || 'シリーズ',
-    path: `series`,
+    title: `Photos | mismith`,
+    description: currentCategoryDescription || 'Photos',
+    path: `photos`,
     ogpImageUrl: pickUpPhoto?.url,
   }
 
@@ -32,15 +32,15 @@ const SeriesPage: NextPage<Props> = ({
         path={meta.path}
         ogpImageUrl={meta.ogpImageUrl}
       />
-      <SeriesContainer data={photoCategory} />
+      <PhotosContainer data={photoCategory} />
     </Layout>
   )
 }
-export default SeriesPage
+export default PhotosPage
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const category = await client.get({
-    endpoint: 'photo-category',
+    endpoint: 'photos',
   })
 
   return {

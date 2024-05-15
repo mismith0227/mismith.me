@@ -56,6 +56,13 @@ export const Navigation = ({ path, className }: Props) => {
               </NavListItemInner>
             </NavListItem>
             <NavListItem>
+              <NavListItemInner isActive={path === 'photos'}>
+                <StyledLink href="/photos" aria-label="photos">
+                  Photos
+                </StyledLink>
+              </NavListItemInner>
+            </NavListItem>
+            <NavListItem>
               <NavListItemInner isActive={path === 'about'}>
                 <StyledLink href="/about" aria-label="About">
                   About
