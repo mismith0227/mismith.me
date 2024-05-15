@@ -1,4 +1,4 @@
-export type PhotoCategory = {
+export type SeriesCategory = {
   id: string
   createdAt: Date
   updatedAt: Date

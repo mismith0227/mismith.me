@@ -7,7 +7,6 @@ import { toNumberId } from '@/utils/toNumberId'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
   blog: Blog[]
@@ -15,7 +14,6 @@ type Props = {
   currentPage: number
   category: BlogCategory[]
   currentCategory: string
-  photoCategory: PhotoCategory[]
 }
 
 const CategoryPage: NextPage<Props> = ({
@@ -24,7 +22,6 @@ const CategoryPage: NextPage<Props> = ({
   currentPage,
   category,
   currentCategory,
-  photoCategory,
 }) => {
   const meta = {
     title: `Blog: Page${currentPage} | mismith`,
@@ -33,7 +30,7 @@ const CategoryPage: NextPage<Props> = ({
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
       <BlogContainer
         data={blog}
@@ -103,10 +100,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     endpoint: 'blog-category',
   })
 
-  const photoCategory = await client.get({
-    endpoint: 'photo-category',
-  })
-
   return {
     props: {
       blog: data.contents,
@@ -114,7 +107,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       currentPage: id,
       category: category.contents,
       currentCategory: params.category,
-      photoCategory: photoCategory.contents,
     },
   }
 }

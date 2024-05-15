@@ -1,5 +1,5 @@
-import { PhotoCategory } from '@/types/PhotoCategory'
+import { SeriesCategory } from '@/types/SeriesCategory'
 
 export type Props = {
-  data: PhotoCategory[]
+  data: SeriesCategory[]
 }

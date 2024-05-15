@@ -6,21 +6,14 @@ import { Seo } from '@/components/organisms/Seo'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-import { PhotoCategory } from '@/types/PhotoCategory'
 
 type Props = {
   blog: Blog[]
   totalCount: number
   category: BlogCategory[]
-  photoCategory: PhotoCategory[]
 }
 
-const BlogPage: NextPage<Props> = ({
-  blog,
-  totalCount,
-  category,
-  photoCategory,
-}) => {
+const BlogPage: NextPage<Props> = ({ blog, totalCount, category }) => {
   const meta = {
     title: 'Blog | mismith.me',
     description: 'ブログです',
@@ -28,7 +21,7 @@ const BlogPage: NextPage<Props> = ({
   }
 
   return (
-    <Layout path={meta.path} photoCategory={photoCategory}>
+    <Layout path={meta.path}>
       <Seo title={meta.title} description={meta.description} path={meta.path} />
       <BlogContainer
         data={blog}
@@ -51,16 +44,11 @@ export const getStaticProps: GetStaticProps = async () => {
     endpoint: 'blog-category',
   })
 
-  const photoCategory = await client.get({
-    endpoint: 'photo-category',
-  })
-
   return {
     props: {
       blog: data.contents,
       totalCount: data.totalCount,
       category: category.contents,
-      photoCategory: photoCategory.contents,
     },
   }
 }
