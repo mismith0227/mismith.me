@@ -1,31 +1,239 @@
-import { Modal } from '@mui/material'
 import { useState } from 'react'
-import {
-  StyledContainer,
-  StyledImageList,
-  StyledImage,
-  ImageModal,
-  ModalImage,
-  CloseModal,
-  ScreenReaderText,
-  ImageWrap,
-  StyledHeading,
-  StyledPickUpImage,
-  Description,
-  Loading,
-  StyledProductLink,
-  BackLink,
-  NextButton,
-  PrevButton,
-} from './styles'
-import { Props } from './types'
-import { useWindowSize } from '@/hooks/useWindowSize'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import { Modal } from '@mui/material'
+import Image from 'next/image'
 
-export type modalState = {
+import { Heading } from '@/components/atoms/Heading'
+import { LinkButton } from '@/components/atoms/LinkButton'
+import { Container } from '@/components/organisms/Container'
+import { useWindowSize } from '@/hooks/useWindowSize'
+import media from '@/styles/media'
+import { Image as ImageType } from '@/types/Photo'
+
+const StyledContainer = styled(Container)``
+
+const StyledHeading = styled(Heading)``
+
+const Description = styled.p`
+  max-width: 980px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+`
+
+const StyledPickUpImage = styled(Image)`
+  width: min(100%, 1000px);
+  height: auto;
+`
+
+const StyledImageList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-self: center;
+  align-self: center;
+  gap: 16px;
+  margin-top: 64px;
+
+  ${media.medium} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  ${media.small} {
+    margin: 40px 0 0 !important;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+`
+
+const ImageWrap = styled.div`
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+
+  &:hover {
+    cursor: zoom-in;
+  }
+
+  ${media.small} {
+    height: auto;
+    padding-bottom: 0;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+`
+
+const StyledImage = styled(Image)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s;
+
+  ${media.small} {
+    position: inherit;
+  }
+`
+
+const ImageModal = styled.div`
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96vw;
+  height: 96vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  box-sizing: border-box;
+
+  ${media.small} {
+    width: 98vw;
+    height: 90vh;
+    padding: 32px 8px;
+  }
+`
+
+const ModalImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+`
+
+const CloseModal = styled.button`
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #888;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+`
+
+const ScreenReaderText = styled.span`
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+`
+
+const Loading = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: gray;
+`
+
+const StyledProductLink = styled(LinkButton)`
+  display: inline-flex;
+`
+
+const BackLink = styled(LinkButton)`
+  margin: 80px auto 0;
+  width: min(100%, 300px);
+`
+
+const getButtonCommonStyles = () => {
+  return css`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+      transition: 0.2s;
+
+      &::after {
+        opacity: 0.6;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: solid #888;
+      border-width: 3px 3px 0 0;
+    }
+  `
+}
+
+const NextButton = styled.button`
+  ${getButtonCommonStyles}
+  right: 0;
+  width: 40px;
+  height: 40px;
+
+  &::after {
+    transform: rotate(45deg);
+  }
+`
+
+const PrevButton = styled.button`
+  ${getButtonCommonStyles}
+  left: 0;
+  width: 40px;
+  height: 40px;
+
+  &::after {
+    transform: rotate(-135deg);
+  }
+`
+
+type modalState = {
   isOpen: boolean
   index: number
   width: number
   height: number
+}
+
+type Props = {
+  data: ImageType[]
+  currentCategoryName: string
+  currentCategoryBody?: string
+  pickUpPhoto?: ImageType
+  link?: string
+  backLink: string
+  backText: string
 }
 
 export const PhotoContainer = ({

@@ -1,5 +1,6 @@
-import { Toc, TocItem } from '@/types/Toc'
 import { JSDOM } from 'jsdom'
+
+import { Toc, TocItem } from '@/types/Toc'
 
 export const convertToToc = (htmlString: string): TocItem[] => {
   const dom = new JSDOM(htmlString)

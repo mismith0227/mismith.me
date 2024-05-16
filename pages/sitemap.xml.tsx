@@ -1,4 +1,5 @@
 import { GetServerSidePropsContext } from 'next'
+
 import { getAllContents } from '@/libs/getAllContents'
 import { Blog } from '@/types/Blog'
 

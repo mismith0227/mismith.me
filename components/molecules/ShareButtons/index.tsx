@@ -1,6 +1,85 @@
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+
+import { Hatena } from '@/components/atoms/Icon/Hatena'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { BASE_URL } from '@/settings/siteSettings'
-import { List, Item, StyledLink, StyledXlogo, StyledHatena } from './styles'
-import { Props } from './types'
+import media from '@/styles/media'
+
+const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  ${media.large} {
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+`
+
+const Item = styled.li`
+  margin-top: 24px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  ${media.large} {
+    margin-top: 0;
+  }
+`
+
+type LinkProps = {
+  service?: 'x' | 'hatena'
+}
+
+const getContentStyles = ({ service = 'x' }: LinkProps) => {
+  switch (service) {
+    case 'x':
+      return css`
+        background: #000;
+      `
+    case 'hatena':
+      return css`
+        background: #00a4de;
+      `
+  }
+}
+
+const StyledLink = styled.a<LinkProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  font-size: 18px;
+  text-decoration: none;
+  ${getContentStyles};
+  color: #fff;
+  transition: 0.4s;
+
+  &:hover {
+    border-radius: 50%;
+  }
+`
+
+const StyledXlogo = styled(Xlogo)`
+  width: 24px;
+  height: auto;
+`
+
+const StyledHatena = styled(Hatena)`
+  width: 24px;
+  height: auto;
+`
+
+type Props = {
+  className?: string
+  currentCategory: string
+  title: string
+  contentId: string
+}
 
 export const ShareButtons = ({
   className,

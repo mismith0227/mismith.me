@@ -1,5 +1,5 @@
 import Icon from '..'
-import { ParentProps } from '../types'
+import { ParentProps } from '../'
 
 export type Props = ParentProps
 

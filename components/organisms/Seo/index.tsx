@@ -1,5 +1,11 @@
 import Head from 'next/head'
-import { Props } from './types'
+
+type Props = {
+  description: string
+  title: string
+  path: string
+  ogpImageUrl?: string
+}
 
 export const Seo: React.FC<Props> = ({
   description,

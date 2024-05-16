@@ -1,5 +1,6 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import { GA_ID, existsGaId } from '@/libs/gtag'
+import { Head, Html, Main, NextScript } from 'next/document'
+
+import { existsGaId, GA_ID } from '@/libs/gtag'
 
 export default function Document() {
   return (

@@ -1,7 +1,8 @@
+import { NextPage } from 'next'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { AboutContainer } from '@/components/pages/AboutContainer'
-import { NextPage } from 'next'
 
 const About: NextPage = () => {
   const meta = {

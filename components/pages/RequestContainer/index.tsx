@@ -1,16 +1,45 @@
+import styled from '@emotion/styled'
+
 import { Heading } from '@/components/atoms/Heading'
-import {
-  StyledContainer,
-  Content,
-  Section,
-  Text,
-  Email,
-  StyledIconList,
-  StyledIconListItem,
-  ExternalLink,
-} from './styles'
-import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { Instagram } from '@/components/atoms/Icon/Instagram'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Container } from '@/components/organisms/Container'
+import media from '@/styles/media'
+
+const StyledContainer = styled(Container)``
+
+const Content = styled.div`
+  margin: 80px 0 0;
+  max-width: 650px;
+
+  ${media.small} {
+    margin-top: 80px;
+  }
+`
+
+const Section = styled.section`
+  margin: 160px 0 0;
+
+  &:first-of-type {
+    margin: 0;
+  }
+`
+
+const Text = styled.p``
+
+const Email = styled.p``
+
+const StyledIconList = styled(IconList)`
+  margin: 32px 0 0;
+`
+
+const StyledIconListItem = styled(IconListItem)``
+
+const ExternalLink = styled.a`
+  display: block;
+  color: #000;
+`
 
 export const RequestContainer = () => (
   <StyledContainer>
