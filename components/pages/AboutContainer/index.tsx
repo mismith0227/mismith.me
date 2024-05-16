@@ -1,22 +1,24 @@
 import styled from '@emotion/styled'
+
+import { Heading } from '@/components/atoms/Heading'
+import { GitHub } from '@/components/atoms/Icon/GitHub'
+import { Instagram } from '@/components/atoms/Icon/Instagram'
+import { Logo } from '@/components/atoms/Icon/Logo'
+import { Note } from '@/components/atoms/Icon/Note'
+import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
+import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { TagList } from '@/components/molecules/TagList'
+import { Container } from '@/components/organisms/Container'
 import media from '@/styles/media'
+
 import {
   biographies,
   booksData,
   exhibitionsData,
-  worksData,
   FeaturedInData,
+  worksData,
 } from './data'
-import { Xlogo } from '@/components/atoms/Icon/Xlogo'
-import { Instagram } from '@/components/atoms/Icon/Instagram'
-import { GitHub } from '@/components/atoms/Icon/GitHub'
-import { Note } from '@/components/atoms/Icon/Note'
-import { IconList, IconListItem } from '@/components/molecules/IconList'
-import { TagList } from '@/components/molecules/TagList'
-import { Container } from '@/components/organisms/Container'
-import { Heading } from '@/components/atoms/Heading'
-import { Logo } from '@/components/atoms/Icon/Logo'
-import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 
 const StyledContainer = styled(Container)``
 

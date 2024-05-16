@@ -1,23 +1,24 @@
-import { client } from '@/libs/client'
+import { useEffect } from 'react'
 import {
-  InferGetStaticPropsType,
-  GetStaticProps,
-  NextPage,
   GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
 } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { BlogDetailContainer } from '@/components/pages/BlogDetailContainer'
-import { toStringId } from '@/utils/toStringId'
-import { isDraft } from '@/utils/isDraft'
-import { convertToHtml } from '@/utils/postUtils'
-import { convertToToc, makeToc } from '@/utils/tocUtils'
+import { client } from '@/libs/client'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
 import { Toc } from '@/types/Toc'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { isDraft } from '@/utils/isDraft'
+import { convertToHtml } from '@/utils/postUtils'
+import { convertToToc, makeToc } from '@/utils/tocUtils'
+import { toStringId } from '@/utils/toStringId'
 
 declare global {
   interface Window {

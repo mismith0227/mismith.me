@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 import { Toc as TocTypes } from '@/types/Toc'
 
 const Details = styled.details`

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import { css, keyframes } from '@emotion/react'
-import media from '@/styles/media'
-import Link from 'next/link'
-import Image from 'next/image'
 import styled from '@emotion/styled'
+import Image from 'next/image'
+import Link from 'next/link'
+
 import main1Img from '@/public/img/main-1.webp'
 import main2Img from '@/public/img/main-2.webp'
 import main3Img from '@/public/img/main-3.webp'
+import media from '@/styles/media'
 
 const Wrap = styled.div`
   position: relative;

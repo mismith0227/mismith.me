@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { HomeContainer } from '@/components/pages/HomeContainer'

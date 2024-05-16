@@ -1,10 +1,11 @@
-import { Heading } from '@/components/atoms/Heading'
-import { Xlogo } from '@/components/atoms/Icon/Xlogo'
-import { Instagram } from '@/components/atoms/Icon/Instagram'
 import styled from '@emotion/styled'
-import media from '@/styles/media'
-import { Container } from '@/components/organisms/Container'
+
+import { Heading } from '@/components/atoms/Heading'
+import { Instagram } from '@/components/atoms/Icon/Instagram'
+import { Xlogo } from '@/components/atoms/Icon/Xlogo'
 import { IconList, IconListItem } from '@/components/molecules/IconList'
+import { Container } from '@/components/organisms/Container'
+import media from '@/styles/media'
 
 const StyledContainer = styled(Container)``
 

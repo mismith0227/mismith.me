@@ -1,8 +1,9 @@
-import { Global } from '@emotion/react'
-import { globalStyle } from '@/styles/globalStyles'
-import type { AppProps } from 'next/app'
-import { usePageView } from '@/hooks/usePageView'
 import { useEffect } from 'react'
+import { Global } from '@emotion/react'
+import type { AppProps } from 'next/app'
+
+import { usePageView } from '@/hooks/usePageView'
+import { globalStyle } from '@/styles/globalStyles'
 
 function MyApp({ Component, pageProps }: AppProps) {
   usePageView()

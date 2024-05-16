@@ -1,12 +1,13 @@
-import { GetStaticProps, NextPage, GetStaticPaths } from 'next'
-import { client } from '@/libs/client'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+
 import { Layout } from '@/components/organisms/Layout'
-import { BlogContainer } from '@/components/pages/BlogContainer'
 import { Seo } from '@/components/organisms/Seo'
-import { toNumberId } from '@/utils/toNumberId'
+import { BlogContainer } from '@/components/pages/BlogContainer'
+import { client } from '@/libs/client'
+import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { Blog } from '@/types/Blog'
 import { BlogCategory } from '@/types/BlogCategory'
-import { BLOG_PER_PAGE } from '@/settings/siteSettings'
+import { toNumberId } from '@/utils/toNumberId'
 
 type Props = {
   blog: Blog[]

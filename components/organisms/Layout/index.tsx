@@ -1,7 +1,8 @@
 import { Global } from '@emotion/react'
-import { globalStyle } from '@/styles/globalStyles'
 import styled from '@emotion/styled'
+
 import { Navigation } from '@/components/organisms/Navigation'
+import { globalStyle } from '@/styles/globalStyles'
 
 const Wrap = styled.div`
   position: relative;

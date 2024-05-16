@@ -1,10 +1,11 @@
+import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useWindowSize } from '@/hooks/useWindowSize'
-import styled from '@emotion/styled'
-import { Container } from '@/components/organisms/Container'
-import media from '@/styles/media'
+
 import { Heading } from '@/components/atoms/Heading'
+import { Container } from '@/components/organisms/Container'
+import { useWindowSize } from '@/hooks/useWindowSize'
+import media from '@/styles/media'
 import { SeriesCategory } from '@/types/SeriesCategory'
 
 const StyledContainer = styled(Container)``

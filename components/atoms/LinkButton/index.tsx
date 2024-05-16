@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+
 import { OpenInNew } from '../Icon/OpenInNew'
 
 const StyledLink = styled(Link)`

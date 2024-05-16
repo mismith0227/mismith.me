@@ -1,8 +1,9 @@
-import { GetStaticProps, NextPage, GetStaticPaths } from 'next'
-import { client } from '@/libs/client'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { PhotoContainer } from '@/components/pages/PhotoContainer'
+import { client } from '@/libs/client'
 import { Image } from '@/types/Photo'
 import { PhotosCategory } from '@/types/PhotosCategory'
 

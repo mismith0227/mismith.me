@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+
 import media from '@/styles/media'
 import { BlogCategory } from '@/types/BlogCategory'
 

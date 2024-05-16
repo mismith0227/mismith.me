@@ -1,7 +1,8 @@
+import { NextPage } from 'next'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
 import { NotFoundContainer } from '@/components/pages/NotFoundContainer'
-import { NextPage } from 'next'
 
 const NotFoundPage: NextPage = () => {
   const meta = {

@@ -1,13 +1,14 @@
-import { Modal } from '@mui/material'
 import { useState } from 'react'
-import { useWindowSize } from '@/hooks/useWindowSize'
-import Image from 'next/image'
-import styled from '@emotion/styled'
-import media from '@/styles/media'
-import { Heading } from '@/components/atoms/Heading'
-import { Container } from '@/components/organisms/Container'
-import { LinkButton } from '@/components/atoms/LinkButton'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import { Modal } from '@mui/material'
+import Image from 'next/image'
+
+import { Heading } from '@/components/atoms/Heading'
+import { LinkButton } from '@/components/atoms/LinkButton'
+import { Container } from '@/components/organisms/Container'
+import { useWindowSize } from '@/hooks/useWindowSize'
+import media from '@/styles/media'
 import { Image as ImageType } from '@/types/Photo'
 
 const StyledContainer = styled(Container)``

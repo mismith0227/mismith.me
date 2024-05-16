@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import media from '@/styles/media'
 import styled from '@emotion/styled'
+import Link from 'next/link'
+
 import { Chevron } from '@/components/atoms/Icon/Chevron'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
+import media from '@/styles/media'
 
 const Container = styled.ul`
   display: flex;

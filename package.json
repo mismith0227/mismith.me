@@ -23,6 +23,7 @@
     "dayjs": "^1.11.10",
     "eslint": "8.29.0",
     "eslint-config-next": "^14.0.4",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
     "highlight.js": "^11.9.0",
     "jsdom": "^20.0.3",
     "microcms-js-sdk": "^2.7.0",

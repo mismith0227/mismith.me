@@ -1,10 +1,11 @@
 import { GetStaticProps, NextPage } from 'next'
-import { client } from '@/libs/client'
+
 import { Layout } from '@/components/organisms/Layout'
 import { Seo } from '@/components/organisms/Seo'
+import { SeriesContainer } from '@/components/pages/SeriesContainer'
+import { client } from '@/libs/client'
 import { Image } from '@/types/Photo'
 import { SeriesCategory } from '@/types/SeriesCategory'
-import { SeriesContainer } from '@/components/pages/SeriesContainer'
 
 type Props = {
   seriesCategory: SeriesCategory[]

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import media from '@/styles/media'
+import { useRouter } from 'next/router'
+
+import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
 import { SiteTitle } from '@/components/atoms/SiteTitle'
 import { ToggleButton } from '@/components/molecules/ToggleButton'
-import { OpenInNew } from '@/components/atoms/Icon/OpenInNew'
+import media from '@/styles/media'
 
 type NavProps = {
   isOpen: boolean

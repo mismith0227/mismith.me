@@ -1,5 +1,3 @@
-import { isExternal } from 'util/types'
-
 export const biographies = [
   {
     id: '2022-02',
