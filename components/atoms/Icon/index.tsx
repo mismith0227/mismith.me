@@ -14,7 +14,7 @@ const StyledSvg = styled.svg<SvgProps>`
   ${({ rotate }) => rotate && `transform: rotate(${rotate}deg);`}
 `
 
-type ParentProps = {
+export type ParentProps = {
   className?: string
   role?: string
   rotate?: number
