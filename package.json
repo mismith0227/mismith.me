@@ -14,7 +14,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.1",
-    "@types/gtag.js": "^0.0.12",
+    "@types/gtag.js": "^0.0.20",
     "@types/jsdom": "^20.0.1",
     "@types/node": "18.11.15",
     "@types/react": "18.0.26",
