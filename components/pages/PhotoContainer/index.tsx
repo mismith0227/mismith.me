@@ -336,7 +336,7 @@ export const PhotoContainer = ({
               alt=""
               width={item.width}
               height={item.height}
-              loading="lazy"
+              loading={index > 5 ? 'lazy' : 'eager'}
             />
           </ImageWrap>
         ))}

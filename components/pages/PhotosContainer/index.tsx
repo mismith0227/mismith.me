@@ -90,16 +90,17 @@ export const PhotosContainer = ({ data }: Props) => {
     <StyledContainer size="lg">
       <StyledHeading>Photos</StyledHeading>
       <Inner>
-        {data.map((item) => (
+        {data.map((item, index) => (
           <Content key={item.id}>
             <Title>{item.title}</Title>
             <StyledLink href={`/photos/${item.id}`}>
               <ThumbnailWrap>
                 <StyledThumbnail
                   src={item.feature_image.url}
-                  alt=""
+                  alt={item.title}
                   width={item.feature_image.width}
                   height={item.feature_image.height}
+                  loading={index > 5 ? 'lazy' : 'eager'}
                 />
               </ThumbnailWrap>
             </StyledLink>
