@@ -10,9 +10,6 @@ https://www.mismith.me/blog
   - 目次
   - 関連記事
 - Google Analytics
-- RSS
-- Site Map
-- algolia（検索機能）
 - PWA
 
 ## 技術構成
