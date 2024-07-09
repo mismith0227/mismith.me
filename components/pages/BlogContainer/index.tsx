@@ -181,6 +181,7 @@ export const BlogContainer = ({
           totalCount={totalCount}
           currentPage={currentPage}
           currentCategory={currentCategory}
+          perPage={BLOG_PER_PAGE}
         />
       )}
       <StyledCategories category={category} currentCategory={currentCategory} />

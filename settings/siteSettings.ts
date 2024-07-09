@@ -3,3 +3,4 @@ export const BASE_URL =
     ? 'https://www.mismith.me'
     : 'http://localhost:3000'
 export const BLOG_PER_PAGE = 10
+export const NOTE_PER_PAGE = 36
