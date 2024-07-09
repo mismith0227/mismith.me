@@ -45,6 +45,9 @@ export default BlogPage
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await client.get({
     endpoint: 'blog',
+    queries: {
+      filters: `category[not_equals]photo`,
+    },
   })
 
   const range = (start: number, end: number) =>
@@ -58,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { params, previewData } = context
+  const { params } = context
   if (!params?.id) {
     throw new Error('Error: ID not found')
   }
@@ -67,11 +70,18 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await client.get({
     endpoint: 'blog',
-    queries: { limit: BLOG_PER_PAGE, offset: (id - 1) * BLOG_PER_PAGE },
+    queries: {
+      limit: BLOG_PER_PAGE,
+      offset: (id - 1) * BLOG_PER_PAGE,
+      filters: `category[not_equals]note`,
+    },
   })
 
   const category = await client.get({
     endpoint: 'blog-category',
+    queries: {
+      filters: `id[not_equals]note`,
+    },
   })
 
   return {

@@ -38,11 +38,18 @@ export default BlogPage
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.get({
     endpoint: 'blog',
-    queries: { limit: BLOG_PER_PAGE, offset: 0 },
+    queries: {
+      limit: BLOG_PER_PAGE,
+      offset: 0,
+      filters: `category[not_equals]note`,
+    },
   })
 
   const category = await client.get({
     endpoint: 'blog-category',
+    queries: {
+      filters: `id[not_equals]note`,
+    },
   })
 
   return {
