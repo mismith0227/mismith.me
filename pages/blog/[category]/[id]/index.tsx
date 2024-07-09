@@ -129,6 +129,9 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
 
     const category = await client.get({
       endpoint: 'blog-category',
+      queries: {
+        filters: `id[not_equals]note`,
+      },
     })
 
     return {
