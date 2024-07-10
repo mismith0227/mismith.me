@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
+import Image from 'next/image'
 
 import { Heading } from '@/components/atoms/Heading'
 import { ReadNext } from '@/components/molecules/ReadNext'
@@ -17,7 +18,7 @@ const StyledContainer = styled(Container)`
 
 const Inner = styled.div`
   margin-right: 200px;
-  max-width: 640px;
+  max-width: 960px;
   width: 100%;
 
   ${media.large} {
@@ -31,6 +32,13 @@ const Inner = styled.div`
   ${media.small} {
     margin-right: 0;
   }
+`
+
+const MainVisual = styled(Image)`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: bottom;
 `
 
 const Title = styled(Heading)`
@@ -177,17 +185,24 @@ type Props = {
 export const NoteDetailContainer = ({ data, body }: Props) => (
   <StyledContainer size="lg">
     <Inner>
-      <Title>{data.title}</Title>
       <DateArea>
         <Date>
           <DateLabel>公開日:</DateLabel>
           {dayjs(data.publishedAt).format('YYYY年M月D日')}
         </Date>
-        <Date>
-          <DateLabel>最終更新日:</DateLabel>
-          {dayjs(data.updatedAt).format('YYYY年M月D日')}
-        </Date>
       </DateArea>
+      <Title>{data.title}</Title>
+
+      {data.thumbnail && (
+        <MainVisual
+          src={data.thumbnail.url}
+          alt={data.title}
+          width={data.thumbnail.width}
+          height={data.thumbnail.height}
+          loading={'eager'}
+        />
+      )}
+
       <BodyWrap>
         <Body
           dangerouslySetInnerHTML={{

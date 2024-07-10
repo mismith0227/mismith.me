@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Heading } from '@/components/atoms/Heading'
@@ -20,6 +21,9 @@ const StyledHeading = styled(Heading)`
 `
 
 const NoteList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 160px 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -81,6 +85,13 @@ const StyledLink = styled(Link)`
   }
 `
 
+const StyledThumbnail = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+`
+
 const StyledPagination = styled(Pagination)`
   margin-top: 120px;
 
@@ -101,9 +112,19 @@ export const NoteContainer = ({ data, totalCount, currentPage }: Props) => {
       <StyledHeading>Blog</StyledHeading>
 
       <NoteList>
-        {data.map((note) => (
+        {data.map((note, index) => (
           <NoteListItem key={note.id}>
             <StyledLink href={`/note/${note.id}`}>
+              {note.thumbnail && (
+                <StyledThumbnail
+                  src={note.thumbnail.url}
+                  alt={note.title}
+                  width={note.thumbnail.width}
+                  height={note.thumbnail.height}
+                  loading={index > 5 ? 'lazy' : 'eager'}
+                />
+              )}
+
               <NoteTitle>{note.title}</NoteTitle>
 
               <DateArea>
