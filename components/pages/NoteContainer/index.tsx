@@ -35,20 +35,11 @@ const NoteList = styled.ul`
   ${media.small} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin: 48px 0 0;
+    gap: 48px 40px;
   }
 `
 
-const NoteListItem = styled.li`
-  margin: 120px 0 0;
-
-  &:first-of-type {
-    margin: 0;
-  }
-
-  ${media.small} {
-    margin: 60px 0 0;
-  }
-`
+const NoteListItem = styled.li``
 
 const NoteTitle = styled.h2`
   margin: 16px 0 0;
