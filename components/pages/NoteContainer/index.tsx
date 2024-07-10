@@ -28,8 +28,13 @@ const NoteList = styled.ul`
   margin: 0;
   padding: 0;
 
+  ${media.medium} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   ${media.small} {
-    margin: 80px 0 0;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 48px 0 0;
   }
 `
 
@@ -109,7 +114,7 @@ export type Props = {
 export const NoteContainer = ({ data, totalCount, currentPage }: Props) => {
   return (
     <StyledContainer size="lg">
-      <StyledHeading>Blog</StyledHeading>
+      <StyledHeading>Note</StyledHeading>
 
       <NoteList>
         {data.map((note, index) => (

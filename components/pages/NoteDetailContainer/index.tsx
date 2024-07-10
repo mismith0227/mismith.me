@@ -39,6 +39,7 @@ const MainVisual = styled(Image)`
   height: auto;
   object-fit: cover;
   vertical-align: bottom;
+  margin: 24px 0 0;
 `
 
 const Title = styled(Heading)`
