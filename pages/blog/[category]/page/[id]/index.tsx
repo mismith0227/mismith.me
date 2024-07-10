@@ -56,7 +56,7 @@ export const getAllCategoryPagePaths = async () => {
         .get({
           endpoint: 'blog',
           queries: {
-            filters: `category[equals]${item.id}`,
+            filters: `category[equals]${item.id}[and]category[not_equals]note`,
           },
         })
         .then(({ totalCount }) => {

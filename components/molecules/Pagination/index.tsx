@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 
 import { Chevron } from '@/components/atoms/Icon/Chevron'
-import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import media from '@/styles/media'
 
 const Container = styled.ul`
@@ -69,6 +68,7 @@ type Props = {
   currentPage: number
   className?: string
   currentCategory?: string
+  perPage: number
 }
 
 export const Pagination = ({
@@ -77,6 +77,7 @@ export const Pagination = ({
   currentPage,
   className,
   currentCategory,
+  perPage,
 }: Props) => {
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i)
@@ -85,7 +86,7 @@ export const Pagination = ({
     ? `${pageRoot}/${currentCategory}/page`
     : `${pageRoot}/page`
 
-  const lastPage = Math.ceil(totalCount / BLOG_PER_PAGE)
+  const lastPage = Math.ceil(totalCount / perPage)
 
   return (
     <Container className={className}>
