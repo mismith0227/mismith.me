@@ -23,7 +23,7 @@ const StyledHeading = styled(Heading)`
 const NoteList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 160px 40px;
+  gap: 40px 40px;
   list-style: none;
   margin: 0;
   padding: 0;
