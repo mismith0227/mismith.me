@@ -89,7 +89,12 @@ const BlogDetailPage: NextPage<PageProps> = (props) => {
 export default BlogDetailPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await client.get({ endpoint: 'blog' })
+  const data = await client.get({
+    endpoint: 'blog',
+    queries: {
+      filters: `category[not_equals]note`,
+    },
+  })
 
   const paths = data.contents.map(
     (content: { id: string; category: { id: string } }) =>
