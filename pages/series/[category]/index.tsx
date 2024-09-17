@@ -13,6 +13,8 @@ type Props = {
   currentCategoryBody: string
   pickUpPhoto?: Image
   link?: string
+  sinceAt?: Date
+  updatedAt?: Date
 }
 
 const PhotoCategoryPage: NextPage<Props> = ({
@@ -21,6 +23,8 @@ const PhotoCategoryPage: NextPage<Props> = ({
   pickUpPhoto,
   currentCategoryBody,
   link,
+  sinceAt,
+  updatedAt,
 }) => {
   const meta = {
     title: `${currentCategoryName} | Series | mismith`,
@@ -45,6 +49,8 @@ const PhotoCategoryPage: NextPage<Props> = ({
         link={link}
         backText="View all series"
         backLink="/series"
+        sinceAt={sinceAt}
+        updatedAt={updatedAt}
       />
     </Layout>
   )
@@ -79,6 +85,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     (item: SeriesCategory) => item.id === params.category
   )
 
+  console.log(currentCategory)
+
   return {
     props: {
       content: currentCategory ? currentCategory.images : [],
@@ -91,6 +99,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
           ? currentCategory.feature_image
           : null,
       link: currentCategory?.link ? currentCategory?.link : '',
+      sinceAt: currentCategory?.sinceAt,
+      updatedAt: currentCategory?.updatedAt,
     },
   }
 }

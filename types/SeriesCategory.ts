@@ -2,6 +2,7 @@ export type SeriesCategory = {
   id: string
   createdAt: Date
   updatedAt: Date
+  sinceAt: Date
   publishedAt: Date
   revisedAt: Date
   category_name: string

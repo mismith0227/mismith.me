@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import { Modal } from '@mui/material'
+import dayjs from 'dayjs'
 import Image from 'next/image'
 
 import { Heading } from '@/components/atoms/Heading'
@@ -219,6 +220,18 @@ const PrevButton = styled.button`
   }
 `
 
+const DateWrap = styled.div`
+  display: flex;
+  gap: 0 24px;
+  font-size: 14px;
+`
+
+const DateItem = styled.span``
+
+const DateLabel = styled.span`
+  font-weight: bold;
+`
+
 type modalState = {
   isOpen: boolean
   index: number
@@ -234,6 +247,8 @@ type Props = {
   link?: string
   backLink: string
   backText: string
+  sinceAt?: Date
+  updatedAt?: Date
 }
 
 export const PhotoContainer = ({
@@ -244,6 +259,8 @@ export const PhotoContainer = ({
   link,
   backText,
   backLink,
+  sinceAt,
+  updatedAt,
 }: Props) => {
   const [windowWidth] = useWindowSize()
 
@@ -316,6 +333,17 @@ export const PhotoContainer = ({
       )}
 
       <StyledHeading>{currentCategoryName}</StyledHeading>
+
+      <DateWrap>
+        <DateItem>
+          <DateLabel>撮影開始:</DateLabel>
+          {dayjs(sinceAt).format('YYYY年M月')}
+        </DateItem>
+        <DateItem>
+          <DateLabel>更新:</DateLabel>
+          {dayjs(updatedAt).format('YYYY年M月')}
+        </DateItem>
+      </DateWrap>
 
       {currentCategoryBody && <Description>{currentCategoryBody}</Description>}
 
