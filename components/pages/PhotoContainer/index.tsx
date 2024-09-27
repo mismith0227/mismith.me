@@ -335,12 +335,15 @@ export const PhotoContainer = ({
       <StyledHeading>{currentCategoryName}</StyledHeading>
 
       <DateWrap>
+        {sinceAt && (
+          <DateItem>
+            <DateLabel>撮影開始:</DateLabel>
+            {dayjs(sinceAt).format('YYYY年M月')}
+          </DateItem>
+        )}
+
         <DateItem>
-          <DateLabel>撮影開始:</DateLabel>
-          {dayjs(sinceAt).format('YYYY年M月')}
-        </DateItem>
-        <DateItem>
-          <DateLabel>更新:</DateLabel>
+          <DateLabel>最終更新:</DateLabel>
           {dayjs(updatedAt).format('YYYY年M月')}
         </DateItem>
       </DateWrap>
