@@ -144,11 +144,37 @@ export const worksData = [
   },
 ]
 
-export const FeaturedInData = [
+export const featuredInData = [
   {
     id: '2024-04-cizucu',
     date: '2024年4月',
     name: 'cizucu Magazine',
     link: 'https://www.cizucu.com/magazines/2024-04-mismith',
+  },
+]
+
+export const awardData = [
+  {
+    id: 'domestic',
+    heading: '国内',
+    items: [
+      {
+        id: '2024-9-sagamihara',
+        date: '2024年9月',
+        name: 'フォトシティさがみはら アマチュアの部',
+        rank: '入選',
+      },
+      {
+        id: '2023-12-houfutenjin',
+        date: '2023年12月',
+        name: '天神おんな神輿写真コンテスト',
+        rank: '特選山口県議会議長賞',
+      },
+    ],
+  },
+  {
+    id: 'overseas',
+    heading: '海外',
+    items: [],
   },
 ]

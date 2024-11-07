@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 
 import { Heading } from '@/components/atoms/Heading'
+import { LinkButton } from '@/components/atoms/LinkButton'
 import { ReadNext } from '@/components/molecules/ReadNext'
 import { Container } from '@/components/organisms/Container'
 import media from '@/styles/media'
@@ -178,6 +179,11 @@ const StyledReadNext = styled(ReadNext)`
   }
 `
 
+const BackLink = styled(LinkButton)`
+  margin: 80px auto 0;
+  width: min(100%, 300px);
+`
+
 type Props = {
   data: Blog
   body: string
@@ -193,7 +199,6 @@ export const NoteDetailContainer = ({ data, body }: Props) => (
         </Date>
       </DateArea>
       <Title>{data.title}</Title>
-
       {data.thumbnail && (
         <MainVisual
           src={data.thumbnail.url}
@@ -203,7 +208,6 @@ export const NoteDetailContainer = ({ data, body }: Props) => (
           loading={'eager'}
         />
       )}
-
       <BodyWrap>
         <Body
           dangerouslySetInnerHTML={{
@@ -211,10 +215,11 @@ export const NoteDetailContainer = ({ data, body }: Props) => (
           }}
         />
       </BodyWrap>
-
       {data.related_post && data.related_post.length > 0 && (
         <StyledReadNext readNestPosts={data.related_post} />
       )}
+
+      <BackLink href="/note">note一覧へ</BackLink>
     </Inner>
   </StyledContainer>
 )
