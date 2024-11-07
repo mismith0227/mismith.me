@@ -13,10 +13,11 @@ import { Container } from '@/components/organisms/Container'
 import media from '@/styles/media'
 
 import {
+  awardData,
   biographies,
   booksData,
   exhibitionsData,
-  FeaturedInData,
+  featuredInData,
   worksData,
 } from './data'
 
@@ -28,11 +29,6 @@ const StyledHeading = styled(Heading)`
   ${media.small} {
     display: block;
   }
-`
-
-const StyledLogo = styled(Logo)`
-  margin-right: 16px;
-  font-size: 2rem;
 `
 
 const Section = styled.section`
@@ -160,13 +156,14 @@ const ExternalLink = styled.a`
 
 const List = styled.ul`
   list-style: none;
-  margin: 0;
+  margin: 16px 0 0;
   padding: 0;
 `
 
 const ListItem = styled.li`
   display: flex;
   gap: 0 16px;
+  margin-top: 8px;
 `
 
 const ListItemText = styled.p`
@@ -176,6 +173,7 @@ const ListItemText = styled.p`
 
 const ListItemNote = styled.p`
   margin: 0;
+  flex: 1;
   font-weight: bold;
 `
 
@@ -298,6 +296,34 @@ export const AboutContainer = () => (
     </Section>
 
     <Section>
+      <Heading level={2}>Award</Heading>
+      <SectionInner>
+        {awardData.map((item) => {
+          if (item.items.length === 0) {
+            return null
+          }
+          return (
+            <SectionContent key={item.id}>
+              <Heading level={3}>{item.heading}</Heading>
+              <List>
+                {item.items.map((data) => {
+                  return (
+                    <ListItem key={data.id}>
+                      <ListItemText>{data.date}</ListItemText>
+                      <ListItemNote>
+                        {data.name} {data.rank}
+                      </ListItemNote>
+                    </ListItem>
+                  )
+                })}
+              </List>
+            </SectionContent>
+          )
+        })}
+      </SectionInner>
+    </Section>
+
+    <Section>
       <Heading level={2}>Exhibitions</Heading>
       <SectionInner>
         {exhibitionsData.map((item) => {
@@ -357,7 +383,7 @@ export const AboutContainer = () => (
       <Heading level={2}>Featured in</Heading>
       <SectionInner>
         <List>
-          {FeaturedInData.map((data) => {
+          {featuredInData.map((data) => {
             return (
               <ListItem key={data.id}>
                 <ListItemText>{data.date}</ListItemText>
