@@ -20,7 +20,7 @@ const StyledHeading = styled(Heading)`
 const Inner = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 160px 40px;
+  gap: 80px 40px;
   max-width: 900px;
 
   ${media.medium} {
