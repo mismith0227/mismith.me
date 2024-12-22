@@ -34,6 +34,7 @@ const StyledImageList = styled.div`
   align-self: center;
   gap: 16px;
   margin-top: 64px;
+  width: 100%;
 
   ${media.medium} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
