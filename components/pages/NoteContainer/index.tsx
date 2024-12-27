@@ -43,6 +43,7 @@ const NoteListItem = styled.li``
 
 const NoteTitle = styled.h2`
   margin: 16px 0 0;
+  font-size: 18px;
 `
 
 const DateArea = styled.div`
