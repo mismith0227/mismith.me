@@ -5,7 +5,7 @@ export const biographies = [
     belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
     detail: 'webアプリやwebサービスの制作に携わっています。',
-    skills: ['JavaScript', 'React', 'Next.js', 'Git'],
+    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Git'],
   },
   {
     id: '2021-09',
@@ -158,6 +158,12 @@ export const awardData = [
     id: 'domestic',
     heading: '国内',
     items: [
+      {
+        id: '2025-2-apa-award',
+        date: '2025年2月',
+        name: 'APA AWARD 2025 写真作品部門',
+        rank: '入選',
+      },
       {
         id: '2024-9-sagamihara',
         date: '2024年9月',
