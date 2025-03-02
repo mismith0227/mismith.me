@@ -59,16 +59,11 @@ const NoteDetailPage: NextPage<PageProps> = (props) => {
 export default NoteDetailPage
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await client.get({
-    endpoint: 'blog',
-    queries: {
-      filters: `category[equals]note`,
-    },
-  })
+  const contentIds = await client.getAllContentIds({ endpoint: 'blog' })
 
-  const paths = data.contents.map(
-    (content: { id: string; category: { id: string } }) => `/note/${content.id}`
-  )
+  const filteredData = contentIds.filter((item) => item.startsWith('note-'))
+
+  const paths = filteredData.map((id) => `/note/${id}`)
 
   return {
     fallback: false,
