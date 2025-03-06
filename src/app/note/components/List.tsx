@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge'
 import { Blog } from '@/types/Blog'
 import { formatDate } from '@/utils/formatDate'
 import Image from 'next/image'
@@ -5,12 +6,18 @@ import Link from 'next/link'
 
 type Props = {
   data: Blog[]
+  className: string
 }
 
 export const List = (props: Props) => {
-  const { data } = props
+  const { data, className } = props
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[20] md:gap-[40]">
+    <ul
+      className={twMerge(
+        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20] md:gap-[40]',
+        className
+      )}
+    >
       {data.map((post) => (
         <li key={post.id}>
           <Link href={`/note/${post.id}`} className="block">

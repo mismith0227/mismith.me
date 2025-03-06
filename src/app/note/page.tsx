@@ -8,8 +8,8 @@ export default async function Note() {
 
   return (
     <main>
-      <h1>note記事一覧</h1>
-      <List data={contents} />
+      <h1 className="text-[32px] md:hidden">Note</h1>
+      <List data={contents} className="mt-[48px] md:mt-0" />
 
       {totalCount > NOTE_PER_PAGE && (
         <Pagination

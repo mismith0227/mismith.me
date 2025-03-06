@@ -39,7 +39,11 @@ export default function RootLayout({
           </>
         )} */}
       </head>
-      <body>{children}</body>
+      <body>
+        <div className="pt-[120px] pl-[6px] pr-[6px] pb-[120px] md:pl-[200px] md:pr-[40px] lg:pl-[240px]">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
