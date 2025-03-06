@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+import { Chevron } from './Icon/Chevron'
 
 type Props = {
   pageRoot: string
@@ -84,7 +85,7 @@ export const Pagination = ({
                   : `${paginationPath}/${currentPage - 1}`
               }
             >
-              前
+              <Chevron />
             </StyledLink>
           </ItemInner>
         </Item>
@@ -128,7 +129,7 @@ export const Pagination = ({
         <Item>
           <ItemInner>
             <StyledLink href={`${paginationPath}/${currentPage + 1}`}>
-              後
+              <Chevron rotate={180} />
             </StyledLink>
           </ItemInner>
         </Item>
