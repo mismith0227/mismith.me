@@ -4,3 +4,30 @@ body {
   letter-spacing: 0.04em;
   line-height: 1.75;
 }
+
+@layer components {
+  .categoryItem::before {
+    content: '';
+    display: block;
+    width: 70%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform-origin: top right;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+  }
+
+  .categoryItem:hover::before {
+    transform: scaleX(1);
+    transform-origin: top left;
+  }
+
+  .activeCategoryItem::before {
+    transform: scaleX(1);
+  }
+}

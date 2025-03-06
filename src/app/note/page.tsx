@@ -3,12 +3,13 @@ import { Pagination } from '@/src/components/Pagination'
 import { getNotePosts } from './api/getNotePosts'
 import { List } from './components/List'
 import { PageTitle } from '@/src/components/PageTitle'
+import { Container } from '@/src/components/Container'
 
 export default async function Note() {
   const { contents, totalCount } = await getNotePosts()
 
   return (
-    <main>
+    <Container size="lg">
       <PageTitle text="Note" />
       <List data={contents} className="mt-[48px] md:mt-0" />
 
@@ -21,6 +22,6 @@ export default async function Note() {
           className="mt-[60px] md:mt-[120px]"
         />
       )}
-    </main>
+    </Container>
   )
 }

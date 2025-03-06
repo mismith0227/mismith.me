@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/jsdom": "^21.1.7",
     "dayjs": "^1.11.13",
+    "highlight.js": "^11.11.1",
+    "jsdom": "^26.0.0",
     "microcms-js-sdk": "^3.1.2",
     "next": "15.2.1",
     "react": "^19.0.0",

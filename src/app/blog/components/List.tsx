@@ -12,7 +12,7 @@ export const List = (props: Props) => {
   return (
     <ul className={className}>
       {data.map((d) => (
-        <li key={d.id} className="mt-[120px] first:mt-0">
+        <li key={d.id} className="mt-[60px] md:mt-[120px] first:mt-0">
           <Link
             href={`/blog/${d.category.id}/${d.id}`}
             className="block hover:text-[rgb(119,119,119)]"

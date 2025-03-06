@@ -1,10 +1,8 @@
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
-import { Pagination } from '@/src/components/Pagination'
 import { toNumberId } from '@/utils/toNumberId'
 
 import { getBlogPosts } from '../../api/getBlogPosts'
-import { PageTitle } from '@/src/components/PageTitle'
-import { List } from '../../components/List'
+import { BlogListContent } from '../../components/BlogListContent'
 
 export default async function BlogPostPage({
   params,
@@ -19,20 +17,11 @@ export default async function BlogPostPage({
   })
 
   return (
-    <main>
-      <PageTitle text="Blog" />
-      <List data={contents} />
-
-      {totalCount > BLOG_PER_PAGE && (
-        <Pagination
-          pageRoot="/blog"
-          totalCount={totalCount}
-          currentPage={currentPage}
-          perPage={BLOG_PER_PAGE}
-          className="mt-[60px] md:mt-[120px]"
-        />
-      )}
-    </main>
+    <BlogListContent
+      data={contents}
+      totalCount={totalCount}
+      currentPage={currentPage}
+    />
   )
 }
 
