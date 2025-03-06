@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 type Props = {
   data: Blog[]
-  className: string
+  className?: string
 }
 
 export const List = (props: Props) => {
@@ -18,22 +18,22 @@ export const List = (props: Props) => {
         className
       )}
     >
-      {data.map((post) => (
-        <li key={post.id}>
-          <Link href={`/note/${post.id}`} className="block">
-            {post.thumbnail && (
+      {data.map((d) => (
+        <li key={d.id}>
+          <Link href={`/note/${d.id}`} className="block">
+            {d.thumbnail && (
               <Image
-                src={post.thumbnail?.url}
-                alt={post.title}
-                width={post.thumbnail.width}
-                height={post.thumbnail.height}
+                src={d.thumbnail?.url}
+                alt={d.title}
+                width={d.thumbnail.width}
+                height={d.thumbnail.height}
                 className="w-full h-full object-cover align-bottom"
               />
             )}
-            <h2 className="mt-4 text-lg font-bold">{post.title}</h2>
+            <h2 className="mt-4 text-lg font-bold">{d.title}</h2>
             <div className="text-xs mt-[2]">
               <span className="inline-block mr-[2] font-bold">公開日:</span>
-              {formatDate(post.publishedAt)}
+              {formatDate(d.publishedAt)}
             </div>
           </Link>
         </li>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
 
 type Props = {
   pageRoot: string
@@ -7,6 +8,51 @@ type Props = {
   className?: string
   currentCategory?: string
   perPage: number
+}
+
+const Item = ({ children }: { children: React.ReactNode }) => {
+  return <li className="flex items-center">{children}</li>
+}
+
+const ItemInner = ({
+  children,
+  isCurrent,
+}: {
+  children: React.ReactNode
+  isCurrent?: boolean
+}) => {
+  return (
+    <span
+      className={twMerge(
+        'flex items-center justify-center w-[28px] h-[46px] md:w-[42px] md:h-[56px] border border-black transition-all duration-200',
+        `${isCurrent && 'pointer-events-none'}`
+      )}
+    >
+      {children}
+    </span>
+  )
+}
+
+const StyledLink = ({
+  href,
+  children,
+  isCurrent,
+}: {
+  href: string
+  children: React.ReactNode
+  isCurrent?: boolean
+}) => {
+  return (
+    <Link
+      href={href}
+      className={twMerge(
+        'flex items-center justify-center w-full h-full no-underline hover:bg-black hover:text-white',
+        `${isCurrent && 'bg-black text-white'}`
+      )}
+    >
+      {children}
+    </Link>
+  )
 }
 
 export const Pagination = ({
@@ -27,11 +73,11 @@ export const Pagination = ({
   const lastPage = Math.ceil(totalCount / perPage)
 
   return (
-    <ul className={className}>
+    <ul className={twMerge('flex justify-center list-none gap-4', className)}>
       {currentPage !== 1 && (
-        <li>
-          <span>
-            <Link
+        <Item>
+          <ItemInner>
+            <StyledLink
               href={
                 currentPage - 1 === 1
                   ? pageRoot
@@ -39,41 +85,53 @@ export const Pagination = ({
               }
             >
               前
-            </Link>
-          </span>
-        </li>
+            </StyledLink>
+          </ItemInner>
+        </Item>
       )}
 
-      <li key={1}>
-        <span>
-          <Link href={pageRoot}>{1}</Link>
-        </span>
-      </li>
+      <Item key={1}>
+        <ItemInner isCurrent={currentPage === 1}>
+          <StyledLink href={pageRoot} isCurrent={currentPage === 1}>
+            {1}
+          </StyledLink>
+        </ItemInner>
+      </Item>
       {range(2, lastPage - 1).map((number, index) => {
         return Math.abs(currentPage - number) < 3 ? (
-          <li key={index}>
-            <span>
-              <Link href={`${paginationPath}/${number}`}>{number}</Link>
-            </span>
-          </li>
+          <Item key={index}>
+            <ItemInner isCurrent={currentPage === number}>
+              <StyledLink
+                href={`${paginationPath}/${number}`}
+                isCurrent={currentPage === number}
+              >
+                {number}
+              </StyledLink>
+            </ItemInner>
+          </Item>
         ) : (
-          Math.abs(currentPage - number) === 3 && <li key={index}>...</li>
+          Math.abs(currentPage - number) === 3 && <Item key={index}>...</Item>
         )
       })}
-      <li key={lastPage}>
-        <span>
-          <Link href={`${paginationPath}/${lastPage}`}>{lastPage}</Link>
-        </span>
-      </li>
+      <Item key={lastPage}>
+        <ItemInner isCurrent={currentPage === lastPage}>
+          <StyledLink
+            href={`${paginationPath}/${lastPage}`}
+            isCurrent={currentPage === lastPage}
+          >
+            {lastPage}
+          </StyledLink>
+        </ItemInner>
+      </Item>
 
       {currentPage !== lastPage && (
-        <li>
-          <span>
-            <Link href={`${paginationPath}/${currentPage + 1}`} passHref>
+        <Item>
+          <ItemInner>
+            <StyledLink href={`${paginationPath}/${currentPage + 1}`}>
               後
-            </Link>
-          </span>
-        </li>
+            </StyledLink>
+          </ItemInner>
+        </Item>
       )}
     </ul>
   )
