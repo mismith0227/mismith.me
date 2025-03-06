@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import { NOTE_PER_PAGE } from '@/settings/siteSettings'
 import { Pagination } from '@/src/components/Pagination'
 import { getNotePosts } from './api/getNotePosts'
+import { List } from './components/List'
 
 export default async function Note() {
   const { contents, totalCount } = await getNotePosts()
@@ -9,13 +9,7 @@ export default async function Note() {
   return (
     <main>
       <h1>note記事一覧</h1>
-      <ul>
-        {contents.map((post) => (
-          <li key={post.id}>
-            <Link href={`/note/${post.id}`}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <List data={contents} />
 
       {totalCount > NOTE_PER_PAGE && (
         <Pagination

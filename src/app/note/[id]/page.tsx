@@ -1,6 +1,5 @@
 import { getAllNoteIds } from '../api/getAllNoteIds'
 import { getNotePost } from '../api/getNotePost'
-import { getNotePosts } from '../api/getNotePosts'
 
 export default async function BlogPostDetailPage({
   params,

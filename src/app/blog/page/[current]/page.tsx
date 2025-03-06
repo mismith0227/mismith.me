@@ -55,7 +55,6 @@ export async function generateStaticParams() {
       current: page.toString(),
     })
   )
-  console.log(paths)
 
   return paths
 }
