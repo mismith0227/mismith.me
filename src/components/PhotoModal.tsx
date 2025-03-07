@@ -13,7 +13,7 @@ type Props = {
   closeModal: () => void
 }
 
-Modal.setAppElement('#main')
+Modal.setAppElement('body')
 
 export const PhotoModal = (props: Props) => {
   const { data, isOpen, closeModal, initialCount } = props

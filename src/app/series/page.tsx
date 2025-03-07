@@ -10,7 +10,8 @@ export default async function Series() {
 
   const renderImages = (
     images?: { url: string; width: number; height: number }[],
-    categoryId?: string
+    categoryId?: string,
+    isPriority?: boolean
   ) => {
     if (!images) {
       return null
@@ -34,6 +35,7 @@ export default async function Series() {
               width={image.width}
               height={image.height}
               className="absolute w-full h-full object-cover"
+              priority={isPriority}
             />
           </div>
         ))}
@@ -51,11 +53,11 @@ export default async function Series() {
       <PageTitle text="Series" />
 
       <div className="mt-16 gap-x-0 gap-y-20 md:flex md:flex-col md:gap-x-0 md:gap-y-40 md:max-w-[900px]">
-        {contents.map((c) => (
+        {contents.map((c, index) => (
           <div key={c.id}>
             <Heading level={2}>{c.category_name}</Heading>
             <div className="mt-2 whitespace-pre-wrap">{c.description}</div>
-            {renderImages(c.images, c.id)}
+            {renderImages(c.images, c.id, index < 2)}
           </div>
         ))}
       </div>

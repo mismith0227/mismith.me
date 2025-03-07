@@ -39,7 +39,7 @@ export default function RootLayout({
           </>
         )} */}
       </head>
-      <body>{children}</body>
+      <body id="main">{children}</body>
     </html>
   )
 }

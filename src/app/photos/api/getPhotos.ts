@@ -1,8 +1,8 @@
 import { client } from '@/libs/client'
-import { SeriesCategory } from '@/types/SeriesCategory'
+import { PhotosCategory } from '@/types/PhotosCategory'
 
 type Data = {
-  contents: SeriesCategory[]
+  contents: PhotosCategory[]
   totalCount: number
   offset: number
   limit: number
@@ -15,7 +15,7 @@ type Props = {
   offset?: number
 }
 
-export const getPhotoCategories = async (props: Props): Promise<Data> => {
+export const getPhotos = async (props: Props): Promise<Data> => {
   const { fields, filters, offset } = props
 
   const queries = {
@@ -25,7 +25,7 @@ export const getPhotoCategories = async (props: Props): Promise<Data> => {
   }
 
   const data = await client.get({
-    endpoint: 'photo-category',
+    endpoint: 'photos',
     queries,
   })
   return data

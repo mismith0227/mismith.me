@@ -1,16 +1,16 @@
 import { Container } from '@/src/components/Container'
 import { PageTitle } from '@/src/components/PageTitle'
-import { getPhotoCategories } from '../api/getPhotoCategory'
+import { getAllPhotoIds } from '../api/getAllPhotoIds'
+import { getPhotos } from '../api/getPhotos'
 import { PhotoGallery } from '@/src/components/PhotoGallery'
-import { getAllSeriesIds } from '../api/getAllSeriesIds'
 
-export default async function SeriesCategory({
+export default async function PhotoDetail({
   params,
 }: {
   params: Promise<{ category: string }>
 }) {
   const { category } = await params
-  const { contents } = await getPhotoCategories({})
+  const { contents } = await getPhotos({})
 
   const currentCategory = contents.find((item) => item.id === category)
 
@@ -23,14 +23,10 @@ export default async function SeriesCategory({
       <PageTitle text="Series" />
 
       <PhotoGallery
-        pickUpPhoto={currentCategory.feature_image}
-        currentCategoryName={currentCategory.category_name}
-        currentCategoryBody={currentCategory.body}
-        link={currentCategory.link}
-        data={currentCategory.images || []}
+        currentCategoryName={currentCategory.title}
+        data={currentCategory.photos || []}
         backText="View all series"
         backLink="/series"
-        sinceAt={currentCategory.sinceAt}
         updatedAt={currentCategory.updatedAt}
       />
     </Container>
@@ -38,7 +34,7 @@ export default async function SeriesCategory({
 }
 
 export async function generateStaticParams() {
-  const ids = await getAllSeriesIds()
+  const ids = await getAllPhotoIds()
 
   const paths = ids.map((id) => {
     return {
