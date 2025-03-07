@@ -1,3 +1,5 @@
+import { Image } from './Photo'
+
 export type SeriesCategory = {
   id: string
   createdAt: Date
@@ -10,7 +12,7 @@ export type SeriesCategory = {
   description: string
   body?: string
   link?: string
-  feature_image?: string
+  feature_image?: Image
   images?: {
     url: string
     width: number

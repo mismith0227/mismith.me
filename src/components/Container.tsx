@@ -8,6 +8,7 @@ type Props = {
   children: React.ReactNode
   className?: string
   size?: 'full' | 'lg' | 'md' | 'sm'
+  id?: string
 }
 
 const getContentStyles = ({ size = 'md' }: ContainerProps) => {
@@ -23,13 +24,14 @@ const getContentStyles = ({ size = 'md' }: ContainerProps) => {
   }
 }
 
-export const Container = ({ children, className, size }: Props) => (
+export const Container = ({ children, className, size, id }: Props) => (
   <main
     className={twMerge(
       'w-[96%] mx-auto pr-0 pl-0 md:pl-[200px] lg:pt-[120px] lg:pr-[40px] pb-[120px] pt-[120px]',
       getContentStyles({ size: size }),
       className
     )}
+    id={id}
   >
     {children}
   </main>
