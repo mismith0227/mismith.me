@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const Heading = (props: Props) => {
-  const { className, children, level } = props
+  const { className, children, level = 1 } = props
 
   switch (level) {
     case 1:
