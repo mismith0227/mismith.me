@@ -31,3 +31,15 @@ body {
     transform: scaleX(1);
   }
 }
+
+@theme {
+  --animate-bar: bar 6s linear infinite;
+  @keyframes bar {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+}
