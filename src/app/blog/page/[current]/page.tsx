@@ -3,6 +3,23 @@ import { toNumberId } from '@/utils/toNumberId'
 
 import { getBlogPosts } from '../../api/getBlogPosts'
 import { BlogListContent } from '../../components/BlogListContent'
+import { getCategories } from '../../api/getCategories'
+import { Metadata } from 'next'
+
+type Props = { current: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Props>
+}): Promise<Metadata> {
+  const { current } = await params
+
+  return {
+    title: `${current}ページ目 | ブログ一覧`,
+    description: `ブログ一覧`,
+  }
+}
 
 export default async function BlogPostPage({
   params,
@@ -16,11 +33,16 @@ export default async function BlogPostPage({
     filters: `category[not_equals]note`,
   })
 
+  const categoryData = await getCategories({
+    filters: `id[not_equals]note`,
+  })
+
   return (
     <BlogListContent
       data={contents}
       totalCount={totalCount}
       currentPage={currentPage}
+      categories={categoryData.contents}
     />
   )
 }

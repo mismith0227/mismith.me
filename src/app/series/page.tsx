@@ -4,6 +4,15 @@ import { getPhotoCategories } from './api/getPhotoCategory'
 import { Heading } from '@/src/components/Heading'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Metadata } from 'next'
+
+const title = 'Series'
+const description = 'Series一覧ページ'
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+}
 
 export default async function Series() {
   const { contents } = await getPhotoCategories({})

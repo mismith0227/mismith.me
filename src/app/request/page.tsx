@@ -2,6 +2,15 @@ import { Container } from '@/src/components/Container'
 import { Heading } from '@/src/components/Heading'
 import { Instagram } from '@/src/components/Icon/Instagram'
 import { Xlogo } from '@/src/components/Icon/Xlogo'
+import { Metadata } from 'next'
+
+const title = 'Request'
+const description = 'Requestページ'
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+}
 
 export default async function Request() {
   return (

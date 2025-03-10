@@ -21,6 +21,15 @@ import { ListItemLabel } from './component/ListItemLabel'
 import { ListItemLink } from './component/ListItemLink'
 import { ListItemNote } from './component/ListItemNote'
 import { OpenInNew } from '@/src/components/Icon/OpenInNew'
+import { Metadata } from 'next'
+
+const title = 'About'
+const description = 'このサイトについて'
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+}
 
 export default async function About() {
   const getLinkIcon = (value: string) => {

@@ -12,11 +12,34 @@ import { ReadNext } from '@/src/components/ReadNext'
 import { Categories } from '@/src/components/Categories'
 import { toStringId } from '@/utils/toStringId'
 import { getCategories } from '../../api/getCategories'
+import { Metadata } from 'next'
+
+type Props = { id: string; category: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Props>
+}): Promise<Metadata> {
+  const { id } = await params
+  const data = await getBlogPost(id)
+
+  return {
+    title: `${data.title} | blog`,
+    description: data.description,
+    openGraph: {
+      images: data.thumbnail,
+    },
+    twitter: {
+      images: data.thumbnail,
+    },
+  }
+}
 
 export default async function BlogPostDetailPage({
   params,
 }: {
-  params: Promise<{ id: string; category: string }>
+  params: Promise<Props>
 }) {
   const { id } = await params
   const data = await getBlogPost(id)

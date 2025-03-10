@@ -4,6 +4,15 @@ import { getNotePosts } from './api/getNotePosts'
 import { List } from './components/List'
 import { PageTitle } from '@/src/components/PageTitle'
 import { Container } from '@/src/components/Container'
+import { Metadata } from 'next'
+
+const title = 'Note'
+const description = 'Note一覧'
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+}
 
 export default async function Note() {
   const { contents, totalCount } = await getNotePosts()

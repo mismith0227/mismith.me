@@ -3,6 +3,15 @@ import { PageTitle } from '@/src/components/PageTitle'
 import { getPhotos } from './api/getPhotos'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Metadata } from 'next'
+
+const title = 'Photo'
+const description = 'Photo一覧'
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+}
 
 export default async function Photos() {
   const { contents } = await getPhotos({})

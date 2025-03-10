@@ -3,11 +3,30 @@ import { PageTitle } from '@/src/components/PageTitle'
 import { getAllPhotoIds } from '../api/getAllPhotoIds'
 import { getPhotos } from '../api/getPhotos'
 import { PhotoGallery } from '@/src/components/PhotoGallery'
+import { Metadata } from 'next'
+
+type Props = { category: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Props>
+}): Promise<Metadata> {
+  const { category } = await params
+  const { contents } = await getPhotos({})
+
+  const currentCategory = contents.find((c) => c.id === category)
+
+  return {
+    title: `${currentCategory?.title} | Photo`,
+    description: `${currentCategory?.title}の写真`,
+  }
+}
 
 export default async function PhotoDetail({
   params,
 }: {
-  params: Promise<{ category: string }>
+  params: Promise<Props>
 }) {
   const { category } = await params
   const { contents } = await getPhotos({})

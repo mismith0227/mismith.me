@@ -5,6 +5,26 @@ import { toNumberId } from '@/utils/toNumberId'
 
 import { getBlogPosts } from '../../../api/getBlogPosts'
 import { BlogListContent } from '../../../components/BlogListContent'
+import { Metadata } from 'next'
+import { getCategories } from '../../../api/getCategories'
+
+type Props = { id: string; category: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Props>
+}): Promise<Metadata> {
+  const { category } = await params
+  const { contents } = await getCategories({})
+
+  const currentCategory = contents.find((c) => c.id === category)
+
+  return {
+    title: `${currentCategory?.category_name}カテゴリの一覧`,
+    description: `${currentCategory?.category_name}カテゴリの一覧ページ`,
+  }
+}
 
 export default async function BlogCategoryPostDetailPage({
   params,
@@ -18,11 +38,17 @@ export default async function BlogCategoryPostDetailPage({
     filters: `category[equals]${category}`,
   })
 
+  const categoryData = await getCategories({
+    filters: `id[not_equals]note`,
+  })
+
   return (
     <BlogListContent
       data={contents}
       totalCount={totalCount}
       currentPage={currentPage}
+      categories={categoryData.contents}
+      currentCategory={category}
     />
   )
 }

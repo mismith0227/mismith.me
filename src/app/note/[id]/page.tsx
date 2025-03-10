@@ -4,11 +4,34 @@ import { getNotePost } from '../api/getNotePost'
 import Image from 'next/image'
 import { LinkButton } from '@/src/components/LinkButton'
 import { Container } from '@/src/components/Container'
+import { Metadata } from 'next'
+
+type Props = { id: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Props>
+}): Promise<Metadata> {
+  const { id } = await params
+  const data = await getNotePost(id)
+
+  return {
+    title: `${data.title} | note`,
+    description: data.description,
+    openGraph: {
+      images: data.thumbnail,
+    },
+    twitter: {
+      images: data.thumbnail,
+    },
+  }
+}
 
 export default async function BlogPostDetailPage({
   params,
 }: {
-  params: Promise<{ id: string; category: string }>
+  params: Promise<Props>
 }) {
   const { id } = await params
   const { publishedAt, title, thumbnail, content } = await getNotePost(id)

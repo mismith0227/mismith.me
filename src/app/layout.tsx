@@ -1,16 +1,37 @@
 import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'My App',
-  description: 'This is my app description',
-  openGraph: {
-    type: 'website',
-    url: 'https://your-site.com',
-  },
-}
-
 import '@/src/styles/globals.css'
 import { Navigation } from '../components/Navigation'
+import { TwitterWidgets } from '../components/TwitterWidgets'
+import { BASE_URL } from '@/settings/siteSettings'
+
+const title = 'Home'
+const description = 'トップページ'
+const images = 'https://www.mismith.me/img/ogp.jpg'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | mismith',
+    default: title,
+  },
+  description: description,
+  openGraph: {
+    type: 'website',
+    url: BASE_URL,
+    images: images,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: {
+      template: '%s | mismith',
+      default: title,
+    },
+    description: description,
+    images: images,
+    site: 'misumi_takuma',
+    creator: 'misumi_takuma',
+  },
+  metadataBase: new URL(BASE_URL),
+}
 
 export default function RootLayout({
   children,
@@ -41,6 +62,7 @@ export default function RootLayout({
         )} */}
       </head>
       <body id="main">
+        <TwitterWidgets />
         {children}
         <Navigation />
       </body>
