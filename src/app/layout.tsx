@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 }
 
 import '@/src/styles/globals.css'
+import { Navigation } from '../components/Navigation'
 
 export default function RootLayout({
   children,
@@ -39,7 +40,10 @@ export default function RootLayout({
           </>
         )} */}
       </head>
-      <body id="main">{children}</body>
+      <body id="main">
+        {children}
+        <Navigation />
+      </body>
     </html>
   )
 }
