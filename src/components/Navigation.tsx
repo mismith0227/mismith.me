@@ -61,12 +61,19 @@ export const Navigation = () => {
   const pathName = usePathname()
 
   useEffect(() => {
-    console.log('test')
     handleChangeRoute()
   }, [pathName])
 
   const handleChangeRoute = () => {
     setIsMenuOpen(false)
+  }
+
+  const isActiveMenu = (value: string) => {
+    if (value === '/') {
+      return pathName === value
+    } else {
+      return pathName !== '/' && pathName.includes(value)
+    }
   }
 
   return (
@@ -89,7 +96,7 @@ export const Navigation = () => {
               <li key={n.id} className="relative transition duration-200">
                 <span
                   className={`navItemInner transition-transform ${
-                    pathName === n.href
+                    isActiveMenu(n.href)
                       ? 'before:scale-x-100 font-bold'
                       : 'before:scale-x-0 hover:before:scale-x-100'
                   } ${
@@ -100,7 +107,7 @@ export const Navigation = () => {
                   <Link
                     href={n.href}
                     aria-label={n.label}
-                    className="inline-flex items-center no-underline text-current text-xl"
+                    className="inline-flex items-center no-underline text-current"
                     target={n.isExternal ? '_blank' : undefined}
                   >
                     {n.label}

@@ -50,6 +50,7 @@ export const PhotoModal = (props: Props) => {
       style={{
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 100,
         },
       }}
     >
