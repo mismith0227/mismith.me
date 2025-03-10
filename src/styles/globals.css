@@ -1,6 +1,12 @@
 @import 'tailwindcss';
 
 body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.04em;
   line-height: 1.75;
 }
@@ -36,7 +42,6 @@ body {
       z-index: 10;
       opacity: 1;
       visibility: visible;
-      color: #000;
     }
 
     .isCloseNav {
@@ -80,7 +85,7 @@ body {
   .navItemInner {
     position: relative;
     display: inline-block;
-    transition: 0.2s;
+    transition: transform 0.2s;
   }
 
   .navItemInner:hover::before {

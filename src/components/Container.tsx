@@ -14,20 +14,20 @@ type Props = {
 const getContentStyles = ({ size = 'md' }: ContainerProps) => {
   switch (size) {
     case 'full':
-      return `max-w-full`
+      return `lg:max-w-full`
     case 'lg':
-      return `pl-200px`
+      return `lg:pl-200px`
     case 'md':
     case 'sm':
     default:
-      return `pl-240px`
+      return `lg:pl-240px`
   }
 }
 
 export const Container = ({ children, className, size, id }: Props) => (
   <main
     className={twMerge(
-      'w-[96%] mx-auto pr-0 pl-0 md:pl-[200px] lg:pt-[120px] lg:pr-[40px] pb-[120px] pt-[120px]',
+      'w-[96%] mx-auto pr-0 pl-0 sm:pl-[200px] md:pt-[120px] lg:pr-[40px] pb-[120px] pt-[120px]',
       getContentStyles({ size: size }),
       className
     )}
