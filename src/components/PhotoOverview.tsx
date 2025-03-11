@@ -30,7 +30,7 @@ export const PhotoOverview = (props: Props) => {
   return (
     <Link
       href={`/series/${categoryId}`}
-      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center self-center gap-4 w-full mt-6 transition duration-200 hover:opacity-80"
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center self-center gap-4 w-full mt-6 transition duration-200 hover:opacity-80 overViewList"
     >
       {filteredImages.map((image) => (
         <div key={image.url} className="relative overflow-hidden h-0 pb-[100%]">
@@ -45,7 +45,7 @@ export const PhotoOverview = (props: Props) => {
         </div>
       ))}
       <div className="relative overflow-hidden h-0 pb-[100%]">
-        <div className="flex items-center justify-center absolute w-full h-full no-underline text-black text-sm font-bold bg-white transition duration-200 after:content-['→'] after:inline-block after:ml-2">
+        <div className="flex items-center justify-center absolute w-full h-full no-underline text-sm font-bold transition duration-200 after:content-['→'] after:inline-block after:ml-2 more">
           続きを見る
         </div>
       </div>

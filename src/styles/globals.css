@@ -115,6 +115,11 @@ body {
     margin: auto;
     transform-origin: top right;
   }
+
+  .overViewList:hover .more {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 @theme {
