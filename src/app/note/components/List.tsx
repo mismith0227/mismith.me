@@ -14,7 +14,7 @@ export const List = (props: Props) => {
   return (
     <ul
       className={twMerge(
-        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20] md:gap-[40]',
+        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30] md:gap-[40]',
         className
       )}
     >
@@ -30,7 +30,7 @@ export const List = (props: Props) => {
                 className="w-full h-full object-cover align-bottom"
               />
             )}
-            <h2 className="mt-4 text-lg font-bold">{d.title}</h2>
+            <h2 className="mt-2 text-lg font-bold">{d.title}</h2>
             <div className="text-xs mt-[2]">
               <span className="inline-block mr-[2] font-bold">公開日:</span>
               {formatDate(d.publishedAt)}
