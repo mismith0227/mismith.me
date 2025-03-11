@@ -12,7 +12,7 @@ export const Categories = (props: Props) => {
   const { className, category, currentCategory } = props
   return (
     <div className={className}>
-      <h3 className="text-[24px] md:text-[32px]">Category</h3>
+      <h3 className="text-[24px] md:text-[32px] font-bold">Category</h3>
       <ul className="flex gap-4 list-none mt-6 p-0">
         {category.map((item) => (
           <li key={item.id}>

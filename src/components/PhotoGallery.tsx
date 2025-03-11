@@ -7,6 +7,7 @@ import { LinkButton } from './LinkButton'
 import { formatDate } from '@/utils/formatDate'
 import { PhotoModal } from './PhotoModal'
 import { useState } from 'react'
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 type Props = {
   data: ImageType[]
@@ -35,11 +36,12 @@ export const PhotoGallery = (props: Props) => {
 
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
   const [initNumberModal, setInitNumberModal] = useState<number | null>(null)
+  const [windowWidth] = useWindowSize()
 
   const onOpenImageModal = (index: number) => {
-    // if (windowWidth < 600) {
-    //   return
-    // }
+    if (windowWidth < 600) {
+      return
+    }
     setIsOpenModal(true)
     setInitNumberModal(index)
 

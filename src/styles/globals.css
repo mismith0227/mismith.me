@@ -33,6 +33,10 @@ body {
     transform-origin: top left;
   }
 
+  .activeCategoryItem {
+    font-weight: bold;
+  }
+
   .activeCategoryItem::before {
     transform: scaleX(1);
   }
