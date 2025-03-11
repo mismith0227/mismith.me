@@ -2,10 +2,8 @@ import type { Metadata } from 'next'
 import '@/src/styles/globals.css'
 import { Navigation } from '../components/Navigation'
 import { TwitterWidgets } from '../components/TwitterWidgets'
-import { BASE_URL } from '@/settings/siteSettings'
+import { BASE_URL, GA_ID } from '@/settings/siteSettings'
 import { GoogleAnalytics } from '@next/third-parties/google'
-
-export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
 
 const title = 'Home'
 const description = 'トップページ'
