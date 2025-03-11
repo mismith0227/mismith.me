@@ -3,6 +3,9 @@ import '@/src/styles/globals.css'
 import { Navigation } from '../components/Navigation'
 import { TwitterWidgets } from '../components/TwitterWidgets'
 import { BASE_URL } from '@/settings/siteSettings'
+import { GoogleAnalytics } from '@next/third-parties/google'
+
+export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''
 
 const title = 'Home'
 const description = 'トップページ'
@@ -41,25 +44,7 @@ export default function RootLayout({
   return (
     <html lang="ja" prefix="og: https://ogp.me/ns#">
       <head>
-        {/* {existsGaId && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${GA_ID}', {
-                    page_path: '${pathname}',
-                  });`,
-              }}
-            />
-          </>
-        )} */}
+        <GoogleAnalytics gaId={GA_ID} />
       </head>
       <body id="main">
         <TwitterWidgets />
