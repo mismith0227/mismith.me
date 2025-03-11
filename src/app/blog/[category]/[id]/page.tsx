@@ -13,6 +13,7 @@ import { Categories } from '@/src/components/Categories'
 import { toStringId } from '@/utils/toStringId'
 import { getCategories } from '../../api/getCategories'
 import { Metadata } from 'next'
+import { ShareButton } from '@/src/components/ShareButton'
 
 type Props = { id: string; category: string }
 
@@ -41,7 +42,7 @@ export default async function BlogPostDetailPage({
 }: {
   params: Promise<Props>
 }) {
-  const { id } = await params
+  const { id, category } = await params
   const data = await getBlogPost(id)
   const categoryData = await getCategories({
     filters: `id[not_equals]note`,
@@ -53,7 +54,7 @@ export default async function BlogPostDetailPage({
 
   return (
     <Container size="lg" className="flex justify-center">
-      <div className="mr-0 md:mr-[80px] lg:mr-[200px] max-w-[640px] w-full">
+      <div className="mr-0 md:mr-[80px] lg:mr-[200px] max-w-[640px] w-full relative">
         <div className="text-[10px] inline-block px-4 py-1 bg-black text-white md:text-[12px] font-bold">
           {data.category && data.category.category_name}
         </div>
@@ -75,6 +76,15 @@ export default async function BlogPostDetailPage({
           <div
             dangerouslySetInnerHTML={{ __html: body }}
             className="blogBody"
+          />
+        </div>
+
+        <div className="flex justify-end mt-[60px] md:mt-[60px] lg:block lg:absolute lg:top-0 lg:right-[-120px] lg:h-full lg:mt-0">
+          <ShareButton
+            category={category}
+            contentId={id}
+            title={data.title}
+            className="sticky top-[200px] right-0"
           />
         </div>
 

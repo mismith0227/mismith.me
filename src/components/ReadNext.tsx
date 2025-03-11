@@ -11,7 +11,7 @@ export const ReadNext = (props: Props) => {
   const { className, readNestPosts } = props
   return (
     <div className={className}>
-      <h3 className="text-[24px] md:text-[32px]">Read next</h3>
+      <h3 className="text-[24px] md:text-[32px] font-bold">Read next</h3>
       <ul>
         {readNestPosts.map((r) => {
           return (

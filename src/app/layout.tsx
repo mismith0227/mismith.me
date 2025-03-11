@@ -11,7 +11,7 @@ const images = 'https://www.mismith.me/img/ogp.jpg'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | mismith',
+    template: '%s | mismith.me',
     default: title,
   },
   description: description,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: {
-      template: '%s | mismith',
+      template: '%s | mismith.me',
       default: title,
     },
     description: description,
