@@ -44,8 +44,8 @@ export default async function PhotoDetail({
       <PhotoGallery
         currentCategoryName={currentCategory.title}
         data={currentCategory.photos || []}
-        backText="View all series"
-        backLink="/series"
+        backText="View all Photos"
+        backLink="/photos"
         updatedAt={currentCategory.updatedAt}
       />
     </Container>

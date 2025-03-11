@@ -91,7 +91,7 @@ export const Navigation = () => {
         } ${isMenuOpen ? 'isOpenNav text-black' : 'isCloseNav'}`}
       >
         <div className={`max-sm:relative max-sm:flex max-sm:flex-col`}>
-          <ul className="flex flex-col m-0 p-0 list-none gap-2 md:gap-3">
+          <ul className="flex gap-4 flex-col m-0 p-0 list-none md:gap-2 md:gap-3">
             {navigations.map((n) => (
               <li key={n.id} className="relative transition duration-200">
                 <span
