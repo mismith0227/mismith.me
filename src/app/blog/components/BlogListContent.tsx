@@ -5,7 +5,6 @@ import { Blog } from '@/types/Blog'
 import { BLOG_PER_PAGE } from '@/settings/siteSettings'
 import { Container } from '@/src/components/Container'
 import { Categories } from '@/src/components/Categories'
-import { toStringId } from '@/utils/toStringId'
 import { BlogCategory } from '@/types/BlogCategory'
 
 type Props = {
