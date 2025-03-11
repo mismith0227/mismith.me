@@ -1,5 +1,4 @@
 import { JSDOM } from 'jsdom'
-
 import { Toc, TocItem } from '@/types/Toc'
 
 export const convertToToc = (htmlString: string): TocItem[] => {
@@ -7,13 +6,15 @@ export const convertToToc = (htmlString: string): TocItem[] => {
   const toc: TocItem[] = []
   dom.window.document
     .querySelectorAll('h1, h2, h3, h4, h5, h6')
-    .forEach((heading) => {
-      toc.push({
-        id: heading.id,
-        name: heading.tagName,
-        text: heading.textContent,
-      })
-    })
+    .forEach(
+      (heading: { id: string; tagName: string; textContent: string }) => {
+        toc.push({
+          id: heading.id,
+          name: heading.tagName,
+          text: heading.textContent,
+        })
+      }
+    )
   return toc
 }
 
