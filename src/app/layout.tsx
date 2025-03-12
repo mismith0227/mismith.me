@@ -42,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ja" prefix="og: https://ogp.me/ns#">
       <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
         <GoogleAnalytics gaId={GA_ID} />
       </head>
       <body id="main">
