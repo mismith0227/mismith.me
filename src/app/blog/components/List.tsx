@@ -1,5 +1,6 @@
 import { Blog } from '@/types/Blog'
 import { formatDate } from '@/utils/formatDate'
+import { isSameDate } from '@/utils/isSameDate'
 import Link from 'next/link'
 
 type Props = {
@@ -9,6 +10,7 @@ type Props = {
 
 export const List = (props: Props) => {
   const { data, className } = props
+
   return (
     <ul className={className}>
       {data.map((d) => (
@@ -28,10 +30,12 @@ export const List = (props: Props) => {
                 <span className="font-bold mr-[4px]">公開日:</span>
                 {formatDate(d.publishedAt)}
               </div>
-              <div>
-                <span className="font-bold mr-[4px]">更新日:</span>
-                {formatDate(d.updatedAt)}
-              </div>
+              {!isSameDate(d.publishedAt, d.updatedAt) && (
+                <div>
+                  <span className="font-bold mr-[4px]">更新日:</span>
+                  {formatDate(d.updatedAt)}
+                </div>
+              )}
             </div>
           </Link>
         </li>

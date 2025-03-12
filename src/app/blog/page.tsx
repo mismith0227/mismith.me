@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   const { contents, totalCount } = await getBlogPosts({
-    fields: 'id,title,category',
+    fields: 'id,title,category,publishedAt,updatedAt',
     filters: `category[not_equals]note`,
   })
 
