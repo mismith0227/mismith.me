@@ -1,13 +1,9 @@
-'use client'
-
 import Image from 'next/image'
 import { Image as ImageType } from '@/types/Photo'
 import { Heading } from './Heading'
 import { LinkButton } from './LinkButton'
 import { formatDate } from '@/utils/formatDate'
-import { PhotoModal } from './PhotoModal'
-import { useState } from 'react'
-import { useWindowSize } from '@/hooks/useWindowSize'
+import { PhotoList } from './PhotoList'
 
 type Props = {
   data: ImageType[]
@@ -33,25 +29,6 @@ export const PhotoGallery = (props: Props) => {
     sinceAt,
     updatedAt,
   } = props
-
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
-  const [initNumberModal, setInitNumberModal] = useState<number | null>(null)
-  const [windowWidth] = useWindowSize()
-
-  const onOpenImageModal = (index: number) => {
-    if (windowWidth < 600) {
-      return
-    }
-    setIsOpenModal(true)
-    setInitNumberModal(index)
-
-    // setIsLoadingModalImage(true)
-  }
-
-  const onCloseImageModal = () => {
-    setIsOpenModal(false)
-    setInitNumberModal(null)
-  }
 
   return (
     <>
@@ -94,34 +71,11 @@ export const PhotoGallery = (props: Props) => {
         </LinkButton>
       )}
 
-      <div className="grid-cols-1 mt-[40px] md:grid-cols-3 grid justify-self-center self-center gap-4 mt-16 w-full">
-        {data.map((d, index) => (
-          <div
-            key={d.url}
-            className="relative overflow-hidden md:h-0 md:pb-[100%] md:hover:cursor-zoom-in"
-            onClick={() => onOpenImageModal(index)}
-          >
-            <Image
-              src={`${d.url}?fit=clip&w=1500&h=1500?fm=webp`}
-              alt=""
-              width={d.width}
-              height={d.height}
-              loading={index > 5 ? 'lazy' : 'eager'}
-              className="md:absolute w-full h-full object-contain transition duration-200"
-            />
-          </div>
-        ))}
-      </div>
+      <PhotoList data={data} />
+
       <LinkButton href={backLink} className="mt-20 mx-auto w-[min(100%,300px)]">
         {backText}
       </LinkButton>
-
-      <PhotoModal
-        data={data}
-        initialCount={initNumberModal}
-        closeModal={onCloseImageModal}
-        isOpen={isOpenModal}
-      />
     </>
   )
 }
