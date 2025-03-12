@@ -14,6 +14,7 @@ import { toStringId } from '@/utils/toStringId'
 import { getCategories } from '../../api/getCategories'
 import { Metadata } from 'next'
 import { ShareButton } from '@/src/components/ShareButton'
+import { isSameDate } from '@/utils/isSameDate'
 
 type Props = { id: string; category: string }
 
@@ -52,6 +53,8 @@ export default async function BlogPostDetailPage({
   const madeToc = makeToc(toc)
   const body = convertToHtml(data.content)
 
+  const isSame = isSameDate(data.publishedAt, data.updatedAt)
+
   return (
     <Container size="lg" className="flex justify-center">
       <div className="mr-0 md:mr-[80px] lg:mr-[200px] max-w-[640px] w-full relative">
@@ -64,10 +67,12 @@ export default async function BlogPostDetailPage({
             <span className="font-bold mr-[4px]">公開日:</span>
             {formatDate(data.publishedAt)}
           </div>
-          <div>
-            <span className="font-bold mr-[4px]">更新日:</span>
-            {formatDate(data.updatedAt)}
-          </div>
+          {!isSame && (
+            <div>
+              <span className="font-bold mr-[4px]">更新日:</span>
+              {formatDate(data.updatedAt)}
+            </div>
+          )}
         </div>
 
         <div className="mt-[60px] md:mt-[80px]">
