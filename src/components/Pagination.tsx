@@ -129,7 +129,7 @@ export const Pagination = ({
         <Item>
           <ItemInner>
             <StyledLink href={`${paginationPath}/${currentPage + 1}`}>
-              <Chevron rotate={180} />
+              <Chevron className="transform rotate-180" />
             </StyledLink>
           </ItemInner>
         </Item>
