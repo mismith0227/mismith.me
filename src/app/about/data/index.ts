@@ -57,7 +57,7 @@ export const biographies = [
     belongs: '制作会社',
     role: 'フロントエンドエンジニア',
     detail:
-      '受託開発で業務支援ツールの開発をしたり、コーポレートサイトやアーティストサイトのコーディングをしました。',
+      '受託開発で業務支援ツールの開発や、コーポレートサイトやアーティストサイトのコーディングをしました。',
     skills: [
       'React',
       'EJS',
@@ -133,9 +133,15 @@ export const booksData = [
     heading: 'Zine',
     items: [
       {
+        id: '2024-06-what-i-saw',
+        date: '2023年6月',
+        name: 'What I Saw',
+        link: 'https://shop.mismith.me/items/94783433',
+      },
+      {
         id: '2023-06-one',
         date: '2023年6月',
-        name: '「ONE」',
+        name: 'ONE',
         link: 'https://shop.mismith.me/items/75504256',
       },
     ],
@@ -183,27 +189,31 @@ export const awardData = [
     items: [
       {
         id: '2025-2-apa-award',
-        date: '2025年2月',
+        date: '2025年',
         name: 'APA AWARD 2025 写真作品部門',
         rank: '入選',
+        link: 'https://apa.or.jp/award2025/',
       },
       {
         id: '2024-9-sagamihara',
-        date: '2024年9月',
-        name: 'フォトシティさがみはら アマチュアの部',
+        date: '2024年',
+        name: 'フォトシティさがみはら2024 アマチュアの部',
         rank: '入選',
-      },
-      {
-        id: '2023-12-houfutenjin',
-        date: '2023年12月',
-        name: '天神おんな神輿写真コンテスト',
-        rank: '特選山口県議会議長賞',
+        link: 'https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/031/272/ichiran2.pdf',
       },
     ],
   },
   {
     id: 'overseas',
     heading: '海外',
-    items: [],
+    items: [
+      {
+        id: '2025-dummy-award',
+        date: '2025年',
+        name: 'Dummy Award 2025',
+        rank: 'Shortlist',
+        link: 'https://dummyaward.org/dummy-award-2025/#about25',
+      },
+    ],
   },
 ]
