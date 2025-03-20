@@ -123,9 +123,18 @@ export default async function About() {
                     return (
                       <ListItem key={data.id}>
                         <ListItemLabel>{data.date}</ListItemLabel>
-                        <ListItemNote>
-                          {data.name} {data.rank}
-                        </ListItemNote>
+                        {data.link ? (
+                          <ListItemLink href={data.link} external>
+                            <ListItemNote>
+                              {data.name} {data.rank}
+                            </ListItemNote>
+                            <OpenInNew className="text-[16px]" />
+                          </ListItemLink>
+                        ) : (
+                          <ListItemNote>
+                            {data.name} {data.rank}
+                          </ListItemNote>
+                        )}
                       </ListItem>
                     )
                   })}

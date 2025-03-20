@@ -4,5 +4,5 @@ type Props = {
 
 export const ListItemLabel = (props: Props) => {
   const { children } = props
-  return <p className="w-[100px]">{children}</p>
+  return <p className="whitespace-nowrap">{children}</p>
 }
