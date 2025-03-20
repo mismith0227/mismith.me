@@ -134,7 +134,7 @@ export const booksData = [
     items: [
       {
         id: '2024-06-what-i-saw',
-        date: '2023年6月',
+        date: '2024年6月',
         name: 'What I Saw',
         link: 'https://shop.mismith.me/items/94783433',
       },
