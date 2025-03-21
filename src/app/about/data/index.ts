@@ -212,7 +212,7 @@ export const awardData = [
         date: '2025年',
         name: 'Dummy Award 2025',
         rank: 'Shortlist',
-        link: 'https://dummyaward.org/dummy-award-2025/#about25',
+        link: 'https://dummyaward.org/dummy-award-2025',
       },
     ],
   },
