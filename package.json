@@ -16,7 +16,7 @@
     "highlight.js": "^11.11.1",
     "jsdom": "^26.0.0",
     "microcms-js-sdk": "^3.1.2",
-    "next": "15.2.1",
+    "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-modal": "^3.16.3",
