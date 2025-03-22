@@ -340,9 +340,9 @@
     undici-types "~6.20.0"
 
 "@types/node@^20":
-  version "20.17.23"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.17.23.tgz#d228a57bbab954f763a883e495bacea8264efcd5"
-  integrity sha512-8PCGZ1ZJbEZuYNTMqywO+Sj4vSKjSjT6Ua+6RFOYlEvIvKQABPtrNkoVSLSKDb4obYcMhspVKmsw8Cm10NFRUg==
+  version "20.17.25"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.17.25.tgz#3135ad0af2b46a7689aa5ffb3ecafe1f50171a29"
+  integrity sha512-bT+r2haIlplJUYtlZrEanFHdPIZTeiMeh/fSOEbOOfWf9uTn+lg8g0KU6Q3iMgjd9FLuuMAgfCNSkjUbxL6E3Q==
   dependencies:
     undici-types "~6.19.2"
 
