@@ -45,9 +45,7 @@ export default async function BlogPostDetailPage({
 }) {
   const { id, category } = await params
   const data = await getBlogPost(id)
-  const categoryData = await getCategories({
-    filters: `id[not_equals]note`,
-  })
+  const categoryData = await getCategories({})
 
   const toc = convertToToc(data.content)
   const madeToc = makeToc(toc)
@@ -111,9 +109,7 @@ export default async function BlogPostDetailPage({
 }
 
 export async function generateStaticParams() {
-  const data = await getBlogPosts({
-    filters: `category[not_equals]note`,
-  })
+  const data = await getBlogPosts({})
 
   const paths = data.contents.map(
     (content: { id: string; category: { id: string } }) => ({
