@@ -54,10 +54,12 @@ export default async function BlogPostDetailPage({
           />
         )}
 
-        <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          className="mt-[60px] md:mt-[80px]"
-        />
+        {content && (
+          <div
+            dangerouslySetInnerHTML={{ __html: content }}
+            className="mt-[60px] md:mt-[80px]"
+          />
+        )}
 
         <LinkButton
           href="/note"

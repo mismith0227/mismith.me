@@ -13,26 +13,21 @@ type Props = {
 export const PhotoOverview = (props: Props) => {
   const { images, categoryId, isPriority } = props
 
-  if (!images) {
+  const [windowWidth] = useWindowSize()
+
+  if (!windowWidth) {
     return null
   }
 
-  const [windowWidth] = useWindowSize()
-
-  let filteredImages
-
-  if (windowWidth > 899) {
-    filteredImages = images.slice(0, 7)
-  } else {
-    filteredImages = images.slice(0, 5)
-  }
+  const filteredImages =
+    windowWidth > 899 ? images?.slice(0, 7) : images?.slice(0, 5)
 
   return (
     <Link
       href={`/series/${categoryId}`}
       className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center self-center gap-4 w-full mt-6 transition duration-200 hover:opacity-80 overViewList"
     >
-      {filteredImages.map((image) => (
+      {filteredImages?.map((image) => (
         <div key={image.url} className="relative overflow-hidden h-0 pb-[100%]">
           <Image
             src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
