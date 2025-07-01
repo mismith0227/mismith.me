@@ -1,14 +1,13 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
 
-export const useIsomorphicEffect = () => {
-  return typeof window !== 'undefined' ? useLayoutEffect : useEffect
-}
+// ❗️ Hookとして直接使えるように変更
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export const useWindowSize = (): number[] => {
-  const isomorphicEffect = useIsomorphicEffect()
   const [size, setSize] = useState([0, 0])
 
-  isomorphicEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const updateSize = (): void => {
       setSize([window.innerWidth, window.innerHeight])
     }
@@ -18,5 +17,6 @@ export const useWindowSize = (): number[] => {
 
     return () => window.removeEventListener('resize', updateSize)
   }, [])
+
   return size
 }

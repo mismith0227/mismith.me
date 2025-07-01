@@ -1,19 +1,7 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["simple-import-sort"],
+  "plugins": [],
   "rules": {
-    "simple-import-sort/imports": [
-      "error",
-      {
-        "groups": [
-          ["^react", "^@?\\w"],
-          ["^(@|components)(/.*|$)"],
-          ["^\\u0000"],
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"]
-        ]
-      }
-    ],
     "no-console": ["error", { "allow": ["error"] }]
   }
 }

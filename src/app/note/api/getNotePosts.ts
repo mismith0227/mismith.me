@@ -21,16 +21,14 @@ export const getNotePosts = async (props?: Props): Promise<Data> => {
     ? {
         fields: props.fields,
         limit: props.limit || NOTE_PER_PAGE,
-        filters: `category[equals]note`,
         offset: props.offset,
       }
     : {
-        filters: `category[equals]note`,
         limit: NOTE_PER_PAGE,
       }
 
   const data = await client.get({
-    endpoint: 'blog',
+    endpoint: 'note',
     queries,
   })
   return data

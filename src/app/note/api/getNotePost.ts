@@ -3,7 +3,7 @@ import { Blog } from '@/types/Blog'
 
 export const getNotePost = async (id: string): Promise<Blog> => {
   const data = await client.get({
-    endpoint: `blog/${id}`,
+    endpoint: `note/${id}`,
   })
   return data
 }
