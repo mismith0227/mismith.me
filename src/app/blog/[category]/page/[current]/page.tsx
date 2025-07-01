@@ -38,9 +38,7 @@ export default async function BlogCategoryPostDetailPage({
     filters: `category[equals]${category}`,
   })
 
-  const categoryData = await getCategories({
-    filters: `id[not_equals]note`,
-  })
+  const categoryData = await getCategories({})
 
   return (
     <BlogListContent
@@ -61,7 +59,7 @@ async function getAllCategoryPagePaths() {
   const paths: string[] = await Promise.all(
     resCategory.contents.map((item: BlogCategory) => {
       const data = getBlogPosts({
-        filters: `category[equals]${item.id}[and]category[not_equals]note`,
+        filters: `category[equals]${item.id}`,
       })
 
       const result = data.then(({ totalCount }) => {

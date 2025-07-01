@@ -30,12 +30,9 @@ export default async function BlogPostPage({
   const currentPage = toNumberId(current)
   const { contents, totalCount } = await getBlogPosts({
     offset: (currentPage - 1) * BLOG_PER_PAGE,
-    filters: `category[not_equals]note`,
   })
 
-  const categoryData = await getCategories({
-    filters: `id[not_equals]note`,
-  })
+  const categoryData = await getCategories({})
 
   return (
     <BlogListContent
@@ -48,9 +45,7 @@ export default async function BlogPostPage({
 }
 
 export async function generateStaticParams() {
-  const res = await getBlogPosts({
-    filters: `category[not_equals]note`,
-  })
+  const res = await getBlogPosts({})
 
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i)
