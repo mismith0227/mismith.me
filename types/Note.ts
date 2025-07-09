@@ -1,21 +1,17 @@
-import { BlogCategory } from '@/types/BlogCategory'
-
 export type Thumbnail = {
   height: number
   url: string
   width: number
 }
 
-export type Blog = {
+export type Note = {
   id: string
   title: string
   description: string
-  body: string
-  category: BlogCategory
+  content: string
   slug: string
   createdAt: Date
   updatedAt: Date
   publishedAt: Date
-  related_post?: Blog[]
   thumbnail?: Thumbnail
 }
