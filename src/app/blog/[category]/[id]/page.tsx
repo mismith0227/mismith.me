@@ -47,9 +47,9 @@ export default async function BlogPostDetailPage({
   const data = await getBlogPost(id)
   const categoryData = await getCategories({})
 
-  const toc = convertToToc(data.content)
+  const toc = convertToToc(data.body)
   const madeToc = makeToc(toc)
-  const body = convertToHtml(data.content)
+  const body = convertToHtml(data.body)
 
   const isSame = isSameDate(data.publishedAt, data.updatedAt)
 
