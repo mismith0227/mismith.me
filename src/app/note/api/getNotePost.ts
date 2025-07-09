@@ -1,7 +1,7 @@
 import { client } from '@/libs/client'
-import { Blog } from '@/types/Blog'
+import { Note } from '@/types/Note'
 
-export const getNotePost = async (id: string): Promise<Blog> => {
+export const getNotePost = async (id: string): Promise<Note> => {
   const data = await client.get({
     endpoint: `note/${id}`,
   })
