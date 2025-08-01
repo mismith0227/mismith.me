@@ -22,9 +22,6 @@ export async function generateMetadata({
     openGraph: {
       images: data.thumbnail,
     },
-    twitter: {
-      images: data.thumbnail,
-    },
   }
 }
 

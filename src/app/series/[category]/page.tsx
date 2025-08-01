@@ -19,6 +19,9 @@ export async function generateMetadata({
   return {
     title: `${currentCategory?.category_name}`,
     description: `${currentCategory?.category_name}`,
+    openGraph: {
+      url: contents[0].feature_image?.url,
+    },
   }
 }
 
