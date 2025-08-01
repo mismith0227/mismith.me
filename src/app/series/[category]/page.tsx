@@ -22,6 +22,9 @@ export async function generateMetadata({
     openGraph: {
       url: contents[0].feature_image?.url,
     },
+    twitter: {
+      card: 'summary_large_image',
+    },
   }
 }
 
