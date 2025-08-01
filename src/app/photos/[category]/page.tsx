@@ -1,5 +1,4 @@
 import { Container } from '@/src/components/Container'
-import { PageTitle } from '@/src/components/PageTitle'
 import { getAllPhotoIds } from '../api/getAllPhotoIds'
 import { getPhotos } from '../api/getPhotos'
 import { PhotoGallery } from '@/src/components/PhotoGallery'
@@ -39,8 +38,6 @@ export default async function PhotoDetail({
 
   return (
     <Container size="lg">
-      <PageTitle text="Series" />
-
       <PhotoGallery
         currentCategoryName={currentCategory.title}
         data={currentCategory.photos || []}

@@ -83,32 +83,6 @@ export default async function About() {
       </Section>
 
       <Section>
-        <Heading level={2}>Books</Heading>
-        <div>
-          {booksData.map((b) => (
-            <SectionContent key={b.id}>
-              <Heading level={3}>{b.heading}</Heading>
-              <List>
-                {b.items.map((data) => (
-                  <ListItem key={data.id}>
-                    <ListItemLabel>{data.date}</ListItemLabel>
-                    {data.link ? (
-                      <ListItemLink href={data.link} external>
-                        <ListItemNote>{data.name}</ListItemNote>
-                        <OpenInNew className="text-[16px]" />
-                      </ListItemLink>
-                    ) : (
-                      <ListItemNote>{data.name}</ListItemNote>
-                    )}
-                  </ListItem>
-                ))}
-              </List>
-            </SectionContent>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
         <Heading level={2}>Award</Heading>
         <div>
           {awardData.map((a) => {
@@ -172,6 +146,32 @@ export default async function About() {
               </SectionContent>
             )
           })}
+        </div>
+      </Section>
+
+      <Section>
+        <Heading level={2}>Books</Heading>
+        <div>
+          {booksData.map((b) => (
+            <SectionContent key={b.id}>
+              <Heading level={3}>{b.heading}</Heading>
+              <List>
+                {b.items.map((data) => (
+                  <ListItem key={data.id}>
+                    <ListItemLabel>{data.date}</ListItemLabel>
+                    {data.link ? (
+                      <ListItemLink href={data.link} external>
+                        <ListItemNote>{data.name}</ListItemNote>
+                        <OpenInNew className="text-[16px]" />
+                      </ListItemLink>
+                    ) : (
+                      <ListItemNote>{data.name}</ListItemNote>
+                    )}
+                  </ListItem>
+                ))}
+              </List>
+            </SectionContent>
+          ))}
         </div>
       </Section>
 

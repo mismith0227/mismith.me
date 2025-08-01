@@ -19,8 +19,7 @@ export default async function Series() {
   return (
     <Container size="lg">
       <PageTitle text="Series" />
-
-      <div className="mt-16 gap-x-0 gap-y-20 md:flex md:flex-col md:gap-x-0 md:gap-y-40 md:max-w-[900px]">
+      <div className="mt-16 gap-x-0 gap-y-20 flex flex-col gap-x-0 gap-y-20 md:gap-y-40 md:max-w-[900px]">
         {contents.map((c, index) => (
           <div key={c.id}>
             <Heading level={2}>{c.category_name}</Heading>
