@@ -19,6 +19,9 @@ export async function generateMetadata({
   return {
     title: `${currentCategory?.title} | Photo`,
     description: `${currentCategory?.title}の写真`,
+    openGraph: {
+      url: contents[0].photos ? `${contents[0].photos[0].url}` : undefined,
+    },
   }
 }
 
