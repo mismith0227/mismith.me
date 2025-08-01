@@ -20,10 +20,6 @@ export async function generateMetadata({
     title: `${currentCategory?.category_name}`,
     description: `${currentCategory?.category_name}`,
     openGraph: {
-      url: contents[0].feature_image?.url,
-    },
-    twitter: {
-      card: 'summary_large_image',
       images: contents[0].feature_image?.url,
     },
   }
