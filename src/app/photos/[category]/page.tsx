@@ -24,6 +24,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
+      images: contents[0].photos ? `${contents[0].photos[0].url}` : undefined,
     },
   }
 }
