@@ -20,17 +20,6 @@ export const metadata: Metadata = {
     url: BASE_URL,
     images: images,
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: {
-      template: '%s | mismith.me',
-      default: title,
-    },
-    description: description,
-    images: images,
-    site: 'misumi_takuma',
-    creator: 'misumi_takuma',
-  },
   metadataBase: new URL(BASE_URL),
 }
 
