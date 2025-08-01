@@ -28,7 +28,7 @@ export const biographies = [
     belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
     detail: 'webアプリやwebサービスの制作に携わっています。',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Git'],
+    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Git', 'Shopify'],
   },
   {
     id: '2021-09',
@@ -133,6 +133,12 @@ export const booksData = [
     heading: 'Zine',
     items: [
       {
+        id: '2025-06-tread-on-snow',
+        date: '2025年6月',
+        name: 'Tread on snow',
+        link: 'https://shop.mismith.me/items/108666474',
+      },
+      {
         id: '2024-06-what-i-saw',
         date: '2024年6月',
         name: 'What I Saw',
@@ -192,7 +198,7 @@ export const awardData = [
         date: '2025年',
         name: 'APA AWARD 2025 写真作品部門',
         rank: '入選',
-        link: 'https://apa.or.jp/award2025/',
+        link: 'https://apa.or.jp/award-gallery/ph/2025/',
       },
       {
         id: '2024-9-sagamihara',

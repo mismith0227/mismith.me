@@ -1,5 +1,4 @@
 import { Container } from '@/src/components/Container'
-import { PageTitle } from '@/src/components/PageTitle'
 import { getPhotoCategories } from '../api/getPhotoCategory'
 import { PhotoGallery } from '@/src/components/PhotoGallery'
 import { getAllSeriesIds } from '../api/getAllSeriesIds'
@@ -39,8 +38,6 @@ export default async function SeriesCategory({
 
   return (
     <Container size="lg">
-      <PageTitle text="Series" />
-
       <PhotoGallery
         pickUpPhoto={currentCategory.feature_image}
         currentCategoryName={currentCategory.category_name}
