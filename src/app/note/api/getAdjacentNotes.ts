@@ -1,9 +1,9 @@
 import { client } from '@/libs/client'
-import { Note } from '@/types/Note'
+import {NoteForAdjacentNotes } from '@/types/Note'
 
 type AdjacentNotes = {
-  previous: Pick<Note, 'id' | 'title' | 'publishedAt'> | null
-  next: Pick<Note, 'id' | 'title' | 'publishedAt'> | null
+  previous: NoteForAdjacentNotes | null
+  next: NoteForAdjacentNotes | null
 }
 
 export const getAdjacentNotes = async (currentId: string): Promise<AdjacentNotes> => {
@@ -11,13 +11,13 @@ export const getAdjacentNotes = async (currentId: string): Promise<AdjacentNotes
   const allNotes = await client.get({
     endpoint: 'note',
     queries: {
-      fields: 'id,title,publishedAt',
+      fields: 'id,title,publishedAt,thumbnail',
       limit: 1000, // 十分大きな数値を設定
       orders: 'publishedAt',
     },
   })
 
-  const notes = allNotes.contents as Pick<Note, 'id' | 'title' | 'publishedAt'>[]
+  const notes = allNotes.contents as NoteForAdjacentNotes[]
   
   // 現在の記事のインデックスを取得
   const currentIndex = notes.findIndex(note => note.id === currentId)
