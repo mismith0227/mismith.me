@@ -15,3 +15,5 @@ export type Note = {
   publishedAt: Date
   thumbnail?: Thumbnail
 }
+
+export type NoteForAdjacentNotes = Pick<Note, 'id' | 'title' | 'publishedAt' | 'thumbnail'> 

@@ -1,9 +1,11 @@
 import { formatDate } from '@/utils/formatDate'
 import { getAllNoteIds } from '../api/getAllNoteIds'
 import { getNotePost } from '../api/getNotePost'
+import { getAdjacentNotes } from '../api/getAdjacentNotes'
 import Image from 'next/image'
 import { LinkButton } from '@/src/components/LinkButton'
 import { Container } from '@/src/components/Container'
+import { AdjacentNoteLinks } from '@/src/components/AdjacentNoteLinks'
 import { Metadata } from 'next'
 
 type Props = { id: string }
@@ -25,13 +27,14 @@ export async function generateMetadata({
   }
 }
 
-export default async function BlogPostDetailPage({
+export default async function NotePostDetailPage({
   params,
 }: {
   params: Promise<Props>
 }) {
   const { id } = await params
   const { publishedAt, title, thumbnail, content } = await getNotePost(id)
+  const { previous, next } = await getAdjacentNotes(id)
 
   return (
     <Container size="lg" className="flex justify-center">
@@ -54,9 +57,15 @@ export default async function BlogPostDetailPage({
         {content && (
           <div
             dangerouslySetInnerHTML={{ __html: content }}
-            className="mt-[60px] md:mt-[80px]"
+            className="mt-[60px] md:mt-[80px] after:content-['***'] after:block after:mt-[60px] after:text-center after:text-[20px] after:text-gray-400"
           />
         )}
+
+        <AdjacentNoteLinks
+          previous={previous}
+          next={next}
+          className="mt-[80px] md:mt-[120px]"
+        />
 
         <LinkButton
           href="/note"
