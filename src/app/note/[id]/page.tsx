@@ -61,8 +61,11 @@ export default async function NotePostDetailPage({
           />
         )}
 
-
-        <AdjacentNoteLinks previous={previous} next={next} className="mt-[80px] md:mt-[120px]" />
+        <AdjacentNoteLinks
+          previous={previous}
+          next={next}
+          className="mt-[80px] md:mt-[120px]"
+        />
 
         <LinkButton
           href="/note"
