@@ -40,7 +40,7 @@ const Home = () => {
       ))}
       <Link
         href="series"
-        className="absolute right-2 bottom-10 md:right-6 md:bottom-16 z-5 inline-flex items-center justify-center px-4 py-1.5 text-white border border-white text-[14px] transition duration-200 md:hover:bg-white md:hover:text-black"
+        className="absolute right-2 bottom-10 md:right-6 md:bottom-16 z-5 inline-flex items-center justify-center px-4 py-1.5 text-white border border-white text-[14px] transition duration-200 md:hover:bg-white md:hover:text-black rounded-md"
       >
         View More
       </Link>
