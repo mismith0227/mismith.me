@@ -23,7 +23,7 @@ export const ShareButton = (props: Props) => {
       target="_blank"
       rel="noopener noreferrer"
       className={twMerge(
-        'flex items-center justify-center h-12 w-12 text-lg no-underline bg-black text-white transition-all duration-400 hover:rounded-[50%]',
+        'flex items-center justify-center h-12 w-12 text-lg no-underline bg-black text-white transition-all duration-400 hover:rounded-[50%] rounded-md',
         className
       )}
     >
