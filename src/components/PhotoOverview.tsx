@@ -1,48 +1,64 @@
-'use client'
-
-import { useWindowSize } from '@/hooks/useWindowSize'
 import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
+  featureImage?: { url: string; width: number; height: number }
   images?: { url: string; width: number; height: number }[]
   categoryId?: string
   isPriority?: boolean
 }
 
 export const PhotoOverview = (props: Props) => {
-  const { images, categoryId, isPriority } = props
+  const { featureImage, images, isPriority, categoryId } = props
 
-  const [windowWidth] = useWindowSize()
-
-  if (!windowWidth) {
-    return null
-  }
-
-  const filteredImages =
-    windowWidth > 899 ? images?.slice(0, 7) : images?.slice(0, 5)
+  const filteredImages = images?.slice(0, 2)
 
   return (
     <Link
       href={`/series/${categoryId}`}
-      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-self-center self-center gap-4 w-full mt-6 transition duration-200 hover:opacity-80 overViewList"
+      className="w-full md:hover:opacity-80 transition"
     >
-      {filteredImages?.map((image) => (
-        <div key={image.url} className="relative overflow-hidden h-0 pb-[100%]">
-          <Image
-            src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
-            alt=""
-            width={image.width}
-            height={image.height}
-            className="absolute w-full h-full object-cover"
-            priority={isPriority}
-          />
+      <div className="w-full md:flex md:flex-row gap-4 items-start">
+        {featureImage && (
+          <div className="relative w-full aspect-[3/2] md:w-1/2">
+            <Image
+              src={`${featureImage.url}?fit=clip&w=1500&h=1500?fm=webp`}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              className="object-cover"
+              priority={isPriority}
+            />
+          </div>
+        )}
+        {/* PC時: 2枚横並び, SP時: 下で横並び */}
+        <div className="hidden md:flex flex-1 flex-row gap-4">
+          {filteredImages?.map((image) => (
+            <div key={image.url} className="relative flex-1 aspect-[3/2]">
+              <Image
+                src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
+                alt=""
+                fill
+                className="object-contain height-auto"
+                priority={isPriority}
+              />
+            </div>
+          ))}
         </div>
-      ))}
-      <div className="relative overflow-hidden h-0 pb-[100%]">
-        <div className="flex items-center justify-center absolute w-full h-full no-underline text-sm font-bold transition duration-200 after:content-['→'] after:inline-block after:ml-2 more">
-          続きを見る
-        </div>
+      </div>
+      {/* SP時: 2枚横並び */}
+      <div className="flex flex-row gap-4 mt-4 md:hidden">
+        {filteredImages?.map((image) => (
+          <div key={image.url} className="relative flex-1 aspect-[3/2]">
+            <Image
+              src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
+              alt=""
+              fill
+              className="object-contain height-auto"
+              priority={isPriority}
+            />
+          </div>
+        ))}
       </div>
     </Link>
   )
