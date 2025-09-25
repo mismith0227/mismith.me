@@ -35,13 +35,13 @@ export default async function About() {
   const getLinkIcon = (value: string) => {
     switch (value) {
       case 'x':
-        return <Xlogo />
+        return <Xlogo className='text-[24px]' />
       case 'instagram':
-        return <Instagram />
+        return <Instagram className='text-[24px]' />
       case 'note':
-        return <Note />
+        return <Note className='text-[44px]' />
       case 'github':
-        return <GitHub />
+        return <GitHub className='text-[28px]' />
     }
   }
   return (
@@ -52,7 +52,7 @@ export default async function About() {
         <Heading level={2}>Profile</Heading>
         <div>
           <p className="max-w-[700px]">
-            大阪拠点のフリーランスのエンジニア兼フォトグラファー。
+            大阪拠点のフリーランスのエンジニア。
             <br />
             2017年から写真を始め、ストリートフォトやポートレートなど様々なジャンルを撮影。
             <br />
@@ -60,12 +60,11 @@ export default async function About() {
           </p>
         </div>
         <SectionContent>
-          <Heading level={3}>Links</Heading>
           <ul className="flex mt-6 gap-4 p-0 list-none">
             {links.map((l) => (
               <li
                 key={l.id}
-                className="transition duration-200 hover:opacity-60"
+                className="transition duration-200 hover:opacity-60 flex items-center"
               >
                 <a
                   href={l.href}
@@ -100,13 +99,13 @@ export default async function About() {
                         {data.link ? (
                           <ListItemLink href={data.link} external>
                             <ListItemNote>
-                              {data.name} {data.rank}
+                              {data.name} {data.rank} {('country' in data && data.country) ? `(${data.country})` : ''}
                             </ListItemNote>
                             <OpenInNew className="text-[16px]" />
                           </ListItemLink>
                         ) : (
                           <ListItemNote>
-                            {data.name} {data.rank}
+                            {data.name} {data.rank} {('country' in data && data.country) ? `(${data.country})` : ''}
                           </ListItemNote>
                         )}
                       </ListItem>
