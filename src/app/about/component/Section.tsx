@@ -5,7 +5,7 @@ type Props = {
 export const Section = (props: Props) => {
   const { children } = props
   return (
-    <section className="mt-16 mx-auto md:mt-[80px] md:first:mt-0">
+    <section className="mt-16 mx-auto md:mt-[80px] md:first-of-type:mt-0">
       {children}
     </section>
   )
