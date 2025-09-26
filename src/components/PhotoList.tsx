@@ -34,11 +34,11 @@ export const PhotoList = (props: Props) => {
 
   return (
     <>
-      <div className="grid-cols-1 mt-[40px] md:grid-cols-3 grid justify-self-center self-center gap-4 mt-16 w-full">
+      <div className="grid-cols-1 mt-[40px] md:grid-cols-4 grid justify-self-center self-center gap-4 mt-16 w-full">
         {data.map((d, index) => (
           <div
             key={d.url}
-            className="relative overflow-hidden md:h-0 md:pb-[100%] md:hover:cursor-zoom-in"
+            className="relative overflow-hidden aspect-[3/2] md:hover:cursor-zoom-in"
             onClick={() => onOpenImageModal(index)}
           >
             <Image
@@ -47,7 +47,7 @@ export const PhotoList = (props: Props) => {
               width={d.width}
               height={d.height}
               loading={index > 5 ? 'lazy' : 'eager'}
-              className="md:absolute w-full h-full object-contain transition duration-200"
+              className="w-full h-full object-cover transition duration-200"
             />
           </div>
         ))}
