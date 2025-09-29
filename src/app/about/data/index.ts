@@ -223,6 +223,13 @@ export const awardData = [
     heading: '海外',
     items: [
       {
+        id: '2025-critical-mass',
+        date: '2025',
+        name: 'Critical Mass 2025',
+        rank: 'Top 200',
+        link: 'https://www.photolucida.org/announcing-critical-mass-2025-top-200',
+      },
+      {
         id: '2025-dummy-award',
         date: '2025',
         name: 'Dummy Award 2025',
