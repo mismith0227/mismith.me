@@ -38,7 +38,7 @@ export const PhotoList = (props: Props) => {
         {data.map((d, index) => (
           <div
             key={d.url}
-            className="relative overflow-hidden aspect-[3/2] md:hover:cursor-zoom-in"
+            className="relative overflow-hidden sm:aspect-[3/2] md:hover:cursor-zoom-in"
             onClick={() => onOpenImageModal(index)}
           >
             <Image
