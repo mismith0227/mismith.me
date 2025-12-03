@@ -22,13 +22,15 @@ export const List = (props: Props) => {
         <li key={d.id}>
           <Link href={`/note/${d.id}`} className="block">
             {d.thumbnail && (
-              <Image
-                src={d.thumbnail?.url}
-                alt={d.title}
-                width={d.thumbnail.width}
-                height={d.thumbnail.height}
-                className="w-full h-full object-cover align-bottom"
-              />
+              <div className="aspect-[3/2] overflow-hidden">
+                <Image
+                  src={d.thumbnail?.url}
+                  alt={d.title}
+                  width={d.thumbnail.width}
+                  height={d.thumbnail.height}
+                  className="w-full h-full object-cover align-bottom"
+                />
+              </div>
             )}
             <h2 className="mt-2 text-lg font-bold">{d.title}</h2>
             <div className="text-xs mt-[2]">
