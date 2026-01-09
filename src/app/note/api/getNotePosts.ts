@@ -22,9 +22,11 @@ export const getNotePosts = async (props?: Props): Promise<Data> => {
         fields: props.fields,
         limit: props.limit || NOTE_PER_PAGE,
         offset: props.offset,
+        orders: '-publishedAt',
       }
     : {
         limit: NOTE_PER_PAGE,
+        orders: '-publishedAt',
       }
 
   const data = await client.get({

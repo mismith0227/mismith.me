@@ -24,6 +24,7 @@ export const getBlogPosts = async (props: Props): Promise<Data> => {
     limit: limit || BLOG_PER_PAGE,
     filters,
     offset,
+    orders: '-publishedAt',
   }
 
   const data = await client.get({
