@@ -7,6 +7,7 @@ import { LinkButton } from '@/src/components/LinkButton'
 import { Container } from '@/src/components/Container'
 import { AdjacentNoteLinks } from '@/src/components/AdjacentNoteLinks'
 import { Metadata } from 'next'
+import '@/src/styles/noteBody.css'
 
 type Props = { id: string }
 
@@ -57,7 +58,7 @@ export default async function NotePostDetailPage({
         {content && (
           <div
             dangerouslySetInnerHTML={{ __html: content }}
-            className="mt-[60px] md:mt-[80px] after:content-['***'] after:block after:mt-[60px] after:text-center after:text-[20px] after:text-gray-400"
+            className="mt-[60px] md:mt-[80px] after:content-['***'] after:block after:mt-[60px] after:text-center after:text-[20px] after:text-gray-400 noteBody"
           />
         )}
 
