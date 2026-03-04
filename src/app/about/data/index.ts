@@ -28,7 +28,15 @@ export const biographies = [
     belongs: 'フリーランス',
     role: 'フロントエンドエンジニア',
     detail: 'webアプリやwebサービスの制作に携わっています。',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Git', 'Shopify'],
+    skills: [
+      'JavaScript',
+      'TypeScript',
+      'React',
+      'Next.js',
+      'Git',
+      'Shopify',
+      'Playwright',
+    ],
   },
   {
     id: '2021-09',
