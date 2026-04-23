@@ -53,7 +53,7 @@ export default async function BlogPostDetailPage({
   return (
     <Container size="lg" className="flex justify-center">
       <div className="mr-0 md:mr-[80px] lg:mr-[200px] max-w-[640px] w-full relative">
-        <div className="text-[10px] inline-block px-4 py-1 bg-black text-white md:text-[12px] font-bold">
+        <div className="text-[10px] inline-block px-4 py-1 bg-black text-white dark:bg-white dark:text-black md:text-[12px] font-bold">
           {data.category && data.category.category_name}
         </div>
         <h1 className="text-[24px] md:text-[36px] font-bold">{data.title}</h1>

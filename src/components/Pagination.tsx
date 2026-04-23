@@ -25,7 +25,7 @@ const ItemInner = ({
   return (
     <span
       className={twMerge(
-        'flex items-center justify-center w-[28px] h-[46px] md:w-[42px] md:h-[56px] border border-black transition-all duration-200',
+        'flex items-center justify-center w-[28px] h-[46px] md:w-[42px] md:h-[56px] border border-black dark:border-white transition-all duration-200',
         `${isCurrent && 'pointer-events-none'}`
       )}
     >
@@ -47,8 +47,8 @@ const StyledLink = ({
     <Link
       href={href}
       className={twMerge(
-        'flex items-center justify-center w-full h-full no-underline hover:bg-black hover:text-white',
-        `${isCurrent && 'bg-black text-white'}`
+        'flex items-center justify-center w-full h-full no-underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black',
+        `${isCurrent && 'bg-black text-white dark:bg-white dark:text-black'}`
       )}
     >
       {children}

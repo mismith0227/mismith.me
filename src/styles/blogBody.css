@@ -111,3 +111,21 @@
     height: auto;
   }
 }
+
+html.dark .blogBody {
+  a {
+    color: #f0f0f0;
+  }
+
+  p,
+  li {
+    code {
+      background-color: #1a1a1a;
+      color: #e06c75;
+    }
+  }
+
+  blockquote {
+    border-left-color: #444;
+  }
+}

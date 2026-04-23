@@ -71,7 +71,7 @@ export default async function About() {
                   target="_blank"
                   aria-label={l.label}
                   rel="noopener"
-                  className="block text-black"
+                  className="block text-black dark:text-white"
                 >
                   {getLinkIcon(l.id)}
                 </a>
@@ -204,7 +204,7 @@ export default async function About() {
           {biographies.map((b) => (
             <li
               key={b.id}
-              className="relative pl-9 pb-9 md:pl-13 md:pb-13 first:before:bg-black last:after:border-r last:after:border-dashed last:after:border-[#aaa] last:after:left-[6px] last:after:bg-white before:content-[''] before:block before:absolute before:top-2 before:left-0 before:bg-white before:border before:border-black before:box-border before:w-[15px] before:h-[15px] before:rounded-full before:z-10 after:content-[''] after:block after:absolute after:top-2 after:left-[7px] after:w-px after:h-full after:bg-black"
+              className="relative pl-9 pb-9 md:pl-13 md:pb-13 first:before:bg-black dark:first:before:bg-white last:after:border-r last:after:border-dashed last:after:border-[#aaa] dark:last:after:border-[#555] last:after:left-[6px] last:after:bg-white dark:last:after:bg-[#0a0a0a] before:content-[''] before:block before:absolute before:top-2 before:left-0 before:bg-white dark:before:bg-[#0a0a0a] before:border before:border-black dark:before:border-white before:box-border before:w-[15px] before:h-[15px] before:rounded-full before:z-10 after:content-[''] after:block after:absolute after:top-2 after:left-[7px] after:w-px after:h-full after:bg-black dark:after:bg-white"
             >
               <div className="flex gap-x-4 font-bold items-center">
                 <p className="text-[14px]">
@@ -225,7 +225,7 @@ export default async function About() {
                   {b.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="text-[10px] inline-block px-4 py-1 bg-gray-400 text-white md:text-[12px] font-bold"
+                      className="text-[10px] inline-block px-4 py-1 bg-gray-400 dark:bg-gray-700 text-white md:text-[12px] font-bold"
                     >
                       {skill}
                     </li>

@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   text-underline-offset: 0.3em;
 }
@@ -13,6 +15,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.04em;
   line-height: 1.75;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+html.dark body {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
 }
 
 a:any-link {
@@ -35,6 +43,10 @@ a:any-link {
     transform-origin: top right;
     transition: transform 0.3s;
     transform: scaleX(0);
+  }
+
+  html.dark .categoryItem::before {
+    background: #f0f0f0;
   }
 
   .categoryItem:hover::before {
@@ -93,6 +105,14 @@ a:any-link {
       padding: 16px 24px;
       transition: opacity 0.2s;
     }
+
+    html.dark .navContainer {
+      background-color: rgba(10, 10, 10, 0.85) !important;
+    }
+
+    html.dark .isOpenNav {
+      color: #f0f0f0 !important;
+    }
   }
 
   .navItemInner {
@@ -128,6 +148,11 @@ a:any-link {
   .overViewList:hover .more {
     color: #fff;
     background-color: #000;
+  }
+
+  html.dark .overViewList:hover .more {
+    color: #0a0a0a;
+    background-color: #f0f0f0;
   }
 }
 

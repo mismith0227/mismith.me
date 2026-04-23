@@ -46,7 +46,7 @@ export const PhotoModal = (props: Props) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={closeModal}
-      className="w-[98vw] h-[90vh] p-8 px-2 bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[96vw] md:h-[96vh] flex items-center justify-center p-8 md:px-6 box-border"
+      className="w-[98vw] h-[90vh] p-8 px-2 bg-white dark:bg-[#0a0a0a] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[96vw] md:h-[96vh] flex items-center justify-center p-8 md:px-6 box-border"
       style={{
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.5)',

@@ -24,7 +24,7 @@ export const Categories = (props: Props) => {
             >
               <Link
                 href={`/blog/${item.id}/page/1`}
-                className="inline-block py-2 px-3 text-[14px] no-underline text-black md:text-[18px]"
+                className="inline-block py-2 px-3 text-[14px] no-underline text-black dark:text-white md:text-[18px]"
               >
                 {item.category_name}
               </Link>
