@@ -42,7 +42,7 @@ export default async function Request() {
               target="_blank"
               aria-label="X"
               rel="noopener"
-              className="block text-black"
+              className="block text-black dark:text-white"
             >
               <Xlogo />
             </a>
@@ -53,7 +53,7 @@ export default async function Request() {
               target="_blank"
               aria-label="Instagram"
               rel="noopener"
-              className="block text-black"
+              className="block text-black dark:text-white"
             >
               <Instagram />
             </a>

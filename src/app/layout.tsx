@@ -29,9 +29,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja" prefix="og: https://ogp.me/ns#">
+    <html lang="ja" prefix="og: https://ogp.me/ns#" suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        {/* ダークモードのフラッシュ防止 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem('darkMode')==='true')document.documentElement.classList.add('dark')}catch(e){}})()`,
+          }}
+        />
         <GoogleAnalytics gaId={GA_ID} />
       </head>
       <body id="main">

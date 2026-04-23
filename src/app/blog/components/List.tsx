@@ -19,7 +19,7 @@ export const List = (props: Props) => {
             href={`/blog/${d.category.id}/${d.id}`}
             className="block hover:text-[rgb(119,119,119)]"
           >
-            <span className="text-[10px] inline-block px-4 py-1 bg-black text-white md:text-xs font-bold">
+            <span className="text-[10px] inline-block px-4 py-1 bg-black text-white dark:bg-white dark:text-black md:text-xs font-bold">
               {d.category.category_name}
             </span>
             <h2 className="text-[24px] md:text-[36px] font-bold mt-[16px]">

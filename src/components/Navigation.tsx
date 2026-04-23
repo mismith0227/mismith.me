@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { OpenInNew } from './Icon/OpenInNew'
+import { DarkModeToggle } from './DarkModeToggle'
 
 const navigations = [
   {
@@ -86,8 +87,8 @@ export const Navigation = () => {
         mismith
       </p>
       <nav
-        className={`navContainer max-sm:bg-white ${
-          pathName === '/' && 'sm:text-white max-sm:bg-white/80'
+        className={`navContainer max-sm:bg-white dark:max-sm:bg-[#0a0a0a] ${
+          pathName === '/' && 'sm:text-white max-sm:bg-white/80 dark:max-sm:bg-[#0a0a0a]/90'
         } ${isMenuOpen ? 'isOpenNav text-black' : 'isCloseNav'}`}
       >
         <div className={`max-sm:relative max-sm:flex max-sm:flex-col`}>
@@ -119,6 +120,7 @@ export const Navigation = () => {
               </li>
             ))}
           </ul>
+          <DarkModeToggle />
         </div>
       </nav>
       <button

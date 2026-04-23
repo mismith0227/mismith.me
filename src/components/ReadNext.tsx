@@ -21,7 +21,7 @@ export const ReadNext = (props: Props) => {
               </span>
               <Link
                 href={`/blog/${r.category.id}/${r.id}`}
-                className="font-bold text-black hover:no-underline"
+                className="font-bold text-black dark:text-white hover:no-underline"
               >
                 {r.title}
               </Link>
