@@ -8,6 +8,14 @@
 # testing
 /coverage
 
+# playwright
+/playwright-report
+/test-results
+/.playwright-mcp
+
+# claude code
+/.claude/settings.local.json
+
 # next.js
 /.next/
 /out/
