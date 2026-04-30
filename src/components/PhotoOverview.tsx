@@ -22,7 +22,7 @@ export const PhotoOverview = (props: Props) => {
         {featureImage && (
           <div className="relative w-full aspect-[3/2] md:w-1/2">
             <Image
-              src={`${featureImage.url}?fit=clip&w=1500&h=1500?fm=webp`}
+              src={`${featureImage.url}?fit=clip&w=1500&h=1500&fm=webp`}
               alt=""
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -36,9 +36,10 @@ export const PhotoOverview = (props: Props) => {
           {filteredImages?.map((image) => (
             <div key={image.url} className="relative flex-1 aspect-[3/2]">
               <Image
-                src={`${image.url}?fit=clip&w=500&h=500?fm=webp`}
+                src={`${image.url}?fit=clip&w=500&h=500&fm=webp`}
                 alt=""
                 fill
+                sizes="(max-width: 768px) 50vw, 12vw"
                 className="object-contain height-auto"
                 priority={isPriority}
               />

@@ -34,10 +34,11 @@ export const PhotoGallery = (props: Props) => {
     <>
       {pickUpPhoto && (
         <Image
-          src={`${pickUpPhoto.url}?fit=clip&w=1500&h=1000?fm=webp`}
+          src={`${pickUpPhoto.url}?fit=clip&w=1500&h=1000&fm=webp`}
           alt=""
           width={pickUpPhoto.width}
           height={pickUpPhoto.height}
+          sizes="(max-width: 768px) 100vw, 80vw"
           loading="eager"
           priority
         />

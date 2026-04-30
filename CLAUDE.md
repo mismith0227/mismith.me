@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+@.claude/performance.md
+
 ## Project Overview
 
 **Project Name:** mismith.me - 写真ポートフォリオサイト

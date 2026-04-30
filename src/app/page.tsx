@@ -33,6 +33,8 @@ const Home = () => {
           width={3000}
           height={2000}
           alt=""
+          priority={index === 0}
+          sizes="100vw"
           className={`absolute top-0 left-0 z-1 w-full h-full object-cover object-center transition-opacity duration-[1500ms] ease-in-out ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
