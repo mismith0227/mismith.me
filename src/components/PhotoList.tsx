@@ -42,10 +42,11 @@ export const PhotoList = (props: Props) => {
             onClick={() => onOpenImageModal(index)}
           >
             <Image
-              src={`${d.url}?fit=clip&w=1500&h=1500?fm=webp`}
+              src={`${d.url}?fit=clip&w=1500&h=1500&fm=webp`}
               alt=""
               width={d.width}
               height={d.height}
+              sizes="(max-width: 768px) 100vw, 25vw"
               loading={index > 5 ? 'lazy' : 'eager'}
               className="w-full h-full object-cover transition duration-200"
             />

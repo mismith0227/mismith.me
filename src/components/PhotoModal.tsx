@@ -56,10 +56,11 @@ export const PhotoModal = (props: Props) => {
     >
       {currentCount !== null && (
         <Image
-          src={`${data[currentCount].url}?fit=clip&w=1500&h=1500?fm=webp`}
+          src={`${data[currentCount].url}?fit=clip&w=1500&h=1500&fm=webp`}
           alt=""
           width={data[currentCount].width}
           height={data[currentCount].height}
+          sizes="96vw"
           className="w-full h-full object-contain"
         />
       )}
