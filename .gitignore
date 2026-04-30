@@ -12,6 +12,7 @@
 /playwright-report
 /test-results
 /.playwright-mcp
+/.playwright-cli
 
 # claude code
 /.claude/settings.local.json
