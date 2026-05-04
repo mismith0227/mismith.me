@@ -22,6 +22,7 @@ import { ListItemLink } from './component/ListItemLink'
 import { ListItemNote } from './component/ListItemNote'
 import { OpenInNew } from '@/src/components/Icon/OpenInNew'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 const title = 'About'
 const description = 'このサイトについて'
@@ -199,6 +200,9 @@ export default async function About() {
 
       <Section>
         <Heading level={2}>Career</Heading>
+
+        <p className="text-[14px]">エンジニア用サイトはこちら</p>
+        <Link href="https://dev.mismith.me/" target="_blank" className="text-[14px]">dev.mismith.me <OpenInNew className="text-[16px]" /></Link>
 
         <ul className="mt-9 p-0 list-none">
           {biographies.map((b) => (
