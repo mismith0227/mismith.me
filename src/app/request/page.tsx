@@ -31,7 +31,7 @@ export default async function Request() {
           お問合せは、以下のメールアドレスよりお問い合わせください。
         </p>
 
-        <p>mismith2227@gmail.com</p>
+        <p>hello@mismith.me</p>
 
         <p className="mt-[24px]">もしくは下記SNSのDMでも大丈夫です。</p>
 
