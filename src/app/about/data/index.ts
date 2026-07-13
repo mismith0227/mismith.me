@@ -231,6 +231,14 @@ export const awardData = [
     heading: '海外',
     items: [
       {
+        id: '2025-dummy-award-winners',
+        date: '2026',
+        name: 'Dummy Award 2025',
+        rank: 'Winners',
+        country: 'Germany',
+        link: 'https://dummyaward.org/dummy-award-2025',
+      },
+      {
         id: '2025-critical-mass',
         date: '2025',
         name: 'Critical Mass 2025',
